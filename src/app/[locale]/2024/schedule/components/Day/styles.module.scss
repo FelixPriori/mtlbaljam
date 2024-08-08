@@ -1,0 +1,26 @@
+.day {
+    background-color: var(--mbj-color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    .titleWrapper {
+        padding: 1rem;
+        width: 100%;
+        background-color: var(--mbj-color-teal);
+
+        h3 {
+            color: var(--mbj-color-white);
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+    }
+
+    .eventsList {
+        padding: 1rem;
+        margin-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,39 @@
+.iconBox {
+    position: absolute;
+    z-index: 10;
+
+    &.topLeft {
+        top: 1rem;
+        left: 1rem;
+    }
+
+    &.topRight {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    &.bottomRight {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    &.bottomLeft {
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    &.centerLeft, &.centerRight {
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+    } 
+
+    &.centerLeft {
+        left: 1rem;
+    }
+
+    &.centerRight {
+        right: 1rem;
+    }
+}

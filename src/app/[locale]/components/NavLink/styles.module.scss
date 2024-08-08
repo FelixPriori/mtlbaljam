@@ -1,0 +1,41 @@
+.navLink {
+    a {
+        color: var(--mbj-color-black);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 2px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &.current {
+        a {
+            position: relative;
+            text-decoration: none;
+            cursor: default;
+            pointer-events: none;
+
+            &:before {
+                content: "*";
+                position: absolute;
+                left: -7px;
+                top: 4px;
+            }
+
+            &:after {
+                content: "*";
+                position: absolute;
+                right: -7px;
+                top: 4px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 576px) {
+        a {
+            font-size: 0.85rem;
+        }
+    }
+}
