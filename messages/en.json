@@ -719,8 +719,9 @@
 		},
 		"2025": {
 			"comingSoon": {
-				"title": "Coming soon...",
-				"saveTheDate": "Save the date: June 20-21-21, 2025"
+				"title": "More details coming soon...",
+				"saveTheDate": "Save the date: June 20-21-21, 2025",
+				"cutoutAlt": "Javi & Lucia's Photo"
 			}
 		},
 		"visitingPage": {

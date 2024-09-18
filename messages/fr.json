@@ -720,8 +720,9 @@
 		},
 		"2025": {
 			"comingSoon": {
-				"title": "À venir...",
-				"saveTheDate": "Réservez la date: 20, 21, 22 juin 2025"
+				"title": "Plus de détails à venir...",
+				"saveTheDate": "Réservez la date: 20, 21, 22 juin 2025",
+				"cutoutAlt": "Photo de Javi & Lucia"
 			}
 		},
 		"visitingPage": {

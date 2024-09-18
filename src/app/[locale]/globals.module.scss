@@ -45,13 +45,13 @@
 		border-width: 2px;
 	}
 
-	.mbj-toast-success {
+	.mbjToastSuccess {
 		--toastify-color-success: #d97f76;
 		--toastify-icon-color-success: var(--toastify-color-success);
 		--toastify-color-progress-success: var(--toastify-color-success);
 	}
 
-	.mbj-link {
+	.mbjLink {
 		text-decoration: underline;
 		text-underline-offset: 3px;
 		text-decoration-thickness: 2px;
@@ -62,31 +62,31 @@
 		}
 	}
 
-	.mbj-form {
+	.mbjForm {
 		padding: 12px;
 		width: 100%;
 
-		.mbj-fieldset {
+		.mbjFieldset {
 			display: flex;
 			flex-direction: column;
 			margin-bottom: 12px;
 		}
 
-		.mbj-inline-fieldset {
+		.mbjInlineFieldset {
 			display: flex;
 			gap: 8px;
 			margin: 12px 0;
 		}
 
-		.mbj-label {
+		.mbjLabel {
 			margin-bottom: 8px;
 		}
 
-		.mbj-inline-label {
+		.mbjInlineLabel {
 			text-align: left;
 		}
 
-		.mbj-field {
+		.mbjField {
 			padding: 8px 12px;
 			border-radius: 4px;
 			border-style: solid;
@@ -97,12 +97,12 @@
 			}
 		}
 
-		.mbj-button-container {
+		.mbjButtonContainer {
 			display: flex;
 			justify-content: flex-end;
 			width: 100%;
 
-			.mbj-button {
+			.mbjButton {
 				margin-left: auto;
 				padding: 0.5rem 2rem;
 				background-color: var(--mbj-color-black);

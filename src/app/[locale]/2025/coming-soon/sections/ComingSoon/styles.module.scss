@@ -1,10 +1,10 @@
 .comingSoonSection {
 	position: relative;
 	background-color: var(--mbj-color-black);
+	min-height: 700px;
 	padding: 40px 0;
 
 	h2,
-	h3,
 	p,
 	a {
 		color: var(--mbj-color-white);
@@ -15,70 +15,63 @@
 		margin-bottom: 20px;
 	}
 
-	h3 {
-		font-size: 2rem;
-		margin-bottom: 20px;
-	}
-
-	.logoContainer {
-		position: absolute;
-		left: 20%;
-		top: 50%;
-		transform: translateY(-50%);
-		justify-self: center;
-		align-self: center;
-
-		img {
-			width: 300px;
-			height: 300px;
-			opacity: 0.15;
-		}
-	}
-
 	.content {
-		position: relative;
 		max-width: 50%;
 		margin: 0 auto;
 
-		p {
-			margin-bottom: 20px;
+		.text {
+			position: relative;
+			z-index: 1;
 
-			br {
-				content: '';
-				margin: 1em;
-				display: block;
-			}
+			p {
+				margin-bottom: 20px;
 
-			.link {
-				text-decoration: underline;
-				text-underline-offset: 3px;
-				text-decoration-thickness: 2px;
+				br {
+					content: '';
+					margin: 1em;
+					display: block;
+				}
 
-				&:hover {
-					text-decoration: none;
+				.link {
+					text-decoration: underline;
+					text-underline-offset: 3px;
+					text-decoration-thickness: 2px;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				&.saveTheDate {
+					text-align: center;
+					font-size: 1.5rem;
 				}
 			}
+		}
 
-			&.saveTheDate {
-				text-align: center;
-				font-size: 1.5rem;
+		.cutout {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				filter: brightness(0.5);
+				object-fit: contain;
 			}
 		}
 	}
 
 	@media only screen and (max-width: 768px) {
-		.logoContainer {
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+		min-height: 300px;
 
 		.content {
 			padding: 20px 50px;
 			max-width: 100%;
-
-			h3 {
-				text-align: center;
-			}
 		}
 	}
 }
