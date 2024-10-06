@@ -719,10 +719,14 @@
 			}
 		},
 		"2025": {
-			"comingSoon": {
-				"title": "Plus de détails à venir...",
-				"saveTheDate": "Réservez la date: 20, 21, 22 juin 2025",
-				"cutoutAlt": "Photo de Javi & Lucia"
+			"instructorsPage": {
+				"title": "Instructeurs",
+				"firstInstructors": {
+					"instructorsNames": "Lucía & Javi",
+					"biography": "Lucía et Javi (ES) dansent et enseignent les danses swing ensemble depuis plus de dix ans. Leur aventure avec le balboa a commencé en 2014, et ils sont tombés amoureux de cette danse. Depuis, ils souhaitent partager cette passion avec les autres dans leur école de danse locale, Black Bottom, ainsi qu'à travers toute l'Europe.<br></br>Dans leurs cours, ils aiment se concentrer sur le partenariat et la création d'un flux harmonieux en couple, en jouant et en réagissant l'un avec l'autre. Ils offrent aux élèves les outils pour que le « leader » et le « follower » puissent communiquer et créer ensemble leurs propres pas et variations.<br></br>Lucía et Javi sont de véritables maîtres de l'improvisation sur de la musique live. Pour eux, danser le balboa est un jeu continuel avec la musique, et une célébration de la joie de la danse jazz dans sa forme la plus pure. Préparez-vous à des cours stimulants et pleins de créativité avec eux !",
+					"cutoutAlt": "Photo de Lucía & Javi",
+					"link": "https://javiandlucia.com/"
+				}
 			}
 		},
 		"visitingPage": {
@@ -1142,9 +1146,9 @@
 					},
 					"2025": {
 						"title": "MTL BAL JAM 2025",
-						"comingSoon": {
-							"text": "À venir",
-							"href": "/fr/2025/coming-soon"
+						"instructors": {
+							"text": "Instructeurs",
+							"href": "/fr/2025/instructors"
 						}
 					}
 				}
@@ -1198,6 +1202,15 @@
 			"toaster": "Icone d'un grille pain",
 			"mbjLogo": "Logo du MTL BAL JAM",
 			"arch": "Dessin d'une arche couleur saumon sur fond bleu"
+		},
+		"mainPage": {
+			"title": "Instructeurs",
+			"firstInstructors": {
+				"instructorsNames": "Lucía & Javi",
+				"shortBio": "Pour eux, danser le balboa est un jeu continuel avec la musique et le plaisir de la danse jazz dans sa forme la plus pure...",
+				"linkText": "Plus de détails...",
+				"link": "/2025/instructors"
+			}
 		},
 		"comingSoon": {
 			"title": "Détails à venir..."

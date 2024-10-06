@@ -15,6 +15,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 1,
 		},
 		{
+			url: 'https://www.mtlbaljam.org/fr/2025/instructors',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
+			url: 'https://www.mtlbaljam.org/en/2025/instructors',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
 			url: 'https://www.mtlbaljam.org/fr/2024/music',
 			lastModified: new Date(),
 			changeFrequency: 'weekly',

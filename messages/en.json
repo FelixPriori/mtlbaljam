@@ -718,10 +718,14 @@
 			}
 		},
 		"2025": {
-			"comingSoon": {
-				"title": "More details coming soon...",
-				"saveTheDate": "Save the date: June 20-21-21, 2025",
-				"cutoutAlt": "Javi & Lucia's Photo"
+			"instructorsPage": {
+				"title": "Instructors",
+				"firstInstructors": {
+					"instructorsNames": "Lucía & Javi",
+					"biography": "Lucía and Javi (ES) have been dancing and teaching swing dances together for more than a decade. Their balboa adventure began in 2014, they both fell in love with this dance and since then, they wish to spread this feeling among other people in their local dance school Black Bottom and throughout Europe.<br></br>In classes, they love to focus on partnership and creating an harmonious flow while dancing in couple playing and reacting with each other. They offer students the tools for both ‘leader’ and ‘follower’ to communicate and create together their own steps and variations. <br></br>Lucía and Javi are real masters in improvising to live music. For them, dancing Balboa is a continuous game with music and the fun of jazz dance in its purest form. Be ready for challenging and playfulness classes with them!",
+					"cutoutAlt": "Lucía & Javi's Photo",
+					"link": "https://javiandlucia.com/"
+				}
 			}
 		},
 		"visitingPage": {
@@ -1140,9 +1144,9 @@
 					},
 					"2025": {
 						"title": "MTL BAL JAM 2025",
-						"comingSoon": {
-							"text": "Coming Soon",
-							"href": "/en/2025/coming-soon"
+						"instructors": {
+							"text": "Instructors",
+							"href": "/en/2025/instructors"
 						}
 					}
 				}
@@ -1196,6 +1200,15 @@
 			"toaster": "Toaster icon",
 			"mbjLogo": "MTL BAL JAM Logo",
 			"arch": "Drawing of a salmon arch on blue background"
+		},
+		"mainPage": {
+			"title": "Instructors",
+			"firstInstructors": {
+				"instructorsNames": "Lucía & Javi",
+				"shortBio": "For them, dancing Balboa is a continuous game with music and the fun of jazz dance in its purest form...",
+				"linkText": "Learn more...",
+				"link": "/2025/instructors"
+			}
 		},
 		"comingSoon": {
 			"title": "Coming soon..."

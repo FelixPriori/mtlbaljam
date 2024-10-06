@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
 import Favicon from '@/app/favicon.ico'
 import BigOG from '@/app/opengraph-image.png'
-import { ComingSoon } from './2025/coming-soon/sections'
+import { MainSection } from './sections'
 
 type Props = {
 	params: { locale: string }
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Props) {
 export default function MTLBALJAM() {
 	return (
 		<>
-			<ComingSoon />
+			<MainSection />
 		</>
 	)
 }
