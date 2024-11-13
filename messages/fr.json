@@ -1064,8 +1064,8 @@
 						"link": "https://www.stm.info/fr/tarifs/titres-de-transport/3-jours-tous-modes"
 					},
 					"app": {
-						"description": "De plus, vous pouvez télécharger l’application mobile <link>TransitApp</link> pour consulter les horaires de métro ou d’autobus et planifier vos déplacements.",
-						"link": "https://transitapp.com/region/montreal?lang=fr"
+						"description": "De plus, vous pouvez télécharger l’application mobile <link>Chrono</link> pour consulter les horaires de métro ou d’autobus et planifier vos déplacements. Vous pouvez aussi utiliser l'application pour recharger votre carte Opus au besoin.",
+						"link": "https://chronoapp.quebec/"
 					}
 				},
 				"bixi": {

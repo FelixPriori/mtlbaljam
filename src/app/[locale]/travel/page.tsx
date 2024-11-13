@@ -62,7 +62,7 @@ export default function MbjTravel() {
 	return (
 		<>
 			<ToMontreal />
-			<ToTheEvent />
+			{/* <ToTheEvent /> */}
 			<Transportation />
 			<Housing />
 		</>

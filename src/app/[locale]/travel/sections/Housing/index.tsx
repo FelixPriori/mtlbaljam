@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl'
 import styles from './styles.module.scss'
 
-const keys = ['hotel', 'community'] as string[]
+const keys = ['hotel' /*'community'*/] as string[]
 
 export default function ToMontreal() {
 	const t = useTranslations('MtlBalJam.travelPage.housing')

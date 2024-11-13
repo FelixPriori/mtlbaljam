@@ -1063,8 +1063,8 @@
 						"link": "https://www.stm.info/en/info/fares/transit-fares/3-day-all-modes"
 					},
 					"app": {
-						"description": "Also, you can download the <link>TransitApp</link> on your mobile device to view the transit schedules and plan your trips accordingly.",
-						"link": "https://transitapp.com/region/montreal?lang=en"
+						"description": "Also, you can download the <link>Chrono</link> on your mobile device to view the transit schedules and plan your trips accordingly. You can also use the app to refill your Opus card if you need to.",
+						"link": "https://chronoapp.quebec/"
 					}
 				},
 				"bixi": {
