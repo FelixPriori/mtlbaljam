@@ -16,10 +16,7 @@ export default function Venue() {
 						<p>
 							{t.rich(`homePage.scheduleSection.description`, {
 								details: chunks => (
-									<Link
-										className="mbj-link"
-										href={t('homePage.scheduleSection.detailsLink')}
-									>
+									<Link href={t('homePage.scheduleSection.detailsLink')}>
 										{chunks}
 									</Link>
 								),

@@ -36,6 +36,17 @@
 		font-family: var(--font-josephin-sans);
 	}
 
+	a {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		text-decoration-thickness: 2px;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
 	fieldset {
 		border: none;
 	}
@@ -49,17 +60,6 @@
 		--toastify-color-success: #d97f76;
 		--toastify-icon-color-success: var(--toastify-color-success);
 		--toastify-color-progress-success: var(--toastify-color-success);
-	}
-
-	.mbjLink {
-		text-decoration: underline;
-		text-underline-offset: 3px;
-		text-decoration-thickness: 2px;
-		cursor: pointer;
-
-		&:hover {
-			text-decoration: none;
-		}
 	}
 
 	.mbjForm {
@@ -140,7 +140,4 @@
 		box-shadow: none;
 		margin: 0;
 	}
-}
-
-.main {
 }

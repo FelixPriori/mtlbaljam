@@ -88,12 +88,7 @@ export default function Tickets() {
 					<p>
 						{t.rich('subsidize.description', {
 							email: chunks => (
-								<a
-									className="mbj-link"
-									href="mailto:mtlbaljam@campusbalboa.org"
-								>
-									{chunks}
-								</a>
+								<a href="mailto:mtlbaljam@campusbalboa.org">{chunks}</a>
 							),
 						})}
 					</p>
@@ -106,7 +101,6 @@ export default function Tickets() {
 								<a
 									target="_blank"
 									rel="noreferrer noopener"
-									className="mbj-link"
 									href={t('terms.link')}
 								>
 									{chunks}

@@ -33,7 +33,6 @@ export default function Youlia() {
 								br: () => <br />,
 								contact: chunks => (
 									<a
-										className="mbj-link"
 										rel="noopener noreferrer"
 										target="_blank"
 										href={t('contactLink')}
@@ -43,7 +42,6 @@ export default function Youlia() {
 								),
 								order: chunks => (
 									<a
-										className="mbj-link"
 										rel="noopener noreferrer"
 										target="_blank"
 										href={t('orderLink')}
@@ -53,7 +51,6 @@ export default function Youlia() {
 								),
 								insta: chunks => (
 									<a
-										className="mbj-link"
 										rel="noopener noreferrer"
 										target="_blank"
 										href={t('instaLink')}

@@ -12,11 +12,10 @@ const keys2025 = [
 	'melanie',
 	'sara',
 	'sihem',
-	'sophie',
 	'tania',
 ]
 
-const keys2024 = ['aronne', 'katya', 'zack']
+const keys2024 = ['aronne', 'katya', 'zack', 'sophie']
 
 export default function StaffSection() {
 	const t = useTranslations('MtlBalJam.aboutPage.staffSection')

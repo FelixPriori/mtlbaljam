@@ -14,7 +14,6 @@ export default function Protocol() {
 						br: () => <br />,
 						protocol: chunks => (
 							<a
-								className="mbj-link"
 								target="_blank"
 								rel="noopener noreferrer"
 								href={t('protocolLink')}
@@ -23,13 +22,10 @@ export default function Protocol() {
 							</a>
 						),
 						email: chunks => (
-							<a className="mbj-link" href="mailto:inclusion@campusbalboa.org">
-								{chunks}
-							</a>
+							<a href="mailto:inclusion@campusbalboa.org">{chunks}</a>
 						),
 						report: chunks => (
 							<a
-								className="mbj-link"
 								target="_blank"
 								rel="noopener noreferrer"
 								href={t('reportLink')}
