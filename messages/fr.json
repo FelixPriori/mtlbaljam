@@ -726,6 +726,12 @@
 					"biography": "Lucía et Javi (ES) dansent et enseignent les danses swing ensemble depuis plus de dix ans. Leur aventure avec le balboa a commencé en 2014, et ils sont tombés amoureux de cette danse. Depuis, ils souhaitent partager cette passion avec les autres dans leur école de danse locale, Black Bottom, ainsi qu'à travers toute l'Europe.<br></br>Dans leurs cours, ils aiment se concentrer sur le partenariat et la création d'un flux harmonieux en couple, en jouant et en réagissant l'un avec l'autre. Ils offrent aux élèves les outils pour que le « leader » et le « follower » puissent communiquer et créer ensemble leurs propres pas et variations.<br></br>Lucía et Javi sont de véritables maîtres de l'improvisation sur de la musique live. Pour eux, danser le balboa est un jeu continuel avec la musique, et une célébration de la joie de la danse jazz dans sa forme la plus pure. Préparez-vous à des cours stimulants et pleins de créativité avec eux !",
 					"cutoutAlt": "Photo de Lucía & Javi",
 					"link": "https://javiandlucia.com/"
+				},
+				"secondInstructors": {
+					"instructorsNames": "Neus & Albert",
+					"biography": "Neus et Albert (🇪🇸) sont partenaires depuis 2015. Ils enseignent à Barcelone et à l’étranger munis d’un désir de continuer à apprendre et à faire grandir la scène. Ils ont rapidement découvert le besoin d’approfondir certains aspects de la danse en partenaire son langage afin d’aider les autres danseur.euse.s à travailler la communication de façon  plus dynamique et fluide. Par conséquent, ils ont développé une technique de danse où les deux partenaires sont égaux en mettant de l’avant la danse sociale, l’improvisation et l’élément humain de la danse tout en respectant ses bases et le Balboa dans sa forme originale.",
+					"cutoutAlt": "Photo de Neus & Albert",
+					"link": "https://www.balanceddancing.com/"
 				}
 			}
 		},
@@ -1208,6 +1214,12 @@
 			"firstInstructors": {
 				"instructorsNames": "Lucía & Javi",
 				"shortBio": "Pour eux, danser le balboa est un jeu continuel avec la musique et le plaisir de la danse jazz dans sa forme la plus pure...",
+				"linkText": "Plus de détails...",
+				"link": "/2025/instructors"
+			},
+			"secondInstructors": {
+				"instructorsNames": "Neus & Albert",
+				"shortBio": "Ils pratiquent la danse équilibrée qui est une technique de danse en couple qui permet aux deux partenaires de s’exprimer avec la même liberté et de construire ensemble la danse sur une base d’égalité, de partage et de ressenti de la musique dans cet espace co-créé...",
 				"linkText": "Plus de détails...",
 				"link": "/2025/instructors"
 			}

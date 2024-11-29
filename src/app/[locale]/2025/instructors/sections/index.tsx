@@ -1,1 +1,1 @@
-export { default as FirstInstructors } from './FirstInstructors'
+export { default as InstructorsSection } from './instructorsSection'

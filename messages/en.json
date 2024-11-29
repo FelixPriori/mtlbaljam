@@ -725,6 +725,12 @@
 					"biography": "Lucía and Javi (ES) have been dancing and teaching swing dances together for more than a decade. Their balboa adventure began in 2014, they both fell in love with this dance and since then, they wish to spread this feeling among other people in their local dance school Black Bottom and throughout Europe.<br></br>In classes, they love to focus on partnership and creating an harmonious flow while dancing in couple playing and reacting with each other. They offer students the tools for both ‘leader’ and ‘follower’ to communicate and create together their own steps and variations. <br></br>Lucía and Javi are real masters in improvising to live music. For them, dancing Balboa is a continuous game with music and the fun of jazz dance in its purest form. Be ready for challenging and playfulness classes with them!",
 					"cutoutAlt": "Lucía & Javi's Photo",
 					"link": "https://javiandlucia.com/"
+				},
+				"secondInstructors": {
+					"instructorsNames": "Neus & Albert",
+					"biography": "Neus & Albert (🇪🇸) started dancing and training together in July 2015, which soon led to teaching weekly Balboa classes in Barcelona and abroad and a desire to continue learning and growing the scene. They quickly saw the need to dig deeper into certain aspects of partner dancing and the language they share in order to empower dancers and foster more fluid, dynamic communication between them. This led them to develop a partner-dance technique in which both partners are equal, focusing on social dancing, improvisation and the philosophical and human elements of the dance while carefully respecting the fundamentals of balboa in its original form.",
+					"cutoutAlt": "Neus & Albert's Photo",
+					"link": "https://www.balanceddancing.com/"
 				}
 			}
 		},
@@ -1207,6 +1213,14 @@
 				"instructorsNames": "Lucía & Javi",
 				"shortBio": "For them, dancing Balboa is a continuous game with music and the fun of jazz dance in its purest form...",
 				"linkText": "Learn more...",
+				"cutoutAlt": "Lucía & Javi's Photo",
+				"link": "/2025/instructors"
+			},
+			"secondInstructors": {
+				"instructorsNames": "Neus & Albert",
+				"shortBio": "They practice Balanced Dancing which is a partner dance technique that enables both parties to express themselves with the same freedom and build the dance together on a foundation of equality, sharing and feeling the music in this co-created space....",
+				"linkText": "Learn more...",
+				"cutoutAlt": "Neus & Albert's Photo",
 				"link": "/2025/instructors"
 			}
 		},

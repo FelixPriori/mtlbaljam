@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server'
 import Favicon from '@/app/favicon.ico'
 import BigOG from '@/app/opengraph-image.png'
-import { FirstInstructors } from './sections'
+import { InstructorsSection } from './sections'
 
 type Props = {
 	params: { locale: string }
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: Props) {
 export default function MbjInstructors() {
 	return (
 		<>
-			<FirstInstructors />
+			<InstructorsSection />
 		</>
 	)
 }
