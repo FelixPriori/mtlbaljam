@@ -734,6 +734,114 @@
 					"link": "https://www.balanceddancing.com/"
 				}
 			},
+			"competitionsPage": {
+				"title": "Compétitions",
+				"competitionNote": "Le MTL BAL JAM veut prioriser la danse sociale. Pour ce faire, nous allons nous efforcer pour que nos compétitions ne prenne pas plus de temps que nécessaire de la danse sociale. Cela dit, nous planifions plusieurs prix et surprises pour les compétiteurs.ices et nous restons certains que nos compétitions demeureront agréables pour tout le monde, tant pour les participants.es que pour le public !",
+				"mixAndMatchSection": {
+					"title": "Mix & Match Ouvert",
+					"information": {
+						"priceTitle": "Coût : ",
+						"price": "à venir",
+						"prelims": {
+							"title": "Prélims",
+							"timeTitle": "Quand : ",
+							"time": "vendredi 20 juin 2025 20h30",
+							"bpmTitle": "Tempo : ",
+							"bpm": "180 à 220 BPM / chanson",
+							"description": "Vous vous inscrivez seul.e.s, vous êtes jugé.e.s individuellement et vous dansez avec un.e partenaire différent pour chaque chanson."
+						},
+						"finals": {
+							"title": "Finales",
+							"timeTitle": "Quand : ",
+							"time": "samedi 21 juin 2025 vers 22h00",
+							"bpmTitle": "Tempo : ",
+							"bpm": "190 à 230 BPM / chanson",
+							"description": "Les finales auront lieu en duo spotlight afin de donner à tous.tes les finalistes une chance de briller et il y aura un changement de partenaire sans interruption à la moitié du spotlight. Il y aura un all-skate sur de la musique live avec des rotations sans interruptions. Vous êtes jugé.e.s individuellement."
+						}
+					}
+				},
+				"pureBalSection": {
+					"title": "Strictly de Pure Balboa",
+					"information": {
+						"priceTitle": "Coût : ",
+						"price": "à venir",
+						"formatTitle": "Format : ",
+						"format": "Tap-out",
+						"timeTitle": "Quand : ",
+						"time": "vendredi 20 juin 2025, durant la danse tardive (vers 1h30am)",
+						"description": "Nouvelle addition pour l’édition 2025 de MTL BAL JAM ! Nous adorons le Pure Balboa et nous avons envie de vous inviter à participer à notre compétition de fin de soirée Strictly Pure Balboa. Vous vous inscrivez avec un.e partenaire et vous dansez tant et aussi longtemps que vous n’êtes pas éliminé.e.s pas un.e de nos juges. Le dernier couple qui reste gagne !"
+					}
+				},
+				"slowBalSection": {
+					"title": "Slow Balboa",
+					"information": {
+						"priceTitle": "Coût : ",
+						"price": "gratuit",
+						"formatTitle": "Format : ",
+						"format": "Tap In (prélims) Tap Out (finales)",
+						"timeTitle": "Quand : ",
+						"time": "dimanche 22 juin 2025 vers 23h00",
+						"description": "Entrez simplement sur la piste de danse avec votre partenaire et montrez-nous votre plus beau Slow Balboa. Les finalistes seront sélectionné.e.s en format Tap In pour qu’ensuite le dernier couple qui reste gagne !"
+					}
+				},
+				"musicSection": {
+					"title": "Musique",
+					"description": "Notre équipe de DJs prendra le temps de choisir soigneusement toutes les chansons en suivant les standards de compétitions de balboa internationales. Si la compétition compote plus d’une vague en prélim, nous nous assurerons que les chansons se ressemblent afin que les participants.es aient une chance égale."
+				},
+				"judgesSection": {
+					"title": "Juges",
+					"judges": {
+						"lucia": {
+							"name": "Lucía",
+							"image": {
+								"src": "/lucia.jpg",
+								"alt": "Photo de Lucía"
+							}
+						},
+						"javi": {
+							"name": "Javi",
+							"image": {
+								"src": "/javi.jpg",
+								"alt": "Photo de Javi"
+							}
+						},
+						"neus": {
+							"name": "Neus",
+							"image": {
+								"src": "/neus.jpg",
+								"alt": "Photo de Neus"
+							}
+						},
+						"albert": {
+							"name": "Albert",
+							"image": {
+								"src": "/albert.jpg",
+								"alt": "Photo de Albert"
+							}
+						}
+					}
+				},
+				"sponsorsSection": {
+					"title": "Partenaires",
+					"sponsors": {
+						"stardust": {
+							"name": "Stardust Slow Balboa Weekend",
+							"link": "https://stardustweekend.com/",
+							"image": {
+								"src": "/stardust.png",
+								"alt": "Logo de Stardust Slow Balboa Weekend"
+							}
+						}
+					},
+					"notes": {
+						"text": "Vous voulez sponsoriser le MTL BAL JAM? Contactez-nous au ",
+						"link": {
+							"text": "mtlbaljam@campusbalboa.org",
+							"link": "mailto:mtlbaljam@campusbalboa.org"
+						}
+					}
+				}
+			},
 			"registrationPage": {
 				"title": "Inscriptions",
 				"registrationSave": {
@@ -1211,6 +1319,10 @@
 						"instructors": {
 							"text": "Instructeurs",
 							"href": "/fr/2025/instructors"
+						},
+						"competitions": {
+							"text": "Compétitions",
+							"href": "/fr/2025/competitions"
 						},
 						"registration": {
 							"text": "Inscriptions",
