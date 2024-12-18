@@ -4,14 +4,15 @@ import BigOG from '@/app/opengraph-image.png'
 import { ToMontreal, ToTheEvent, Transportation, Housing } from './sections'
 
 type Props = {
-	params: { locale: string }
+	params: Promise<{ locale: string }>
 }
 
-export async function generateMetadata({ params }: Props) {
-	unstable_setRequestLocale(params.locale)
-	const siteUrl = `https://www.mtlbaljam.org/${params.locale}`
+export async function generateMetadata(props: Props) {
+    const params = await props.params;
+    unstable_setRequestLocale(params.locale)
+    const siteUrl = `https://www.mtlbaljam.org/${params.locale}`
 
-	if (params.locale === 'fr') {
+    if (params.locale === 'fr') {
 		return {
 			title: 'Voyagement | MTL BAL JAM',
 			description: 'Voyager pour MTL BAL JAM',

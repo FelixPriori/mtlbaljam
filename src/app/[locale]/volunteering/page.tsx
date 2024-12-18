@@ -4,14 +4,15 @@ import BigOG from '@/app/opengraph-image.png'
 import { Volunteering } from './sections'
 
 type Props = {
-	params: { locale: string }
+	params: Promise<{ locale: string }>
 }
 
-export async function generateMetadata({ params }: Props) {
-	unstable_setRequestLocale(params.locale)
-	const siteUrl = `https://www.mtlbaljam.org/${params.locale}`
+export async function generateMetadata(props: Props) {
+    const params = await props.params;
+    unstable_setRequestLocale(params.locale)
+    const siteUrl = `https://www.mtlbaljam.org/${params.locale}`
 
-	if (params.locale === 'fr') {
+    if (params.locale === 'fr') {
 		return {
 			title: 'Bénévolat | MTL BAL JAM',
 			description: 'Faire du bénévolat pour MTL BAL JAM',
