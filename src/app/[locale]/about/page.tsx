@@ -3,13 +3,14 @@ import Favicon from '@/app/favicon.ico'
 import BigOG from '@/app/opengraph-image.png'
 import { Description, Staff } from './sections'
 type Props = {
-	params: { locale: string }
+	params: Promise<{ locale: string }>
 }
 
-export async function generateMetadata({ params }: Props) {
-	unstable_setRequestLocale(params.locale)
-	const siteUrl = `https://www.mtlbaljam.org/${params.locale}`
-	if (params.locale === 'fr') {
+export async function generateMetadata(props: Props) {
+    const params = await props.params;
+    unstable_setRequestLocale(params.locale)
+    const siteUrl = `https://www.mtlbaljam.org/${params.locale}`
+    if (params.locale === 'fr') {
 		return {
 			title: 'À propos | MTL BAL JAM',
 			description: 'À propos de MTL BAL JAM',

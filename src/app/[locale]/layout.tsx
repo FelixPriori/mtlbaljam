@@ -28,23 +28,32 @@ const josephinSans = Josefin_Sans({
 	variable: '--font-josephin-sans',
 })
 
-export default async function LocaleLayout({
-	children,
-	params: { locale },
-}: {
-	children: React.ReactElement
-	params: { locale: string }
-}) {
-	unstable_setRequestLocale(locale)
+export default async function LocaleLayout(
+    props: {
+        children: React.ReactElement
+        params: Promise<{ locale: string }>
+    }
+) {
+    const params = await props.params;
 
-	let messages
-	try {
+    const {
+        locale
+    } = params;
+
+    const {
+        children
+    } = props;
+
+    unstable_setRequestLocale(locale)
+
+    let messages
+    try {
 		messages = (await import(`../../../messages/${locale}.json`)).default
 	} catch (error) {
 		notFound()
 	}
 
-	return (
+    return (
 		<html lang={locale}>
 			<body
 				suppressHydrationWarning
