@@ -1387,12 +1387,14 @@
 				"instructorsNames": "Lucía & Javi",
 				"shortBio": "Pour eux, danser le balboa est un jeu continuel avec la musique et le plaisir de la danse jazz dans sa forme la plus pure...",
 				"linkText": "Plus de détails...",
+				"cutoutAlt": "Photo de Lucía & Javi",
 				"link": "/2025/instructors"
 			},
 			"secondInstructors": {
 				"instructorsNames": "Neus & Albert",
 				"shortBio": "Ils pratiquent la danse équilibrée qui est une technique de danse en couple qui permet aux deux partenaires de s’exprimer avec la même liberté et de construire ensemble la danse sur une base d’égalité, de partage et de ressenti de la musique dans cet espace co-créé...",
 				"linkText": "Plus de détails...",
+				"cutoutAlt": "Photo de Neus & Albert",
 				"link": "/2025/instructors"
 			}
 		},
