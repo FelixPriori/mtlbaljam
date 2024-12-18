@@ -27,6 +27,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.7,
 		},
 		{
+			url: 'https://www.mtlbaljam.org/fr/2025/registration',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
+			url: 'https://www.mtlbaljam.org/en/2025/registration',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
+			url: 'https://www.mtlbaljam.org/fr/2025/competitions',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
+			url: 'https://www.mtlbaljam.org/en/2025/competitions',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
 			url: 'https://www.mtlbaljam.org/fr/2024/music',
 			lastModified: new Date(),
 			changeFrequency: 'weekly',
