@@ -1,10 +1,7 @@
-'use client'
-import { usePathname } from 'next/navigation'
 import NavLinks from '../../components/NavLinks'
 import styles from './styles.module.scss'
 import MobileNavigation from '../MobileNavigation'
 import LanguageSwitcher from '../LanguageSwitcher'
-import { getSlugFromPathname } from '@/util/navigationUtils'
 
 const pageTabs = {
 	about: ['about', 'code-of-conduct', 'volunteering'],

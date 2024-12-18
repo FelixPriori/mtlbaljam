@@ -1,3 +1,4 @@
+'use client'
 import { useTranslations } from 'next-intl'
 import NavLink from '../NavLink'
 import styles from './styles.module.scss'
