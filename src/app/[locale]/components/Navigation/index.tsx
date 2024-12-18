@@ -18,7 +18,7 @@ const pageTabs = {
 			'schedule',
 			'extra',
 		],
-		2025: ['instructors'],
+		2025: ['instructors', 'registration'],
 	},
 	travel: ['visiting', 'travel'],
 }

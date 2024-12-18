@@ -1,0 +1,36 @@
+.saveTheDateSection {
+	background-color: var(--mbj-color-black);
+	padding: 40px;
+
+	h2 {
+		color: var(--mbj-color-white);
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	.content {
+		margin: 0 auto;
+		max-width: 500px;
+
+		.annoucementBox {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: var(--mbj-color-chartreuse);
+			padding: 2rem 1rem;
+			border: 2px dotted var(--mbj-color-black);
+			border-radius: 8px;
+			margin-bottom: 1rem;
+
+			h3 {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 500px) {
+		h2 {
+			margin-bottom: 1rem;
+		}
+	}
+}

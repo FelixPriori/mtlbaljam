@@ -733,6 +733,62 @@
 					"cutoutAlt": "Photo de Neus & Albert",
 					"link": "https://www.balanceddancing.com/"
 				}
+			},
+			"registrationPage": {
+				"title": "Inscriptions",
+				"registrationSave": {
+					"subtitle": "Les inscriptions débutent le",
+					"date": "16 janvier 2025",
+					"text": "Réservez la date!"
+				},
+				"tickets": {
+					"title": "Détails des laissez-passer",
+					"fullPass": "Laissez-passer complet",
+					"partyPass": "Laissez-passer festif",
+					"level": {
+						"title": "Niveau requis",
+						"content": {
+							"details": "Ceci est un atelier de balboa pour tous niveaux qui nécessite tout de même de connaître les bases de la danse. Les débutants sont les bienvenus aux danses sociales, mais il faut avoir pris quelques mois de cours réguliers avant de s’inscrire aux ateliers. Nous voulons ainsi éviter que vous vous sentiez dépassé durant les ateliers et permettre aux autres participants de se concentrer sur ce qui est enseigné. Si l’un ou plusieurs de ces mots clés vous sont inconnus, s’il vous plaît considérez vous inscrire à des cours de balboa dans votre scène locale !",
+							"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
+						}
+					},
+					"ticketsDetails": {
+						"title": "À l'achat d'un laissez-passer",
+						"full": "8 heures d'ateliers,Soirée de danse du vendredi avec le Michaël Srey Legacy Band nonet,Soirée de danse du samedi avec le Michaël Srey Legacy Band nonet,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées",
+						"party": "Soirée de danse du vendredi avec le Michaël Srey Legacy Band nonet,Soirée de danse du samedi avec le Michaël Srey Legacy Band nonet,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées"
+					},
+					"priceCalendar": {
+						"title": "Menu des prix",
+						"note": "Note: il ne sera plus possible de s’inscrire en ligne à partir du 17 juin.",
+						"dates": {
+							"first": "Du 18 janvier au 29 février",
+							"second": "Du 1er mars au 30 avril",
+							"third": "Du 1er mai au 16 juin",
+							"door": "À la porte"
+						},
+						"full": {
+							"first": "185,00$",
+							"second": "205,00$",
+							"third": "225,00$",
+							"door": "240,00$"
+						},
+						"party": {
+							"first": "90,00$",
+							"second": "100,00$",
+							"third": "110,00$",
+							"door": "120,00$"
+						}
+					},
+					"subsidize": {
+						"title": "Aider quelqu’un à participer",
+						"description": "Il est possible d'aider une personne qui n'a pas les moyens de s'offrir un laissez-passer complet en faisant un don lors de votre inscription. S’il vous plaît, écrivez-nous à <email>mtlbaljam@campusbalboa.org</email> si une aide financière vous permettrait de participer à MTL BAL JAM."
+					},
+					"terms": {
+						"title": "Conditions générales",
+						"content": "<link>Cliquez ici</link> pour en savoir plus sur nos conditions générales. Conditions incluses: code de conduite, consentement médiatique, décharge de responsabilité, respect du matériel, changements majeurs, politique COVID-19 et autres infections respiratoires, politique d'hébergement, politique de remboursement, paiements.",
+						"link": "https://docs.google.com/document/d/1aTzEW1yvG6ddAsQRz9aTwY0imb9kZZVf6usP_AZAPsI/edit?usp=sharing"
+					}
+				}
 			}
 		},
 		"visitingPage": {
@@ -1155,6 +1211,10 @@
 						"instructors": {
 							"text": "Instructeurs",
 							"href": "/fr/2025/instructors"
+						},
+						"registration": {
+							"text": "Inscriptions",
+							"href": "/fr/2025/registration"
 						}
 					}
 				}

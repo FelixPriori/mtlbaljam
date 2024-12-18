@@ -732,6 +732,62 @@
 					"cutoutAlt": "Neus & Albert's Photo",
 					"link": "https://www.balanceddancing.com/"
 				}
+			},
+			"registrationPage": {
+				"title": "Registration",
+				"registrationSave": {
+					"subtitle": "Registrations open on",
+					"date": "January 16th, 2025",
+					"text": "Save the date!"
+				},
+				"tickets": {
+					"title": "Ticket details",
+					"fullPass": "Full pass",
+					"partyPass": "Party pass",
+					"level": {
+						"title": "Level requirement",
+						"content": {
+							"details": "This is an all levels workshop with a caveat: we assume that you know the basics of balboa to participate in the workshops. Newcomers are welcome to attend the dances, but you should have at least taken a couple of months of classes before registering. This is to ensure that you do not find yourself overwhelmed, and to ensure that other attendees can focus on what is being taught. If any of these words are unknown to you, please consider taking regular classes in your local dance scene instead!",
+							"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
+						}
+					},
+					"ticketsDetails": {
+						"title": "Tickets include",
+						"full": "8 hours of workshops,Friday evening social dance with the Michaël Srey Legacy Band nonet,Saturday evening social dance with the Michaël Srey Legacy Band nonet,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced",
+						"party": "Friday evening social dance with the Michaël Srey Legacy Band nonet,Saturday evening social dance with the Michaël Srey Legacy Band nonet,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced"
+					},
+					"priceCalendar": {
+						"title": "Price Menu",
+						"note": "Note: online registration will be closed starting June 17th.",
+						"dates": {
+							"first": "From January 18th until February 29th",
+							"second": "From March 1st until April 30th",
+							"third": "From May 1st until June 16th",
+							"door": "At the door"
+						},
+						"full": {
+							"first": "$185.00",
+							"second": "$205.00",
+							"third": "$225.00",
+							"door": "$240.00"
+						},
+						"party": {
+							"first": "$90.00",
+							"second": "$100.00",
+							"third": "$110.00",
+							"door": "$120.00"
+						}
+					},
+					"subsidize": {
+						"title": "Help someone attend MTL BAL JAM",
+						"description": "You can choose to help someone who cannot afford a full pass by donating an amount while registering. Please reach out to <email>mtlbaljam@campusbalboa.org</email> if in need of financial assistance to attend MTL BAL JAM."
+					},
+					"terms": {
+						"title": "Terms & Conditions",
+						"content": "<link>Click here</link> to learn more about our terms & conditions. These terms include: code of conduct, media consent, liability, respect of property, major changes, COVID-19 and other respiratory infections policy, hosting policy, reimbursement policy, payments.",
+						"link": "https://docs.google.com/document/d/1aTzEW1yvG6ddAsQRz9aTwY0imb9kZZVf6usP_AZAPsI/edit?usp=sharing"
+					}
+				}
 			}
 		},
 		"visitingPage": {
@@ -1153,6 +1209,10 @@
 						"instructors": {
 							"text": "Instructors",
 							"href": "/en/2025/instructors"
+						},
+						"registration": {
+							"text": "Registration",
+							"href": "/en/2025/registration"
 						}
 					}
 				}
