@@ -815,6 +815,7 @@
 		},
 		"competitionsPage": {
 			"title": "Compétitions",
+			"scheduleNote": "Notez que l'horaire des compétitions est sujet à changements.",
 			"competitionNote": "Le MTL BAL JAM veut prioriser la danse sociale. Pour ce faire, nous allons nous efforcer pour que nos compétitions ne prenne pas plus de temps que nécessaire de la danse sociale. Cela dit, nous planifions plusieurs prix et surprises pour les compétiteurs.ices et nous restons certains que nos compétitions demeureront agréables pour tout le monde, tant pour les participants.es que pour le public !",
 			"mixAndMatchSection": {
 				"title": "Mix & Match Ouvert",

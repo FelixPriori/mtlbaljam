@@ -9,6 +9,9 @@ export default function Intro({
 	return (
 		<section className={styles.introSection}>
 			<h2>{competitionsPage.title}</h2>
+			<div className={styles.scheduleNote}>
+				<p>{competitionsPage.scheduleNote}</p>
+			</div>
 			<div className={styles.competitionNote}>
 				<p>{competitionsPage.competitionNote}</p>
 			</div>
