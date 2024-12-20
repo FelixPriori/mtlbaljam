@@ -1,0 +1,22 @@
+.socials {
+	position: absolute;
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+	z-index: 3;
+
+	img {
+		max-width: 50px;
+		max-height: 50px;
+	}
+
+	&.bottomLeft {
+		bottom: 0.5rem;
+		left: 1rem;
+	}
+
+	&.topRight {
+		top: 1rem;
+		right: 1rem;
+	}
+}
