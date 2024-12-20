@@ -1,14 +1,10 @@
-import { notFound } from 'next/navigation';
-import { getRequestConfig } from 'next-intl/server';
+export const locales = ['en', 'fr']
 
-// Can be imported from a shared config
-const locales = ['en', 'fr'];
+export const i18n = {
+	defaultLocale: 'en',
+	locales,
+} as const
 
-export default getRequestConfig(async ({ locale }) => {
-    // Validate that the incoming `locale` parameter is valid
-    if (!locales.includes(locale as any)) notFound();
+export type Locale = (typeof i18n)['locales'][number]
 
-    return {
-        messages: (await import(`../messages/${locale}.json`)).default
-    };
-});
+export type Locales = 'en' | 'fr'

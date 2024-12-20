@@ -1,12 +1,10 @@
-import createMiddleware from 'next-intl/middleware';
-import { locales, localePrefix } from './navigation';
+import { NextRequest } from 'next/server'
+import { localizationMiddleware } from './localization-middleware'
 
-export default createMiddleware({
-  defaultLocale: 'fr',
-  localePrefix,
-  locales
-});
+export function middleware(request: NextRequest) {
+	return localizationMiddleware(request)
+}
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
-};
+	matcher: ['/((?!api|assets|.*\\..*|_next).*)'],
+}

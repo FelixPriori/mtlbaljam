@@ -1,0 +1,44 @@
+.pillRadio {
+	padding: 0.25rem;
+	border: 1px solid var(--color-dark);
+	border-radius: 0.75rem;
+	width: fit-content;
+
+	&.noOutline {
+		border: none;
+	}
+
+	.option {
+		display: inline-block;
+		background-color: transparent;
+		padding: 0.5rem 1rem;
+		line-height: 1;
+		border: none;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:not(.active) {
+			color: var(--color-dark);
+
+			&:hover {
+				background-color: var(--color-primary);
+				color: var(--color-neutral);
+				transition: all 200ms;
+			}
+		}
+
+		&.active {
+			color: var(--color-neutral);
+			background-color: var(--color-dark);
+			pointer-events: none;
+		}
+
+		&.first {
+			border-radius: 0.5rem 0 0 0.5rem;
+		}
+
+		&.last {
+			border-radius: 0 0.5rem 0.5rem 0;
+		}
+	}
+}
