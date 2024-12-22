@@ -1,9 +1,8 @@
 import Favicon from '@/app/favicon.ico'
 import BigOG from '@/app/opengraph-image.png'
-import { SaveTheDate } from './sections'
+import { SaveTheDate, Tickets } from './sections'
 import { getDictionary } from '../../dictionaries'
 import { Locales } from '@/i18n'
-// import { Tickets } from './sections'
 
 type Props = {
 	params: Promise<{ lang: Locales }>
@@ -73,8 +72,8 @@ export default async function MbjRegistration({
 	const { mbj2025 } = await getDictionary(lang)
 	return (
 		<>
-			{/* <Tickets /> */}
 			<SaveTheDate registrationPage={mbj2025.registrationPage} />
+			<Tickets tickets={mbj2025.registrationPage.tickets} />
 		</>
 	)
 }

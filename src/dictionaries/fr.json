@@ -821,7 +821,7 @@
 				"title": "Mix & Match Ouvert",
 				"information": {
 					"priceTitle": "Coût : ",
-					"price": "à venir",
+					"price": "25,00 $",
 					"prelims": {
 						"title": "Prélims",
 						"timeTitle": "Quand : ",
@@ -844,7 +844,7 @@
 				"title": "Strictly de Pure Balboa",
 				"information": {
 					"priceTitle": "Coût : ",
-					"price": "à venir",
+					"price": "40,00 $",
 					"formatTitle": "Format : ",
 					"format": "Tap-out",
 					"timeTitle": "Quand : ",
@@ -856,7 +856,7 @@
 				"title": "Strictly de Slow Balboa",
 				"information": {
 					"priceTitle": "Coût : ",
-					"price": "à venir",
+					"price": "gratuit",
 					"formatTitle": "Format : ",
 					"format": "Tap In (prélims) Tap Out (finales)",
 					"timeTitle": "Quand : ",
@@ -933,6 +933,7 @@
 				"title": "Détails des laissez-passer",
 				"fullPass": "Laissez-passer complet",
 				"partyPass": "Laissez-passer festif",
+				"classPass": "Laissez-passer d’ateliers",
 				"level": {
 					"title": "Niveau requis",
 					"content": {
@@ -942,38 +943,54 @@
 				},
 				"ticketsDetails": {
 					"title": "À l'achat d'un laissez-passer",
-					"full": "8 heures d'ateliers,Soirée de danse du vendredi avec le Michaël Srey Legacy Band nonet,Soirée de danse du samedi avec le Michaël Srey Legacy Band nonet,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées",
-					"party": "Soirée de danse du vendredi avec le Michaël Srey Legacy Band nonet,Soirée de danse du samedi avec le Michaël Srey Legacy Band nonet,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées"
+					"full": "6 heures d'ateliers,Soirée de danse du vendredi avec un band live à annoncer,Soirée « late night » du vendredi,Soirée de danse du samedi avec un band live à annoncer,Soirée « late night » du samedi,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées",
+					"party": "Soirée de danse du vendredi avec un band live à annoncer,Soirée « late night » du vendredi,Soirée de danse du samedi avec un band live à annoncer,Soirée « late night » du samedi,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées",
+					"class": "6 heures d'ateliers,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées"
 				},
 				"priceCalendar": {
 					"title": "Menu des prix",
-					"note": "Note: il ne sera plus possible de s’inscrire en ligne à partir du 17 juin.",
+					"note": "Note: il ne sera plus possible de s’inscrire en ligne à partir du 16 juin.",
 					"dates": {
-						"first": "Du 18 janvier au 29 février",
-						"second": "Du 1er mars au 30 avril",
-						"third": "Du 1er mai au 16 juin",
+						"first": "Du 16 au 19 janvier inclusivement",
+						"second": "Du 20 janvier au 31 mars inclusivement",
+						"third": "Du 1er avril au 15 juin inclusivement",
 						"door": "À la porte"
 					},
 					"full": {
-						"first": "185,00$",
-						"second": "205,00$",
-						"third": "225,00$",
-						"door": "240,00$"
+						"first": "195,00$",
+						"second": "220,00$",
+						"third": "240,00$",
+						"door": "260,00$"
 					},
 					"party": {
 						"first": "90,00$",
-						"second": "100,00$",
-						"third": "110,00$",
-						"door": "120,00$"
+						"second": "105,00$",
+						"third": "115,00$",
+						"door": "125,00$"
+					},
+					"class": {
+						"first": "110,00$",
+						"second": "130,00$",
+						"third": "140,00$",
+						"door": "160,00$"
 					}
 				},
 				"subsidize": {
 					"title": "Aider quelqu’un à participer",
-					"description": "Il est possible d'aider une personne qui n'a pas les moyens de s'offrir un laissez-passer complet en faisant un don lors de votre inscription. S’il vous plaît, écrivez-nous à {{email}} si une aide financière vous permettrait de participer à MTL BAL JAM."
+					"description": "Il est possible d'aider une personne qui n'a pas les moyens de s'offrir un laissez-passer complet en faisant un don lors de votre inscription. S’il vous plaît, écrivez-nous à {{email}} si une aide financière vous permettrait de participer à MTL BAL JAM.",
+					"eligibilityTitle": "Critères et directives",
+					"eligibility": [
+						"L’aide s’applique uniquement aux laissez-passer complets, de soirées ou d’ateliers.",
+						"Les demandes doivent être soumises avant l'inscription. L'aide financière ne peut pas rembourser des laissez-passer déjà achetés.",
+						"Vous pouvez demander une aide totale ou partielle selon un modèle « payez ce que vous pouvez ».",
+						"L’aide peut être combinée avec des opportunités de bénévolat.",
+						"Les fonds restants seront utilisés pour aider les participant.e.s de l’année prochaine.",
+						"L’aide financière ne couvre pas les achats supplémentaires, tels que les articles promotionnels, les compétitions ou les visites guidées."
+					]
 				},
 				"terms": {
 					"title": "Conditions générales",
-					"content": "{{link}} pour en savoir plus sur nos conditions générales. Conditions incluses: code de conduite, consentement médiatique, décharge de responsabilité, respect du matériel, changements majeurs, politique COVID-19 et autres infections respiratoires, politique d'hébergement, politique de remboursement, paiements.",
+					"content": "{{link}} pour en savoir plus sur nos conditions générales. Conditions incluses: code de conduite, consentement médiatique, décharge de responsabilité, respect du matériel, changements majeurs, politique COVID-19 et autres infections respiratoires, politique d'hébergement, politique de remboursement, paiements, aide financière.",
 					"link": "https://docs.google.com/document/d/1aTzEW1yvG6ddAsQRz9aTwY0imb9kZZVf6usP_AZAPsI/edit?usp=sharing",
 					"linkText": "Cliquez ici"
 				}

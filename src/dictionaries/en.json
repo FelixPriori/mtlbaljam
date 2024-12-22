@@ -815,7 +815,7 @@
 				"title": "Open Mix & Match",
 				"information": {
 					"priceTitle": "Price: ",
-					"price": "TBA",
+					"price": "$25.00",
 					"prelims": {
 						"title": "Prelims",
 						"timeTitle": "When: ",
@@ -838,7 +838,7 @@
 				"title": "Pure Balboa Strictly",
 				"information": {
 					"priceTitle": "Price: ",
-					"price": "TBA",
+					"price": "$40.00",
 					"format": "Tap-out",
 					"formatTitle": "Format: ",
 					"time": "Friday, June 20, 2025, during the late-night dance (around 1:30 AM)",
@@ -850,7 +850,7 @@
 				"title": "Slow Balboa Strictly",
 				"information": {
 					"priceTitle": "Price: ",
-					"price": "TBA",
+					"price": "free",
 					"formatTitle": "Format: ",
 					"format": "Tap-in (prelims) & Tap-out (finals)",
 					"timeTitle": "When: ",
@@ -927,6 +927,7 @@
 				"title": "Ticket details",
 				"fullPass": "Full pass",
 				"partyPass": "Party pass",
+				"classPass": "Learner's pass",
 				"level": {
 					"title": "Level requirement",
 					"content": {
@@ -936,38 +937,54 @@
 				},
 				"ticketsDetails": {
 					"title": "Tickets include",
-					"full": "8 hours of workshops,Friday evening social dance with the Michaël Srey Legacy Band nonet,Saturday evening social dance with the Michaël Srey Legacy Band nonet,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced",
-					"party": "Friday evening social dance with the Michaël Srey Legacy Band nonet,Saturday evening social dance with the Michaël Srey Legacy Band nonet,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced"
+					"full": "6 hours of workshops,Friday evening social dance with a live band TBA,Friday late night extravaganza,Saturday evening social dance with a live band TBA,Saturday late night extravaganza,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced",
+					"party": "Friday evening social dance with a live band TBA,Friday late night extravaganza,Saturday evening social dance with a live band TBA,Saturday late night extravaganza,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced",
+					"class": "6 hours of workshops,Toasty snacks throughout the weekend,More surprises and social activities to be announced"
 				},
 				"priceCalendar": {
 					"title": "Price Menu",
-					"note": "Note: online registration will be closed starting June 17th.",
+					"note": "Note: online registration will be closed starting June 16th.",
 					"dates": {
-						"first": "From January 18th until February 29th",
-						"second": "From March 1st until April 30th",
-						"third": "From May 1st until June 16th",
+						"first": "From January 16th until January 19th inclusively",
+						"second": "From January 20th until March 31st inclusively",
+						"third": "From April 1st until June 15th inclusively",
 						"door": "At the door"
 					},
 					"full": {
-						"first": "$185.00",
-						"second": "$205.00",
-						"third": "$225.00",
-						"door": "$240.00"
+						"first": "$195.00",
+						"second": "$220.00",
+						"third": "$240.00",
+						"door": "$260.00"
 					},
 					"party": {
 						"first": "$90.00",
-						"second": "$100.00",
-						"third": "$110.00",
-						"door": "$120.00"
+						"second": "$105.00",
+						"third": "$115.00",
+						"door": "$125.00"
+					},
+					"class": {
+						"first": "$110.00",
+						"second": "$130.00",
+						"third": "$140.00",
+						"door": "$160.00"
 					}
 				},
 				"subsidize": {
 					"title": "Help someone attend MTL BAL JAM",
-					"description": "You can choose to help someone who cannot afford a full pass by donating an amount while registering. Please reach out to {{email}} if in need of financial assistance to attend MTL BAL JAM."
+					"description": "We believe in making MTL BAL JAM accessible to everyone. If you need financial assistance to attend, please contact us at {{email}}.",
+					"eligibilityTitle": "Eligibility and Guidelines",
+					"eligibility": [
+						"Assistance applies to Full Passes, Dance Passes, or Learner Passes only.",
+						"Requests must be submitted before registering. Financial aid cannot reimburse already purchased passes.",
+						"You can request full or partial aid using a \"pay-what-you-can\" model.",
+						"Aid can be combined with volunteering opportunities.",
+						"Any leftover funds will go toward helping people attend next year’s event.",
+						"Financial aid does not cover extra purchases, such as merchandise, competitions, or guided tours."
+					]
 				},
 				"terms": {
 					"title": "Terms & Conditions",
-					"content": "{{link}} to learn more about our terms & conditions. These terms include: code of conduct, media consent, liability, respect of property, major changes, COVID-19 and other respiratory infections policy, hosting policy, reimbursement policy, payments.",
+					"content": "{{link}} to learn more about our terms & conditions. These terms include: code of conduct, media consent, liability, respect of property, major changes, COVID-19 and other respiratory infections policy, hosting policy, reimbursement policy, payments, financial aid.",
 					"link": "https://docs.google.com/document/d/1aTzEW1yvG6ddAsQRz9aTwY0imb9kZZVf6usP_AZAPsI/edit?usp=sharing",
 					"linkText": "Click here"
 				}
