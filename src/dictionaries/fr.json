@@ -922,6 +922,39 @@
 				}
 			}
 		},
+		"extrasPage": {
+			"shirt": {
+				"title": "T-shirt «MTL BAL JAM»",
+				"price": "Prix: 35,00$ CAD",
+				"soldOut": "Rupture de stock",
+				"images": {
+					"imageWomenSrc": "/womens_crew_1.png",
+					"imageWomenAlt": "Photo du t-shirt coupe femme MTL BAL JAM",
+					"imageUnisexSrc": "/unisex_crew.png",
+					"imageUnisexAlt": "Photo du t-shirt coupe unisex MTL BAL JAM",
+					"imageCropSrc": "/crop.png",
+					"imageCropAlt": "Photo du crop top MTL BAL JAM"
+				},
+				"when": "Attention ! La dernière journée pour commander votre t-shirt est le 25 mai.",
+				"description": "Nous avons à cœur d'être éco-responsables, éthiques et respectueux de l'environnement. Pour cela nous avons choisi la Mercerie Roger, une compagnie pour nos t-shirts qui sont : ",
+				"list": "Fabriqués au Québec,Imprimés à Montréal,Coton 100 % biologique certifié GOTS (Global Organic Textile Standard),Sans plastique et aucune matière synthétiques",
+				"credit": "Merci à {{credit}}, créateur local, pour l'aide et à Félix pour le design.",
+				"link": "https://raph.xyz/",
+				"how": "Comment obtenir son propre T-shirt «MTL BAL JAM» :",
+				"instructions": {
+					"register": {
+						"text": "Directement lors de ",
+						"linkText": "l'inscription"
+					},
+					"edit": "Si déja inscrit.e : en modifiant le formulaire d’inscription",
+					"contact": {
+						"text": "En nous contactant à ",
+						"linkText": "mtlbaljam@campusbalboa.org"
+					},
+					"soldOut": "Rupture de stock"
+				}
+			}
+		},
 		"registrationPage": {
 			"title": "Inscriptions",
 			"registrationSave": {
@@ -1446,6 +1479,10 @@
 				{
 					"text": "Inscriptions",
 					"href": "/fr/2025/registration"
+				},
+				{
+					"text": "Extra",
+					"href": "/fr/2025/extra"
 				}
 			]
 		},

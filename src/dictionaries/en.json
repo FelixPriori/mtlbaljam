@@ -916,6 +916,36 @@
 				}
 			}
 		},
+		"extrasPage": {
+			"shirt": {
+				"title": "\"MTL BAL JAM\" T-shirt",
+				"price": "Price: $35.00 CAD",
+				"soldOut": "Sold out",
+				"images": {
+					"imageWomenSrc": "/womens_crew_1.png",
+					"imageWomenAlt": "MTL BAL JAM women's cut t-shirt",
+					"imageUnisexSrc": "/unisex_crew.png",
+					"imageUnisexAlt": "MTL BAL JAM unisex cut t-shirt",
+					"imageCropSrc": "/crop.png",
+					"imageCropAlt": "MTL BAL JAM crop top shirt"
+				},
+				"when": "Note: the last day to order your t-shirt is May 25th.",
+				"description": "We are committed to being Eco-Responsible, ethical and respectful of the environment. For this reason, we have selected Mercerie Roger for our t-shirts which are:",
+				"list": "Made in Quebec,Printed in Montreal,100% organic cotton & GOTS certified (Global Organic Textile Standard),Plastic and synthetic-free",
+				"credit": "Thanks to {{credit}} an excellent local designer for the help, and to Félix for the design.",
+				"link": "https://raph.xyz/",
+				"how": "How to get your own \"MTL BAL JAM\" shirt:",
+				"instructions": {
+					"register": { "text": "Directly while", "linkText": "registering" },
+					"edit": "If already registered: you can edit your registration form and add one",
+					"contact": {
+						"text": "Contact us via email at ",
+						"linkText": "mtlbaljam@campusbalboa.org"
+					},
+					"soldOut": "Sold out"
+				}
+			}
+		},
 		"registrationPage": {
 			"title": "Registration",
 			"registrationSave": {
@@ -1440,10 +1470,13 @@
 				{
 					"text": "Competitions",
 					"href": "/en/2025/competitions"
+				},
+				{
+					"text": "Extra",
+					"href": "/en/2025/extra"
 				}
 			]
 		},
-
 		"travel": {
 			"title": "Travel",
 			"subtabs": [
