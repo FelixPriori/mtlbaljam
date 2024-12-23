@@ -928,6 +928,8 @@
 				"price": "Prix: 35,00$ CAD",
 				"soldOut": "Rupture de stock",
 				"images": {
+					"previewSrc": "/t-shirt-preview.png",
+					"previewAlt": "Un apperçu des tailles du t-shirt MTL BAL JAM",
 					"imageWomenSrc": "/womens_crew_1.png",
 					"imageWomenAlt": "Photo du t-shirt coupe femme MTL BAL JAM",
 					"imageUnisexSrc": "/unisex_crew.png",

@@ -59,31 +59,13 @@ export default function Shirt({
 		<section className={styles.shirtSection}>
 			<h2>{shirt.title}</h2>
 			<div className={styles.content}>
-				<div className={styles.imagesWrapper}>
-					<div className={`${styles.imageWrapper} ${styles.firstImage}`}>
-						<Image
-							src={shirt.images.imageUnisexSrc}
-							width={1000}
-							height={1000}
-							alt={shirt.images.imageUnisexAlt}
-						/>
-					</div>
-					<div className={`${styles.imageWrapper} ${styles.secondImage}`}>
-						<Image
-							src={shirt.images.imageWomenSrc}
-							width={1000}
-							height={1000}
-							alt={shirt.images.imageWomenAlt}
-						/>
-					</div>
-					<div className={`${styles.imageWrapper} ${styles.thirdImage}`}>
-						<Image
-							src={shirt.images.imageCropSrc}
-							width={1000}
-							height={1000}
-							alt={shirt.images.imageCropAlt}
-						/>
-					</div>
+				<div className={styles.imageWrapper}>
+					<Image
+						src={shirt.images.previewSrc}
+						width={1000}
+						height={1000}
+						alt={shirt.images.previewAlt}
+					/>
 				</div>
 				<div className={styles.text}>
 					<p>{shirt.price}</p>
