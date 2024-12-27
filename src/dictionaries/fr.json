@@ -611,7 +611,7 @@
 				},
 				"subsidize": {
 					"title": "Aider quelqu’un à participer",
-					"description": "Il est possible d'aider une personne qui n'a pas les moyens de s'offrir un laissez-passer complet en faisant un don lors de votre inscription. S’il vous plaît, écrivez-nous à {{email}} si une aide financière vous permettrait de participer à MTL BAL JAM."
+					"description": "Il est possible d'aider une personne à participer à MTL BAL JAM en faisant un don lors de votre inscription. S’il vous plaît, écrivez-nous à {{email}} si une aide financière vous permettrait de participer à MTL BAL JAM."
 				},
 				"terms": {
 					"title": "Conditions générales",

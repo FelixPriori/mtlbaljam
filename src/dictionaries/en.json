@@ -1003,7 +1003,7 @@
 				},
 				"subsidize": {
 					"title": "Help someone attend MTL BAL JAM",
-					"description": "We believe in making MTL BAL JAM accessible to everyone. If you need financial assistance to attend, please contact us at {{email}}.",
+					"description": "It is possible to help someone attend MTL BAL JAM by donating during registration. If you need financial assistance to attend MTL BAL JAM, please contact us at {{email}}.",
 					"eligibilityTitle": "Eligibility and Guidelines",
 					"eligibility": [
 						"Assistance applies to Full Passes, Dance Passes, or Learner Passes only.",
