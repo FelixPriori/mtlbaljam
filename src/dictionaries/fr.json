@@ -923,6 +923,29 @@
 			}
 		},
 		"extrasPage": {
+			"tour": {
+				"title": "Découvrez les Murales de Montréal/Tiohtià:ke",
+				"price": "Prix : 25,00$ CAD",
+				"length": "Durée : 2h",
+				"when": "Quand : Dimanche à 17h",
+				"imageAlt": "Photo promotionnelle du tour guidé",
+				"description": [
+					"Montréal/Tiohtià:ke regorge de fresques impressionnantes à découvrir. Ce parcours est l’occasion parfaite d’explorer certaines des murales les plus dynamiques et créatives de la ville. Pas d’inquiétude, le tour se déroule le dimanche, après les cours et avant la soirée de clôture, un moment idéal pour se détendre ensemble.",
+					"Que vous soyez montréalais.e ou visiteur.euse, laissez-vous emporter par l’univers vibrant de la ville en découvrant ses célèbres murales, qu’elles soient anciennes ou fraîchement réalisées. Cette balade te permettra de te relaxer tout en découvrant que Montréal/Tiohtià:ke, véritable musée à ciel ouvert, est devenue un carrefour incontournable de l’art de rue en Amérique du Nord."
+				],
+				"how": "Comment s'inscrire au tour guidé :",
+				"instructions": {
+					"register": {
+						"text": "Directement lors de ",
+						"linkText": "l'inscription"
+					},
+					"edit": "Si déja inscrit.e : en modifiant le formulaire d’inscription",
+					"contact": {
+						"text": "En nous contactant à ",
+						"linkText": "mtlbaljam@campusbalboa.org>"
+					}
+				}
+			},
 			"shirt": {
 				"title": "T-shirt «MTL BAL JAM»",
 				"price": "Prix: 35,00$ CAD",

@@ -1,17 +1,16 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import { DictionaryType } from '@/app/[lang]/dictionaries'
-import TourImage from '@/../public/mbj-guided-tour.png'
 
 type TourInstructions =
-	keyof DictionaryType['mbj2024']['extrasPage']['tour']['instructions']
+	keyof DictionaryType['mbj2025']['extrasPage']['tour']['instructions']
 
 const keys: TourInstructions[] = ['register', 'edit', 'contact']
 
 export default function Tour({
 	tour,
 }: {
-	tour: DictionaryType['mbj2024']['extrasPage']['tour']
+	tour: DictionaryType['mbj2025']['extrasPage']['tour']
 }) {
 	const renderInstruction = (key: string) => {
 		switch (key) {
@@ -48,12 +47,12 @@ export default function Tour({
 	}
 
 	return (
-		<section className={styles.bandSection}>
+		<section className={styles.tourSection}>
 			<h2>{tour.title}</h2>
 			<div className={styles.content}>
 				<div className={styles.imageWrapper}>
 					<Image
-						src={TourImage}
+						src="/murals-tour.png"
 						width={1080}
 						height={1080}
 						alt={tour.imageAlt}
@@ -61,10 +60,11 @@ export default function Tour({
 				</div>
 				<div className={styles.text}>
 					<p>{tour.price}</p>
-					<p>{tour.when}</p>
-					<p>{tour.length}</p>
-					<p>{tour.description}</p>
-
+					{/* <p>{tour.when}</p>
+					<p>{tour.length}</p> */}
+					{tour.description.map(line => (
+						<p key={line}>{line}</p>
+					))}
 					<div className={styles.instructions}>
 						<h3>{tour.how}</h3>
 						<ul>

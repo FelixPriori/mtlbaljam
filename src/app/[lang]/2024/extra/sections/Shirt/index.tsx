@@ -25,14 +25,15 @@ export default function Shirt({
 			case 'register':
 				return (
 					<p>
-						{shirt.instructions.register.text}{' '}
-						<a
+						{shirt.instructions.register.text}
+						{shirt.instructions.register.linkText}
+						{/* <a
 							rel="noopener noreferrer"
 							target="_blank"
 							href="https://mtl-bal-jam-2024.dancecamps.org/booking.php"
 						>
 							{shirt.instructions.register.linkText}
-						</a>
+						</a> */}
 					</p>
 				)
 			case 'contact':

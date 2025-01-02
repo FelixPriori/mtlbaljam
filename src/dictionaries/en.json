@@ -917,6 +917,26 @@
 			}
 		},
 		"extrasPage": {
+			"tour": {
+				"title": "Discover Montréal/Tiohtià:ke's Murals",
+				"price": "Price: $25.00 CAD",
+				"length": "Duration: 2h",
+				"when": "When: Sunday, 5 PM",
+				"imageAlt": "Guided tour promo picture",
+				"description": [
+					"Montréal/Tiohtià:ke is full of impressive murals to discover. This tour is the perfect opportunity to explore some of the city’s most dynamic and creative artworks. Don’t worry, the tour takes place on Sunday, after classes and before the closing event, making it the ideal time to relax together.",
+					"Whether you're a montréaler or a visitor, let yourself be immersed in the vibrant atmosphere of the city as you discover its famous murals, whether they are old or freshly created. This stroll will allow you to unwind while discovering that Montreal, a true open-air museum, has become a major hub for street art in North America."
+				],
+				"how": "How to sign up for the guided tour:",
+				"instructions": {
+					"register": { "text": "Directly while ", "linkText": "registering" },
+					"edit": "If already registered: you can edit your registration form and add the option",
+					"contact": {
+						"text": "Contact us via email at ",
+						"linkText": "mtlbaljam@campusbalboa.org"
+					}
+				}
+			},
 			"shirt": {
 				"title": "\"MTL BAL JAM\" T-shirt",
 				"price": "Price: $35.00 CAD",

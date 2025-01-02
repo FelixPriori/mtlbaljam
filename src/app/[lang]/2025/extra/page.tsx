@@ -1,6 +1,6 @@
 import Favicon from '@/app/favicon.ico'
 import BigOG from '@/app/opengraph-image.png'
-import { Shirt } from './sections'
+import { Shirt, Tour } from './sections'
 import { Locales } from '@/i18n'
 import { getDictionary } from '../../dictionaries'
 
@@ -74,6 +74,7 @@ export default async function MbjExtra({
 	return (
 		<>
 			<Shirt shirt={mbj2025.extrasPage.shirt} lang={lang} />
+			<Tour tour={mbj2025.extrasPage.tour} />
 		</>
 	)
 }
