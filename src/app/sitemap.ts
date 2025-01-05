@@ -51,6 +51,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.7,
 		},
 		{
+			url: 'https://www.mtlbaljam.org/fr/2025/venue',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
+			url: 'https://www.mtlbaljam.org/en/2025/venue',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
+			url: 'https://www.mtlbaljam.org/fr/2025/extra',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
+			url: 'https://www.mtlbaljam.org/en/2025/extra',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
 			url: 'https://www.mtlbaljam.org/fr/2024/music',
 			lastModified: new Date(),
 			changeFrequency: 'weekly',

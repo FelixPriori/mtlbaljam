@@ -9,7 +9,7 @@
 				"href": "mailto:mtlbaljam@campusbalboa.org",
 				"text": "mtlbaljam@campusbalboa.org"
 			},
-			"copyright": "©2024 Campus Balboa",
+			"copyright": "©2025 Campus Balboa",
 			"socialMedia": {
 				"facebook": {
 					"id": "fb",
@@ -916,6 +916,25 @@
 				}
 			}
 		},
+		"venuePage": {
+			"cats": {
+				"title": "Dances & Workshops",
+				"position": {
+					"lat": "45.5325875",
+					"lng": "-73.5520898"
+				},
+				"markerTitle": "Cat's Corner",
+				"infoWindowText": "Cat's Corner, 1956 Rue Frontenac, Montréal, QC H2K 2Z1",
+				"venueName": "Cat's Corner",
+				"venueDescription": [
+					"We are extremely excited to announce a collaboration with Cat’s Corner for MTL BAL JAM 2025. Indeed, they have accepted to act as our gracious hosts and will be welcoming us in their space for the weekend of the event.",
+					"Conveniently located across from Frontenac metro station, the venue features an amazing dance floor perfect to dance Balboa!"
+				],
+				"venueAddress": "1956 Rue Frontenac, Montréal, QC H2K 2Z1",
+				"venueWebsite": "https://www.catscorner.ca/",
+				"cutoutAlt": "Photo of Cat's Corner"
+			}
+		},
 		"extrasPage": {
 			"tour": {
 				"title": "Discover Montréal/Tiohtià:ke's Murals",
@@ -1494,6 +1513,10 @@
 					"href": "/en/2025/competitions"
 				},
 				{
+					"text": "Venue",
+					"href": "/en/2025/venue"
+				},
+				{
 					"text": "Extra",
 					"href": "/en/2025/extra"
 				}
@@ -1541,7 +1564,7 @@
 		"success": "Message sent successfully",
 		"error": "Something went wrong."
 	},
-	"copyright": "©2024 Campus Balboa",
+	"copyright": "©2025 Campus Balboa",
 	"iconAlts": {
 		"loaf": "Loaf of bread icon",
 		"knife": "Butterknife icon",
