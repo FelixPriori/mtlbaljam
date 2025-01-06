@@ -77,7 +77,8 @@
 			"volunteering": "Volunteering",
 			"coming-soon": "Coming Soon",
 			"mbj2025": "2025",
-			"mbj2024": "2024"
+			"mbj2024": "2024",
+			"tracks": "Tracks"
 		}
 	},
 	"homePage": {
@@ -1060,6 +1061,20 @@
 					"linkText": "Click here"
 				}
 			}
+		},
+		"tracksPage": {
+			"title": "Tracks",
+			"description": "At MTL BAL JAM, both tracks are designed to cater to different learning styles and preferences rather than levels of experience. There isn’t a track that is more advanced than the other—each offers a unique approach to exploring Balboa. Whether you prefer to dive deep into a few topics or to explore a variety of concepts, the goal is to ensure that everyone can grow and learn at their own pace in a way that resonates with them. Choose the track that best matches your personal learning style and interests!",
+			"tracks": [
+				{
+					"title": "Tapas",
+					"description": "The Tapas Track is perfect for dancers who crave variety and want to sample a little bit of everything. Inspired by the diverse and lively world of Spanish tapas, this track offers a wide range of topics to keep you energized and curious. You’ll experience a medley of concepts and techniques, all designed to expand your Balboa palate. Ideal for those who enjoy exploring many flavors without staying on one dish for too long!"
+				},
+				{
+					"title": "Paella",
+					"description": "The Paella Track is designed for dancers who want to savor the richness and depth of Balboa. Much like the iconic Spanish dish it's named after, this track focuses on a select few topics, allowing participants to explore them in detail. You'll have the opportunity to refine your technique, deepen your understanding, and truly immerse yourself in the nuances of the dance. Perfect for those who enjoy focusing on the intricate flavors of Balboa and prefer a steady, enriching pace."
+				}
+			]
 		}
 	},
 	"visitingPage": {
@@ -1507,6 +1522,10 @@
 				{
 					"text": "Registration",
 					"href": "/en/2025/registration"
+				},
+				{
+					"text": "Tracks",
+					"href": "/en/2025/tracks"
 				},
 				{
 					"text": "Competitions",

@@ -39,6 +39,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.7,
 		},
 		{
+			url: 'https://www.mtlbaljam.org/fr/2025/tracks',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
+			url: 'https://www.mtlbaljam.org/en/2025/tracks',
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.7,
+		},
+		{
 			url: 'https://www.mtlbaljam.org/fr/2025/competitions',
 			lastModified: new Date(),
 			changeFrequency: 'weekly',
