@@ -1074,16 +1074,16 @@
 			}
 		},
 		"tracksPage": {
-			"title": "Tracks",
-			"description": "À MTL BAL JAM, les deux tracks sont conçues pour s’adapter à différents styles et préférences d’apprentissage, plutôt qu’à des niveaux d’expérience. Aucune track n’est plus avancée que l’autre—chacune propose une approche unique pour explorer le Balboa. Que vous préfériez approfondir quelques sujets ou explorer une variété de concepts, l’objectif est de permettre à chacun.e de progresser à son propre rythme et selon ses intérêts. Choisissez la track qui correspond le mieux à votre style d’apprentissage et à vos envies !",
+			"title": "Groupes",
+			"description": "À MTL BAL JAM, les deux groupes sont conçus pour s’adapter à différents styles et préférences d’apprentissage, plutôt qu’à des niveaux d’expérience. Aucun groupe n’est plus avancé que l’autre, chacun propose une approche unique pour explorer le Balboa. Que vous préfériez approfondir quelques sujets ou explorer une variété de concepts, l’objectif est de permettre à chacun.e de progresser à son propre rythme et selon ses intérêts. Choisissez le groupe qui correspond le mieux à votre style d’apprentissage et à vos envies !",
 			"tracks": [
 				{
 					"title": "Tapas",
-					"description": "La track Tapas est parfaite pour les danseur.euse.s qui aiment la variété et souhaitent goûter à un peu de tout. Inspirée par l’univers diversifié et convivial des tapas espagnols, cette track offre un éventail de sujets pour vous garder motivé et curieux. Avec l’accompagnement dynamique de nos professeur.e.s invité.e.s, vous explorerez un mélange de concepts, de techniques et de styles conçus pour élargir votre répertoire en Balboa. Idéal pour ceux.celles qui aiment explorer de multiples saveurs sans s’attarder trop longtemps sur un seul plat !La track Paella est idéale pour les danseur.euse.s qui souhaitent savourer la richesse et la profondeur du Balboa. À l’image du plat espagnol emblématique dont elle tire son nom, cette track se concentre sur quelques sujets spécifiques, permettant aux participant.e.s de les explorer en détail. Sous la direction experte de nos professeur.e.s invité.e.s, vous aurez l’occasion de perfectionner votre technique, d’approfondir votre compréhension et de vous immerger dans les subtilités de cette danse. Parfait pour ceux.celles qui aiment se concentrer sur les saveurs complexes du Balboa à un rythme enrichissant et réfléchi."
+					"description": "Le groupe Tapas est parfait pour les danseur.euse.s qui aiment la variété et souhaitent goûter à un peu de tout. Inspiré par l’univers diversifié et convivial des tapas espagnols, ce groupe offre un éventail de sujets pour vous garder motivé.e et curieux.se. Avec l’accompagnement dynamique de nos professeur.e.s invité.e.s, vous explorerez un mélange de concepts, de techniques et de styles conçus pour élargir votre répertoire en Balboa. Idéal pour ceux.celles qui aiment explorer de multiples saveurs sans s’attarder trop longtemps sur un seul plat !"
 				},
 				{
 					"title": "Paella",
-					"description": "La track Paella est idéale pour les danseur.euse.s qui souhaitent savourer la richesse et la profondeur du Balboa. À l’image du plat espagnol emblématique dont elle tire son nom, cette track se concentre sur quelques sujets spécifiques, permettant aux participant.e.s de les explorer en détail. Sous la direction experte de nos professeur.e.s invité.e.s, vous aurez l’occasion de perfectionner votre technique, d’approfondir votre compréhension et de vous immerger dans les subtilités de cette danse. Parfait pour ceux.celles qui aiment se concentrer sur les saveurs complexes du Balboa à un rythme enrichissant et réfléchi."
+					"description": "Le groupe Paella est idéal pour les danseur.euse.s qui souhaitent savourer la richesse et la profondeur du Balboa. À l’image du plat espagnol emblématique dont il tire son nom, ce groupe se concentre sur quelques sujets spécifiques, permettant aux participant.e.s de les explorer en détail. Sous la direction experte de nos professeur.e.s invité.e.s, vous aurez l’occasion de perfectionner votre technique, d’approfondir votre compréhension et de vous immerger dans les subtilités de cette danse. Parfait pour ceux.celles qui aiment se concentrer sur les saveurs complexes du Balboa à un rythme enrichissant et réfléchi."
 				}
 			]
 		}
@@ -1539,7 +1539,7 @@
 					"href": "/fr/2025/registration"
 				},
 				{
-					"text": "Tracks",
+					"text": "Ateliers",
 					"href": "/fr/2025/tracks"
 				},
 				{
