@@ -20,6 +20,32 @@
 		margin-bottom: 20px;
 	}
 
+	svg {
+		color: var(--mbj-color-white);
+	}
+
+	.halfCircle {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: flex-start;
+
+		svg {
+			max-height: 200px;
+			max-width: 200px;
+		}
+	}
+
+	.linesCircle {
+		position: absolute;
+		right: 50px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+	}
+
 	.content {
 		.instructors {
 			margin-bottom: 4rem;
@@ -74,9 +100,30 @@
 		}
 	}
 
+	@media only screen and (max-width: 1400px) {
+		.halfCircle {
+			bottom: -100px;
+			top: initial;
+			transform: none;
+		}
+
+		.linesCircle {
+			top: 2px;
+
+			svg {
+				height: 200px;
+				width: 200px;
+			}
+		}
+	}
+
 	@media only screen and (max-width: 768px) {
 		min-height: 300px;
 		padding: 40px 0;
+
+		.linesCircle {
+			right: -100px;
+		}
 
 		.content {
 			.instructors {
@@ -98,6 +145,16 @@
 					}
 				}
 			}
+		}
+	}
+
+	@media only screen and (max-width: 576px) {
+		.halfCircle {
+			display: none;
+		}
+
+		.linesCircle {
+			clip-path: inset(0 0 51% 0);
 		}
 	}
 }

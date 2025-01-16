@@ -2,6 +2,8 @@ import styles from './styles.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import { DictionaryType } from '../../dictionaries'
+import LinesCircle from '@/assets/svgs/lines-circle'
+import HalfCircle from '@/assets/svgs/half-circle'
 
 export default function MainSection({
 	mainPage,
@@ -10,6 +12,9 @@ export default function MainSection({
 }) {
 	return (
 		<section className={styles.mainSection}>
+			<div className={styles.halfCircle}>
+				<HalfCircle />
+			</div>
 			<h2>{mainPage.title}</h2>
 			<div className={styles.content}>
 				<div className={`${styles.instructors} ${styles.first}`}>
@@ -49,6 +54,9 @@ export default function MainSection({
 						</Link>
 					</div>
 				</div>
+			</div>
+			<div className={styles.linesCircle}>
+				<LinesCircle />
 			</div>
 		</section>
 	)
