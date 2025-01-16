@@ -12,10 +12,10 @@ export default function MainSection({
 		<section className={styles.mainSection}>
 			<h2>{mainPage.title}</h2>
 			<div className={styles.content}>
-				<div className={styles.instructors}>
+				<div className={`${styles.instructors} ${styles.first}`}>
 					<div className={`${styles.cutout} ${styles.firsCutout}`}>
 						<Image
-							src="/javilucia.png"
+							src="/lucia-javi-square.png"
 							alt={mainPage.firstInstructors.cutoutAlt}
 							width={1920}
 							height={1005}
@@ -29,10 +29,10 @@ export default function MainSection({
 						</Link>
 					</div>
 				</div>
-				<div className={styles.instructors}>
+				<div className={`${styles.instructors} ${styles.second}`}>
 					<div className={`${styles.cutout} ${styles.secondCutout}`}>
 						<Image
-							src="/neusalbert.png"
+							src="/neus-albert-square.png"
 							alt={mainPage.secondInstructors.cutoutAlt}
 							width={1376}
 							height={1113}
