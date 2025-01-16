@@ -69,18 +69,18 @@ export default async function Event2024({
 	params: Promise<{ lang: Locales }>
 }) {
 	const { lang } = await params
-	const { homePage, iconAlts, socials } = await getDictionary(lang)
+	const { mbj2024, iconAlts, socials } = await getDictionary(lang)
 
 	return (
 		<>
-			<Instructors instructorsSection={homePage.instructorsSection} />
+			<Instructors instructorsSection={mbj2024.homePage.instructorsSection} />
 			<Venue
-				venueSection={homePage.venueSection}
-				scheduleSection={homePage.scheduleSection}
+				venueSection={mbj2024.homePage.venueSection}
+				scheduleSection={mbj2024.homePage.scheduleSection}
 				iconAlts={iconAlts}
 			/>
 			<Music
-				musicSection={homePage.musicSection}
+				musicSection={mbj2024.homePage.musicSection}
 				iconAlts={iconAlts}
 				socials={socials}
 			/>

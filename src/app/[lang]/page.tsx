@@ -1,6 +1,6 @@
 import Favicon from '@/app/favicon.ico'
 import BigOG from '@/app/opengraph-image.png'
-import { MainSection } from './sections'
+import { MainSection, Venue } from './sections'
 import { Locales } from '@/i18n'
 import { getDictionary } from './dictionaries'
 
@@ -64,11 +64,16 @@ export default async function MTLBALJAM({
 	params: Promise<{ lang: Locales }>
 }) {
 	const { lang } = await params
-	const { mainPage } = await getDictionary(lang)
+	const { mainPage, mbj2025, iconAlts } = await getDictionary(lang)
 
 	return (
 		<>
 			<MainSection mainPage={mainPage} />
+			<Venue
+				workshopsSection={mbj2025.homePage.workshopsSection}
+				venueSection={mbj2025.homePage.venueSection}
+				iconAlts={iconAlts}
+			/>
 		</>
 	)
 }

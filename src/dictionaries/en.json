@@ -81,44 +81,6 @@
 			"tracks": "Workshops"
 		}
 	},
-	"homePage": {
-		"musicSection": {
-			"title": "Music",
-			"bandName": "Michaël Srey Legacy Band",
-			"description": "A live band based in Montréal / Tiohtià:ke, it brings together a collective of musicians from the local jazz scene. With up to 9 instrumentalists on stage, he is keen to share the most inspiring compositions and arrangements of the big band repertoire.",
-			"learnMore": {
-				"text": "Learn more...",
-				"href": "/music"
-			}
-		},
-		"instructorsSection": {
-			"title": "Instructors",
-			"instructorsNames": "Yulia & Sasha",
-			"description": "Yulia and Sasha are two UK based Balboa enthusiasts: dancers, instructors and competitors.  They offer classes, short courses and mini-workshops in London, as well travel to teach Balboa across Europe.",
-			"learnMore": {
-				"text": "Learn more...",
-				"href": "/2024/instructors"
-			}
-		},
-		"venueSection": {
-			"title": "Venue",
-			"learnMore": {
-				"text": "Check out our venues...",
-				"href": "/2024/venue"
-			}
-		},
-		"registrationSection": {
-			"title": "Registration",
-			"detailsLink": "/registration",
-			"description": "You can now register by going to our <registration>registration page</registration>! Or if you want to see what the options are, <details>click here</details>."
-		},
-		"scheduleSection": {
-			"title": "Schedule",
-			"detailsLink": "/schedule",
-			"description": "You can now view the weekend schedule by going to our ",
-			"linkText": "schedule page"
-		}
-	},
 	"aboutPage": {
 		"descriptionSection": {
 			"title": "About the event",
@@ -323,6 +285,44 @@
 		}
 	},
 	"mbj2024": {
+		"homePage": {
+			"musicSection": {
+				"title": "Music",
+				"bandName": "Michaël Srey Legacy Band",
+				"description": "A live band based in Montréal / Tiohtià:ke, it brings together a collective of musicians from the local jazz scene. With up to 9 instrumentalists on stage, he is keen to share the most inspiring compositions and arrangements of the big band repertoire.",
+				"learnMore": {
+					"text": "Learn more...",
+					"href": "/2024/music"
+				}
+			},
+			"instructorsSection": {
+				"title": "Instructors",
+				"instructorsNames": "Yulia & Sasha",
+				"description": "Yulia and Sasha are two UK based Balboa enthusiasts: dancers, instructors and competitors.  They offer classes, short courses and mini-workshops in London, as well travel to teach Balboa across Europe.",
+				"learnMore": {
+					"text": "Learn more...",
+					"href": "/2024/instructors"
+				}
+			},
+			"venueSection": {
+				"title": "Venue",
+				"learnMore": {
+					"text": "Check out our venues...",
+					"href": "/2024/venue"
+				}
+			},
+			"registrationSection": {
+				"title": "Registration",
+				"detailsLink": "/2024/registration",
+				"description": "You can now register by going to our <registration>registration page</registration>! Or if you want to see what the options are, <details>click here</details>."
+			},
+			"scheduleSection": {
+				"title": "Schedule",
+				"detailsLink": "/2024/schedule",
+				"description": "You can now view the weekend schedule by going to our ",
+				"linkText": "schedule page"
+			}
+		},
 		"musicPage": {
 			"liveMusic": {
 				"title": "Live music",
@@ -789,6 +789,52 @@
 		}
 	},
 	"mbj2025": {
+		"homePage": {
+			"workshopsSection": {
+				"title": "Workshops",
+				"description": "At MTL BAL JAM, both tracks are designed to cater to different learning styles and preferences rather than levels of experience. There isn’t a track that is more advanced than the other—each offers a unique approach to exploring Balboa. Whether you prefer to dive deep into a few topics or to explore a variety of concepts, the goal is to ensure that everyone can grow and learn at their own pace in a way that resonates with them. Choose the track that best matches your personal learning style and interests!",
+				"learnMore": {
+					"text": "Learn more...",
+					"href": "/2025/tracks"
+				}
+			},
+			"musicSection": {
+				"title": "Music",
+				"bandName": "Michaël Srey Legacy Band",
+				"description": "A live band based in Montréal / Tiohtià:ke, it brings together a collective of musicians from the local jazz scene. With up to 9 instrumentalists on stage, he is keen to share the most inspiring compositions and arrangements of the big band repertoire.",
+				"learnMore": {
+					"text": "Learn more...",
+					"href": "/2025/music"
+				}
+			},
+			"instructorsSection": {
+				"title": "Instructors",
+				"instructorsNames": "Yulia & Sasha",
+				"description": "Yulia and Sasha are two UK based Balboa enthusiasts: dancers, instructors and competitors.  They offer classes, short courses and mini-workshops in London, as well travel to teach Balboa across Europe.",
+				"learnMore": {
+					"text": "Learn more...",
+					"href": "/2025/instructors"
+				}
+			},
+			"venueSection": {
+				"title": "Venue",
+				"learnMore": {
+					"text": "Check out our venue...",
+					"href": "/2025/venue"
+				}
+			},
+			"registrationSection": {
+				"title": "Registration",
+				"detailsLink": "/2025/registration",
+				"description": "You can now register by going to our <registration>registration page</registration>! Or if you want to see what the options are, <details>click here</details>."
+			},
+			"scheduleSection": {
+				"title": "Schedule",
+				"detailsLink": "/2025/schedule",
+				"description": "You can now view the weekend schedule by going to our ",
+				"linkText": "schedule page"
+			}
+		},
 		"instructorsPage": {
 			"title": "Instructors",
 			"firstInstructors": {

@@ -8,7 +8,7 @@ import { DictionaryType } from '@/app/[lang]/dictionaries'
 export default function Instructors({
 	instructorsSection,
 }: {
-	instructorsSection: DictionaryType['homePage']['instructorsSection']
+	instructorsSection: DictionaryType['mbj2024']['homePage']['instructorsSection']
 }) {
 	return (
 		<section className={styles.instructorsSection}>

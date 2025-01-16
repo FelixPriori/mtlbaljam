@@ -10,7 +10,7 @@ export default function MusicSection({
 	iconAlts,
 	socials,
 }: {
-	musicSection: DictionaryType['mbj2024']['homePage']['musicSection']
+	musicSection: DictionaryType['homePage']['musicSection']
 	iconAlts: DictionaryType['iconAlts']
 	socials: DictionaryType['socials']
 }) {

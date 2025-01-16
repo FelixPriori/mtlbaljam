@@ -6,23 +6,23 @@ import { DictionaryType } from '@/app/[lang]/dictionaries'
 
 export default function Venue({
 	venueSection,
-	scheduleSection,
+	workshopsSection,
 	iconAlts,
 }: {
-	scheduleSection: DictionaryType['mbj2024']['homePage']['scheduleSection']
-	venueSection: DictionaryType['mbj2024']['homePage']['venueSection']
+	workshopsSection: DictionaryType['mbj2025']['homePage']['workshopsSection']
+	venueSection: DictionaryType['mbj2025']['homePage']['venueSection']
 	iconAlts: DictionaryType['iconAlts']
 }) {
 	return (
 		<section className={styles.venueSection}>
 			<div className={styles.subscribeWrapper}>
 				<div className={styles.registration}>
-					<h2>{scheduleSection.title}</h2>
+					<h2>{workshopsSection.title}</h2>
 					<div className={styles.registrationContent}>
-						<p>
-							{scheduleSection.description}
-							<Link href="/schedule">{scheduleSection.linkText}</Link>
-						</p>
+						<p>{workshopsSection.description}</p>
+						<Link className={styles.link} href="/2025/tracks">
+							{workshopsSection.learnMore.text}
+						</Link>
 					</div>
 				</div>
 			</div>
