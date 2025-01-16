@@ -72,7 +72,7 @@ export default async function MbjRegistration({
 	const { mbj2025 } = await getDictionary(lang)
 	return (
 		<>
-			<SaveTheDate registrationPage={mbj2025.registrationPage} />
+			{/* <SaveTheDate registrationPage={mbj2025.registrationPage} /> */}
 			<Tickets tickets={mbj2025.registrationPage.tickets} />
 		</>
 	)

@@ -24,20 +24,42 @@ export default function Header({
 		if (pageName) {
 			return (
 				<>
-					<h1>{header.pageTitle[pageName]}</h1>
 					<p className={styles.date}>
 						{is2024 ? header.date2024 : header.date}
 					</p>
+					<h1>{header.pageTitle[pageName]}</h1>
+					<a
+						className={styles.registerNow}
+						href="https://mtlbaljam2025.dancecamps.org/booking.php"
+						rel="noreferrer noopener"
+						target="_blank"
+					>
+						{header.registerNow}
+					</a>
 				</>
 			)
 		}
 		return (
 			<>
-				<h1>{header.pageTitle.home}</h1>
 				<p className={styles.date}>{is2024 ? header.date2024 : header.date}</p>
+				<h1>{header.pageTitle.home}</h1>
+				<a
+					className={styles.registerNow}
+					href="https://mtlbaljam2025.dancecamps.org/booking.php"
+					rel="noreferrer noopener"
+					target="_blank"
+				>
+					{header.registerNow}
+				</a>
 			</>
 		)
-	}, [header.date, header.date2024, header.pageTitle, pathname])
+	}, [
+		header.date,
+		header.date2024,
+		header.pageTitle,
+		header.registerNow,
+		pathname,
+	])
 
 	return (
 		<header className={styles.headerSection}>

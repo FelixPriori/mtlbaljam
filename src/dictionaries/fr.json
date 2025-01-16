@@ -1002,6 +1002,7 @@
 		},
 		"registrationPage": {
 			"title": "Inscriptions",
+			"registerNow": "INSCRIVEZ-VOUS !",
 			"registrationSave": {
 				"subtitle": "Les inscriptions débutent le",
 				"date": "16 janvier 2025",

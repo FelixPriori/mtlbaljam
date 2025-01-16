@@ -11,9 +11,14 @@ export default function SaveTheDate({
 			<h2>{registrationPage.title}</h2>
 			<div className={styles.content}>
 				<div className={styles.annoucementBox}>
-					<p>{registrationPage.registrationSave.subtitle}</p>
-					<h3>{registrationPage.registrationSave.date}</h3>
-					<p>{registrationPage.registrationSave.text}</p>
+					<a
+						className={styles.registerNow}
+						href="https://mtlbaljam2025.dancecamps.org/booking.php"
+						rel="noreferrer noopener"
+						target="_blank"
+					>
+						{registrationPage.registerNow}
+					</a>
 				</div>
 			</div>
 		</section>

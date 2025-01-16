@@ -990,6 +990,7 @@
 		},
 		"registrationPage": {
 			"title": "Registration",
+			"registerNow": "REGISTER NOW!",
 			"registrationSave": {
 				"subtitle": "Registrations open on",
 				"date": "January 16th, 2025",
