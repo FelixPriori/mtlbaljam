@@ -89,13 +89,6 @@ export default function Tickets({
 					<h4>{tickets.partyPass}</h4>
 					<ul>{getDetails(tickets.ticketsDetails.party)}</ul>
 				</div>
-				<div className={styles.level}>
-					<h3>{tickets.level.title}</h3>
-					<p>{tickets.level.content.details}</p>
-					<ul className={styles.levelList}>
-						{getDetails(tickets.level.content.list)}
-					</ul>
-				</div>
 				<div className={styles.subsidize}>
 					<h3>{tickets.subsidize.title}</h3>
 					<p
