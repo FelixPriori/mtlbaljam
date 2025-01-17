@@ -576,13 +576,6 @@
 				"title": "Détails des laissez-passer",
 				"fullPass": "Laissez-passer complet",
 				"partyPass": "Laissez-passer festif",
-				"level": {
-					"title": "Niveau requis",
-					"content": {
-						"details": "Ceci est un atelier de balboa pour tous niveaux qui nécessite tout de même de connaître les bases de la danse. Les débutants sont les bienvenus aux danses sociales, mais il faut avoir pris quelques mois de cours réguliers avant de s’inscrire aux ateliers. Nous voulons ainsi éviter que vous vous sentiez dépassé durant les ateliers et permettre aux autres participants de se concentrer sur ce qui est enseigné. Si l’un ou plusieurs de ces mots clés vous sont inconnus, s’il vous plaît considérez vous inscrire à des cours de balboa dans votre scène locale !",
-						"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
-					}
-				},
 				"ticketsDetails": {
 					"title": "À l'achat d'un laissez-passer",
 					"full": "8 heures d'ateliers,Soirée de danse du vendredi avec le Michaël Srey Legacy Band nonet,Soirée de danse du samedi avec le Michaël Srey Legacy Band nonet,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées",
@@ -1133,7 +1126,17 @@
 					"title": "Paella",
 					"description": "Le groupe Paella est idéal pour les danseur.euse.s qui souhaitent savourer la richesse et la profondeur du Balboa. À l’image du plat espagnol emblématique dont il tire son nom, ce groupe se concentre sur quelques sujets spécifiques, permettant aux participant.e.s de les explorer en détail. Sous la direction experte de nos professeur.e.s invité.e.s, vous aurez l’occasion de perfectionner votre technique, d’approfondir votre compréhension et de vous immerger dans les subtilités de cette danse. Parfait pour ceux.celles qui aiment se concentrer sur les saveurs complexes du Balboa à un rythme enrichissant et réfléchi."
 				}
-			]
+			],
+			"level": {
+				"title": "Niveau requis",
+				"content": {
+					"details": [
+						"Ceci est un atelier de balboa pour tous niveaux qui nécessite tout de même de connaître les bases du Balboa. C'est-à-dire qu’il faut avoir pris quelques mois de cours réguliers avant de s’inscrire aux ateliers, afin d’éviter que vous vous sentiez dépassé durant les ateliers et pour permettre aux autres participant.e.s de se concentrer sur ce qui est enseigné.",
+						"Si l’un ou plusieurs de ces concepts vous sont inconnus, s’il vous plaît considérez vous inscrire à des cours de Balboa dans votre scène locale !"
+					],
+					"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
+				}
+			}
 		}
 	},
 	"visitingPage": {

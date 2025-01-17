@@ -1047,13 +1047,6 @@
 				"fullPass": "Full pass",
 				"partyPass": "Party pass",
 				"classPass": "Learner's pass",
-				"level": {
-					"title": "Level requirement",
-					"content": {
-						"details": "This is an all levels workshop with a caveat: we assume that you know the basics of balboa to participate in the workshops. Newcomers are welcome to attend the dances, but you should have at least taken a couple of months of classes before registering. This is to ensure that you do not find yourself overwhelmed, and to ensure that other attendees can focus on what is being taught. If any of these words are unknown to you, please consider taking regular classes in your local dance scene instead!",
-						"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
-					}
-				},
 				"ticketsDetails": {
 					"title": "Tickets include",
 					"full": "6 hours of workshops,Friday evening social dance with a live band TBA,Friday late night extravaganza,Saturday evening social dance with a live band TBA,Saturday late night extravaganza,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced",
@@ -1110,6 +1103,16 @@
 			}
 		},
 		"tracksPage": {
+			"level": {
+				"title": "Level requirement",
+				"content": {
+					"details": [
+						"This is an all levels workshop with a caveat: to participate, you should know the basics of Balboa, meaning you should have taken a couple of months of Balboa lessons before registering. This is to ensure that you do not find yourself overwhelmed and that other attendees can focus on what is being taught.",
+						"Look at the list of balboa concepts below and if you do not have the basics required yet, please consider taking regular classes in your local dance scene instead."
+					],
+					"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
+				}
+			},
 			"title": "Tracks",
 			"description": "At MTL BAL JAM, both tracks are designed to cater to different learning styles and preferences rather than levels of experience. There isn’t a track that is more advanced than the other—each offers a unique approach to exploring Balboa. Whether you prefer to dive deep into a few topics or to explore a variety of concepts, the goal is to ensure that everyone can grow and learn at their own pace in a way that resonates with them. Choose the track that best matches your personal learning style and interests!",
 			"tracks": [

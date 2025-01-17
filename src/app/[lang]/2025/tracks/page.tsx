@@ -2,7 +2,7 @@ import Favicon from '@/app/favicon.ico'
 import BigOG from '@/app/opengraph-image.png'
 import { Locales } from '@/i18n'
 import { getDictionary } from '../../dictionaries'
-import { Tracks } from './sections'
+import { Level, Tracks } from './sections'
 
 type Props = {
 	params: Promise<{ lang: Locales }>
@@ -72,5 +72,10 @@ export default async function MbjTracks({
 	const { lang } = await params
 	const { mbj2025 } = await getDictionary(lang)
 
-	return <Tracks tracksPage={mbj2025.tracksPage} />
+	return (
+		<>
+			<Level levelSection={mbj2025.tracksPage.level} />
+			<Tracks tracksPage={mbj2025.tracksPage} />
+		</>
+	)
 }
