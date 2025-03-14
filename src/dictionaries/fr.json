@@ -1503,7 +1503,7 @@
 			},
 			"car": {
 				"title": "Auto",
-				"description": "Les places de stationnement sont limitées près de la Casa d’Italia, il est recommandé de prévoir un temps pour la recherche d’un stationnement. Vous pouvez payer les parcomètres à l'aide de l'application mobile {{link}}.",
+				"description": "Les places de stationnement sont limitées près du Cat's Corner, il est recommandé de prévoir un temps pour la recherche d’un stationnement. Vous pouvez payer les parcomètres à l'aide de l'application mobile {{link}}.",
 				"link": "https://www.agencemobilitedurable.ca/fr/infos-pratiques/pservicemobile",
 				"linkText": "P$ Service mobile"
 			}
@@ -1516,9 +1516,9 @@
 				"linkText": "couchsurfing"
 			},
 			"community": {
-				"description": "Visitez la page Facebook de l’événement afin de retrouver la {{link}} visant à faciliter la recherche et l’offre d’hébergement dans la communauté.",
+				"description": "Rejoignez le {{link}} visant à faciliter la recherche et l’offre d’hébergement dans la communauté.",
 				"link": "https://www.facebook.com/events/843165910936891/?post_id=928359642417517&view=permalink&notif_id=1710706831431731&notif_t=feedback_reaction_generic&ref=notif",
-				"linkText": "publication épinglée"
+				"linkText": "groupe Facebook"
 			}
 		}
 	},

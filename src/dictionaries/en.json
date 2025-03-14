@@ -1491,7 +1491,7 @@
 			},
 			"car": {
 				"title": "Car",
-				"description": "Parking spaces are limited around the Casa d’Italia, so plan your trip accordingly if traveling by car! You can also pay your parking meter through the {{link}} mobile app.",
+				"description": "Parking spaces are limited around Cat's Corner, so plan your trip accordingly if traveling by car! You can also pay your parking meter through the {{link}} mobile app.",
 				"link": "https://www.agencemobilitedurable.ca/en/practical-info/pmobileservice",
 				"linkText": "P$ mobile service"
 			}
@@ -1504,9 +1504,9 @@
 				"linkText": "couchsurfing"
 			},
 			"community": {
-				"description": "Visit the event’s Facebook page to find the {{link}} about housing to see what the offer is within the community.",
-				"link": "https://www.facebook.com/events/843165910936891/?post_id=928359642417517&view=permalink&notif_id=1710706831431731&notif_t=feedback_reaction_generic&ref=notif",
-				"linkText": "pinned post"
+				"description": "Join the {{link}} to see what the offer is within the community.",
+				"link": "https://www.facebook.com/groups/550223361374124",
+				"linkText": "Facebook group"
 			}
 		}
 	},
