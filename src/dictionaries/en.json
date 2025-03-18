@@ -963,6 +963,46 @@
 				}
 			}
 		},
+		"musicPage": {
+			"liveMusic": {
+				"title": "Live music",
+				"bandName": "Michaël Srey Legacy Band",
+				"biography": [
+					"The Michaël Srey Legacy Band is a collective of up to 9 professional musicians from the Montréal / Tiohtià:ke jazz scene. The group already has several concerts under its belt and its reputation is growing.",
+					"The band knows its standards and includes the compositions of the great names in jazz: Louis Armstrong, Duke Ellington, Fletcher Henderson, Mary Lou Williams but also Jimmy Smith, Quincy Jones and Oscar Peterson. Equally curious about the different influences and developments of this art form, the band's repertoire includes other music from the same sources, with a strong emphasis on rhythm, improvisation and dance such as beguine or mambo.",
+					"Michaël Srey carefully selects, arranges and transcribes each piece mainly from the big band repertoire. Thus, the band has created a unique, tailor-made repertoire with new pieces regularly added to the music stands.",
+					"The quality of its musicians as well as the composition of the group give it great versatility and allow it to traverse the history of swing and its various styles: second line of New Orleans, early jazz, swing era, blues, be bop, hard bop…",
+					"Dedicated to the precision and colors of the iconic arrangements of big bands, the horn section makes each of its notes shine and the rhythm section roars across the dance floor."
+				],
+				"link": "https://www.michaelsrey.com/",
+				"logoAlt": "Michaël Srey Legacy Band Logo"
+			},
+			"djMusic": {
+				"title": "DJs",
+				"djs": {
+					"felix": {
+						"name": "Felix",
+						"djName": "DJ Can't Stop The Felix",
+						"pronouns": "He/Him",
+						"biography": "Felix has been interested in music his whole life. In his never-ending quest to understand music on a deeper level, he started swing dancing in 2013. Self-proclaimed music geek, he studied Jazz vocals, composition and arranging. He loves to think about, talk about, and breathe DJing, and he is always on the lookout for the best swinging tunes.",
+						"image": {
+							"src": "/felix.jpg",
+							"alt": "Photo of Felix"
+						}
+					},
+					"gab": {
+						"name": "Gabrielle",
+						"djName": "DJ Kern Down For What?!",
+						"pronouns": "She/Her",
+						"biography": "Gabrielle loves playing music that gets dancers out on the floor and keeps them there! Her passion is music that moves you, be it blues, vintage jazz, or more soulful, funky tunes. Be careful, her music will often inspire you to dance long after your feet would have called it a night.",
+						"image": {
+							"src": "/gabrielle.png",
+							"alt": "Photo of Gabrielle"
+						}
+					}
+				}
+			}
+		},
 		"venuePage": {
 			"cats": {
 				"title": "Dances & Workshops",
@@ -1580,6 +1620,10 @@
 				{
 					"text": "Competitions",
 					"href": "/en/2025/competitions"
+				},
+				{
+					"text": "Music",
+					"href": "/en/2025/music"
 				},
 				{
 					"text": "Venue",
