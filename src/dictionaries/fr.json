@@ -998,6 +998,26 @@
 							"src": "/gabrielle.png",
 							"alt": "Photo de Gabrielle"
 						}
+					},
+					"david": {
+						"name": "David",
+						"djName": "DJ Loose Lid David",
+						"pronouns": "Il/Accords masculins",
+						"biography": "David a commencé sa carrière de DJ en 2017 au club de swing de son université. Il adore la musique swing rapide et a un penchant marqué pour les enregistrements live. En effet, c’est la musique qui l’a convaincu d’apprendre le Balboa. Notez qu’il est toujours prêt à avoir de grandes conversation sur la musique et il a toujours une nouvelle chanson préféré à partager !",
+						"image": {
+							"src": "/david.jpg",
+							"alt": "Photo de David"
+						}
+					},
+					"dan": {
+						"name": "Dan",
+						"djName": "DJ Dan",
+						"pronouns": "Il/Accords masculins",
+						"biography": "En tant qu’instructeur et DJ vétérant, il a travaillé au quatres coins du monde tant bien que pour des événements internationaux que pour des danses locales. Il a occupé le rôle de DJ en chef à des événements tels que BluesSHOUT! et au Balboa/Blues Experiment.",
+						"image": {
+							"src": "/dan-dj.png",
+							"alt": "Photo de Dan, crédit: Braden Nesin"
+						}
 					}
 				}
 			}
