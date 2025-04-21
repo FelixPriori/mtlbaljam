@@ -7,10 +7,17 @@ import { getDay } from 'date-fns/getDay'
 import { useMemo } from 'react'
 import { Locales } from '@/i18n'
 import { enCA, fr } from 'date-fns/locale'
-import MBJ2025Weekend from './MBJ2025Weekend'
-import MBJ2025Day from './MBJ2025Day'
+import MBJ2025WeekendNight from './MBJ2025WeekendNight'
+import * as dates from 'date-arithmetic'
+import './styles.scss'
 
 type CustomEventType = { id: string; start: string; end: string; title: string }
+type CustomParsedEventType = {
+	id: string
+	start: Date
+	end: Date
+	title: string
+}
 
 const parseEventDate = (event: CustomEventType) => ({
 	...event,
@@ -18,7 +25,12 @@ const parseEventDate = (event: CustomEventType) => ({
 	end: new Date(event.end),
 })
 
-export default function CustomCalendar({
+const isBeforeThreeAM = (event: CustomParsedEventType) => {
+	const hours = dates.hours(event.end)
+	return hours >= 0 && hours <= 3
+}
+
+export default function CustomNightCalendar({
 	events,
 	lang,
 }: {
@@ -29,10 +41,9 @@ export default function CustomCalendar({
 		() => ({
 			defaultDate: new Date('2025-06-21'),
 			views: {
-				week: MBJ2025Weekend,
-				day: MBJ2025Day,
+				week: MBJ2025WeekendNight,
 			},
-			parsedEvents: events.map(parseEventDate),
+			parsedEvents: events.map(parseEventDate).filter(isBeforeThreeAM),
 			localizer: dateFnsLocalizer({
 				format,
 				parse,
@@ -45,15 +56,16 @@ export default function CustomCalendar({
 	)
 
 	return (
-		<Calendar
-			defaultDate={defaultDate}
-			defaultView={Views.WEEK}
-			events={parsedEvents}
-			localizer={localizer}
-			views={views}
-			culture={lang === 'fr' ? 'fr' : 'en-CA'}
-			selectable={false}
-			showMultiDayTimes={true}
-		/>
+		<div className="calendar night">
+			<Calendar
+				defaultDate={defaultDate}
+				defaultView={Views.WEEK}
+				events={parsedEvents}
+				localizer={localizer}
+				views={views}
+				culture={lang === 'fr' ? 'fr' : 'en-CA'}
+				selectable={false}
+			/>
+		</div>
 	)
 }

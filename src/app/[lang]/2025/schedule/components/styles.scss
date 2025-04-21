@@ -1,52 +1,85 @@
 @import 'react-big-calendar/lib/sass/styles';
 
-.rbc-calendar {
-	background-color: white;
-	width: 100%;
-	border-radius: 8px;
-	.rbc-time-header,
-	.rbc-time-header-content,
-	.rbc-time-header-cell {
-		height: 38px;
-	}
-	.rbc-header {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-bottom: none;
-		pointer-events: none;
-		.rbc-button-link {
-			font-size: 18px;
-			font-weight: 600;
+.calendar {
+	.rbc-calendar {
+		background-color: white;
+		width: 100%;
+		.rbc-time-header,
+		.rbc-time-header-content,
+		.rbc-time-header-cell {
+			height: 38px;
+		}
+		.rbc-header {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-bottom: none;
+			pointer-events: none;
+			.rbc-button-link {
+				font-size: 18px;
+				font-weight: 600;
+			}
+		}
+		.rbc-toolbar {
+			display: none;
+		}
+		.rbc-allday-cell {
+			display: none;
+		}
+		.rbc-time-view {
+			border: none;
+		}
+		.rbc-time-slot {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.rbc-event {
+			background-color: var(--mbj-color-teal);
+			border-color: var(--mbj-color-salmon);
+			outline-color: var(--mbj-color-salmon);
+			.rbc-event-label {
+				font-weight: 700;
+			}
+		}
+		.rbc-timeslot-group {
+			min-height: 72px;
+		}
+		.rbc-time-column .rbc-timeslot-group:last-of-type,
+		.rbc-day-slot .rbc-timeslot-group:nth-last-child(2) {
+			border-bottom: none;
 		}
 	}
-	.rbc-toolbar {
-		display: none;
+}
+
+.day {
+	.rbc-calendar {
+		border-radius: 8px 8px 0 0;
 	}
-	.rbc-allday-cell {
-		display: none;
+	.rbc-time-content {
+		border-bottom: none;
 	}
-	.rbc-time-view {
-		border: none;
-	}
-	.rbc-time-slot {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.rbc-event {
-		background-color: var(--mbj-color-teal);
-		border-color: var(--mbj-color-salmon);
-		outline-color: var(--mbj-color-salmon);
-		.rbc-event-label {
-			font-weight: 700;
+
+	@media (max-width: 576px) {
+		.rbc-calendar {
+			border-radius: 0;
 		}
 	}
-	.rbc-timeslot-group {
-		min-height: 72px;
+}
+
+.night {
+	.rbc-calendar {
+		border-radius: 0 0 8px 8px;
 	}
-	.rbc-time-column .rbc-timeslot-group:last-of-type,
-	.rbc-day-slot .rbc-timeslot-group:nth-last-child(2) {
-		border-bottom: none;
+	.rbc-time-header {
+		display: none;
+	}
+	.rbc-time-content {
+		border-top-width: 1px;
+	}
+	@media (max-width: 576px) {
+		.rbc-calendar {
+			border-radius: 0;
+		}
 	}
 }

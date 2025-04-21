@@ -1,9 +1,9 @@
 import styles from './styles.module.scss'
 import Link from 'next/link'
 import { DictionaryType } from '@/app/[lang]/dictionaries'
-import CustomCalendar from '../../components/CustomCalendar'
 import { Locales } from '@/i18n'
-
+import CustomDayCalendar from '../../components/CustomDayCalendar'
+import CustomNightCalendar from '../../components/CustomNightCalendar'
 export default function Schedule({
 	schedule,
 	lang,
@@ -20,7 +20,8 @@ export default function Schedule({
 				</Link>
 			</div>
 			<div className={styles.scheduleWrapper}>
-				<CustomCalendar events={schedule.events} lang={lang} />
+				<CustomDayCalendar events={schedule.events} lang={lang} />
+				<CustomNightCalendar events={schedule.events} lang={lang} />
 			</div>
 		</section>
 	)

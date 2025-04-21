@@ -9,9 +9,8 @@ import {
 import TimeGrid from 'react-big-calendar/lib/TimeGrid'
 import { useMemo } from 'react'
 import * as dates from 'date-arithmetic'
-import './styles.scss'
 
-interface MBJ2025WeekendProps extends WeekProps {
+interface MBJ2025WeekendNightProps extends WeekProps {
 	date: Date
 	localizer: DateLocalizer
 	max: Date
@@ -19,16 +18,16 @@ interface MBJ2025WeekendProps extends WeekProps {
 	scrollToTime: Date
 }
 
-export default function MBJ2025Weekend({
+export default function MBJ2025WeekendNight({
 	date,
 	localizer,
-	max = localizer.endOf(new Date(), 'day'),
 	min = localizer.startOf(new Date(), 'day'),
+	max = new Date(2025, 6, 21, 3, 30),
 	scrollToTime = localizer.startOf(new Date(), 'day'),
 	...props
-}: MBJ2025WeekendProps) {
+}: MBJ2025WeekendNightProps) {
 	const currRange = useMemo(
-		() => MBJ2025Weekend.range(date, { localizer }),
+		() => MBJ2025WeekendNight.range(date, { localizer }),
 		[date, localizer],
 	)
 
@@ -46,7 +45,7 @@ export default function MBJ2025Weekend({
 	)
 }
 
-MBJ2025Weekend.range = (
+MBJ2025WeekendNight.range = (
 	date: Date,
 	{ localizer }: { localizer: DateLocalizer },
 ) => {
@@ -64,7 +63,7 @@ MBJ2025Weekend.range = (
 	return range
 }
 
-MBJ2025Weekend.navigate = (
+MBJ2025WeekendNight.navigate = (
 	date: Date,
 	action: NavigateAction,
 	{ localizer }: { localizer: DateLocalizer },
@@ -81,4 +80,4 @@ MBJ2025Weekend.navigate = (
 	}
 }
 
-MBJ2025Weekend.title = () => `MTL BAL JAM 2025`
+MBJ2025WeekendNight.title = () => `MTL BAL JAM 2025`
