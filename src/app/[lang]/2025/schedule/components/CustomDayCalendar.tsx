@@ -10,8 +10,7 @@ import { enCA, fr } from 'date-fns/locale'
 import MBJ2025WeekendDay from './MBJ2025WeekendDay'
 import * as dates from 'date-arithmetic'
 import './styles.scss'
-
-type CustomEventType = { id: string; start: string; end: string; title: string }
+import { CustomEventType, CustomParsedEventType } from '../sections/Schedule'
 
 const parseEventDate = (event: CustomEventType) => ({
 	...event,
@@ -19,12 +18,6 @@ const parseEventDate = (event: CustomEventType) => ({
 	end: new Date(event.end),
 })
 
-type CustomParsedEventType = {
-	id: string
-	start: Date
-	end: Date
-	title: string
-}
 const isAfter9AM = (event: CustomParsedEventType) => {
 	const hours = dates.hours(event.start)
 	return hours >= 9

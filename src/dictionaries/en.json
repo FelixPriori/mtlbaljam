@@ -857,6 +857,7 @@
 		"schedulePage": {
 			"schedule": {
 				"title": "Weekend schedule",
+				"textTitle": "Weekend schedule (text version)",
 				"link": {
 					"text": "More info about the venue...",
 					"href": "/en/2025/venue"

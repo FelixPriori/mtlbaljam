@@ -1025,6 +1025,7 @@
 		"schedulePage": {
 			"schedule": {
 				"title": "Horaire de l'événement",
+				"textTitle": "Horaire de l'événement (version textuelle)",
 				"link": {
 					"text": "Plus d'info sur la salle...",
 					"href": "/fr/2025/venue"

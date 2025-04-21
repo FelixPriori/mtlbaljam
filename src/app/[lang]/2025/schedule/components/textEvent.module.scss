@@ -1,0 +1,15 @@
+.textSchedule {
+	.day {
+		text-transform: capitalize;
+		margin-bottom: 0.5rem;
+	}
+}
+.textEvent {
+	list-style: none;
+	margin-bottom: 0.5rem;
+	display: flex;
+	gap: 0.5rem;
+	.time {
+		font-weight: 600;
+	}
+}

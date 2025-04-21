@@ -4,6 +4,22 @@ import { DictionaryType } from '@/app/[lang]/dictionaries'
 import { Locales } from '@/i18n'
 import CustomDayCalendar from '../../components/CustomDayCalendar'
 import CustomNightCalendar from '../../components/CustomNightCalendar'
+import TextSchedule from '../../components/TextSchedule'
+
+export type CustomEventType = {
+	id: string
+	start: string
+	end: string
+	title: string
+}
+
+export type CustomParsedEventType = {
+	id: string
+	start: Date
+	end: Date
+	title: string
+}
+
 export default function Schedule({
 	schedule,
 	lang,
@@ -23,6 +39,8 @@ export default function Schedule({
 				<CustomDayCalendar events={schedule.events} lang={lang} />
 				<CustomNightCalendar events={schedule.events} lang={lang} />
 			</div>
+			<h2>{schedule.textTitle}</h2>
+			<TextSchedule events={schedule.events} lang={lang} />
 		</section>
 	)
 }

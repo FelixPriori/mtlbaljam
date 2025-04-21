@@ -10,14 +10,7 @@ import { enCA, fr } from 'date-fns/locale'
 import MBJ2025WeekendNight from './MBJ2025WeekendNight'
 import * as dates from 'date-arithmetic'
 import './styles.scss'
-
-type CustomEventType = { id: string; start: string; end: string; title: string }
-type CustomParsedEventType = {
-	id: string
-	start: Date
-	end: Date
-	title: string
-}
+import { CustomEventType, CustomParsedEventType } from '../sections/Schedule'
 
 const parseEventDate = (event: CustomEventType) => ({
 	...event,
