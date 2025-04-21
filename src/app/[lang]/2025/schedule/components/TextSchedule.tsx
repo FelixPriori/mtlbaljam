@@ -18,7 +18,6 @@ const breakEventsByDay = (events: CustomEventType[]) => {
 
 	events.forEach(event => {
 		const day = dates.day(new Date(event.start))
-		console.log(day)
 		if (day === 5) {
 			friday.push(event)
 		} else if (day === 6) {
