@@ -1293,9 +1293,9 @@
 					"imageCropSrc": "/crop.png",
 					"imageCropAlt": "MTL BAL JAM crop top shirt"
 				},
-				"when": "Note: the last day to order your t-shirt is May 25th.",
-				"description": "We are committed to being Eco-Responsible, ethical and respectful of the environment. For this reason, we have selected Mercerie Roger for our t-shirts which are:",
-				"list": "Made in Quebec,Printed in Montreal,100% organic cotton & GOTS certified (Global Organic Textile Standard),Plastic and synthetic-free",
+				"when": "Note: the last day to order your t-shirt is May 15th.",
+				"description": "We are committed to being Eco-Responsible, ethical and respectful of the environment. Our t-shirts which are:",
+				"list": "Printed in Montreal,100% organic cotton & GOTS certified (Global Organic Textile Standard),Plastic and synthetic-free",
 				"credit": "Thanks to {{credit}} an excellent local designer for the help, and to Félix for the design.",
 				"link": "https://raph.xyz/",
 				"how": "How to get your own \"MTL BAL JAM\" shirt:",

@@ -445,9 +445,9 @@
 				"soldOut": "Rupture de stock",
 				"imageSrc": "/mbj-shirt-sold-out-fr.png",
 				"imageAlt": "Photo du t-shirt Let's Jam",
-				"when": "Attention ! La dernière journée pour commander votre t-shirt est le 25 mai.",
-				"description": "Nous avons à cœur d'être éco-responsables, éthiques et respectueux de l'environnement. Pour cela nous avons choisi la Mercerie Roger, une compagnie pour nos t-shirts qui sont : ",
-				"list": "Fabriqués au Québec,Imprimés à Montréal,Coton 100 % biologique certifié GOTS (Global Organic Textile Standard),Sans plastique et aucune matière synthétiques",
+				"when": "Attention ! La dernière journée pour commander votre t-shirt est le 15 mai.",
+				"description": "Nous avons à cœur d'être éco-responsables, éthiques et respectueux de l'environnement. Nos t-shirts sont : ",
+				"list": "Imprimés à Montréal,Coton 100 % biologique certifié GOTS (Global Organic Textile Standard),Sans plastique et aucune matière synthétiques",
 				"credit": [
 					"Merci à ",
 					"Youlia",
