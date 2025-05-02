@@ -1400,7 +1400,60 @@
 					"title": "Paella",
 					"description": "The Paella Track is designed for dancers who want to savor the richness and depth of Balboa. Much like the iconic Spanish dish it's named after, this track focuses on a select few topics, allowing participants to explore them in detail. You'll have the opportunity to refine your technique, deepen your understanding, and truly immerse yourself in the nuances of the dance. Perfect for those who enjoy focusing on the intricate flavors of Balboa and prefer a steady, enriching pace."
 				}
-			]
+			],
+			"classes": {
+				"title": "Class descriptions",
+				"tapas": {
+					"title": "Tapas",
+					"items": [
+						{
+							"teachers": "Lucía & Javi",
+							"title": "Balboa swivels with mediterranean flair",
+							"description": "We will dive into the fundamentals of this essential balboa movement, then spice things up with juicy variations that add texture and rhythm (just like onions do in a good tortilla, yes we are on team with onions!)."
+						},
+						{
+							"teachers": "Neus & Albert",
+							"title": "Pure Bal Dice",
+							"description": "Let's play with the geometrics of Pure Bal."
+						},
+						{
+							"teachers": "Lucía & Javi",
+							"title": "Old Timers Inspiration",
+							"description": "We will take a journey to the roots of balboa. The aim of this class is not only to learn a classic movement or a figure. The attractive part of the class will be to study or favourite old timers in order to develop new movements or figures within the Balboa."
+						},
+						{
+							"teachers": "Neus & Albert",
+							"title": "Welcoming the unexpected",
+							"description": "Let's see how we embrace the uncertainity while dancing Balswing"
+						}
+					]
+				},
+				"paella": {
+					"title": "Paella",
+					"items": [
+						{
+							"teachers": "Neus & Albert",
+							"title": "Lasagna Pure Bal",
+							"description": "Let's dig into the layers of Pure Bal"
+						},
+						{
+							"teachers": "Lucía & Javi",
+							"title": "Bal Swing with flavor",
+							"description": "We will explore rhythm and connection with a Spanish twist (blending dance technique with the culinary art of making paella). Just like each ingredient in paella adds its own essence to the dish, every Balboa step contributes precision and flavor to the dance."
+						},
+						{
+							"teachers": "Neus & Albert",
+							"title": "Cooking with what there is in the fridge",
+							"description": "Let's explore how we can adapt to the dance of the other and cook the best dance together (balswing)"
+						},
+						{
+							"teachers": "Lucía & Javi",
+							"title": "Pure Bal & Musicality",
+							"description": "We will focus on footwork technique and new rhythm variation. Learning new rhythms facilitates the understanding of the music and at the same time aloow us to enjoy other aspects of the dance. Lucía & Javi will teach you the rhythms they use and how to put them into the dance as a couple to enjoy every beat ;)"
+						}
+					]
+				}
+			}
 		}
 	},
 	"visitingPage": {

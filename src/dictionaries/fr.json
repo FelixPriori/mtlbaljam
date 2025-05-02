@@ -1412,6 +1412,59 @@
 					],
 					"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
 				}
+			},
+			"classes": {
+				"title": "Description des cours",
+				"tapas": {
+					"title": "Tapas",
+					"items": [
+						{
+							"teachers": "Lucía & Javi",
+							"title": "Swivels au flair méditéranéen",
+							"description": "Nous allons plonger dans les bases de ce mouvement essentiel du balboa, puis pimenter les choses avec des variations savoureuses qui ajoutent de la texture et du rythme (un peu comme les oignons dans une bonne tortilla. Oui, nous sommes dans l’équipe des oignons !)"
+						},
+						{
+							"teachers": "Neus & Albert",
+							"title": "Pure bal géométrique",
+							"description": "On joue avec la géométrie du pure bal"
+						},
+						{
+							"teachers": "Lucía & Javi",
+							"title": "S’inspirer des danseur.euse.s originaux.ales",
+							"description": "Nous retournons aux racines du Balboa. Le but de ce cours n’est pas seulement d’apprendre un mouvement ou une figure classique. Ce qui rendra le cours particulièrement intéressant, c’est l’étude de nos danseurs favoris de l’époque afin de développer de nouveaux mouvements ou figures dans le respect de la stylistique de la danse."
+						},
+						{
+							"teachers": "Neus & Albert",
+							"title": "Accepter l’inattendu",
+							"description": "Comment pouvons-nous s'inspirer de l'innatendu en bal swing."
+						}
+					]
+				},
+				"paella": {
+					"title": "Paella",
+					"items": [
+						{
+							"teachers": "Neus & Albert",
+							"title": "Lasagne pure bal",
+							"description": "Puisons dans les multiples couches du pure bal"
+						},
+						{
+							"teachers": "Lucía & Javi",
+							"title": "Du bal swing avec de la saveur",
+							"description": "Nous allons explorer le rythme et la connexion avec une touche espagnole (en mêlant technique de danse et art culinaire de la paella). Tout comme chaque ingrédient de la paella apporte sa propre essence au plat, chaque pas de Balboa ajoute précision et saveur à la danse."
+						},
+						{
+							"teachers": "Neus & Albert",
+							"title": "Cuisiner avec ce qui reste dans le frigo",
+							"description": "Explorons comment s'adapter à la danse de notre partenaire afin de se cuisiner ensemble une bonne danse en bal swing."
+						},
+						{
+							"teachers": "Lucía & Javi",
+							"title": "Musicalité et pure bal",
+							"description": "Nous nous concentrerons sur du footwork et des variations rythmiques. Apprendre de nouveaux rythmes facilite la compréhension de la musique et nous permet en même temps de profiter d’autres aspects de la danse. Lucía & Javi vous enseigneront les rythmes qu’ils utilisent et comment les intégrer dans la danse en couple pour savourer chaque temps ;)"
+						}
+					]
+				}
 			}
 		}
 	},

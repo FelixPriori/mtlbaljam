@@ -3,6 +3,7 @@ import BigOG from '@/app/opengraph-image.png'
 import { Locales } from '@/i18n'
 import { getDictionary } from '../../dictionaries'
 import { Level, Tracks } from './sections'
+import ClassDescriptions from './sections/ClassDescriptions'
 
 type Props = {
 	params: Promise<{ lang: Locales }>
@@ -76,6 +77,7 @@ export default async function MbjTracks({
 		<>
 			<Level levelSection={mbj2025.tracksPage.level} />
 			<Tracks tracksPage={mbj2025.tracksPage} />
+			<ClassDescriptions tracksPage={mbj2025.tracksPage} />
 		</>
 	)
 }
