@@ -1033,7 +1033,7 @@
 				"events": [
 					{
 						"id": "1",
-						"title": "Ouverture des Portes / Service au Bar",
+						"title": "Ouverture des portes / Service au bar",
 						"start": "2025-06-20T19:30:00",
 						"end": "2025-06-20T23:59:00"
 					},
@@ -1045,7 +1045,7 @@
 					},
 					{
 						"id": "3",
-						"title": "Musique Live",
+						"title": "Musique live",
 						"start": "2025-06-20T21:30:00",
 						"end": "2025-06-20T22:15:00"
 					},
@@ -1057,7 +1057,7 @@
 					},
 					{
 						"id": "5",
-						"title": "Musique Live",
+						"title": "Musique live",
 						"start": "2025-06-20T22:45:00",
 						"end": "2025-06-20T23:30:00"
 					},
@@ -1069,169 +1069,181 @@
 					},
 					{
 						"id": "7",
-						"title": "Musique Live",
+						"title": "Service au bar",
 						"start": "2025-06-21T00:00:00",
 						"end": "2025-06-21T00:45:00"
 					},
 					{
 						"id": "8",
-						"title": "Nourriture Tardive",
+						"title": "Musique live",
+						"start": "2025-06-21T00:00:00",
+						"end": "2025-06-21T00:45:00"
+					},
+					{
+						"id": "9",
+						"title": "Nourriture tardive",
 						"start": "2025-06-21T00:45:00",
 						"end": "2025-06-21T01:15:00"
 					},
 					{
-						"id": "9",
-						"title": "Danse Tardive",
+						"id": "10",
+						"title": "Danse tardive",
 						"start": "2025-06-21T01:15:00",
 						"end": "2025-06-21T03:00:00"
 					},
 					{
-						"id": "10",
-						"title": "Strictly Pure Bal (estimé)",
+						"id": "11",
+						"title": "Strictly pure bal (estimé)",
 						"start": "2025-06-21T01:30:00",
 						"end": "2025-06-21T02:00:00"
 					},
 					{
-						"id": "11",
-						"title": "Ouverture des portes / Thé et Café",
+						"id": "12",
+						"title": "Ouverture des portes / Thé et café",
 						"start": "2025-06-21T11:30:00",
 						"end": "2025-06-21T12:30:00"
 					},
 					{
-						"id": "12",
-						"title": "Cours 1 - Tapas",
-						"start": "2025-06-21T12:30:00",
-						"end": "2025-06-21T14:00:00"
-					},
-					{
 						"id": "13",
-						"title": "Cours 1 - Paella",
+						"title": "Tapas - Swivels au flair méditérannéen - Lucía & Javi",
 						"start": "2025-06-21T12:30:00",
 						"end": "2025-06-21T14:00:00"
 					},
 					{
 						"id": "14",
+						"title": "Paella - Lasagne pur bal - Neus & Albert",
+						"start": "2025-06-21T12:30:00",
+						"end": "2025-06-21T14:00:00"
+					},
+					{
+						"id": "15",
 						"title": "Pause",
 						"start": "2025-06-21T14:00:00",
 						"end": "2025-06-21T14:30:00"
 					},
 					{
-						"id": "15",
-						"title": "Cours 2 - Tapas",
-						"start": "2025-06-21T14:30:00",
-						"end": "2025-06-21T16:00:00"
-					},
-					{
-						"id": "16",
-						"title": "Cours 2 - Paella",
-						"start": "2025-06-21T14:30:00",
-						"end": "2025-06-21T16:00:00"
-					},
-					{
 						"id": "17",
-						"title": "Ouverture des Portes / Service au Bar",
+						"title": "Tapas - Pur bal géométrique - Neus & Albert",
+						"start": "2025-06-21T14:30:00",
+						"end": "2025-06-21T16:00:00"
+					},
+					{
+						"id": "18",
+						"title": "Paella - Du bal swing avec de la saveur - Lucía & Javi",
+						"start": "2025-06-21T14:30:00",
+						"end": "2025-06-21T16:00:00"
+					},
+					{
+						"id": "19",
+						"title": "Ouverture des portes / Service au bar",
 						"start": "2025-06-21T20:00:00",
 						"end": "2025-06-21T23:59:00"
 					},
 					{
-						"id": "18",
-						"title": "Musique Live",
+						"id": "20",
+						"title": "Musique live",
 						"start": "2025-06-21T21:30:00",
 						"end": "2025-06-21T22:15:00"
 					},
 					{
-						"id": "19",
+						"id": "21",
 						"title": "Finales du M&M / DJ",
 						"start": "2025-06-21T22:15:00",
 						"end": "2025-06-21T22:45:00"
 					},
 					{
-						"id": "20",
-						"title": "Musique Live",
+						"id": "22",
+						"title": "Musique live",
 						"start": "2025-06-21T22:45:00",
 						"end": "2025-06-21T23:30:00"
 					},
 					{
-						"id": "21",
+						"id": "23",
 						"title": "DJ",
 						"start": "2025-06-21T23:30:00",
 						"end": "2025-06-21T23:59:00"
 					},
 					{
-						"id": "22",
-						"title": "Musique Live",
+						"id": "24",
+						"title": "Service au bar",
+						"start": "2025-06-22T00:00:00",
+						"end": "2025-06-22T02:00:00"
+					},
+					{
+						"id": "25",
+						"title": "Musique live",
 						"start": "2025-06-22T00:00:00",
 						"end": "2025-06-22T00:45:00"
 					},
 					{
-						"id": "23",
-						"title": "Nourriture Tardive",
+						"id": "26",
+						"title": "Nourriture tardive",
 						"start": "2025-06-22T00:45:00",
 						"end": "2025-06-22T01:15:00"
 					},
 					{
-						"id": "24",
-						"title": "Danse Tardive",
+						"id": "27",
+						"title": "Danse tardive",
 						"start": "2025-06-22T01:15:00",
 						"end": "2025-06-22T03:00:00"
 					},
 					{
-						"id": "25",
-						"title": "Ouverture des portes / Thé et Café",
+						"id": "28",
+						"title": "Ouverture des portes / Thé et café",
 						"start": "2025-06-22T11:30:00",
 						"end": "2025-06-22T12:30:00"
 					},
 					{
-						"id": "26",
-						"title": "Cours 3 - Tapas",
+						"id": "29",
+						"title": "Tapas - S'inspirer des danseur.euse.s originaux.ales - Lucía & Javi",
 						"start": "2025-06-22T12:30:00",
 						"end": "2025-06-22T14:00:00"
 					},
 					{
-						"id": "27",
-						"title": "Cours 3 - Paella",
+						"id": "30",
+						"title": "Paella - Cuisiner avec ce qui reste dans le frigo - Neus & Albert",
 						"start": "2025-06-22T12:30:00",
 						"end": "2025-06-22T14:00:00"
 					},
 					{
-						"id": "28",
+						"id": "31",
 						"title": "Pause",
 						"start": "2025-06-22T14:00:00",
 						"end": "2025-06-22T14:30:00"
 					},
 					{
-						"id": "29",
-						"title": "Cours 4 - Tapas",
+						"id": "32",
+						"title": "Tapas - Accepter l'innatendu - Neus & Albert",
 						"start": "2025-06-22T14:30:00",
 						"end": "2025-06-22T16:00:00"
 					},
 					{
-						"id": "30",
-						"title": "Cours 4 - Paella",
+						"id": "33",
+						"title": "Paella - Musicalité et pure bal - Lucía & Javi",
 						"start": "2025-06-22T14:30:00",
 						"end": "2025-06-22T16:00:00"
 					},
 					{
-						"id": "31",
-						"title": "Tour Guidé",
+						"id": "34",
+						"title": "Tour guidé",
 						"start": "2025-06-22T17:00:00",
 						"end": "2025-06-22T18:30:00"
 					},
 					{
-						"id": "32",
+						"id": "35",
 						"title": "Crème glacée / Heure sociale",
 						"start": "2025-06-22T19:30:00",
 						"end": "2025-06-22T21:00:00"
 					},
 					{
-						"id": "33",
+						"id": "36",
 						"title": "DJ",
 						"start": "2025-06-22T21:00:00",
 						"end": "2025-06-22T23:59:00"
 					},
 					{
-						"id": "34",
-						"title": "Strictly de Balboa lent",
+						"id": "37",
+						"title": "Strictly de balboa lent",
 						"start": "2025-06-22T23:00:00",
 						"end": "2025-06-22T23:15:00"
 					}
