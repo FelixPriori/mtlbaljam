@@ -22,7 +22,7 @@ export default function MBJ2025WeekendNight({
 	date,
 	localizer,
 	min = localizer.startOf(new Date(), 'day'),
-	max = new Date(2025, 6, 21, 3, 30),
+	max = localizer.add(localizer.startOf(new Date(), 'day'), 3.5, 'hours'),
 	scrollToTime = localizer.startOf(new Date(), 'day'),
 	...props
 }: MBJ2025WeekendNightProps) {
@@ -59,7 +59,6 @@ MBJ2025WeekendNight.range = (
 		range.push(current)
 		current = localizer.add(current, 1, 'day')
 	}
-
 	return range
 }
 

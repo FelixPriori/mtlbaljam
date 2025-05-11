@@ -32,7 +32,7 @@ export default function CustomDayCalendar({
 }) {
 	const { defaultDate, views, parsedEvents, localizer } = useMemo(
 		() => ({
-			defaultDate: new Date('2025-06-21'),
+			defaultDate: new Date('2025-06-20'),
 			views: {
 				week: MBJ2025WeekendDay,
 			},
@@ -58,6 +58,7 @@ export default function CustomDayCalendar({
 				views={views}
 				culture={lang === 'fr' ? 'fr' : 'en-CA'}
 				selectable={false}
+				date={new Date(2025, 5, 20, 0, 0, 0)}
 			/>
 		</div>
 	)

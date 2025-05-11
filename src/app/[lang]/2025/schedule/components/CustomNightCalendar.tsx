@@ -58,6 +58,7 @@ export default function CustomNightCalendar({
 				views={views}
 				culture={lang === 'fr' ? 'fr' : 'en-CA'}
 				selectable={false}
+				date={new Date(2025, 5, 21, 0, 0, 0)}
 			/>
 		</div>
 	)
