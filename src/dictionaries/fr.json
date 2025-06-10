@@ -876,7 +876,7 @@
 						"time": "samedi 21 juin 2025 vers 22h00",
 						"bpmTitle": "Tempo : ",
 						"bpm": "190 à 230 BPM / chanson",
-						"description": "Les finales auront lieu en duo spotlight afin de donner à tous.tes les finalistes une chance de briller et il y aura un changement de partenaire sans interruption à la moitié du spotlight. Il y aura un all-skate sur de la musique live avec des rotations sans interruptions. Vous êtes jugé.e.s individuellement."
+						"description": "Les finales auront lieu en duo spotlight afin de donner à tous.tes les finalistes une chance de briller et il y aura un changement de partenaire sans interruption à la moitié du spotlight. Il y aura un all-skate avec des rotations sans interruptions. Vous êtes jugé.e.s individuellement."
 					}
 				}
 			},
@@ -938,6 +938,27 @@
 							"src": "/albert.jpg",
 							"alt": "Photo de Albert"
 						}
+					},
+					"dominique": {
+						"name": "Dominique",
+						"image": {
+							"src": "/dominique.jpg",
+							"alt": "Photo de Dominique"
+						}
+					},
+					"zack": {
+						"name": "Zack",
+						"image": {
+							"src": "/zack.jpg",
+							"alt": "Photo de Zack"
+						}
+					},
+					"cara": {
+						"name": "Cara",
+						"image": {
+							"src": "/cara.jpg",
+							"alt": "Photo de Cara"
+						}
 					}
 				}
 			},
@@ -950,6 +971,38 @@
 						"image": {
 							"src": "/stardust.png",
 							"alt": "Logo de Stardust Slow Balboa Weekend"
+						}
+					},
+					"greatLakes": {
+						"name": "Great Lakes Balboa Escape",
+						"link": "https://www.greatlakesbalboaescape.com/",
+						"image": {
+							"src": "/great-lakes.jpg",
+							"alt": "Logo de Great Lakes Balboa Escape"
+						}
+					},
+					"slowDance": {
+						"name": "Slow Dance Soirée",
+						"link": "https://www.slowdancesoiree.com/",
+						"image": {
+							"src": "/slow-dance.jpg",
+							"alt": "Logo de Slow Dance Soirée"
+						}
+					},
+					"balMoment": {
+						"name": "Bal Moment Québec",
+						"link": "https://swingmoment.com/bal/",
+						"image": {
+							"src": "/bal-moment-small.png",
+							"alt": "Logo de Bal Moment Québec"
+						}
+					},
+					"toronto": {
+						"name": "Toronto Bal Weekend",
+						"link": "https://www.torontobalweekend.com/",
+						"image": {
+							"src": "/toronto-bal-weekend.png",
+							"alt": "Logo de Toronto Bal Weekend"
 						}
 					}
 				},

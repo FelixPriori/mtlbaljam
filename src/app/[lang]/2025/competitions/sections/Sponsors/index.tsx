@@ -5,7 +5,13 @@ import { DictionaryType } from '@/app/[lang]/dictionaries'
 type SponsorsNames =
 	keyof DictionaryType['mbj2025']['competitionsPage']['sponsorsSection']['sponsors']
 
-const keys: SponsorsNames[] = ['stardust']
+const keys: SponsorsNames[] = [
+	'stardust',
+	'balMoment',
+	'greatLakes',
+	'slowDance',
+	'toronto',
+]
 
 export default function Sponsors({
 	sponsorsSection,

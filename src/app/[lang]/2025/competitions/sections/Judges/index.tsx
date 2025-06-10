@@ -5,7 +5,15 @@ import { DictionaryType } from '@/app/[lang]/dictionaries'
 type JudgesNames =
 	keyof DictionaryType['mbj2025']['competitionsPage']['judgesSection']['judges']
 
-const keys: JudgesNames[] = ['lucia', 'javi', 'neus', 'albert']
+const keys: JudgesNames[] = [
+	'lucia',
+	'javi',
+	'neus',
+	'albert',
+	'dominique',
+	'zack',
+	'cara',
+]
 
 export default function Judges({
 	judgesSection,
