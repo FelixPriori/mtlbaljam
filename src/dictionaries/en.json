@@ -1373,6 +1373,20 @@
 					},
 					"soldOut": "Sold out"
 				}
+			},
+			"shoebag": {
+				"title": "\"Let's Jam\" Shoe Bag",
+				"price": "Price: $15.00 CAD",
+				"soldOut": "Sold out",
+				"images": {
+					"previewSrc": "/shoe-bag.png",
+					"previewAlt": "A preview of the \"Let's Jam\" Shoe Bag"
+				},
+				"when": "Note: the \"Let's Jam\" Shoe Bag will be available for purchase at the front desk during the weekend.",
+				"description": "We are committed to being Eco-Responsible, ethical and respectful of the environment. Our shoe bags which are:",
+				"list": "Printed in Montreal,100% organic cotton & GOTS certified (Global Organic Textile Standard),Plastic and synthetic-free",
+				"credit": "Thanks to {{credit}} an excellent local designer for the awesome design.",
+				"link": "https://www.instagram.com/youlia.moments/"
 			}
 		},
 		"registrationPage": {

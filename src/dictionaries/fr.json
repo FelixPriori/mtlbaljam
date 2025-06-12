@@ -1378,6 +1378,20 @@
 					},
 					"soldOut": "Rupture de stock"
 				}
+			},
+			"shoebag": {
+				"title": "Sac à chaussures «Let's Jam»",
+				"price": "Prix: 15,00 $ CAD",
+				"soldOut": "Sold out",
+				"images": {
+					"previewSrc": "/shoe-bag.png",
+					"previewAlt": "Un apperçu du sac à chaussures «Let's Jam»"
+				},
+				"when": "Note: le sac à chaussures «Let's Jam» sera disponible à l'achat durant le weekend à l'accueil.",
+				"description": "Nous avons à cœur d'être éco-responsables, éthiques et respectueux de l'environnement. Nos sacs sont : ",
+				"list": "Imprimés à Montréal,Coton 100 % biologique certifié GOTS (Global Organic Textile Standard),Sans plastique et aucune matière synthétiques",
+				"credit": "Merci à {{credit}}, créatrice local pour le merveilleux design",
+				"link": "https://www.instagram.com/youlia.moments/"
 			}
 		},
 		"registrationPage": {
