@@ -33,11 +33,11 @@ export default function Tickets({
 						{keys.map(key => (
 							<li key={key} className={styles.priceItem}>
 								<span
-								// className={
-								// 	key === 'first' || key === 'second' || key === 'third'
-								// 		? styles.dashed
-								// 		: ''
-								// }
+									className={
+										key === 'first' || key === 'second' /* || key === 'third' */
+											? styles.dashed
+											: ''
+									}
 								>
 									{tickets.priceCalendar.dates[key]}
 								</span>
@@ -53,11 +53,11 @@ export default function Tickets({
 						{keys.map(key => (
 							<li key={key} className={styles.priceItem}>
 								<span
-								// className={
-								// 	key === 'first' || key === 'second' || key === 'third'
-								// 		? styles.dashed
-								// 		: ''
-								// }
+									className={
+										key === 'first' || key === 'second' /* || key === 'third' */
+											? styles.dashed
+											: ''
+									}
 								>
 									{tickets.priceCalendar.dates[key]}
 								</span>
@@ -73,11 +73,11 @@ export default function Tickets({
 						{keys.map(key => (
 							<li key={key} className={styles.priceItem}>
 								<span
-								// className={
-								// 	key === 'first' || key === 'second' || key === 'third'
-								// 		? styles.dashed
-								// 		: ''
-								// }
+									className={
+										key === 'first' || key === 'second' /* || key === 'third' */
+											? styles.dashed
+											: ''
+									}
 								>
 									{tickets.priceCalendar.dates[key]}
 								</span>
@@ -89,6 +89,38 @@ export default function Tickets({
 						))}
 					</ul>
 					<p className={styles.note}>{tickets.priceCalendar.note}</p>
+					<h4>{tickets.priceCalendar.carte.title}</h4>
+					<ul>
+						<li className={styles.priceItem}>
+							<span>{tickets.priceCalendar.carte.classes.title}</span>
+							<span className={styles.dots}></span>
+							<span className={`${styles.price}`}>
+								<strong>{tickets.priceCalendar.carte.classes.price}</strong>
+							</span>
+						</li>
+						<li className={styles.priceItem}>
+							<span>{tickets.priceCalendar.carte.friday.title}</span>
+							<span className={styles.dots}></span>
+							<span className={`${styles.price}`}>
+								<strong>{tickets.priceCalendar.carte.friday.price}</strong>
+							</span>
+						</li>
+						<li className={styles.priceItem}>
+							<span>{tickets.priceCalendar.carte.saturday.title}</span>
+							<span className={styles.dots}></span>
+							<span className={`${styles.price}`}>
+								<strong>{tickets.priceCalendar.carte.saturday.price}</strong>
+							</span>
+						</li>
+						<li className={styles.priceItem}>
+							<span>{tickets.priceCalendar.carte.sunday.title}</span>
+							<span className={styles.dots}></span>
+							<span className={`${styles.price}`}>
+								<strong>{tickets.priceCalendar.carte.sunday.price}</strong>
+							</span>
+						</li>
+					</ul>
+					<p className={styles.note}>{tickets.priceCalendar.carte.note}</p>
 				</div>
 				<div className={styles.details}>
 					<h3>{tickets.ticketsDetails.title}</h3>

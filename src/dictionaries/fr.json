@@ -1432,6 +1432,17 @@
 						"second": "130,00$",
 						"third": "140,00$",
 						"door": "160,00$"
+					},
+					"carte": {
+						"title": "À la carte",
+						"classes": {
+							"title": "Ateliers samedi OU dimanche",
+							"price": "85,00$/jour"
+						},
+						"friday": { "title": "Danse vendredi", "price": "45,00$" },
+						"saturday": { "title": "Danse samedi", "price": "50,00$" },
+						"sunday": { "title": "Danse dimanche", "price": "30,00$" },
+						"note": "À la carte disponible à la porte seulement."
 					}
 				},
 				"subsidize": {
