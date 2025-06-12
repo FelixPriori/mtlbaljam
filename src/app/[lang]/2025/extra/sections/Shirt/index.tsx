@@ -69,7 +69,7 @@ export default function Shirt({
 				</div>
 				<div className={styles.text}>
 					<p>{shirt.price}</p>
-					{/* <p className={styles.soldOut}>{shirt.soldOut}</p> */}
+					<p className={styles.soldOut}>{shirt.soldOut}</p>
 					<p className={styles.when}>{shirt.when}</p>
 					<div className={styles.description}>
 						<p>{shirt.description}</p>
@@ -86,9 +86,9 @@ export default function Shirt({
 							{keys.map(key => (
 								<li key={key}>{renderInstruction(key)}</li>
 							))}
-							{/* <li className={styles.soldOut}>
+							<li className={styles.soldOut}>
 								<p>{shirt.instructions.soldOut}</p>
-							</li> */}
+							</li>
 						</ul>
 					</div>
 				</div>
