@@ -5,7 +5,6 @@ import { DictionaryType } from '@/app/[lang]/dictionaries'
 type StaffNames = keyof DictionaryType['aboutPage']['staffSection']['staff']
 
 const keys2025: StaffNames[] = [
-	'bree',
 	'cara',
 	'felix',
 	'gab',
@@ -16,7 +15,7 @@ const keys2025: StaffNames[] = [
 	'tania',
 ]
 
-const keys2024: StaffNames[] = ['aronne', 'katya', 'zack', 'sophie']
+const keys2024: StaffNames[] = ['aronne', 'bree', 'katya', 'zack', 'sophie']
 
 export default function StaffSection({
 	staffSection,
