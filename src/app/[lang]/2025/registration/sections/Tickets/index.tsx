@@ -34,7 +34,7 @@ export default function Tickets({
 							<li key={key} className={styles.priceItem}>
 								<span
 									className={
-										key === 'first' || key === 'second' /* || key === 'third' */
+										key === 'first' || key === 'second' || key === 'third'
 											? styles.dashed
 											: ''
 									}
@@ -54,7 +54,7 @@ export default function Tickets({
 							<li key={key} className={styles.priceItem}>
 								<span
 									className={
-										key === 'first' || key === 'second' /* || key === 'third' */
+										key === 'first' || key === 'second' || key === 'third'
 											? styles.dashed
 											: ''
 									}
@@ -74,7 +74,7 @@ export default function Tickets({
 							<li key={key} className={styles.priceItem}>
 								<span
 									className={
-										key === 'first' || key === 'second' /* || key === 'third' */
+										key === 'first' || key === 'second' || key === 'third'
 											? styles.dashed
 											: ''
 									}
