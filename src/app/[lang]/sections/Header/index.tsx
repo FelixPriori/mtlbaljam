@@ -28,14 +28,15 @@ export default function Header({
 						{is2024 ? header.date2024 : header.date}
 					</p>
 					<h1>{header.pageTitle[pageName]}</h1>
-					<a
+					<p>{header.registrationClosed}</p>
+					{/* <a
 						className={styles.registerNow}
 						href="https://mtlbaljam2025.dancecamps.org/booking.php"
 						rel="noreferrer noopener"
 						target="_blank"
 					>
 						{header.registerNow}
-					</a>
+					</a> */}
 				</>
 			)
 		}
@@ -43,21 +44,24 @@ export default function Header({
 			<>
 				<p className={styles.date}>{is2024 ? header.date2024 : header.date}</p>
 				<h1>{header.pageTitle.home}</h1>
-				<a
+				<p>{header.registrationClosed}</p>
+
+				{/* <a
 					className={styles.registerNow}
 					href="https://mtlbaljam2025.dancecamps.org/booking.php"
 					rel="noreferrer noopener"
 					target="_blank"
 				>
 					{header.registerNow}
-				</a>
+				</a> */}
 			</>
 		)
 	}, [
 		header.date,
 		header.date2024,
 		header.pageTitle,
-		header.registerNow,
+		// header.registerNow,
+		header.registrationClosed,
 		pathname,
 	])
 

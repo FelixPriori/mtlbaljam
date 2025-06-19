@@ -59,6 +59,7 @@
 		"title": "MTL BAL JAM",
 		"googleCal": "Save to Google Calendar",
 		"registerNow": "REGISTER NOW!",
+		"registrationClosed": "Online registration closed!",
 		"registerNowAria": "Opens registration page in a new window",
 		"pageTitle": {
 			"home": "Home",
@@ -1398,6 +1399,7 @@
 		"registrationPage": {
 			"title": "Registration",
 			"registerNow": "REGISTER NOW!",
+			"registrationClosed": "Online registration closed!",
 			"registrationSave": {
 				"subtitle": "Registrations open on",
 				"date": "January 16th, 2025",
