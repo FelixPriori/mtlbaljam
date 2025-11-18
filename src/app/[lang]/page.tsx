@@ -64,7 +64,7 @@ export default async function MTLBALJAM({
 	params: Promise<{ lang: Locales }>
 }) {
 	const { lang } = await params
-	const { mainPage, mbj2025, iconAlts } = await getDictionary(lang)
+	const { mainPage, mbj2025, iconAlts, comingSoon } = await getDictionary(lang)
 
 	return (
 		<>
@@ -73,6 +73,7 @@ export default async function MTLBALJAM({
 				workshopsSection={mbj2025.homePage.workshopsSection}
 				venueSection={mbj2025.homePage.venueSection}
 				iconAlts={iconAlts}
+				comingSoon={comingSoon}
 			/>
 		</>
 	)

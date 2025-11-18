@@ -50,11 +50,12 @@
 		"error": "Une erreur s'est produite, veuillez réessayer."
 	},
 	"header": {
-		"date": "20-21-22 juin 2025",
+		"date": "19-20-21 juin 2026",
+		"date2025": "20-21-22 juin 2025",
 		"date2024": "21-22-23 juin 2024",
 		"registration": {
 			"text": "INSCRIPTIONS : ",
-			"date": "18 janvier 2024"
+			"date": "3 février 2026"
 		},
 		"title": "MTL BAL JAM",
 		"googleCal": "Sauvegarder à Google Calendar",
@@ -1968,38 +1969,9 @@
 				}
 			]
 		},
-		"mbj2024": {
-			"title": "MTL BAL JAM 2024",
-			"subtabs": [
-				{
-					"text": "Instructeurs",
-					"href": "/fr/2024/instructors"
-				},
-				{
-					"text": "Musique",
-					"href": "/fr/2024/music"
-				},
-				{
-					"text": "Lieux",
-					"href": "/fr/2024/venue"
-				},
-				{
-					"text": "Compétitions",
-					"href": "/fr/2024/competitions"
-				},
-				{
-					"text": "Inscription",
-					"href": "/fr/2024/registration"
-				},
-				{
-					"text": "Horaire",
-					"href": "/fr/2024/schedule"
-				},
-				{
-					"text": "Extra",
-					"href": "/fr/2024/extra"
-				}
-			]
+		"mbj2026": {
+			"title": "MTL BAL JAM 2026",
+			"subtabs": []
 		},
 		"mbj2025": {
 			"title": "MTL BAL JAM 2025",
@@ -2038,6 +2010,40 @@
 				}
 			]
 		},
+		"mbj2024": {
+			"title": "MTL BAL JAM 2024",
+			"subtabs": [
+				{
+					"text": "Instructeurs",
+					"href": "/fr/2024/instructors"
+				},
+				{
+					"text": "Musique",
+					"href": "/fr/2024/music"
+				},
+				{
+					"text": "Lieux",
+					"href": "/fr/2024/venue"
+				},
+				{
+					"text": "Compétitions",
+					"href": "/fr/2024/competitions"
+				},
+				{
+					"text": "Inscription",
+					"href": "/fr/2024/registration"
+				},
+				{
+					"text": "Horaire",
+					"href": "/fr/2024/schedule"
+				},
+				{
+					"text": "Extra",
+					"href": "/fr/2024/extra"
+				}
+			]
+		},
+
 		"travel": {
 			"title": "Voyage",
 			"subtabs": [
@@ -2091,17 +2097,17 @@
 	"mainPage": {
 		"title": "Instructeurs",
 		"firstInstructors": {
-			"instructorsNames": "Lucía & Javi",
-			"shortBio": "Pour eux, danser le balboa est un jeu continuel avec la musique et le plaisir de la danse jazz dans sa forme la plus pure...",
+			"instructorsNames": "Annoncés bientôt !",
+			"shortBio": "Plus de détails sous peu.",
 			"linkText": "Plus de détails...",
-			"cutoutAlt": "Photo de Lucía & Javi",
+			"cutoutAlt": "Point d'intérrogation",
 			"link": "/2025/instructors"
 		},
 		"secondInstructors": {
-			"instructorsNames": "Neus & Albert",
-			"shortBio": "Ils pratiquent la danse équilibrée qui est une technique de danse en couple qui permet aux deux partenaires de s’exprimer avec la même liberté et de construire ensemble la danse sur une base d’égalité, de partage et de ressenti de la musique dans cet espace co-créé...",
+			"instructorsNames": "Annoncés bientôt !",
+			"shortBio": "Plus de détails sous peu.",
 			"linkText": "Plus de détails...",
-			"cutoutAlt": "Photo de Neus & Albert",
+			"cutoutAlt": "Point d'intérrogation",
 			"link": "/2025/instructors"
 		}
 	},

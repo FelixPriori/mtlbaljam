@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { DictionaryType } from '../../dictionaries'
 import LinesCircle from '@/assets/svgs/lines-circle'
 import HalfCircle from '@/assets/svgs/half-circle'
@@ -20,38 +20,38 @@ export default function MainSection({
 				<div className={`${styles.instructors} ${styles.first}`}>
 					<div className={`${styles.cutout} ${styles.firsCutout}`}>
 						<Image
-							src="/lucia-javi-square.png"
+							src="/tba-2.png"
 							alt={mainPage.firstInstructors.cutoutAlt}
-							width={1920}
-							height={1005}
+							width={1080}
+							height={1080}
 						/>
 					</div>
 					<div className={styles.text}>
 						<h3>{mainPage.firstInstructors.instructorsNames}</h3>
 						<p>{mainPage.firstInstructors.shortBio}</p>
-						<Link className={styles.link} href={mainPage.firstInstructors.link}>
+						{/* <Link className={styles.link} href={mainPage.firstInstructors.link}>
 							{mainPage.firstInstructors.linkText}
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 				<div className={`${styles.instructors} ${styles.second}`}>
 					<div className={`${styles.cutout} ${styles.secondCutout}`}>
 						<Image
-							src="/neus-albert-square.png"
+							src="/tba-1.png"
 							alt={mainPage.secondInstructors.cutoutAlt}
-							width={1376}
-							height={1113}
+							width={1080}
+							height={1080}
 						/>
 					</div>
 					<div className={styles.text}>
 						<h3>{mainPage.secondInstructors.instructorsNames}</h3>
 						<p>{mainPage.secondInstructors.shortBio}</p>
-						<Link
+						{/* <Link
 							className={styles.link}
 							href={mainPage.secondInstructors.link}
 						>
 							{mainPage.secondInstructors.linkText}
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 			</div>
