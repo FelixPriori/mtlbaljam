@@ -16,15 +16,31 @@ export default function NavLinks({
 	const pathname = usePathname()
 	const slug = getSlugFromPathname(pathname)
 
+	const orderOfNav = Object.keys(navigation)
+		.filter(key => key !== 'title')
+		.sort((a, b) => {
+			if (a === 'about') {
+				return -1
+			}
+			if (a === 'travel') {
+				return 1
+			}
+			const year1 = a.split('202')[1]
+			const year2 = b.split('202')[1]
+			if (year1 < year2) {
+				return 1
+			}
+			return -1
+		})
+
 	return (
 		<div className={styles.navLinksWrapper}>
 			<div className={styles.toasterWrapper}>
 				<h2 className={styles.title}>{navigation.title}</h2>
 			</div>
 			<ul className={styles.navLinks}>
-				{Object.keys(navigation).map(tab => {
+				{orderOfNav.map(tab => {
 					const isOpen = tab === toggledTab
-					if (tab === 'title') return
 					return (
 						<NavTab
 							key={tab}
