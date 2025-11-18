@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { localizationMiddleware } from './localization-middleware'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	return localizationMiddleware(request)
 }
 
