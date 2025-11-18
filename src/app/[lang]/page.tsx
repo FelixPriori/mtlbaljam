@@ -13,8 +13,8 @@ export async function generateMetadata(props: Props) {
 	const siteUrl = `https://www.mtlbaljam.org/${lang}`
 	if (lang === 'fr') {
 		return {
-			title: 'MTL BAL JAM 2025',
-			description: 'MTL BAL JAM 2025',
+			title: 'MTL BAL JAM 2026',
+			description: 'MTL BAL JAM 2026',
 			alternates: {
 				canonical: siteUrl,
 			},
@@ -28,15 +28,15 @@ export async function generateMetadata(props: Props) {
 						height: 512,
 					},
 				],
-				title: 'MTL BAL JAM 2025',
+				title: 'MTL BAL JAM 2026',
 				locale: 'fr',
-				description: 'MTL BAL JAM 2025',
+				description: 'MTL BAL JAM 2026',
 			},
 		}
 	} else {
 		return {
-			title: 'MTL BAL JAM 2025',
-			description: 'MTL BAL JAM 2025',
+			title: 'MTL BAL JAM 2026',
+			description: 'MTL BAL JAM 2026',
 			alternates: {
 				canonical: siteUrl,
 			},
@@ -50,9 +50,9 @@ export async function generateMetadata(props: Props) {
 						height: 512,
 					},
 				],
-				title: 'MTL BAL JAM 2025',
+				title: 'MTL BAL JAM 2026',
 				locale: 'en',
-				description: 'MTL BAL JAM 2025',
+				description: 'MTL BAL JAM 2026',
 			},
 		}
 	}
