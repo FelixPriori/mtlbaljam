@@ -4,7 +4,6 @@ import Navigation from './components/Navigation'
 import { Footer, Header } from './sections'
 import { Locales, locales } from '@/i18n'
 import { getDictionary } from './dictionaries'
-import { ReactElement } from 'react'
 import '@/app/[lang]/globals.css'
 
 export function generateStaticParams() {
@@ -28,11 +27,8 @@ const josephinSans = Josefin_Sans({
 export default async function LocaleLayout({
 	children,
 	params,
-}: {
-	children: ReactElement
-	params: Promise<{ lang: Locales }>
-}) {
-	const { lang } = await params
+}: LayoutProps<'/[lang]'>) {
+	const lang = (await params).lang as Locales
 
 	const { header, copyright, iconAlts, navigation } = await getDictionary(lang)
 
