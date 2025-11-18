@@ -25,16 +25,16 @@ const josephinSans = Josefin_Sans({
 	variable: '--font-josephin-sans',
 })
 
-export default async function LocaleLayout(props: {
+export default async function LocaleLayout({
+	children,
+	params,
+}: {
 	children: ReactElement
 	params: Promise<{ lang: Locales }>
 }) {
-	const params = await props.params
+	const { lang } = await params
 
-	const { lang } = params
 	const { header, copyright, iconAlts, navigation } = await getDictionary(lang)
-
-	const { children } = props
 
 	return (
 		<html lang={lang}>
