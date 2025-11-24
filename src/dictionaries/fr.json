@@ -1567,6 +1567,28 @@
 			}
 		}
 	},
+	"mbj2026": {
+		"instructorsPage": {
+			"title": "Instructeurs",
+			"firstInstructors": {
+				"instructorsNames": "Irina & Natalia",
+				"biography": [
+					"Rien n’apporte plus de joie à Irina (elle/accords féminins) que de partager la danse et bâtir la communauté. Depuis qu’elle a découvert le Lindy Hop à 15 ans, elle adore la danse sociale, une passion qui inclut le Balboa, le Collegiate Shag, le Solo Jazz et le West Coast Swing. Élevée dans le sud de la Californie, elle se considère chanceuse d’avoir appris dans une scène influencée par certains des meilleurs danseurs, enseignants et musiciens au monde.",
+					"Irina a depuis été récompensée pour sa danse à Camp Hollywood, le International Lindy Hop Championships, le California Balboa Classic et le All Balboa Weekend. Elle est aussi membre du Camp Hollywood Hall of Fame depuis 2019 et le California Swing Dance Hall of Fame depuis 2022. Elle a enseigné à travers les États Unis, l’Europe, l’Asie et l’Australie. Elle considère tout aussi important le travail qu’elle fait à Salt Lake City, où elle est co-organisatrice du Salt City Swing avec son partenaire de vie et de danse Anthony Chen. Elle considère qu’une partie la plus récompensante de son parcours est de s’investir dans sa scène de danse locale en enseignant, organisant et en créant des espaces pour permettre aux gens de tisser des liens.",
+					"En tant qu’enseignante, Irina est patiente, encourageante et facile d’accès. Son but est d’inspirer les étudiant.e.s à valoriser les bases et la culture des danses qu’elle enseigne, tout en célébrant l’individualité, l’expression et la confiance avec le mouvement.",
+					"Mon nom est Natalia (elle/accords féminins), je suis une danseuse de jazz, enseignante et interprète de la Californie du Sud, qui vit actuellement à St. Louis, au Missouri. Je danse depuis la majeure partie de ma vie, mais j’ai découvert la danse Swing en Californie du Sud en 2010 lorsque j’avais 17 ans. J’ai d’abord eu un coup de cœur pour le Balboa et le Lindy Hop, puis je me suis aventurée vers le Solo Jazz, le Collegiate Shag et le St. Louis Shag. Ce que j’aime le plus de la danse swing c'est la musique et la liberté d'improviser par le mouvement que ce soit en solo ou avec partenaire. Je me sens privilégiée de faire partie d’une communauté où l'on crée ensemble avec les autres que ce soit en cours, en danse sociale ou lors d'un jam et qui est, selon moi, une expérience magnifique et vulnérable."
+				],
+				"cutoutAlt": "Photo de Irina et Natalia",
+				"link": ""
+			},
+			"secondInstructors": {
+				"instructorsNames": "Annoncés bientôt !",
+				"biography": "Plus de détails sous peu.",
+				"cutoutAlt": "Point d'intérrogation",
+				"link": ""
+			}
+		}
+	},
 	"visitingPage": {
 		"title": "À manger et à boire",
 		"travelBlogSection": {
@@ -1971,7 +1993,12 @@
 		},
 		"mbj2026": {
 			"title": "MTL BAL JAM 2026",
-			"subtabs": []
+			"subtabs": [
+				{
+					"text": "Instructeurs",
+					"href": "/fr/2026/instructors"
+				}
+			]
 		},
 		"mbj2025": {
 			"title": "MTL BAL JAM 2025",
@@ -2097,8 +2124,11 @@
 	"mainPage": {
 		"title": "Instructeurs",
 		"firstInstructors": {
-			"instructorsNames": "Annoncés bientôt !",
-			"shortBio": "Plus de détails sous peu.",
+			"instructorsNames": "Irina & Natalia",
+			"shortBio": [
+				"Irina (elle/accords féminins) danse le swing depuis qu’elle a 15 ans, ce qui est tout à la fois « il y a longtemps » et « comme si c’était hier ». Elle s’est plongée profondément dans le Lindy Hop, le Balboa, le Collegiate Shag ainsi que le Solo Jazz et, depuis récemment, le West Coast Swing. Elle enseigne, participe à des compétitions et coorganise Salt City Swing à Salt Lake City avec son mari, Anthony Chen. Elle adore tellement danser socialement qu’elle oublie parfois de boire, manger et de prendre des pauses. Elle reste sur le plancher de danse jusqu’à ce que la musique s’arrête… ou qu’elle s’écroule !",
+				"Mon nom est Natalia (elle/accords féminins), je suis une danseuse de jazz, enseignante et interprète de la Californie du Sud, qui vit actuellement à St. Louis, au Missouri. Je danse depuis la majeure partie de ma vie, mais j’ai découvert la danse Swing en Californie du Sud en 2010 lorsque j’avais 17 ans. J’ai d’abord eu un coup de cœur pour le Balboa et le Lindy Hop, puis je me suis aventurée vers le Solo Jazz, le Collegiate Shag et le St. Louis Shag. Ce que j’aime le plus de la danse swing c'est la musique et la liberté d'improviser par le mouvement que ce soit en solo ou avec partenaire. Je me sens privilégiée de faire partie d’une communauté où l'on crée ensemble avec les autres que ce soit en cours, en danse sociale ou lors d'un jam et qui est, selon moi, une expérience magnifique et vulnérable."
+			],
 			"linkText": "Plus de détails...",
 			"cutoutAlt": "Point d'intérrogation",
 			"link": "/2025/instructors"

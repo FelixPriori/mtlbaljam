@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
-// import Link from 'next/link'
+import Link from 'next/link'
 import { DictionaryType } from '../../dictionaries'
 import LinesCircle from '@/assets/svgs/lines-circle'
 import HalfCircle from '@/assets/svgs/half-circle'
@@ -20,7 +20,7 @@ export default function MainSection({
 				<div className={`${styles.instructors} ${styles.first}`}>
 					<div className={`${styles.cutout} ${styles.firsCutout}`}>
 						<Image
-							src="/tba-2.png"
+							src="/irina-natalia.png"
 							alt={mainPage.firstInstructors.cutoutAlt}
 							width={1080}
 							height={1080}
@@ -28,10 +28,12 @@ export default function MainSection({
 					</div>
 					<div className={styles.text}>
 						<h3>{mainPage.firstInstructors.instructorsNames}</h3>
-						<p>{mainPage.firstInstructors.shortBio}</p>
-						{/* <Link className={styles.link} href={mainPage.firstInstructors.link}>
+						{mainPage.firstInstructors.shortBio.map(line => (
+							<p key={line}>{line}</p>
+						))}
+						<Link className={styles.link} href={mainPage.firstInstructors.link}>
 							{mainPage.firstInstructors.linkText}
-						</Link> */}
+						</Link>
 					</div>
 				</div>
 				<div className={`${styles.instructors} ${styles.second}`}>
