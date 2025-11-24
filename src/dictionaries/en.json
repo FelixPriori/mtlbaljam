@@ -1555,6 +1555,28 @@
 			}
 		}
 	},
+	"mbj2026": {
+		"instructorsPage": {
+			"title": "Instructors",
+			"firstInstructors": {
+				"instructorsNames": "Irina & Natalia",
+				"biography": [
+					"Nothing brings Irina (she/her) more joy than sharing a dance and building community. Since discovering Lindy Hop at 15, she has been a lifelong lover of social dancing — a passion that grew to include Balboa, Collegiate Shag, Solo Jazz, and West Coast Swing. Raised in Southern California, she feels fortunate to have learned in a scene shaped by some of the world’s finest dancers, teachers, and musicians.",
+					"Irina’s dancing has since earned recognition at Camp Hollywood, the International Lindy Hop Championships, the California Balboa Classic, and All Balboa Weekend, and she is honored to be a member of both the Camp Hollywood Hall of Fame (2019) and the California Swing Dance Hall of Fame (2022). She has also taught across the U.S., Asia, Europe, and Australia. Just as meaningful is her work in Salt Lake City, where she co-leads Salt City Swing with her partner in both dance and life, Anthony Chen. Investing in her local scene — teaching, organizing, and creating space for others to connect — has been one of the most rewarding parts of her journey.",
+					"As a teacher, Irina strives to be patient, encouraging, and approachable. Her goal is to inspire students to value the foundations and culture of these dances while also celebrating individuality, expression, and confidence through movement.",
+					"My name is Natalia (she/her) and I am a jazz dancer, teacher and performer from Southern California and based in St. Louis, Missouri. I have been dancing most of my life but discovered Swing dance in Southern California in 2010 when I was 17 years old, falling in love first with Balboa and Lindy Hop and soon after venturing out into Solo Jazz, Collegiate Shag and St. Louis Shag. What I love most about Swing dance is the music and the freedom to improvise through movement, whether solo or with a partner. Being a part of this community and creating together with others, whether in a class, social dance or jam setting is a beautiful and vulnerable experience that I feel privileged to be a part of."
+				],
+				"cutoutAlt": "Irina & Natalia's photo",
+				"link": ""
+			},
+			"secondInstructors": {
+				"instructorsNames": "To be announced soon!",
+				"biography": "More information coming soon",
+				"cutoutAlt": "Question mark",
+				"link": ""
+			}
+		}
+	},
 	"visitingPage": {
 		"title": "Food & Drinks",
 		"travelBlogSection": {
@@ -1959,7 +1981,12 @@
 		},
 		"mbj2026": {
 			"title": "MTL BAL JAM 2026",
-			"subtabs": []
+			"subtabs": [
+				{
+					"text": "Instructors",
+					"href": "/en/2026/instructors"
+				}
+			]
 		},
 		"mbj2025": {
 			"title": "MTL BAL JAM 2025",
@@ -2085,10 +2112,13 @@
 	"mainPage": {
 		"title": "Instructors",
 		"firstInstructors": {
-			"instructorsNames": "To be announced soon!",
-			"shortBio": "More information coming soon",
+			"instructorsNames": "Irina & Natalia",
+			"shortBio": [
+				"Irina (she/her) has been swing dancing since she was 15, which is somehow both “a while ago” and “just yesterday.” She has immersed herself deeply in Lindy Hop, Balboa, Collegiate Shag, Solo Jazz, and, most recently, West Coast Swing. She teaches, competes, and co-runs Salt City Swing in Salt Lake City with her lovely husband, Anthony Chen. As a lifelong lover of social dancing,  when the music and the connection are right, she will happily forgo food, water, and any breaks, staying on the dance floor until the music stops… or she collapses.",
+				"My name is Natalia (she/her) and I am a jazz dancer, teacher and performer from Southern California and based in St. Louis, Missouri. I have been dancing most of my life but discovered Swing dance in Southern California in 2010 when I was 17 years old, falling in love first with Balboa and Lindy Hop and soon after venturing out into Solo Jazz, Collegiate Shag and St. Louis Shag. What I love most about Swing dance is the music and the freedom to improvise through movement, whether solo or with a partner. Being a part of this community and creating together with others, whether in a class, social dance or jam setting is a beautiful and vulnerable experience that I feel privileged to be a part of."
+			],
 			"linkText": "Learn more...",
-			"cutoutAlt": "Question mark",
+			"cutoutAlt": "Irina & Natalia",
 			"link": "/2026/instructors"
 		},
 		"secondInstructors": {

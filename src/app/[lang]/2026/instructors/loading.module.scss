@@ -1,0 +1,19 @@
+.header {
+    min-height: 400px;
+    height: 50vh;
+    background-color: var(--mbj-color-chartreuse);
+}
+
+.instructors {
+    background-color: var(--mbj-color-black);
+    padding: 40px 0;
+
+    .yt {
+        min-height: 300px;
+    }
+}
+
+.footer {
+    height: 5rem;
+    background-color: var(--mbj-color-salmon);
+}
