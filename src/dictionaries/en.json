@@ -1570,9 +1570,12 @@
 				"link": ""
 			},
 			"secondInstructors": {
-				"instructorsNames": "To be announced soon!",
-				"biography": "More information coming soon",
-				"cutoutAlt": "Question mark",
+				"instructorsNames": "Fancy & Albert",
+				"biography": [
+					"Hailing from Los Angeles, California, Fancy (a birth name) fell in love with Lindy and Shag in 2008, with Balboa trailing not far behind. She’s been hooked ever since, constantly endeavoring to improve her technique on a never-ending quest for connection, improvisational freedom in social dancing and the true jitterbug spirit. She has performed, competed in and taught Lindy, Balboa and Shag all over the world, and is a five-time winner of the National Jitterbug Championships in the shag division. She loves to dance with new people and beginners, so be sure to ask her to dance!",
+					"Albert has loved to dance since he was a child, and in 1996 finally discovered folk dancing. Then one magical evening in 2000, between waltzes at Plaça del Rei in Barcelona, he was invited to a swing dance. That’s when he started dancing lindy. Enthralled with social dancing, he discovered balboa in 2005, and towards the end of 2006, he and Gloria and began teaching this amazing dance locally and growing the scene in Barcelona. In 2011, they started teaching international workshops, and in June 2014 during a competition in the US, Albert had a personal crisis that made him question whether the way he danced was consistent with who he was and how he felt about partner dancing. That’s when he decided to embark on a different path."
+				],
+				"cutoutAlt": "Fancy & Albert's photo",
 				"link": ""
 			}
 		}
@@ -2122,10 +2125,13 @@
 			"link": "/2026/instructors"
 		},
 		"secondInstructors": {
-			"instructorsNames": "To be announced soon!",
-			"shortBio": "More information coming soon",
+			"instructorsNames": "Fancy & Albert",
+			"shortBio": [
+				"Hailing from Los Angeles, California, Fancy (a birth name) fell in love with Lindy and Shag in 2008, with Balboa trailing not far behind. She’s been hooked ever since, constantly endeavoring to improve her technique on a never-ending quest for connection, improvisational freedom in social dancing and the true jitterbug spirit. She has performed, competed in and taught Lindy, Balboa and Shag all over the world, and is a five-time winner of the National Jitterbug Championships in the shag division. She loves to dance with new people and beginners, so be sure to ask her to dance!",
+				"Albert has loved to dance since he was a child, and in 1996 finally discovered folk dancing. Then one magical evening in 2000, between waltzes at Plaça del Rei in Barcelona, he was invited to a swing dance. That’s when he started dancing lindy. Enthralled with social dancing, he discovered balboa in 2005, and towards the end of 2006, he and Gloria and began teaching this amazing dance locally and growing the scene in Barcelona. In 2011, they started teaching international workshops, and in June 2014 during a competition in the US, Albert had a personal crisis that made him question whether the way he danced was consistent with who he was and how he felt about partner dancing. That’s when he decided to embark on a different path."
+			],
 			"linkText": "Learn more...",
-			"cutoutAlt": "Question mark",
+			"cutoutAlt": "Fancy & Albert's photo",
 			"link": "/2026/instructors"
 		}
 	},
