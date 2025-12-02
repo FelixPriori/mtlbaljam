@@ -69,11 +69,11 @@ export default function InstructorsSection({
 						</a> */}
 					</div>
 				</div>
-				{/* <div className={styles.instructor}>
+				<div className={styles.instructor}>
 					<div className={styles.youtubeWrapper}>
 						{hasWindow ? (
 							<ReactPlayer
-								url="https://www.youtube.com/watch?v=v8RIcdyC608"
+								url="https://youtu.be/-d8zICnuJFw?si=Oj2-Q-aMt4qKPwR3&t=296"
 								config={{
 									playerVars: {
 										showInfo: 1,
@@ -95,15 +95,17 @@ export default function InstructorsSection({
 					</div>
 					<div className={styles.cutout}>
 						<Image
-							src="/neusalbert.png"
+							src="/fancy-albert.png"
 							alt={instructorsPage.secondInstructors.cutoutAlt}
-							width={1376}
-							height={1113}
+							width={1080}
+							height={1080}
 						/>
 					</div>
 					<div className={styles.text}>
 						<h3>{instructorsPage.secondInstructors.instructorsNames}</h3>
-						<p>{instructorsPage.secondInstructors.biography}</p>
+						{instructorsPage.secondInstructors.biography.map(line => (
+							<p key={line}>{line}</p>
+						))}
 						<a
 							target="_blank"
 							rel="norefferer"
@@ -112,7 +114,7 @@ export default function InstructorsSection({
 							{instructorsPage.secondInstructors.link}
 						</a>
 					</div>
-				</div> */}
+				</div>
 			</div>
 		</section>
 	)

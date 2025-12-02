@@ -39,7 +39,7 @@ export default function MainSection({
 				<div className={`${styles.instructors} ${styles.second}`}>
 					<div className={`${styles.cutout} ${styles.secondCutout}`}>
 						<Image
-							src="/tba-1.png"
+							src="/fancy-albert.png"
 							alt={mainPage.secondInstructors.cutoutAlt}
 							width={1080}
 							height={1080}
@@ -47,13 +47,15 @@ export default function MainSection({
 					</div>
 					<div className={styles.text}>
 						<h3>{mainPage.secondInstructors.instructorsNames}</h3>
-						<p>{mainPage.secondInstructors.shortBio}</p>
-						{/* <Link
+						{mainPage.secondInstructors.shortBio.map(line => (
+							<p key={line}>{line}</p>
+						))}
+						<Link
 							className={styles.link}
 							href={mainPage.secondInstructors.link}
 						>
 							{mainPage.secondInstructors.linkText}
-						</Link> */}
+						</Link>
 					</div>
 				</div>
 			</div>
