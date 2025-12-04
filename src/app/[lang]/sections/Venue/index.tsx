@@ -11,7 +11,7 @@ export default function Venue({
 	comingSoon,
 }: {
 	workshopsSection: DictionaryType['mbj2025']['homePage']['workshopsSection']
-	venueSection: DictionaryType['mbj2025']['homePage']['venueSection']
+	venueSection: DictionaryType['mbj2026']['homePage']['venueSection']
 	iconAlts: DictionaryType['iconAlts']
 	comingSoon: DictionaryType['comingSoon']
 }) {
@@ -41,10 +41,10 @@ export default function Venue({
 
 				<div className={styles.text}>
 					<h2>{venueSection.title}</h2>
-					<p>{comingSoon.title}</p>
-					{/* <Link href={venueSection.learnMore.href}>
+					{/* <p>{comingSoon.title}</p> */}
+					<Link href={venueSection.learnMore.href}>
 						{venueSection.learnMore.text}
-					</Link> */}
+					</Link>
 				</div>
 
 				<IconBox

@@ -1568,6 +1568,32 @@
 		}
 	},
 	"mbj2026": {
+		"homePage": {
+			"workshopsSection": {
+				"title": "Ateliers",
+				"description": "À MTL BAL JAM, les deux groupes sont conçus pour s’adapter à différents styles et préférences d’apprentissage, plutôt qu’à des niveaux d’expérience. Aucun groupe n’est plus avancé que l’autre, chacun propose une approche unique pour explorer le Balboa. Que vous préfériez approfondir quelques sujets ou explorer une variété de concepts, l’objectif est de permettre à chacun.e de progresser à son propre rythme et selon ses intérêts. Choisissez le groupe qui correspond le mieux à votre style d’apprentissage et à vos envies !",
+				"learnMore": {
+					"text": "Plus de détails...",
+					"href": "/2026/tracks"
+				}
+			},
+			"musicSection": {
+				"title": "Musique",
+				"bandName": "Michaël Srey Legacy Band",
+				"description": "Live band basé à Montréal / Tiohtià:ke, il regroupe un collectif de musicien.nes de la scène jazz locale. Allant jusqu'à 9 instrumentistes sur scène, il a coeur de partager les plus inspirantes compositions et arrangements du répertoire big band.",
+				"learnMore": {
+					"text": "Plus de détails...",
+					"href": "/2025/music"
+				}
+			},
+			"venueSection": {
+				"title": "Lieux",
+				"learnMore": {
+					"text": "Découvrir notre salle...",
+					"href": "/2026/venue"
+				}
+			}
+		},
 		"instructorsPage": {
 			"title": "Instructeurs",
 			"firstInstructors": {
@@ -1589,6 +1615,164 @@
 				],
 				"cutoutAlt": "Photo de Albert et Fancy",
 				"link": ""
+			}
+		},
+		"tracksPage": {
+			"title": "Groupes",
+			"description": "À MTL BAL JAM, les deux groupes sont conçus pour s’adapter à différents styles et préférences d’apprentissage, plutôt qu’à des niveaux d’expérience. Aucun groupe n’est plus avancé que l’autre, chacun propose une approche unique pour explorer le Balboa. Que vous préfériez approfondir quelques sujets ou explorer une variété de concepts, l’objectif est de permettre à chacun.e de progresser à son propre rythme et selon ses intérêts. Choisissez le groupe qui correspond le mieux à votre style d’apprentissage et à vos envies !",
+			"tracks": [
+				{
+					"title": "Élargir",
+					"description": "Le groupe élargir est parfait pour les danseur.euse.s qui aiment la variété et souhaitent goûter à un peu de tout. Ce groupe offre un éventail de sujets pour vous garder motivé.e et curieux.se. Avec l’accompagnement dynamique de nos professeur.e.s invité.e.s, vous explorerez un mélange de concepts, de techniques et de styles conçus pour élargir votre répertoire en Balboa. Idéal pour ceux.celles qui aiment explorer de multiples saveurs sans s’attarder trop longtemps sur un seul plat !"
+				},
+				{
+					"title": "Approfondir",
+					"description": "Le groupe approfondir est idéal pour les danseur.euse.s qui souhaitent savourer la richesse et la profondeur du Balboa. Ce groupe se concentre sur quelques sujets spécifiques, permettant aux participant.e.s de les explorer en détail. Sous la direction experte de nos professeur.e.s invité.e.s, vous aurez l’occasion de perfectionner votre technique, d’approfondir votre compréhension et de vous immerger dans les subtilités de cette danse. Parfait pour ceux.celles qui aiment se concentrer sur les saveurs complexes du Balboa à un rythme enrichissant et réfléchi."
+				}
+			],
+			"level": {
+				"title": "Niveau requis",
+				"content": {
+					"details": [
+						"Ceci est un atelier de balboa pour tous niveaux qui nécessite tout de même de connaître les bases du Balboa. C'est-à-dire qu’il faut avoir pris quelques mois de cours réguliers avant de s’inscrire aux ateliers, afin d’éviter que vous vous sentiez dépassé durant les ateliers et pour permettre aux autres participant.e.s de se concentrer sur ce qui est enseigné.",
+						"Si l’un ou plusieurs de ces concepts vous sont inconnus, s’il vous plaît considérez vous inscrire à des cours de Balboa dans votre scène locale !"
+					],
+					"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
+				}
+			}
+		},
+		"venuePage": {
+			"cats": {
+				"title": "Danses et ateliers",
+				"position": {
+					"lat": "45.5325875",
+					"lng": "-73.5520898"
+				},
+				"markerTitle": "Cat's Corner",
+				"infoWindowText": "Cat's Corner, 1956 Rue Frontenac, Montréal, QC H2K 2Z1",
+				"venueName": "Cat's Corner",
+				"venueDescription": [
+					"Nous sommes extrêmement fiers d’annoncer une collaboration avec le Cat’s Corner pour l’édition 2026 de MTL BAL JAM. En effet, ils ont accepté de nous accueillir dans leur espace pour le weekend de l’événement.",
+					"Situés en face de la station de métro Frontenac, nous aurons droit à un excellent plancher parfait pour le Balboa."
+				],
+				"venueAddress": "1956 Rue Frontenac, Montréal, QC H2K 2Z1",
+				"venueWebsite": "https://www.catscorner.ca/",
+				"cutoutAlt": "Photo du Cat's Corner"
+			}
+		},
+		"musicPage": {
+			"liveMusic": {
+				"title": "Musique live",
+				"bandName": "Michaël Srey Legacy Band",
+				"biography": [
+					"Le Michaël Srey Legacy Band est un groupe regroupant un collectif allant jusqu'à 11 musicien.nes professionnel.les de la scène jazz  de Montréal/Tiohtià:ke. Le groupe a déjà plusieurs concerts à son actif et sa réputation est grandissante.",
+					"Le band connait ses standards et intègre les compositions des grands noms du jazz : Louis Armstrong, Duke Ellington, Fletcher Henderson, Mary Lou Williams mais aussi Jimmy Smith, Quincy Jones ou encore Oscar Peterson. Curieux également des différentes influences et autres développements de cet art, le groupe intègre au sein de son répertoire d'autres musiques provenant des mêmes sources et faisant une part belle au rythme, à l'improvisation et à la danse comme la beguine ou le mambo.",
+					"Michaël Srey sélectionne, arrange et retranscrit avec soin chaque morceau principalement issu du répertoire big band. Ainsi, le groupe s'est constitué d'un répertoire unique, fait sur mesure et comprend des morceaux inédits ajoutés régulièrement aux pupitres.es.",
+					"La qualité de ses musicien.nes ainsi que la composition du groupe lui donnent une grande polyvalence et lui permettent de traverser l'histoire du swing et de ses différents styles : second line de la Nouvelle Orléans, early jazz, swing era, blues, be bop, hard bop ...",
+					"Attachée à la précision et aux couleurs des arrangements iconiques des big bands, la section cuivre fait rutiler chacune de ses notes et la section rythmique vrombir le plancher de l'auditoire."
+				],
+				"link": "https://www.michaelsrey.com/",
+				"logoAlt": "Logo du Michaël Srey Legacy Band"
+			},
+			"djMusic": {
+				"title": "DJs",
+				"djs": {
+					"felix": {
+						"name": "Felix",
+						"djName": "DJ Can't Stop The Felix",
+						"pronouns": "Il/Accords masculins",
+						"biography": "Félix s'intéresse à la musique depuis toujours. Dans sa quête sans fin pour comprendre la musique à un niveau plus profond, il a commencé à danser le swing en 2013. Geek autoproclamé de la musique, il a étudié le chant, la composition et l'arrangement du jazz. Il adore réfléchir et parler de DJ et il est toujours à la recherche des meilleurs morceaux swing.",
+						"image": {
+							"src": "/felix.jpg",
+							"alt": "Photo de Felix"
+						}
+					},
+					"gab": {
+						"name": "Gabrielle",
+						"djName": "DJ Kern Down For What?!",
+						"pronouns": "Elle/Accords féminins",
+						"biography": "Gabrielle adore jouer de la musique qui fait sortir les danseurs sur la piste et les y maintient ! Sa passion est la musique qui vous émeut, qu'il s'agisse de blues, de jazz vintage ou de morceaux plus soul et funky. Attention, sa musique vous incitera souvent à danser bien après que vos pieds ne soient plus capables de continuer !",
+						"image": {
+							"src": "/gabrielle.png",
+							"alt": "Photo de Gabrielle"
+						}
+					},
+					"dan": {
+						"name": "Dan",
+						"djName": "DJ Dan",
+						"pronouns": "Il/Accords masculins",
+						"biography": "Dan est un vétéran du DJ avec une passion éternelle pour la musique. Il DJ parce qu'il aime partager sa musique, inspirer les danseur.euses et parce qu'il aime influencer le courant de la danse. Il a joué pour des événements à travers 4 continents et est invité régulièrement aussi bien pour des événements internationaux que pour des petites danses locales. Il a été DJ en chef pour des événements tels que BluesSHOUT! et The Balboa/Blues Experiment.",
+						"image": {
+							"src": "/dan-dj.png",
+							"alt": "Photo de Dan, crédit: Braden Nesin"
+						}
+					}
+				}
+			}
+		},
+		"competitionsPage": {
+			"title": "Compétitions",
+			"scheduleNote": "Notez que l'horaire des compétitions est sujet à changements.",
+			"competitionNote": "Le MTL BAL JAM veut prioriser la danse sociale. Pour ce faire, nous allons nous efforcer pour que nos compétitions ne prenne pas plus de temps que nécessaire de la danse sociale. Cela dit, nous planifions plusieurs prix et surprises pour les compétiteurs.ices et nous restons certains que nos compétitions demeureront agréables pour tout le monde, tant pour les participants.es que pour le public !",
+			"mixAndMatchSection": {
+				"title": "Mix & Match Ouvert",
+				"information": {
+					"priceTitle": "Coût : ",
+					"price": "à venir",
+					"prelims": {
+						"title": "Prélims",
+						"timeTitle": "Quand : ",
+						"time": "À venir",
+						"bpmTitle": "Tempo : ",
+						"bpm": "180 à 220 BPM / chanson",
+						"description": "Vous vous inscrivez seul.e.s, vous êtes jugé.e.s individuellement et vous dansez avec un.e partenaire différent pour chaque chanson."
+					},
+					"finals": {
+						"title": "Finales",
+						"timeTitle": "Quand : ",
+						"time": "À venir",
+						"bpmTitle": "Tempo : ",
+						"bpm": "190 à 230 BPM / chanson",
+						"description": "Les finales auront lieu en duo spotlight afin de donner à tous.tes les finalistes une chance de briller et il y aura un changement de partenaire sans interruption à la moitié du spotlight. Il y aura un all-skate avec des rotations sans interruptions. Vous êtes jugé.e.s individuellement."
+					}
+				}
+			},
+			"musicSection": {
+				"title": "Musique",
+				"description": "Notre équipe de DJs prendra le temps de choisir soigneusement toutes les chansons en suivant les standards de compétitions de balboa internationales. Si la compétition compote plus d’une vague en prélim, nous nous assurerons que les chansons se ressemblent afin que les participants.es aient une chance égale."
+			},
+			"judgesSection": {
+				"title": "Juges",
+				"judges": {
+					"irina": {
+						"name": "Irina",
+						"image": {
+							"src": "/irina.png",
+							"alt": "Photo de Irina"
+						}
+					},
+					"natalia": {
+						"name": "Natalia",
+						"image": {
+							"src": "/natalia.png",
+							"alt": "Photo de Natalia"
+						}
+					},
+					"fancy": {
+						"name": "Fancy",
+						"image": {
+							"src": "/fancy.png",
+							"alt": "Photo de Fancy"
+						}
+					},
+					"albert": {
+						"name": "Albert",
+						"image": {
+							"src": "/albert.jpg",
+							"alt": "Photo de Albert"
+						}
+					}
+				}
 			}
 		}
 	},
@@ -2000,6 +2184,22 @@
 				{
 					"text": "Instructeurs",
 					"href": "/fr/2026/instructors"
+				},
+				{
+					"text": "Ateliers",
+					"href": "/fr/2026/tracks"
+				},
+				{
+					"text": "Lieux",
+					"href": "/fr/2026/venue"
+				},
+				{
+					"text": "Musique",
+					"href": "/fr/2026/music"
+				},
+				{
+					"text": "Compétitions",
+					"href": "/fr/2026/competitions"
 				}
 			]
 		},
