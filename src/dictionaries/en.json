@@ -1556,6 +1556,32 @@
 		}
 	},
 	"mbj2026": {
+		"homePage": {
+			"workshopsSection": {
+				"title": "Workshops",
+				"description": "At MTL BAL JAM, both tracks are designed to cater to different learning styles and preferences rather than levels of experience. There isn’t a track that is more advanced than the other—each offers a unique approach to exploring Balboa. Whether you prefer to dive deep into a few topics or to explore a variety of concepts, the goal is to ensure that everyone can grow and learn at their own pace in a way that resonates with them. Choose the track that best matches your personal learning style and interests!",
+				"learnMore": {
+					"text": "Learn more...",
+					"href": "/2026/tracks"
+				}
+			},
+			"musicSection": {
+				"title": "Music",
+				"bandName": "Michaël Srey Legacy Band",
+				"description": "A live band based in Montréal / Tiohtià:ke, it brings together a collective of musicians from the local jazz scene. With up to 9 instrumentalists on stage, he is keen to share the most inspiring compositions and arrangements of the big band repertoire.",
+				"learnMore": {
+					"text": "Learn more...",
+					"href": "/2026/music"
+				}
+			},
+			"venueSection": {
+				"title": "Venue",
+				"learnMore": {
+					"text": "Check out our venue...",
+					"href": "/2026/venue"
+				}
+			}
+		},
 		"instructorsPage": {
 			"title": "Instructors",
 			"firstInstructors": {
@@ -1577,6 +1603,164 @@
 				],
 				"cutoutAlt": "Fancy & Albert's photo",
 				"link": ""
+			}
+		},
+		"tracksPage": {
+			"level": {
+				"title": "Level requirement",
+				"content": {
+					"details": [
+						"This is an all levels workshop with a caveat: to participate, you should know the basics of Balboa, meaning you should have taken a couple of months of Balboa lessons before registering. This is to ensure that you do not find yourself overwhelmed and that other attendees can focus on what is being taught.",
+						"Look at the list of balboa concepts below and if you do not have the basics required yet, please consider taking regular classes in your local dance scene instead."
+					],
+					"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
+				}
+			},
+			"title": "Tracks",
+			"description": "At MTL BAL JAM, both tracks are designed to cater to different learning styles and preferences rather than levels of experience. There isn’t a track that is more advanced than the other—each offers a unique approach to exploring Balboa. Whether you prefer to dive deep into a few topics or to explore a variety of concepts, the goal is to ensure that everyone can grow and learn at their own pace in a way that resonates with them. Choose the track that best matches your personal learning style and interests!",
+			"tracks": [
+				{
+					"title": "Breadth",
+					"description": "The Breadth track is perfect for dancers who crave variety and want to sample a little bit of everything. This track offers a wide range of topics to keep you energized and curious. You’ll experience a medley of concepts and techniques, all designed to expand your Balboa palate. Ideal for those who enjoy exploring many flavours without staying on one dish for too long."
+				},
+				{
+					"title": "Depth",
+					"description": "The Depth Track is designed for dancers who want to savor the richness and depth of Balboa. This track focuses on a select few topics, allowing participants to explore them in detail. You'll have the opportunity to refine your technique, deepen your understanding, and truly immerse yourself in the nuances of the dance. Perfect for those who enjoy focusing on the intricate flavors of Balboa and prefer a steady, enriching pace."
+				}
+			]
+		},
+		"venuePage": {
+			"cats": {
+				"title": "Dances & Workshops",
+				"position": {
+					"lat": "45.5325875",
+					"lng": "-73.5520898"
+				},
+				"markerTitle": "Cat's Corner",
+				"infoWindowText": "Cat's Corner, 1956 Rue Frontenac, Montréal, QC H2K 2Z1",
+				"venueName": "Cat's Corner",
+				"venueDescription": [
+					"We are extremely excited to announce a collaboration with Cat’s Corner for MTL BAL JAM 2026. Indeed, they have accepted to act as our gracious hosts and will be welcoming us in their space for the weekend of the event.",
+					"Conveniently located across from Frontenac metro station, the venue features an amazing dance floor perfect to dance Balboa!"
+				],
+				"venueAddress": "1956 Rue Frontenac, Montréal, QC H2K 2Z1",
+				"venueWebsite": "https://www.catscorner.ca/",
+				"cutoutAlt": "Photo of Cat's Corner"
+			}
+		},
+		"musicPage": {
+			"liveMusic": {
+				"title": "Live music",
+				"bandName": "Michaël Srey Legacy Band",
+				"biography": [
+					"The Michaël Srey Legacy Band is a collective of up to 11 professional musicians from the Montréal / Tiohtià:ke jazz scene. The group already has several concerts under its belt and its reputation is growing.",
+					"The band knows its standards and includes the compositions of the great names in jazz: Louis Armstrong, Duke Ellington, Fletcher Henderson, Mary Lou Williams but also Jimmy Smith, Quincy Jones and Oscar Peterson. Equally curious about the different influences and developments of this art form, the band's repertoire includes other music from the same sources, with a strong emphasis on rhythm, improvisation and dance such as beguine or mambo.",
+					"Michaël Srey carefully selects, arranges and transcribes each piece mainly from the big band repertoire. Thus, the band has created a unique, tailor-made repertoire with new pieces regularly added to the music stands.",
+					"The quality of its musicians as well as the composition of the group give it great versatility and allow it to traverse the history of swing and its various styles: second line of New Orleans, early jazz, swing era, blues, be bop, hard bop…",
+					"Dedicated to the precision and colors of the iconic arrangements of big bands, the horn section makes each of its notes shine and the rhythm section roars across the dance floor."
+				],
+				"link": "https://www.michaelsrey.com/",
+				"logoAlt": "Michaël Srey Legacy Band Logo"
+			},
+			"djMusic": {
+				"title": "DJs",
+				"djs": {
+					"felix": {
+						"name": "Felix",
+						"djName": "DJ Can't Stop The Felix",
+						"pronouns": "He/Him",
+						"biography": "Felix has been interested in music his whole life. In his never-ending quest to understand music on a deeper level, he started swing dancing in 2013. Self-proclaimed music geek, he studied Jazz vocals, composition and arranging. He loves to think about, talk about, and breathe DJing, and he is always on the lookout for the best swinging tunes.",
+						"image": {
+							"src": "/felix.jpg",
+							"alt": "Photo of Felix"
+						}
+					},
+					"gab": {
+						"name": "Gabrielle",
+						"djName": "DJ Kern Down For What?!",
+						"pronouns": "She/Her",
+						"biography": "Gabrielle loves playing music that gets dancers out on the floor and keeps them there! Her passion is music that moves you, be it blues, vintage jazz, or more soulful, funky tunes. Be careful, her music will often inspire you to dance long after your feet would have called it a night.",
+						"image": {
+							"src": "/gabrielle.png",
+							"alt": "Photo of Gabrielle"
+						}
+					},
+					"dan": {
+						"name": "Dan",
+						"djName": "DJ Dan",
+						"pronouns": "He/Him",
+						"biography": "Dan is a veteran DJ with a lifelong musical obsession. He DJs because he loves sharing music, inspiring dancers, and shaping a dance night. He’s spun for events across 4 continents, regularly playing everything from international events to local dances. He's also worked as the Head DJ for events such as BluesSHOUT! and The Balboa/Blues Experiment.",
+						"image": {
+							"src": "/dan-dj.png",
+							"alt": "Photo of Dan. Credit: Braden Nesin"
+						}
+					}
+				}
+			}
+		},
+		"competitionsPage": {
+			"title": "Competitions",
+			"scheduleNote": "Please note that the schedule for competitions is subject to change.",
+			"competitionNote": "MTL BAL JAM wants to prioritize social dancing! As such, we will make sure that competitions run smoothly and that they do not interfere with the social dance more than they have to. That being said, we have many prizes and surprises planned for competitors, and we can say with absolute confidence that our competitions will be a treat for everyone whether you are watching or participating!",
+			"mixAndMatchSection": {
+				"title": "Open Mix & Match",
+				"information": {
+					"priceTitle": "Price: ",
+					"price": "TBD",
+					"prelims": {
+						"title": "Prelims",
+						"timeTitle": "When: ",
+						"time": "TBD",
+						"bpmTitle": "Tempo: ",
+						"bpm": "180 to 220 BPM / song",
+						"description": "You register on your own, are judged individually, and dance with a different partner for each song."
+					},
+					"finals": {
+						"title": "Finals",
+						"timeTitle": "When: ",
+						"time": "TBD",
+						"bpmTitle": "Tempo: ",
+						"bpm": "190 to 230 BPM / song",
+						"description": "The finals will take place in dual spotlights to give all finalists a chance to shine, and there will be a partner rotation mid-song without interrupting the dance. There will be an all-skate at the end with partner rotations without interrupting the dance. You will be judged individually."
+					}
+				}
+			},
+			"musicSection": {
+				"title": "Music",
+				"description": "Every song is carefully picked by our team of DJs, and will follow the standards of international balboa competitions. If there are many heats in the prelims, we will make sure to have similar songs and tempos across heats so that everyone gets a fair chance."
+			},
+			"judgesSection": {
+				"title": "Judges",
+				"judges": {
+					"irina": {
+						"name": "Irina",
+						"image": {
+							"src": "/irina.png",
+							"alt": "Photo de Irina"
+						}
+					},
+					"natalia": {
+						"name": "Natalia",
+						"image": {
+							"src": "/natalia.png",
+							"alt": "Photo de Natalia"
+						}
+					},
+					"fancy": {
+						"name": "Fancy",
+						"image": {
+							"src": "/fancy.png",
+							"alt": "Photo de Fancy"
+						}
+					},
+					"albert": {
+						"name": "Albert",
+						"image": {
+							"src": "/albert.jpg",
+							"alt": "Photo de Albert"
+						}
+					}
+				}
 			}
 		}
 	},
@@ -1988,6 +2172,22 @@
 				{
 					"text": "Instructors",
 					"href": "/en/2026/instructors"
+				},
+				{
+					"text": "Workshops",
+					"href": "/en/2026/tracks"
+				},
+				{
+					"text": "Venue",
+					"href": "/en/2026/venue"
+				},
+				{
+					"text": "Music",
+					"href": "/en/2026/music"
+				},
+				{
+					"text": "Competitions",
+					"href": "/en/2026/competitions"
 				}
 			]
 		},
