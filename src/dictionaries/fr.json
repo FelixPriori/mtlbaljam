@@ -1617,6 +1617,82 @@
 				"link": ""
 			}
 		},
+		"registrationPage": {
+			"title": "Inscriptions",
+			"registerNow": "INSCRIVEZ-VOUS !",
+			"registrationClosed": "Inscriptions en ligne fermée !",
+			"registrationSave": {
+				"subtitle": "Les inscriptions débutent le",
+				"date": "16 janvier 2025",
+				"text": "Réservez la date!"
+			},
+			"tickets": {
+				"title": "Détails des laissez-passer",
+				"fullPass": "Laissez-passer complet",
+				"partyPass": "Laissez-passer festif",
+				"classPass": "Laissez-passer d’ateliers",
+				"level": {
+					"title": "Niveau requis",
+					"content": {
+						"details": "Ceci est un atelier de balboa pour tous niveaux qui nécessite tout de même de connaître les bases de la danse. Les débutants sont les bienvenus aux danses sociales, mais il faut avoir pris quelques mois de cours réguliers avant de s’inscrire aux ateliers. Nous voulons ainsi éviter que vous vous sentiez dépassé durant les ateliers et permettre aux autres participants de se concentrer sur ce qui est enseigné. Si l’un ou plusieurs de ces mots clés vous sont inconnus, s’il vous plaît considérez vous inscrire à des cours de balboa dans votre scène locale !",
+						"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
+					}
+				},
+				"ticketsDetails": {
+					"title": "À l'achat d'un laissez-passer",
+					"full": "6 heures d'ateliers,Soirée de danse du vendredi avec band annoncé sous peu,Soirée de danse du samedi avec le Michael Srey Legacy Band,Soirée « late night » du samedi,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées",
+					"party": "Soirée de danse du vendredi avec band annoncé sous peu,Soirée de danse du samedi avec le Michael Srey Legacy Band,Soirée « late night » du samedi,Soirée de danse du dimanche,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées",
+					"class": "6 heures d'ateliers,Des collations croustillantes durant tout le weekend,Plus de surprises et activités sociales seront annoncées"
+				},
+				"priceCalendar": {
+					"title": "Menu des prix",
+					"note": "Note: il ne sera plus possible de s’inscrire en ligne à partir du 15 juin.",
+					"dates": {
+						"first": "Du 3 au 6 février inclusivement",
+						"second": "Du 7 février au 31 mars inclusivement",
+						"third": "Du 1er avril au 14 juin inclusivement",
+						"door": "À la porte"
+					},
+					"full": {
+						"first": "210,00$",
+						"second": "240,00$",
+						"third": "260,00$",
+						"door": "280,00$"
+					},
+					"party": {
+						"first": "115,00$",
+						"second": "115,00$",
+						"third": "125,00$",
+						"door": "135,00$"
+					},
+					"class": {
+						"first": "140,00$",
+						"second": "140,00$",
+						"third": "150,00$",
+						"door": "170,00$"
+					}
+				},
+				"subsidize": {
+					"title": "Aider quelqu’un à participer",
+					"description": "Il est possible d'aider une personne qui n'a pas les moyens de s'offrir un laissez-passer complet en faisant un don lors de votre inscription. S’il vous plaît, écrivez-nous à {{email}} si une aide financière vous permettrait de participer à MTL BAL JAM.",
+					"eligibilityTitle": "Critères et directives",
+					"eligibility": [
+						"L’aide s’applique uniquement aux laissez-passer complets, de soirées ou d’ateliers.",
+						"Les demandes doivent être soumises avant l'inscription. L'aide financière ne peut pas rembourser des laissez-passer déjà achetés.",
+						"Vous pouvez demander une aide totale ou partielle selon un modèle « payez ce que vous pouvez ».",
+						"L’aide peut être combinée avec des opportunités de bénévolat.",
+						"Les fonds restants seront utilisés pour aider les participant.e.s de l’année prochaine.",
+						"L’aide financière ne couvre pas les achats supplémentaires, tels que les articles promotionnels, les compétitions ou les visites guidées."
+					]
+				},
+				"terms": {
+					"title": "Conditions générales",
+					"content": "{{link}} pour en savoir plus sur nos conditions générales. Conditions incluses: code de conduite, consentement médiatique, décharge de responsabilité, respect du matériel, changements majeurs, politique COVID-19 et autres infections respiratoires, politique d'hébergement, politique de remboursement, paiements, aide financière.",
+					"link": "https://docs.google.com/document/d/1aTzEW1yvG6ddAsQRz9aTwY0imb9kZZVf6usP_AZAPsI/edit?usp=sharing",
+					"linkText": "Cliquez ici"
+				}
+			}
+		},
 		"tracksPage": {
 			"title": "Groupes",
 			"description": "À MTL BAL JAM, les deux groupes sont conçus pour s’adapter à différents styles et préférences d’apprentissage, plutôt qu’à des niveaux d’expérience. Aucun groupe n’est plus avancé que l’autre, chacun propose une approche unique pour explorer le Balboa. Que vous préfériez approfondir quelques sujets ou explorer une variété de concepts, l’objectif est de permettre à chacun.e de progresser à son propre rythme et selon ses intérêts. Choisissez le groupe qui correspond le mieux à votre style d’apprentissage et à vos envies !",
@@ -2184,6 +2260,10 @@
 				{
 					"text": "Instructeurs",
 					"href": "/fr/2026/instructors"
+				},
+				{
+					"text": "Inscriptions",
+					"href": "/fr/2025/registration"
 				},
 				{
 					"text": "Ateliers",

@@ -1605,6 +1605,75 @@
 				"link": ""
 			}
 		},
+		"registrationPage": {
+			"title": "Registration",
+			"registerNow": "REGISTER NOW!",
+			"registrationClosed": "Online registration closed!",
+			"registrationSave": {
+				"subtitle": "Registrations open on",
+				"date": "January 16th, 2025",
+				"text": "Save the date!"
+			},
+			"tickets": {
+				"title": "Ticket details",
+				"fullPass": "Full pass",
+				"partyPass": "Party pass",
+				"classPass": "Learner's pass",
+				"ticketsDetails": {
+					"title": "Tickets include",
+					"full": "6 hours of workshops,Friday evening social dance with band TBA,Saturday evening social dance with the Michael Srey Legacy Band,Saturday late night extravaganza,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced",
+					"party": "Friday evening social dance with band TBA,Saturday evening social dance with the Michael Srey Legacy Band,Saturday late night extravaganza,Sunday evening dance,Toasty snacks throughout the weekend,More surprises and social activities to be announced",
+					"class": "6 hours of workshops,Toasty snacks throughout the weekend,More surprises and social activities to be announced"
+				},
+				"priceCalendar": {
+					"title": "Price Menu",
+					"note": "Note: online registration will be closed starting June 15th.",
+					"dates": {
+						"first": "From February 3rd until February 6th inclusively",
+						"second": "From February 7th until March 31st inclusively",
+						"third": "From April 1st until June 14th inclusively",
+						"door": "At the door"
+					},
+					"full": {
+						"first": "$210.00",
+						"second": "$240.00",
+						"third": "$260.00",
+						"door": "$280.00"
+					},
+					"party": {
+						"first": "$115.00",
+						"second": "$115.00",
+						"third": "$130.00",
+						"door": "$135.00"
+					},
+					"class": {
+						"first": "$140.00",
+						"second": "$140.00",
+						"third": "$150.00",
+						"door": "$170.00"
+					}
+				},
+				"subsidize": {
+					"title": "Help someone attend MTL BAL JAM",
+					"description": "It is possible to help someone attend MTL BAL JAM by donating during registration. If you need financial assistance to attend MTL BAL JAM, please contact us at {{email}}.",
+					"eligibilityTitle": "Eligibility and Guidelines",
+					"eligibility": [
+						"Assistance applies to Full Passes, Dance Passes, or Learner Passes only.",
+						"Requests must be submitted before registering. Financial aid cannot reimburse already purchased passes.",
+						"You can request full or partial aid using a \"pay-what-you-can\" model.",
+						"Aid can be combined with volunteering opportunities.",
+						"Any leftover funds will go toward helping people attend next year’s event.",
+						"Financial aid does not cover extra purchases, such as merchandise, competitions, or guided tours."
+					]
+				},
+				"terms": {
+					"title": "Terms & Conditions",
+					"content": "{{link}} to learn more about our terms & conditions. These terms include: code of conduct, media consent, liability, respect of property, major changes, COVID-19 and other respiratory infections policy, hosting policy, reimbursement policy, payments, financial aid.",
+					"link": "https://docs.google.com/document/d/1aTzEW1yvG6ddAsQRz9aTwY0imb9kZZVf6usP_AZAPsI/edit?usp=sharing",
+					"linkText": "Click here"
+				}
+			}
+		},
 		"tracksPage": {
 			"level": {
 				"title": "Level requirement",
@@ -2172,6 +2241,10 @@
 				{
 					"text": "Instructors",
 					"href": "/en/2026/instructors"
+				},
+				{
+					"text": "Registration",
+					"href": "/en/2026/registration"
 				},
 				{
 					"text": "Workshops",

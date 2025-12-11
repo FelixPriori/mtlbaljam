@@ -26,7 +26,7 @@ export default function StaffSection({
 		<section className={styles.staffSection}>
 			<h2 className={styles.title}>{staffSection.title}</h2>
 			<div className={styles.content}>
-				<h3>2025 & 2024</h3>
+				<h3>2026</h3>
 				<div className={styles.cards}>
 					{keys2025.map(key => (
 						<FeatureCard
@@ -44,7 +44,7 @@ export default function StaffSection({
 						</FeatureCard>
 					))}
 				</div>
-				<h3>2024</h3>
+				<h3>2024, 2025</h3>
 				<div className={styles.cards}>
 					{keys2024.map(key => (
 						<FeatureCard
