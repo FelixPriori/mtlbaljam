@@ -4,7 +4,7 @@ import { DictionaryType } from '@/app/[lang]/dictionaries'
 
 type DJs = keyof DictionaryType['mbj2026']['musicPage']['djMusic']['djs']
 
-const keys: DJs[] = ['felix', 'gab', 'dan']
+const keys: DJs[] = ['felix', 'gab', 'dan', 'david']
 
 export default function DJs({
 	djMusic,

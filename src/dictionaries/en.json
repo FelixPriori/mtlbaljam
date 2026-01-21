@@ -1763,6 +1763,16 @@
 							"src": "/dan-dj.png",
 							"alt": "Photo of Dan. Credit: Braden Nesin"
 						}
+					},
+					"david": {
+						"name": "David",
+						"djName": "DJ Loose Lid David",
+						"pronouns": "He/Him",
+						"biography": "David started DJing at his university swing dance club in 2017. He loves fast swing music, especially recordings of live performances for dancers. In fact, it was the great music that first drew him to Balboa! He's always ready to geek out about a tune, and has too many favourite tracks to share!",
+						"image": {
+							"src": "/david.jpg",
+							"alt": "Photo of David"
+						}
 					}
 				}
 			}
@@ -2433,7 +2443,7 @@
 		"success": "Message sent successfully",
 		"error": "Something went wrong."
 	},
-	"copyright": "©2025 Campus Balboa",
+	"copyright": "©2026 Campus Balboa",
 	"iconAlts": {
 		"loaf": "Loaf of bread icon",
 		"knife": "Butterknife icon",
