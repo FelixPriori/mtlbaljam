@@ -7,6 +7,7 @@ import {
 	SlowBal,
 	Intro,
 	PureBal,
+	Strictly,
 } from './sections'
 import { Locales } from '@/i18n'
 import { getDictionary } from '../../dictionaries'
@@ -84,6 +85,7 @@ export default async function MbjCompetitions({
 			<MixAndMatch
 				mixAndMatchSection={mbj2026.competitionsPage.mixAndMatchSection}
 			/>
+			<Strictly strictlySection={mbj2026.competitionsPage.strictlySection} />
 			{/* <PureBal pureBalSection={mbj2026.competitionsPage.pureBalSection} /> */}
 			{/* <SlowBal slowBalSection={mbj2026.competitionsPage.slowBalSection} /> */}
 			<Judges judgesSection={mbj2026.competitionsPage.judgesSection} />
