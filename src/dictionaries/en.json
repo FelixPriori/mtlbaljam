@@ -1775,7 +1775,7 @@
 				"title": "Open Mix & Match",
 				"information": {
 					"priceTitle": "Price: ",
-					"price": "TBD",
+					"price": "$25.00",
 					"prelims": {
 						"title": "Prelims",
 						"timeTitle": "When: ",
@@ -1792,6 +1792,18 @@
 						"bpm": "190 to 230 BPM / song",
 						"description": "The finals will take place in dual spotlights to give all finalists a chance to shine, and there will be a partner rotation mid-song without interrupting the dance. There will be an all-skate at the end with partner rotations without interrupting the dance. You will be judged individually."
 					}
+				}
+			},
+			"strictlySection": {
+				"title": "Balboa Strictly",
+				"information": {
+					"priceTitle": "Price: ",
+					"price": "$50.00",
+					"formatTitle": "Format: ",
+					"format": "Tap-in (prelims) & Spotlight (finals)",
+					"timeTitle": "When: ",
+					"time": "Sunday, June 22, 2025, around 11:00 PM",
+					"description": "In the Balboa Strictly, you sign up with a partner, but you don't choose what music you will be dancing to!"
 				}
 			},
 			"musicSection": {
@@ -1830,6 +1842,46 @@
 						}
 					}
 				}
+			}
+		},
+		"extrasPage": {
+			"shirt": {
+				"title": "\"Jam on Toast\" T-shirt",
+				"price": "Price: TBA",
+				"soldOut": "Sold out",
+				"images": {
+					"previewSrc": "/shirt-2026.png",
+					"previewAlt": "A preview of all the MTL BAL JAM shirt cuts"
+				},
+				"when": "Note: the last day to order your t-shirt is May 15th.",
+				"description": "We are committed to being Eco-Responsible, ethical and respectful of the environment. Our t-shirts which are:",
+				"list": "Printed in Montreal,100% organic cotton & GOTS certified (Global Organic Textile Standard),Plastic and synthetic-free",
+				"credit": "Thanks to {{credit}} an excellent local designer the design.",
+				"link": "https://www.instagram.com/alyssa_bobyssa",
+				"how": "How to get your own \"Jam on Toast\" shirt:",
+				"instructions": {
+					"register": { "text": "Directly while", "linkText": "registering" },
+					"edit": "If already registered: you can edit your registration form and add one",
+					"contact": {
+						"text": "Contact us via email at ",
+						"linkText": "mtlbaljam@campusbalboa.org"
+					},
+					"soldOut": "Sold out"
+				}
+			},
+			"shoebag": {
+				"title": "\"Let's Jam\" Shoe Bag",
+				"price": "Price: $15.00 CAD",
+				"soldOut": "Sold out",
+				"images": {
+					"previewSrc": "/shoe-bag.png",
+					"previewAlt": "A preview of the \"Let's Jam\" Shoe Bag"
+				},
+				"when": "Note: the \"Let's Jam\" Shoe Bag will be available for purchase at the front desk during the weekend.",
+				"description": "We are committed to being Eco-Responsible, ethical and respectful of the environment. Our shoe bags which are:",
+				"list": "Printed in Montreal,100% organic cotton & GOTS certified (Global Organic Textile Standard),Plastic and synthetic-free",
+				"credit": "Thanks to {{credit}} an excellent local designer for the awesome design.",
+				"link": "https://www.instagram.com/youlia.moments/"
 			}
 		}
 	},
@@ -2261,6 +2313,10 @@
 				{
 					"text": "Competitions",
 					"href": "/en/2026/competitions"
+				},
+				{
+					"text": "Extra",
+					"href": "/en/2026/extra"
 				}
 			]
 		},
