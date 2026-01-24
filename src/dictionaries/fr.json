@@ -1876,7 +1876,7 @@
 		"extrasPage": {
 			"shirt": {
 				"title": "T-shirt « Jam on Toast »",
-				"price": "Prix : à venir",
+				"price": "Prix : 37,50 $",
 				"soldOut": "Rupture de stock",
 				"images": {
 					"previewSrc": "/shirt-2026.png",
@@ -1904,7 +1904,7 @@
 			"shoebag": {
 				"title": "Sac à chaussures «Let's Jam»",
 				"price": "Prix: 15,00 $ CAD",
-				"soldOut": "Sold out",
+				"soldOut": "Rupture de stock",
 				"images": {
 					"previewSrc": "/shoe-bag.png",
 					"previewAlt": "Un apperçu du sac à chaussures «Let's Jam»"
@@ -1914,6 +1914,31 @@
 				"list": "Imprimés à Montréal,Coton 100 % biologique certifié GOTS (Global Organic Textile Standard),Sans plastique et aucune matière synthétiques",
 				"credit": "Merci à {{credit}}, créatrice local pour le merveilleux design",
 				"link": "https://www.instagram.com/youlia.moments/"
+			},
+			"towel": {
+				"title": "Serivette à mains en microfibre",
+				"price": "Prix: 17,50 $ CAD",
+				"soldOut": "Rupture de stock",
+				"images": {
+					"previewSrc": "/mtlbaljam-towel.png",
+					"previewAlt": "Un apperçu de la serviette à mains en microfibre"
+				},
+				"when": "Attention ! La dernière journée pour commander votre serviette est le 15 mai.",
+				"description": "Nos serviettes sont :",
+				"list": "Fabriquées au Canada,Imprimées à Montreal/Tiohtià:ke,Microfibres de polyester (80% Polyester / 20% Nylon),12\"x12\"",
+				"how": "Comment obtenir sa propre serviette :",
+				"instructions": {
+					"register": {
+						"text": "Directement lors de ",
+						"linkText": "l'inscription"
+					},
+					"edit": "Si déja inscrit.e : en modifiant le formulaire d’inscription",
+					"contact": {
+						"text": "En nous contactant à ",
+						"linkText": "mtlbaljam@campusbalboa.org"
+					},
+					"soldOut": "Rupture de stock"
+				}
 			}
 		}
 	},

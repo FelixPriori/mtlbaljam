@@ -1857,7 +1857,7 @@
 		"extrasPage": {
 			"shirt": {
 				"title": "\"Jam on Toast\" T-shirt",
-				"price": "Price: TBA",
+				"price": "Price: $37.50",
 				"soldOut": "Sold out",
 				"images": {
 					"previewSrc": "/shirt-2026.png",
@@ -1892,6 +1892,28 @@
 				"list": "Printed in Montreal,100% organic cotton & GOTS certified (Global Organic Textile Standard),Plastic and synthetic-free",
 				"credit": "Thanks to {{credit}} an excellent local designer for the awesome design.",
 				"link": "https://www.instagram.com/youlia.moments/"
+			},
+			"towel": {
+				"title": "Microfiber Hand Towel",
+				"price": "Price: $17.50 CAD",
+				"soldOut": "Sold out",
+				"images": {
+					"previewSrc": "/mtlbaljam-towel.png",
+					"previewAlt": "A preview of the Microfiber hand towel"
+				},
+				"when": "Note: the last day to order your towel is May 15th.",
+				"description": "Our hand towels are:",
+				"list": "Made in Canada,Printed in Montreal/Tiohtià:ke,Polyester Microfiber (80% Polyester / 20% Nylon),12\"x12\"",
+				"how": "How to get your own towel:",
+				"instructions": {
+					"register": { "text": "Directly while", "linkText": "registering" },
+					"edit": "If already registered: you can edit your registration form and add one",
+					"contact": {
+						"text": "Contact us via email at ",
+						"linkText": "mtlbaljam@campusbalboa.org"
+					},
+					"soldOut": "Sold out"
+				}
 			}
 		}
 	},
