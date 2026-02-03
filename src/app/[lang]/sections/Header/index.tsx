@@ -58,7 +58,7 @@ export default function Header({
 
 				<a
 					className={styles.registerNow}
-					href="https://mtlbaljam2025.dancecamps.org/booking.php"
+					href="https://mtlbaljam2026.dancecamps.org/booking.php"
 					rel="noreferrer noopener"
 					target="_blank"
 				>
