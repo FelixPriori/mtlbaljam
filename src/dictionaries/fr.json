@@ -1739,16 +1739,31 @@
 		"musicPage": {
 			"liveMusic": {
 				"title": "Musique live",
-				"bandName": "Michaël Srey Legacy Band",
-				"biography": [
-					"Le Michaël Srey Legacy Band est un groupe regroupant un collectif allant jusqu'à 11 musicien.nes professionnel.les de la scène jazz  de Montréal/Tiohtià:ke. Le groupe a déjà plusieurs concerts à son actif et sa réputation est grandissante.",
-					"Le band connait ses standards et intègre les compositions des grands noms du jazz : Louis Armstrong, Duke Ellington, Fletcher Henderson, Mary Lou Williams mais aussi Jimmy Smith, Quincy Jones ou encore Oscar Peterson. Curieux également des différentes influences et autres développements de cet art, le groupe intègre au sein de son répertoire d'autres musiques provenant des mêmes sources et faisant une part belle au rythme, à l'improvisation et à la danse comme la beguine ou le mambo.",
-					"Michaël Srey sélectionne, arrange et retranscrit avec soin chaque morceau principalement issu du répertoire big band. Ainsi, le groupe s'est constitué d'un répertoire unique, fait sur mesure et comprend des morceaux inédits ajoutés régulièrement aux pupitres.es.",
-					"La qualité de ses musicien.nes ainsi que la composition du groupe lui donnent une grande polyvalence et lui permettent de traverser l'histoire du swing et de ses différents styles : second line de la Nouvelle Orléans, early jazz, swing era, blues, be bop, hard bop ...",
-					"Attachée à la précision et aux couleurs des arrangements iconiques des big bands, la section cuivre fait rutiler chacune de ses notes et la section rythmique vrombir le plancher de l'auditoire."
-				],
-				"link": "https://www.michaelsrey.com/",
-				"logoAlt": "Logo du Michaël Srey Legacy Band"
+				"cutoutAlt": "Michael Srey",
+				"bands": [
+					{
+						"bandName": "Michaël Srey Legacy Band",
+						"biography": [
+							"Le Michaël Srey Legacy Band est un groupe regroupant un collectif allant jusqu'à 11 musicien.nes professionnel.les de la scène jazz  de Montréal/Tiohtià:ke. Le groupe a déjà plusieurs concerts à son actif et sa réputation est grandissante.",
+							"Le band connait ses standards et intègre les compositions des grands noms du jazz : Louis Armstrong, Duke Ellington, Fletcher Henderson, Mary Lou Williams mais aussi Jimmy Smith, Quincy Jones ou encore Oscar Peterson. Curieux également des différentes influences et autres développements de cet art, le groupe intègre au sein de son répertoire d'autres musiques provenant des mêmes sources et faisant une part belle au rythme, à l'improvisation et à la danse comme la beguine ou le mambo.",
+							"Michaël Srey sélectionne, arrange et retranscrit avec soin chaque morceau principalement issu du répertoire big band. Ainsi, le groupe s'est constitué d'un répertoire unique, fait sur mesure et comprend des morceaux inédits ajoutés régulièrement aux pupitres.es.",
+							"La qualité de ses musicien.nes ainsi que la composition du groupe lui donnent une grande polyvalence et lui permettent de traverser l'histoire du swing et de ses différents styles : second line de la Nouvelle Orléans, early jazz, swing era, blues, be bop, hard bop ...",
+							"Attachée à la précision et aux couleurs des arrangements iconiques des big bands, la section cuivre fait rutiler chacune de ses notes et la section rythmique vrombir le plancher de l'auditoire."
+						],
+						"link": "https://www.michaelsrey.com/",
+						"logoSrc": "/legacy-band-promo.png",
+						"logoAlt": "Logo du Michaël Srey Legacy Band"
+					},
+					{
+						"bandName": "Michael Johancsik Swing Orchestra",
+						"biography": [
+							"Michael Johancsik, originaire de Calgary et désormais basé à Montréal, est un saxophoniste, multi-instrumentaliste, compositeur, arrangeur et enseignant. Influencé dès l’âge de 11 ans par le jazz traditionnel et les ténors de l’époque du swing grâce à son grand-père, il dirige le Michael Johancsik Swing Orchestra, qui joue une joyeuse combinaison de musique des années 30, 40 et 50, à la croisée du jazz et du rhythm & blues, idéale pour danser ou simplement taper du pied."
+						],
+						"link": "https://michaeljohancsik.com/about-me/",
+						"logoSrc": "/johancsik.png",
+						"logoAlt": "Photo de Michael Johancsik"
+					}
+				]
 			},
 			"djMusic": {
 				"title": "DJs",
