@@ -1685,6 +1685,18 @@
 					"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
 				}
 			},
+			"switch": {
+				"title": "Switch class",
+				"content": {
+					"details": [
+						"This 1.5-hour switch class with Irina & Natalia focuses on switching roles mid-dance. It's open to all as an add-on and takes place on Saturday after the regular workshops."
+					],
+					"info": {
+						"price": "Price: $45.00",
+						"when": "Saturday from 4:30 to 6:30 pm"
+					}
+				}
+			},
 			"title": "Tracks",
 			"description": "At MTL BAL JAM, both tracks are designed to cater to different learning styles and preferences rather than levels of experience. There isn’t a track that is more advanced than the other, each offers a unique approach to exploring Balboa. Whether you prefer to dive deep into a few topics or to explore a variety of concepts, the goal is to ensure that everyone can grow and learn at their own pace in a way that resonates with them. Choose the track that best matches your personal learning style and interests!",
 			"tracks": [

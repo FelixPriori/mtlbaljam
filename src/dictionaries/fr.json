@@ -1715,6 +1715,18 @@
 					],
 					"list": "Bal swing,Pure bal,Lollys,Paddle turns,Toss-out,Come around,Swivel,Up-hold,Down-hold,Out and in"
 				}
+			},
+			"switch": {
+				"title": "Cours de switch",
+				"content": {
+					"details": [
+						"Ce cours de 1.5 heure, animé par Irina et Natalia, est consacré à l'inversion des rôles en cours de danse. Il est ouvert à tous et se déroule le samedi après les ateliers habituels."
+					],
+					"info": {
+						"price": "Prix : 45,00 $",
+						"when": "Samedi de 16h30 à 18h00"
+					}
+				}
 			}
 		},
 		"venuePage": {
