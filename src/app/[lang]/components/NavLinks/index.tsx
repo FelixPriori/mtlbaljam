@@ -7,13 +7,39 @@ import { checkIsCurrent, getSlugFromPathname } from '@/util/navigationUtils'
 import { usePathname } from 'next/navigation'
 import { NavigationData, PageTabs } from '../Navigation'
 
+function getDefaultToggledTab(pathname: string, navigation: string[]) {
+	// When the user starts browsing, we need to figure out which navigation
+	// section to have expanded. This applies only when the user loads a page
+	// directly, coming from an external source.
+	//
+	// If the user is viewing a page related to a specific event year, we should
+	// expand that year's navigation section.
+	const yearInPathname = pathname.match(/\d{4}/)
+	if (yearInPathname != null && yearInPathname.length > 0) {
+		const matchingKeys = navigation.filter(key => key.includes(yearInPathname[0]))
+		if (matchingKeys.length == 1) {
+			return matchingKeys[0]
+		}
+	// If the user is on the homepage, we should expand the navigation section
+	// for the most recent event (to make the details more discoverable).
+	} else if (pathname == "/en" || pathname == "/fr") {
+		return navigation.filter(
+			key => /\d{4}/.test(key)
+		).sort().reverse()[0] ?? null
+	}
+	// For all other situations, we won't expand any tab by default.
+	return null
+}
+
 export default function NavLinks({
 	navigation,
 }: {
 	navigation: NavigationData
 }) {
-	const [toggledTab, setToggledTab] = useState<string | null>(null)
 	const pathname = usePathname()
+	const [toggledTab, setToggledTab] = useState<string | null>(
+		getDefaultToggledTab(pathname, Object.keys(navigation))
+	)
 	const slug = getSlugFromPathname(pathname)
 
 	const orderOfNav = Object.keys(navigation)
