@@ -100,7 +100,7 @@
 					"name": "Aronne",
 					"pronouns": "He/Him",
 					"image": {
-						"src": "/aronne.png",
+						"src": "/aronne.jpg",
 						"alt": "Photo of Aronne"
 					}
 				},
@@ -1305,7 +1305,7 @@
 						"pronouns": "He/Him",
 						"biography": "Dan is a veteran DJ with a lifelong musical obsession. He DJs because he loves sharing music, inspiring dancers, and shaping a dance night. He’s spun for events across 4 continents, regularly playing everything from international events to local dances. He's also worked as the Head DJ for events such as BluesSHOUT! and The Balboa/Blues Experiment.",
 						"image": {
-							"src": "/dan-dj.png",
+							"src": "/dan-dj.jpg",
 							"alt": "Photo of Dan. Credit: Braden Nesin"
 						}
 					}
@@ -1787,7 +1787,7 @@
 						"pronouns": "He/Him",
 						"biography": "Dan is a veteran DJ with a lifelong musical obsession. He DJs because he loves sharing music, inspiring dancers, and shaping a dance night. He’s spun for events across 4 continents, regularly playing everything from international events to local dances. He's also worked as the Head DJ for events such as BluesSHOUT! and The Balboa/Blues Experiment.",
 						"image": {
-							"src": "/dan-dj.png",
+							"src": "/dan-dj.jpg",
 							"alt": "Photo of Dan. Credit: Braden Nesin"
 						}
 					},
@@ -1853,21 +1853,21 @@
 					"irina": {
 						"name": "Irina",
 						"image": {
-							"src": "/irina.png",
+							"src": "/irina.jpg",
 							"alt": "Photo de Irina"
 						}
 					},
 					"natalia": {
 						"name": "Natalia",
 						"image": {
-							"src": "/natalia.png",
+							"src": "/natalia.jpg",
 							"alt": "Photo de Natalia"
 						}
 					},
 					"fancy": {
 						"name": "Fancy",
 						"image": {
-							"src": "/fancy.png",
+							"src": "/fancy.jpg",
 							"alt": "Photo de Fancy"
 						}
 					},
@@ -1957,7 +1957,7 @@
 			"sections": {
 				"foodAndDrinks": {
 					"intro": "Park yourself on a colorful bench or take a mural filled stroll with a tasty treat! Here are some of our recommendations:",
-					"image": "/food.png",
+					"image": "/food.jpg",
 					"imageAlt": "Photos of meals and restaurants in Montréal / Tiohtià:ke",
 					"subSections": [
 						{
@@ -2126,7 +2126,7 @@
 				},
 				"sightSeeing": {
 					"intro": "Take a tour around Montréal / Tiohtià:ke from our outdoor markets to some lovely historical sites! Be sure to check out:",
-					"image": "/sightseeing.png",
+					"image": "/sightseeing.jpg",
 					"imageAlt": "Photos of Montréal / Tiohtià:ke landmarks",
 					"subSections": [
 						{

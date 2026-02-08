@@ -100,7 +100,7 @@
 					"name": "Aronne",
 					"pronouns": "Il/Accords masculins",
 					"image": {
-						"src": "/aronne.png",
+						"src": "/aronne.jpg",
 						"alt": "Photo de Aronne"
 					}
 				},
@@ -1070,7 +1070,7 @@
 						"pronouns": "Il/Accords masculins",
 						"biography": "Dan est un vétéran du DJ avec une passion éternelle pour la musique. Il DJ parce qu'il aime partager sa musique, inspirer les danseur.euses et parce qu'il aime influencer le courant de la danse. Il a joué pour des événements à travers 4 continents et est invité régulièrement aussi bien pour des événements internationaux que pour des petites danses locales. Il a été DJ en chef pour des événements tels que BluesSHOUT! et The Balboa/Blues Experiment.",
 						"image": {
-							"src": "/dan-dj.png",
+							"src": "/dan-dj.jpg",
 							"alt": "Photo de Dan, crédit: Braden Nesin"
 						}
 					}
@@ -1806,7 +1806,7 @@
 						"pronouns": "Il/Accords masculins",
 						"biography": "Dan est un vétéran du DJ avec une passion éternelle pour la musique. Il DJ parce qu'il aime partager sa musique, inspirer les danseur.euses et parce qu'il aime influencer le courant de la danse. Il a joué pour des événements à travers 4 continents et est invité régulièrement aussi bien pour des événements internationaux que pour des petites danses locales. Il a été DJ en chef pour des événements tels que BluesSHOUT! et The Balboa/Blues Experiment.",
 						"image": {
-							"src": "/dan-dj.png",
+							"src": "/dan-dj.jpg",
 							"alt": "Photo de Dan, crédit: Braden Nesin"
 						}
 					},
@@ -1872,21 +1872,21 @@
 					"irina": {
 						"name": "Irina",
 						"image": {
-							"src": "/irina.png",
+							"src": "/irina.jpg",
 							"alt": "Photo de Irina"
 						}
 					},
 					"natalia": {
 						"name": "Natalia",
 						"image": {
-							"src": "/natalia.png",
+							"src": "/natalia.jpg",
 							"alt": "Photo de Natalia"
 						}
 					},
 					"fancy": {
 						"name": "Fancy",
 						"image": {
-							"src": "/fancy.png",
+							"src": "/fancy.jpg",
 							"alt": "Photo de Fancy"
 						}
 					},
@@ -1982,7 +1982,7 @@
 			"sections": {
 				"foodAndDrinks": {
 					"intro": "Installez-vous sur un banc coloré ou prennez une marche entre les murales en mangeant une sucrerie ! Voici quelques-unes de nos recommandations :",
-					"image": "/food.png",
+					"image": "/food.jpg",
 					"imageAlt": "Photos de plats et de restaurants à Montréal / Tiohtià:ke",
 					"subSections": [
 						{
@@ -2151,7 +2151,7 @@
 				},
 				"sightSeeing": {
 					"intro": "Visitez la ville de Montréal / Tiohtià:ke depuis les marchés extérieurs jusqu'aux sites historiques ! N'oubliez-pas :",
-					"image": "/sightseeing.png",
+					"image": "/sightseeing.jpg",
 					"imageAlt": "Photos de paysages montréalais",
 					"subSections": [
 						{
