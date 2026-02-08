@@ -4,6 +4,7 @@ import * as dates from 'date-arithmetic'
 import { Locales } from '@/i18n'
 import { enCA, fr } from 'date-fns/locale'
 import TextEvent from './TextEvent'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 import styles from './textEvent.module.scss'
 
 const isBeforeThreeAM = (event: CustomEventType) => {

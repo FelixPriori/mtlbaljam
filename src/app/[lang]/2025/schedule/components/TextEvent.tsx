@@ -1,5 +1,6 @@
 import { format } from 'date-fns'
 import { CustomEventType } from '../sections/Schedule'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 import styles from './textEvent.module.scss'
 
 const formatTime = (date: Date) => format(date, 'hh:mm aa')
