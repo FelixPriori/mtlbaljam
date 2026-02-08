@@ -9,6 +9,7 @@ import { Locales } from '@/i18n'
 import { enCA, fr } from 'date-fns/locale'
 import MBJ2025WeekendNight from './MBJ2025WeekendNight'
 import * as dates from 'date-arithmetic'
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 import './styles.scss'
 import { CustomEventType, CustomParsedEventType } from '../sections/Schedule'
 
