@@ -10,7 +10,7 @@ type Props = {
 
 export async function generateMetadata(props: Props) {
 	const { lang } = await props.params
-	const siteUrl = `https://www.mtlbaljam.org/${lang}`
+	const siteUrl = `https://mtlbaljam.org/${lang}`
 	if (lang === 'fr') {
 		return {
 			title: 'À propos | MTL BAL JAM',
