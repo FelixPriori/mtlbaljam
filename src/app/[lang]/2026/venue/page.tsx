@@ -11,7 +11,7 @@ type Props = {
 export async function generateMetadata(props: Props) {
 	const { lang } = await props.params
 
-	const siteUrl = `https://www.mtlbaljam.org/${lang}/2026`
+	const siteUrl = `https://mtlbaljam.org/${lang}/2026`
 
 	if (lang === 'fr') {
 		return {
