@@ -49,7 +49,7 @@ export default function InstructorsSection({
 					</div>
 					<div className={styles.cutout}>
 						<Image
-							src="/javilucia.png"
+							src="/javilucia.jpg"
 							alt={instructorsPage.firstInstructors.cutoutAlt}
 							width={1920}
 							height={1005}
