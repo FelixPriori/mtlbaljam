@@ -4,7 +4,7 @@ import NavTab from '../NavTab'
 import NavLink from '../NavLink'
 import styles from './styles.module.scss'
 import LanguageSwitcher from '../LanguageSwitcher'
-import { checkIsCurrent, getSlugFromPathname } from '@/util/navigationUtils'
+import { checkIsCurrent } from '@/util/navigationUtils'
 import { usePathname } from 'next/navigation'
 import { NavigationData, PageTabs } from '../Navigation'
 import { Locales } from '@/i18n'
@@ -22,7 +22,6 @@ export default function MobileNavigation({
 	const [isOpen, setIsOpen] = useState(false)
 	const toggle = () => setIsOpen(!isOpen)
 	const pathname = usePathname()
-	const slug = getSlugFromPathname(pathname)
 
 	return (
 		<>
@@ -57,7 +56,7 @@ export default function MobileNavigation({
 										<NavLink
 											key={page.text}
 											hidden={!isTabOpen}
-											isCurrent={checkIsCurrent(page, slug)}
+											isCurrent={checkIsCurrent(page.href, pathname)}
 											mobileToggle={toggle}
 											href={page.href}
 											text={page.text}

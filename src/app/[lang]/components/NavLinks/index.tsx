@@ -3,7 +3,7 @@ import NavLink from '../NavLink'
 import styles from './styles.module.scss'
 import { useState } from 'react'
 import NavTab from '../NavTab'
-import { checkIsCurrent, getSlugFromPathname } from '@/util/navigationUtils'
+import { checkIsCurrent } from '@/util/navigationUtils'
 import { usePathname } from 'next/navigation'
 import { NavigationData, PageTabs } from '../Navigation'
 
@@ -14,7 +14,6 @@ export default function NavLinks({
 }) {
 	const [toggledTab, setToggledTab] = useState<string | null>(null)
 	const pathname = usePathname()
-	const slug = getSlugFromPathname(pathname)
 
 	const orderOfNav = Object.keys(navigation)
 		.filter(key => key !== 'title')
@@ -53,7 +52,7 @@ export default function NavLinks({
 								<NavLink
 									key={page.text}
 									hidden={!isOpen}
-									isCurrent={checkIsCurrent(page, slug)}
+									isCurrent={checkIsCurrent(page.href, pathname)}
 									href={page.href}
 									text={page.text}
 								/>
