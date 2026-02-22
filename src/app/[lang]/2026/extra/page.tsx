@@ -1,6 +1,6 @@
 import Favicon from '@/app/favicon.ico'
 import BigOG from '@/app/opengraph-image.png'
-import { Bag, Shirt, Towel } from './sections'
+import { Bag, Breakfast, Shirt, Towel } from './sections'
 import { Locales } from '@/i18n'
 import { getDictionary } from '../../dictionaries'
 
@@ -76,6 +76,7 @@ export default async function MbjExtra({
 			<Shirt shirt={mbj2026.extrasPage.shirt} lang={lang} />
 			<Bag bag={mbj2026.extrasPage.shoebag} lang={lang} />
 			<Towel towel={mbj2026.extrasPage.towel} />
+			<Breakfast breakfast={mbj2026.extrasPage.breakfast} />
 		</>
 	)
 }

@@ -1966,6 +1966,30 @@
 					},
 					"soldOut": "Rupture de stock"
 				}
+			},
+			"breakfast": {
+				"title": "Déjeuner continental",
+				"price": "Prix: 10,00 $",
+				"soldOut": "Rupture de stock",
+				"images": {
+					"previewSrc": "/continental-breakfast.png",
+					"previewAlt": "Image d'un toast"
+				},
+				"when": "Samedi de 10h30 à midi",
+				"description": "Venez prendre le temps de jaser et de rencontrer les participant.es autour d’un déjeuner continental avant les cours du samedi. Rendez-vous entre 10h30 et midi pour charger vos batteries avant les cours et rencontrer celles et ceux avec qui vous partagerez un week-end de danse inoubliable !",
+				"how": "Comment s'inscrire pour le déjeuner continental :",
+				"instructions": {
+					"register": {
+						"text": "Directement lors de ",
+						"linkText": "l'inscription"
+					},
+					"edit": "Si déja inscrit.e : en modifiant le formulaire d’inscription",
+					"contact": {
+						"text": "En nous contactant à ",
+						"linkText": "mtlbaljam@campusbalboa.org"
+					},
+					"soldOut": "Rupture de stock"
+				}
 			}
 		}
 	},
