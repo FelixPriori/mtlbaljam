@@ -3,7 +3,7 @@ import NavLink from '../NavLink'
 import styles from './styles.module.scss'
 import { useState } from 'react'
 import NavTab from '../NavTab'
-import { checkIsCurrent } from '@/util/navigationUtils'
+import { checkIsCurrent, getDefaultToggledTab } from '@/util/navigationUtils'
 import { usePathname } from 'next/navigation'
 import { NavigationData, PageTabs } from '../Navigation'
 
@@ -12,9 +12,10 @@ export default function NavLinks({
 }: {
 	navigation: NavigationData
 }) {
-	const [toggledTab, setToggledTab] = useState<string | null>(null)
 	const pathname = usePathname()
-
+	const [toggledTab, setToggledTab] = useState<string | null>(
+		getDefaultToggledTab(pathname, navigation)
+	)
 	const orderOfNav = Object.keys(navigation)
 		.filter(key => key !== 'title')
 		.sort((a, b) => {
