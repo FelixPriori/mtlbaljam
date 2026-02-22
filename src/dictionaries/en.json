@@ -1941,6 +1941,27 @@
 					},
 					"soldOut": "Sold out"
 				}
+			},
+			"breakfast": {
+				"title": "Continental breakfast",
+				"price": "Price: $10.00 CAD",
+				"soldOut": "Sold out",
+				"images": {
+					"previewSrc": "/continental-breakfast.png",
+					"previewAlt": "Image with toast"
+				},
+				"when": "Saturday, 10:30 am until noon",
+				"description": "Take the time to get to know MTL BAL JAM participants over a continental breakfast before Saturday's classes. Join us right before classes (10:30 AM to noon) to refuel and recharge with the people who have come to share in this unforgettable weekend of dance!",
+				"how": "How to sign up for the continental breakfast:",
+				"instructions": {
+					"register": { "text": "Directly while", "linkText": "registering" },
+					"edit": "If already registered: you can edit your registration form and add it",
+					"contact": {
+						"text": "Contact us via email at ",
+						"linkText": "mtlbaljam@campusbalboa.org"
+					},
+					"soldOut": "Sold out"
+				}
 			}
 		}
 	},
