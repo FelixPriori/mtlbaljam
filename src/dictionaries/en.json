@@ -1890,7 +1890,7 @@
 					"previewSrc": "/shirt-2026.png",
 					"previewAlt": "A preview of all the MTL BAL JAM shirt cuts"
 				},
-				"when": "Note: the last day to order your t-shirt is May 15th.",
+				"when": "Note: the last day to order your t-shirt is April 30th.",
 				"description": "We are committed to being Eco-Responsible, ethical and respectful of the environment. Our t-shirts which are:",
 				"list": "Printed in Montreal,100% organic cotton & GOTS certified (Global Organic Textile Standard),Plastic and synthetic-free",
 				"credit": "Thanks to {{credit}} an excellent local designer the design.",
@@ -1928,7 +1928,7 @@
 					"previewSrc": "/mtlbaljam-towel.png",
 					"previewAlt": "A preview of the Microfiber hand towel"
 				},
-				"when": "Note: the last day to order your towel is May 15th.",
+				"when": "Note: the last day to order your towel is April 30th.",
 				"description": "Our hand towels are:",
 				"list": "Made in Canada,Printed in Montreal/Tiohtià:ke,Polyester Microfiber (80% Polyester / 20% Nylon),12\"x12\"",
 				"how": "How to get your own towel:",
@@ -1951,6 +1951,7 @@
 					"previewAlt": "Image with toast"
 				},
 				"when": "Saturday, 10:30 am until noon",
+				"preorderBy": "Note: the last day to order breakfast is April 30th.",
 				"description": "Take the time to get to know MTL BAL JAM participants over a continental breakfast before Saturday's classes. Join us right before classes (10:30 AM to noon) to refuel and recharge with the people who have come to share in this unforgettable weekend of dance!",
 				"how": "How to sign up for the continental breakfast:",
 				"instructions": {

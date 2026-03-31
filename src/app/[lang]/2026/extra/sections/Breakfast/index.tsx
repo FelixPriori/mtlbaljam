@@ -62,6 +62,7 @@ export default function Breakfast({
 					<p>{breakfast.price}</p>
 					{/* <p className={styles.soldOut}>{shirt.soldOut}</p> */}
 					<p className={styles.when}>{breakfast.when}</p>
+					<p className={styles.when}>{breakfast.preorderBy}</p>
 					<div className={styles.description}>
 						<p>{breakfast.description}</p>
 					</div>
