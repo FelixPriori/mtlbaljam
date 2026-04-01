@@ -24,6 +24,8 @@ export default function MainSection({
 							alt={mainPage.firstInstructors.cutoutAlt}
 							width={1080}
 							height={1080}
+							loading="eager"
+							priority
 						/>
 					</div>
 					<div className={styles.text}>

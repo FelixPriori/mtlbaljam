@@ -13,7 +13,7 @@
 			"socialMedia": {
 				"facebook": {
 					"id": "fb",
-					"href": "https://www.facebook.com/MontrealBalJam",
+					"href": "https://www.facebook.com/MTLBALJAM",
 					"accessibilityDescription": "Ouvre une nouvelle fenêtre vers la page Facebook de  MTL BAL JAM",
 					"logo": {
 						"url": "/facebook-white.png",
@@ -23,7 +23,7 @@
 				"instagram": {
 					"id": "in",
 					"accessibilityDescription": "Ouvre une nouvelle fenêtre vers la page Instagram de MTL BAL JAM",
-					"href": "https://www.instagram.com/mtlbaljam/",
+					"href": "https://www.instagram.com/MTLBALJAM/",
 					"logo": {
 						"url": "/instagram-white.png",
 						"title": "Logo d'Instagram"
@@ -1581,9 +1581,11 @@
 				"title": "Musique",
 				"bandName": "Michaël Srey Legacy Band",
 				"description": "Live band basé à Montréal / Tiohtià:ke, il regroupe un collectif de musicien.nes de la scène jazz locale. Allant jusqu'à 9 instrumentistes sur scène, il a coeur de partager les plus inspirantes compositions et arrangements du répertoire big band.",
+				"secondBandName": "Michael Johancsik Swing Orchestra",
+				"secondDescription": "Originaire de Calgary et maintenant basé à Montréal, Michael Johancsik dirige un orchestre swing jouant un savoureux mélange de musique des années 30, 40 et 50, au carrefour du jazz et du rhythm & blues, idéal pour danser.",
 				"learnMore": {
 					"text": "Plus de détails...",
-					"href": "/2025/music"
+					"href": "/2026/music"
 				}
 			},
 			"venueSection": {
@@ -1591,6 +1593,90 @@
 				"learnMore": {
 					"text": "Découvrir notre salle...",
 					"href": "/2026/venue"
+				}
+			},
+			"sponsorsSection": {
+				"title": "Partenaires",
+				"sponsors": {
+					"stardust": {
+						"name": "Stardust Slow Balboa Weekend",
+						"link": "https://stardustweekend.com/",
+						"image": {
+							"src": "/stardust.png",
+							"alt": "Logo de Stardust Slow Balboa Weekend"
+						}
+					},
+					"greatLakes": {
+						"name": "Great Lakes Balboa Escape",
+						"link": "https://www.greatlakesbalboaescape.com/",
+						"image": {
+							"src": "/great-lakes.jpg",
+							"alt": "Logo de Great Lakes Balboa Escape"
+						}
+					},
+					"slowDance": {
+						"name": "Slow Dance Soirée",
+						"link": "https://slowdancesoiree.com/",
+						"image": {
+							"src": "/slow-dance-soiree.png",
+							"alt": "Logo de Slow Dance Soirée"
+						}
+					},
+					"balMoment": {
+						"name": "Bal Moment Québec",
+						"link": "https://www.facebook.com/bal.moment/",
+						"image": {
+							"src": "/bal-moment-small.png",
+							"alt": "Logo de Bal Moment Québec"
+						}
+					},
+					"toronto": {
+						"name": "Toronto Bal Weekend",
+						"link": "https://www.torontobalweekend.com/",
+						"image": {
+							"src": "/toronto-bal-weekend.png",
+							"alt": "Logo de Toronto Bal Weekend"
+						}
+					},
+					"swingCalendar": {
+						"name": "Swing Calendar",
+						"link": "https://swingcalendar.com/events",
+						"image": {
+							"src": "/swing-calendar.jpg",
+							"alt": "Logo de Swing Calendar"
+						}
+					},
+					"swingPlanIt": {
+						"name": "Swing Plan It",
+						"link": "https://www.swingplanit.com/",
+						"image": {
+							"src": "/swing-plan-it.jpg",
+							"alt": "Logo de Swing Plan It"
+						}
+					},
+					"lesGivres": {
+						"name": "Les Givrés",
+						"link": "https://www.lesgivres.ca/",
+						"image": {
+							"src": "/les-givres.png",
+							"alt": "Logo des Givrés"
+						}
+					},
+					"balboaOnTheRiver": {
+						"name": "Balboa On The River",
+						"link": "https://www.balboaontheriver.com/",
+						"image": {
+							"src": "/balboa-on-the-river.png",
+							"alt": "Logo de Balboa On The River"
+						}
+					}
+				},
+				"notes": {
+					"text": "Vous voulez sponsoriser le MTL BAL JAM? Contactez-nous au ",
+					"link": {
+						"text": "mtlbaljam@campusbalboa.org",
+						"link": "mailto:mtlbaljam@campusbalboa.org"
+					}
 				}
 			}
 		},
@@ -2517,12 +2603,12 @@
 	"socials": {
 		"facebook": {
 			"alt": "Facebook",
-			"href": "https://www.facebook.com/MontrealBalJam",
+			"href": "https://www.facebook.com/MTLBALJAM",
 			"logo": "/facebook-white.png"
 		},
 		"instagram": {
 			"alt": "Instagram",
-			"href": "https://www.instagram.com/mtlbaljam/",
+			"href": "https://www.instagram.com/MTLBALJAM/",
 			"logo": "/instagram-white.png"
 		},
 		"email": {

@@ -4,29 +4,54 @@ import Link from 'next/link'
 import IconBox from '@/app/[lang]/components/IconBox'
 import { DictionaryType } from '@/app/[lang]/dictionaries'
 
+type SponsorsSection = DictionaryType['mbj2026']['homePage']['sponsorsSection']
+type SponsorKey = keyof SponsorsSection['sponsors']
+
+const sponsorKeys: SponsorKey[] = ['swingCalendar', 'swingPlanIt', 'balboaOnTheRiver']
+
 export default function Venue({
 	venueSection,
-	workshopsSection,
+	sponsorsSection,
 	iconAlts,
-	comingSoon,
 }: {
-	workshopsSection: DictionaryType['mbj2025']['homePage']['workshopsSection']
+	sponsorsSection: SponsorsSection
 	venueSection: DictionaryType['mbj2026']['homePage']['venueSection']
 	iconAlts: DictionaryType['iconAlts']
-	comingSoon: DictionaryType['comingSoon']
 }) {
 	return (
 		<section className={styles.venueSection}>
 			<div className={styles.subscribeWrapper}>
 				<div className={styles.registration}>
-					<h2>{workshopsSection.title}</h2>
-					<div className={styles.registrationContent}>
-						<p>{comingSoon.title}</p>
-						{/* <p>{workshopsSection.description}</p>
-						<Link className={styles.link} href="/2025/tracks">
-							{workshopsSection.learnMore.text}
-						</Link> */}
+					<h2>{sponsorsSection.title}</h2>
+					<div className={styles.sponsorsList}>
+						{sponsorKeys.map(key => (
+							<a
+								href={sponsorsSection.sponsors[key].link}
+								key={key}
+								className={styles.sponsorItem}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<div className={styles.sponsorLogo}>
+									<Image
+										src={sponsorsSection.sponsors[key].image.src}
+										alt={sponsorsSection.sponsors[key].image.alt}
+										width={100}
+										height={100}
+									/>
+								</div>
+								<span className={styles.sponsorName}>
+									{sponsorsSection.sponsors[key].name}
+								</span>
+							</a>
+						))}
 					</div>
+					<p className={styles.sponsorNote}>
+						{sponsorsSection.notes.text}
+						<a href={sponsorsSection.notes.link.link}>
+							{sponsorsSection.notes.link.text}
+						</a>
+					</p>
 				</div>
 			</div>
 			<div className={styles.archWrapper}>

@@ -10,29 +10,48 @@ export default function MusicSection({
 	iconAlts,
 	socials,
 }: {
-	musicSection: DictionaryType['mbj2025']['homePage']['musicSection']
+	musicSection: DictionaryType['mbj2026']['homePage']['musicSection']
 	iconAlts: DictionaryType['iconAlts']
 	socials: DictionaryType['socials']
 }) {
 	return (
 		<section className={styles.bandSection}>
-			<div className={styles.bandName}>
-				<div className={styles.bandImageWrapper}>
-					<Image
-						src="/legacy-band.png"
-						alt="Legacy Band logo"
-						width={270}
-						height={291}
-					/>
+			<div className={styles.bandsArea}>
+				<h2>{musicSection.title}</h2>
+				<div className={styles.bands}>
+					<div className={styles.band}>
+						<div className={styles.bandImageWrapper}>
+							<Image
+								src="/legacy-band.png"
+								alt="Legacy Band logo"
+								width={270}
+								height={291}
+							/>
+						</div>
+						<div className={styles.bandText}>
+							<h3>{musicSection.bandName}</h3>
+							<p>{musicSection.description}</p>
+						</div>
+					</div>
+					<div className={styles.band}>
+						<div className={styles.bandImageWrapper}>
+							<Image
+								src="/michael-johancsik.webp"
+								alt="Michael Johancsik Swing Orchestra logo"
+								fill
+								sizes="112px"
+								style={{ objectFit: 'cover' }}
+							/>
+						</div>
+						<div className={styles.bandText}>
+							<h3>{musicSection.secondBandName}</h3>
+							<p>{musicSection.secondDescription}</p>
+						</div>
+					</div>
 				</div>
-				<div className={styles.text}>
-					<h2>{musicSection.title}</h2>
-					<h3>{musicSection.bandName}</h3>
-					<p>{musicSection.description}</p>
-					<Link href={musicSection.learnMore.href}>
-						{musicSection.learnMore.text}
-					</Link>
-				</div>
+				<Link href={musicSection.learnMore.href}>
+					{musicSection.learnMore.text}
+				</Link>
 			</div>
 
 			<div className={styles.socialsWrapper}>
