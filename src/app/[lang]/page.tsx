@@ -13,7 +13,7 @@ export async function generateMetadata(props: Props) {
 	const siteUrl = `https://mtlbaljam.org/${lang}`
 	if (lang === 'fr') {
 		return {
-			title: 'MTL Bal Jam 2026 — Événement Balboa · Montréal / Tiohtià:ke, 19–21 juin',
+			title: 'MTL BAL JAM 2026 — Événement Balboa · Montréal / Tiohtià:ke, 19–21 juin',
 			description:
 				'Week-end de Balboa à Montréal / Tiohtià:ke, 19–21 juin 2026. Instructeurs de classe mondiale, musique live swing, compétitions et soirées sociales. Inscrivez-vous!',
 			alternates: {
@@ -34,7 +34,7 @@ export async function generateMetadata(props: Props) {
 						height: 630,
 					},
 				],
-				title: 'MTL Bal Jam 2026 — Événement Balboa · Montréal / Tiohtià:ke, 19–21 juin',
+				title: 'MTL BAL JAM 2026 — Événement Balboa · Montréal / Tiohtià:ke, 19–21 juin',
 				locale: 'fr',
 				description:
 					'Week-end de Balboa à Montréal / Tiohtià:ke, 19–21 juin 2026. Instructeurs de classe mondiale, musique live swing, compétitions et soirées sociales. Inscrivez-vous!',
@@ -45,7 +45,7 @@ export async function generateMetadata(props: Props) {
 		}
 	} else {
 		return {
-			title: 'MTL Bal Jam 2026 — Balboa Dance Event · Montréal / Tiohtià:ke, June 19–21',
+			title: 'MTL BAL JAM 2026 — Balboa Dance Event · Montréal / Tiohtià:ke, June 19–21',
 			description:
 				'Balboa dance weekend in Montréal / Tiohtià:ke, June 19–21, 2026. World-class instructors, live swing bands, competitions, and social dancing. Register now!',
 			alternates: {
@@ -66,7 +66,7 @@ export async function generateMetadata(props: Props) {
 						height: 630,
 					},
 				],
-				title: 'MTL Bal Jam 2026 — Balboa Dance Event · Montréal / Tiohtià:ke, June 19–21',
+				title: 'MTL BAL JAM 2026 — Balboa Dance Event · Montréal / Tiohtià:ke, June 19–21',
 				locale: 'en',
 				description:
 					'Balboa dance weekend in Montréal / Tiohtià:ke, June 19–21, 2026. World-class instructors, live swing bands, competitions, and social dancing. Register now!',
@@ -90,7 +90,7 @@ export default async function MTLBALJAM({
 	const eventSchema = {
 		'@context': 'https://schema.org',
 		'@type': 'DanceEvent',
-		name: 'MTL Bal Jam 2026',
+		name: 'MTL BAL JAM 2026',
 		url: `https://mtlbaljam.org/${lang}`,
 		startDate: '2026-06-19T09:00:00-04:00',
 		endDate: '2026-06-21T23:59:00-04:00',
