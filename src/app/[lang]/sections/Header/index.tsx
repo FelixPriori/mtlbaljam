@@ -6,7 +6,7 @@ import styles from './styles.module.scss'
 import { getPageNameFromSlug } from '@/util/navigationUtils'
 import { DictionaryType } from '../../dictionaries'
 
-type PageName = keyof DictionaryType['header']['pageTitle']
+type PageName = keyof DictionaryType['header']['headerTitle']
 
 export default function Header({
 	header,
@@ -27,7 +27,7 @@ export default function Header({
 					<p className={styles.date}>
 						{is2024 ? header.date2024 : header.date}
 					</p>
-					<h1>{header.pageTitle[pageName]}</h1>
+					<h1>{header.headerTitle[pageName]}</h1>
 					{/* <div className={styles.registrationOpens}>
 						<p>
 							{header.registration.text} {header.registration.date}
@@ -48,7 +48,7 @@ export default function Header({
 		return (
 			<>
 				<p className={styles.date}>{is2024 ? header.date2024 : header.date}</p>
-				<h1>{header.pageTitle.home}</h1>
+				<h1>{header.headerTitle.home}</h1>
 				{/* <div className={styles.registrationOpens}>
 					<p>
 						{header.registration.text} {header.registration.date}
@@ -69,7 +69,7 @@ export default function Header({
 	}, [
 		header.date,
 		header.date2024,
-		header.pageTitle,
+		header.headerTitle,
 		header.registration.date,
 		header.registration.text,
 		pathname,

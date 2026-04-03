@@ -1,5 +1,5 @@
 import Favicon from '@/app/favicon.ico'
-import BigOG from '@/app/opengraph-image.png'
+
 import { Bar, Shirt, Tour, Youlia } from './sections'
 import { Locales } from '@/i18n'
 import { getDictionary } from '../../dictionaries'
@@ -24,10 +24,10 @@ export async function generateMetadata(props: Props) {
 			openGraph: {
 				images: [
 					{
-						url: BigOG.src,
+						url: '/og-image.png',
 						alt: 'MTL BAL JAM 2024 logo',
-						width: 512,
-						height: 512,
+						width: 1200,
+						height: 630,
 					},
 				],
 				title: 'Extra | MTL BAL JAM 2024',
@@ -48,10 +48,10 @@ export async function generateMetadata(props: Props) {
 			openGraph: {
 				images: [
 					{
-						url: BigOG.src,
+						url: '/og-image.png',
 						alt: 'MTL BAL JAM 2024 logo',
-						width: 512,
-						height: 512,
+						width: 1200,
+						height: 630,
 					},
 				],
 				title: 'Extra | MTL BAL JAM 2024',

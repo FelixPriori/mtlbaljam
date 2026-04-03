@@ -63,6 +63,26 @@
 		"registrationClosed": "Online registration closed!",
 		"registerNowAria": "Opens registration page in a new window",
 		"pageTitle": {
+			"home": "MTL BAL JAM 2026 — Balboa Dance Event · Montréal / Tiohtià:ke, June 19–21",
+			"music": "Live Swing Music & DJs | MTL BAL JAM",
+			"about": "About Campus Balboa | MTL BAL JAM",
+			"venue": "Venue — Cat's Corner | MTL BAL JAM",
+			"instructors": "Balboa Instructors | MTL BAL JAM",
+			"extra": "Extras & Activities | MTL BAL JAM",
+			"competitions": "Balboa Competitions | MTL BAL JAM",
+			"code-of-conduct": "Code of Conduct | MTL BAL JAM",
+			"registration": "Register Now | MTL BAL JAM",
+			"schedule": "Event Schedule | MTL BAL JAM",
+			"visiting": "Visiting Montréal / Tiohtià:ke | MTL BAL JAM",
+			"travel": "Travel to Montréal | MTL BAL JAM",
+			"accommodation": "Accommodation in Montréal | MTL BAL JAM",
+			"volunteering": "Volunteer with Us | MTL BAL JAM",
+			"coming-soon": "Coming Soon | MTL BAL JAM",
+			"mbj2025": "MTL BAL JAM 2025 — Past Edition",
+			"mbj2024": "MTL BAL JAM 2024 — Past Edition",
+			"tracks": "Balboa Workshop Tracks | MTL BAL JAM"
+		},
+		"headerTitle": {
 			"home": "Home",
 			"music": "Music",
 			"about": "About",
@@ -2587,6 +2607,38 @@
 			"alt": "Email",
 			"href": "mailto:info@campusbalboa.org",
 			"logo": "/email-white.png"
+		}
+	},
+	"schema": {
+		"event": {
+			"description": "MTL BAL JAM is a Balboa dance event held in Montréal / Tiohtià:ke, QC, featuring world-class instructors, live swing music, competitions, and social dancing."
+		},
+		"organization": {
+			"description": "Campus Balboa is a Montréal / Tiohtià:ke-based nonprofit organization dedicated to promoting Balboa dance through events, education, and community building."
+		},
+		"performers": {
+			"legacyBand": {
+				"description": "Live big band from Montréal / Tiohtià:ke with up to 9 instrumentalists"
+			},
+			"johancsik": {
+				"description": "Swing orchestra playing jazz and rhythm & blues from the 30s–50s"
+			}
+		},
+		"djJobTitle": "Swing DJ",
+		"instructors": {
+			"jobTitle": "Swing Dance Instructor",
+			"fancy": {
+				"description": "Five-time National Jitterbug Championships winner and international Balboa, Lindy, and Shag instructor."
+			},
+			"albert": {
+				"description": "Balboa and Lindy Hop instructor based in Barcelona, teaching internationally since 2011."
+			},
+			"irina": {
+				"description": "Swing dancer and instructor specializing in Lindy Hop, Balboa, Collegiate Shag, and Solo Jazz."
+			},
+			"natalia": {
+				"description": "Jazz dancer, teacher, and performer specializing in Balboa, Lindy Hop, and Solo Jazz, based in St. Louis."
+			}
 		}
 	},
 	"contact": {

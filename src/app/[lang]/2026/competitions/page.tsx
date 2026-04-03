@@ -1,5 +1,5 @@
 import Favicon from '@/app/favicon.ico'
-import BigOG from '@/app/opengraph-image.png'
+
 import {
 	Judges,
 	Sponsors,
@@ -32,10 +32,10 @@ export async function generateMetadata(props: Props) {
 			openGraph: {
 				images: [
 					{
-						url: BigOG.src,
+						url: '/og-image.png',
 						alt: 'MTL BAL JAM 2026 logo',
-						width: 512,
-						height: 512,
+						width: 1200,
+						height: 630,
 					},
 				],
 				title: 'Compétitions | MTL BAL JAM 2026',
@@ -56,10 +56,10 @@ export async function generateMetadata(props: Props) {
 			openGraph: {
 				images: [
 					{
-						url: BigOG.src,
+						url: '/og-image.png',
 						alt: 'MTL BAL JAM 2026 logo',
-						width: 512,
-						height: 512,
+						width: 1200,
+						height: 630,
 					},
 				],
 				title: 'Competitions | MTL BAL JAM 2026',

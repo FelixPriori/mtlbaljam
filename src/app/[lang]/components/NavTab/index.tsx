@@ -35,7 +35,7 @@ export default function NavTab({
 				{title}
 				<Image
 					src="/mbj-knife-black.png"
-					alt="Toaster"
+					alt="MTL BAL JAM logo"
 					width={1584}
 					height={1584}
 				/>
