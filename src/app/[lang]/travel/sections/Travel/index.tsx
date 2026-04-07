@@ -1,11 +1,10 @@
-import Image from 'next/image'
 import styles from './styles.module.scss'
 import { PortableText } from '@portabletext/react'
 import type { PortableTextBlock } from '@portabletext/types'
 
-export default function Description({ blocks }: { blocks: PortableTextBlock[] }) {
+export default function Travel({ blocks }: { blocks: PortableTextBlock[] }) {
 	return (
-		<section className={styles.descriptionSection}>
+		<section className={styles.travelSection}>
 			<div className={styles.content}>
 				<PortableText
 					value={blocks}
@@ -14,7 +13,6 @@ export default function Description({ blocks }: { blocks: PortableTextBlock[] })
 							link: ({ value, children }) => (
 								<a
 									href={value?.href}
-									className={styles.link}
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -23,14 +21,6 @@ export default function Description({ blocks }: { blocks: PortableTextBlock[] })
 							),
 						},
 					}}
-				/>
-			</div>
-			<div className={styles.logoContainer}>
-				<Image
-					src="/mtl-bal-jam-logo-white.png"
-					height={1584}
-					width={1584}
-					alt="MTL BAL JAM logo"
 				/>
 			</div>
 		</section>

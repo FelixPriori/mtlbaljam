@@ -1,17 +1,17 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
-import { DictionaryType } from '../../dictionaries'
 
-type SocialMedias = keyof DictionaryType['socials']
+type SocialEntry = { alt: string; href: string; logo: string }
+type SocialsData = { facebook: SocialEntry; instagram: SocialEntry; email: SocialEntry }
 
-const keys: SocialMedias[] = ['facebook', 'instagram', 'email']
+const keys: (keyof SocialsData)[] = ['facebook', 'instagram', 'email']
 
 export default function Socials({
 	position = 'bottomLeft',
 	socials,
 }: {
 	position?: 'bottomLeft' | 'topRight'
-	socials: DictionaryType['socials']
+	socials: SocialsData
 }) {
 	return (
 		<ul className={`${styles.socials} ${styles[position]}`}>
