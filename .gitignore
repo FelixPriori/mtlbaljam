@@ -32,6 +32,15 @@ yarn-error.log*
 # vercel
 .vercel
 
+# sanity studio
+/studio/node_modules
+/studio/dist/
+/studio/.sanity/
+/studio/schema.json
+
+# migration scripts output
+/scripts/image-asset-map.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

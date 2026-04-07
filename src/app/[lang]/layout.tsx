@@ -4,6 +4,7 @@ import Navigation from './components/Navigation'
 import { Footer, Header } from './sections'
 import { Locales, locales } from '@/i18n'
 import { getDictionary } from './dictionaries'
+import { SanityLive } from '@/lib/sanity/live'
 import '@/app/[lang]/globals.css'
 
 export function generateStaticParams() {
@@ -44,6 +45,7 @@ export default async function LocaleLayout({
 					<Main>{children}</Main>
 					<Footer copyright={copyright} iconAlts={iconAlts} />
 				</div>
+				<SanityLive />
 			</body>
 		</html>
 	)

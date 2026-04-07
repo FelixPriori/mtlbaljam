@@ -6,14 +6,21 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"studio": "cd studio && npm run dev",
+		"studio:build": "cd studio && npm run build",
+		"studio:deploy": "cd studio && npm run deploy",
+		"typegen": "cd studio && sanity schema extract --path=schema.json && sanity typegen generate"
 	},
 	"dependencies": {
 		"@formatjs/intl-localematcher": "^0.5.9",
+		"@portabletext/react": "^6.0.3",
+		"@sanity/image-url": "^2.1.1",
 		"@vis.gl/react-google-maps": "^1.1.0",
 		"date-fns": "^4.1.0",
 		"negotiator": "^1.0.0",
 		"next": "^16.1.6",
+		"next-sanity": "^12.2.1",
 		"react": "^19.2.4",
 		"react-big-calendar": "^1.19.4",
 		"react-dom": "^19.2.4",
@@ -22,14 +29,16 @@
 		"sharp": "^0.33.5"
 	},
 	"devDependencies": {
+		"@sanity/client": "^7.20.0",
 		"@types/negotiator": "^0.6.3",
-		"@types/next": "^9.0.0",
 		"@types/node": "^20",
 		"@types/react": "^19.2.13",
 		"@types/react-big-calendar": "^1.16.3",
 		"@types/react-dom": "^19.2.3",
+		"dotenv": "^17.4.0",
 		"eslint": "^9.39.1",
 		"eslint-config-next": "^16.1.6",
+		"tsx": "^4.21.0",
 		"typescript": "^5"
 	}
 }

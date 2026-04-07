@@ -2,7 +2,12 @@ import Favicon from '@/app/favicon.ico'
 
 import { MainSection, MusicSection, Venue } from './sections'
 import { Locales } from '@/i18n'
-import { getDictionary } from './dictionaries'
+import { sanityFetch } from '@/lib/sanity/fetch'
+import { HOME_PAGE_QUERY, SITE_SETTINGS_QUERY } from '@/lib/sanity/queries'
+import type { HOME_PAGE_QUERY_RESULT, SITE_SETTINGS_QUERY_RESULT } from '@/sanity.types'
+import { localize } from '@/lib/sanity/localize'
+
+const CURRENT_YEAR = 2026
 
 type Props = {
 	params: Promise<{ lang: Locales }>
@@ -84,8 +89,17 @@ export default async function MTLBALJAM({
 	params: Promise<{ lang: Locales }>
 }) {
 	const { lang } = await params
-	const { mainPage, mbj2026, iconAlts, socials, schema } =
-		await getDictionary(lang)
+	const [data, siteSettings] = await Promise.all([
+		sanityFetch<HOME_PAGE_QUERY_RESULT>(HOME_PAGE_QUERY, { year: CURRENT_YEAR }),
+		sanityFetch<SITE_SETTINGS_QUERY_RESULT>(SITE_SETTINGS_QUERY),
+	])
+
+	const homePage = data?.homePage ?? null
+	const bands = data?.bands ?? []
+	const labels = siteSettings?.labels ?? null
+
+	const band0 = bands[0]
+	const band1 = bands[1]
 
 	const eventSchema = {
 		'@context': 'https://schema.org',
@@ -115,27 +129,28 @@ export default async function MTLBALJAM({
 			email: 'mtlbaljam@campusbalboa.org',
 		},
 		performer: [
-			{
+			band0 && {
 				'@type': 'MusicGroup',
-				name: 'Michaël Srey Legacy Band',
-				description: schema.performers.legacyBand.description,
+				name: band0.name,
+				description: band0.schemaDescription ?? undefined,
 				image: 'https://mtlbaljam.org/legacy-band-promo.png',
-				url: 'https://www.michaelsrey.com/',
 			},
-			{
+			band1 && {
 				'@type': 'MusicGroup',
-				name: 'Michael Johancsik Swing Orchestra',
-				description: schema.performers.johancsik.description,
+				name: band1.name,
+				description: band1.schemaDescription ?? undefined,
 				image: 'https://mtlbaljam.org/johancsik.png',
-				url: 'https://michaeljohancsik.com/about-me/',
 			},
-		],
+		].filter(Boolean),
 		offers: {
 			'@type': 'Offer',
 			url: 'https://mtlbaljam2026.dancecamps.org/booking.php',
 			availability: 'https://schema.org/InStock',
 		},
-		description: schema.event.description,
+		description:
+			lang === 'fr'
+				? 'MTL BAL JAM est un événement de danse Balboa à Montréal / Tiohtià:ke.'
+				: 'MTL BAL JAM is a Balboa dance event in Montréal / Tiohtià:ke.',
 	}
 
 	return (
@@ -144,17 +159,36 @@ export default async function MTLBALJAM({
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
 			/>
-			<MainSection mainPage={mainPage} />
-			<Venue
-				sponsorsSection={mbj2026.homePage.sponsorsSection}
-				venueSection={mbj2026.homePage.venueSection}
-				iconAlts={iconAlts}
-			/>
-			<MusicSection
-				musicSection={mbj2026.homePage.musicSection}
-				iconAlts={iconAlts}
-				socials={socials}
-			/>
+			{homePage && (
+				<>
+					<MainSection
+						groups={homePage.featuredInstructorGroups ?? []}
+						sectionTitle={localize(homePage.instructorSectionTitle, lang)}
+						linkText={localize(homePage.instructorLinkText, lang)}
+						labels={labels}
+						year={String(CURRENT_YEAR)}
+						lang={lang}
+					/>
+					<Venue
+						featuredSponsors={homePage.featuredSponsors ?? []}
+						sponsorSectionTitle={localize(homePage.sponsorSectionTitle, lang)}
+						sponsorNoteText={localize(homePage.sponsorNoteText, lang)}
+						venueSectionTitle={localize(homePage.venueSectionTitle, lang)}
+						venueLearnMoreText={localize(homePage.venueLearnMoreText, lang)}
+						labels={labels}
+						year={String(CURRENT_YEAR)}
+						lang={lang}
+					/>
+					<MusicSection
+						bands={bands}
+						sectionTitle={localize(homePage.musicSectionTitle, lang)}
+						learnMoreText={localize(homePage.musicLearnMoreText, lang)}
+						year={String(CURRENT_YEAR)}
+						lang={lang}
+						siteSettings={siteSettings}
+					/>
+				</>
+			)}
 		</>
 	)
 }

@@ -1,8 +1,12 @@
 import Favicon from '@/app/favicon.ico'
 
-import { Title, TravelBlog } from './sections'
+import { Title, VisitingContent } from './sections'
 import { Locales } from '@/i18n'
-import { getDictionary } from '../dictionaries'
+import { sanityFetch } from '@/lib/sanity/fetch'
+import { STATIC_PAGE_QUERY, SITE_SETTINGS_QUERY } from '@/lib/sanity/queries'
+import { localize } from '@/lib/sanity/localize'
+import type { STATIC_PAGE_QUERY_RESULT, SITE_SETTINGS_QUERY_RESULT } from '@/sanity.types'
+import type { PortableTextBlock } from '@portabletext/types'
 
 type Props = {
 	params: Promise<{ lang: Locales }>
@@ -14,52 +18,29 @@ export async function generateMetadata(props: Props) {
 
 	if (lang === 'fr') {
 		return {
-			title: 'Visiter | MTL BAL JAM 2024',
-			description:
-				"Visiter MTL BAL JAM, l'évenement de balboa à Montréal le 21-22-23 juin 2024",
-			alternates: {
-				canonical: `${siteUrl}/visiting`,
-			},
+			title: 'Visiter | MTL BAL JAM',
+			description: 'Visiter Montréal / Tiohtià:ke avec MTL BAL JAM',
+			alternates: { canonical: `${siteUrl}/visiting` },
 			icons: [{ rel: 'icon', url: Favicon.src }],
 			openGraph: {
-				images: [
-					{
-						url: '/og-image.png',
-						alt: 'MTL BAL JAM 2024 logo',
-						width: 1200,
-						height: 630,
-					},
-				],
-				title: 'Visiter | MTL BAL JAM 2024',
+				images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
+				title: 'Visiter | MTL BAL JAM',
 				locale: 'fr',
-				description:
-					"Visiter MTL BAL JAM, l'évenement de balboa à Montréal le 21-22-23 juin 2024",
+				description: 'Visiter Montréal / Tiohtià:ke avec MTL BAL JAM',
 			},
 		}
-	} else {
-		return {
-			title: 'Visiting | MTL BAL JAM 2024',
-			description:
-				'Visiting MTL BAL JAM, a Balboa event happening in Montreal on June 21-22-23 2024',
-			alternates: {
-				canonical: `${siteUrl}/visiting`,
-			},
-			icons: [{ rel: 'icon', url: Favicon.src }],
-			openGraph: {
-				images: [
-					{
-						url: '/og-image.png',
-						alt: 'MTL BAL JAM 2024 logo',
-						width: 1200,
-						height: 630,
-					},
-				],
-				title: 'Visiting | MTL BAL JAM 2024',
-				locale: 'en',
-				description:
-					'Visiting MTL BAL JAM, a Balboa event happening in Montreal on June 21-22-23 2024',
-			},
-		}
+	}
+	return {
+		title: 'Visiting | MTL BAL JAM',
+		description: 'Visiting Montréal / Tiohtià:ke with MTL BAL JAM',
+		alternates: { canonical: `${siteUrl}/visiting` },
+		icons: [{ rel: 'icon', url: Favicon.src }],
+		openGraph: {
+			images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
+			title: 'Visiting | MTL BAL JAM',
+			locale: 'en',
+			description: 'Visiting Montréal / Tiohtià:ke with MTL BAL JAM',
+		},
 	}
 }
 
@@ -69,12 +50,30 @@ export default async function MbjVisiting({
 	params: Promise<{ lang: Locales }>
 }) {
 	const { lang } = await params
-	const { visitingPage } = await getDictionary(lang)
+	const [page, siteSettings] = await Promise.all([
+		sanityFetch<STATIC_PAGE_QUERY_RESULT>(STATIC_PAGE_QUERY, { pageKey: 'visiting' }),
+		sanityFetch<SITE_SETTINGS_QUERY_RESULT>(SITE_SETTINGS_QUERY),
+	])
+	const labels = siteSettings?.labels ?? null
+
+	const allBlocks = (localize(page?.content ?? null, lang) ?? []) as PortableTextBlock[]
+	// First block is the h2 title — rendered by the Title hero section above
+	const titleBlock = allBlocks[0] as { children?: Array<{ text?: string }> } | undefined
+	const title = titleBlock?.children?.map(c => c.text ?? '').join('') ?? ''
+	const contentBlocks = allBlocks.slice(1)
 
 	return (
 		<>
-			<Title visitingPage={visitingPage} />
-			<TravelBlog travelBlogSection={visitingPage.travelBlogSection} />
+			<Title title={title} />
+			<VisitingContent
+				blocks={contentBlocks}
+				foodImage={page?.foodSectionImage ?? null}
+				sightseeingImage={page?.sightseeingSectionImage ?? null}
+				mapUrl={page?.mapUrl ?? null}
+				mapLabel={localize(page?.mapLabel ?? null, lang)}
+				labels={labels}
+				lang={lang}
+			/>
 		</>
 	)
 }

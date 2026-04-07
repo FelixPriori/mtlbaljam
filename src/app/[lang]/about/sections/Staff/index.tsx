@@ -1,67 +1,61 @@
 import styles from './styles.module.scss'
 import FeatureCard from '@/app/[lang]/components/FeatureCard'
-import { DictionaryType } from '@/app/[lang]/dictionaries'
-
-type StaffNames = keyof DictionaryType['aboutPage']['staffSection']['staff']
-
-const keys2025: StaffNames[] = [
-	'cara',
-	'felix',
-	'gab',
-	'kim',
-	'melanie',
-	'sara',
-	'sihem',
-	'tania',
-]
-
-const keys2024: StaffNames[] = ['aronne', 'bree', 'katya', 'zack', 'sophie']
+import { urlFor } from '@/lib/sanity/image'
+import type { SanityStaffMember } from '@/lib/sanity/queryTypes'
+import type { Locales } from '@/i18n'
 
 export default function StaffSection({
-	staffSection,
+	title,
+	members,
+	lang,
 }: {
-	staffSection: DictionaryType['aboutPage']['staffSection']
+	title: string
+	members: SanityStaffMember[]
+	lang: Locales
 }) {
+	const current = members.filter(m => m.yearsActive?.includes(2026))
+	const alumni = members.filter(m => !m.yearsActive?.includes(2026))
+
+	function renderGroup(group: SanityStaffMember[]) {
+		return (
+			<div className={styles.cards}>
+				{group.map(member => (
+					<FeatureCard
+						key={member._id}
+						name={member.name ?? ''}
+						image={
+							member.photo?.asset
+								? {
+										src: urlFor(member.photo).width(300).height(300).fit('crop').url(),
+										alt: member.name ?? '',
+									}
+								: { src: '', alt: member.name ?? '' }
+						}
+						isH4
+					>
+						<p className={styles.pronouns}>{member.pronouns}</p>
+					</FeatureCard>
+				))}
+			</div>
+		)
+	}
+
 	return (
 		<section className={styles.staffSection}>
-			<h2 className={styles.title}>{staffSection.title}</h2>
+			<h2 className={styles.title}>{title}</h2>
 			<div className={styles.content}>
-				<h3>2026</h3>
-				<div className={styles.cards}>
-					{keys2025.map(key => (
-						<FeatureCard
-							key={key}
-							name={staffSection.staff[key].name}
-							image={{
-								src: staffSection.staff[key].image.src,
-								alt: staffSection.staff[key].image.alt,
-							}}
-							isH4
-						>
-							<p className={styles.pronouns}>
-								{staffSection.staff[key].pronouns}
-							</p>
-						</FeatureCard>
-					))}
-				</div>
-				<h3>2024, 2025</h3>
-				<div className={styles.cards}>
-					{keys2024.map(key => (
-						<FeatureCard
-							key={key}
-							name={staffSection.staff[key].name}
-							image={{
-								src: staffSection.staff[key].image.src,
-								alt: staffSection.staff[key].image.alt,
-							}}
-							isH4
-						>
-							<p className={styles.pronouns}>
-								{staffSection.staff[key].pronouns}
-							</p>
-						</FeatureCard>
-					))}
-				</div>
+				{current.length > 0 && (
+					<>
+						<h3>2026</h3>
+						{renderGroup(current)}
+					</>
+				)}
+				{alumni.length > 0 && (
+					<>
+						<h3>2024, 2025</h3>
+						{renderGroup(alumni)}
+					</>
+				)}
 			</div>
 		</section>
 	)
