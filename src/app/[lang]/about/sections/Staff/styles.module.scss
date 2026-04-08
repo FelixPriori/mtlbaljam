@@ -31,6 +31,13 @@
 			color: var(--mbj-color-white);
 		}
 
+		.role {
+			text-align: center;
+			color: var(--mbj-color-white);
+			font-style: italic;
+			margin-top: 0.25rem;
+		}
+
 		img {
 			filter: grayscale(100%) contrast(1);
 		}

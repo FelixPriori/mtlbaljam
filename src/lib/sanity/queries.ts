@@ -253,7 +253,7 @@ export const STAFF_QUERY = defineQuery(`
   *[_type == "staffMember"] | order(name asc) {
     _id,
     name,
-    pronouns,
+    pronouns ${localizedStringFragment},
     role ${localizedStringFragment},
     photo ${imageWithAltFragment},
     isCurrent

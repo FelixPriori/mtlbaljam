@@ -14,7 +14,7 @@ export const staffMember = defineType({
     defineField({
       name: 'pronouns',
       title: 'Pronouns',
-      type: 'string',
+      type: 'localizedString',
     }),
     defineField({
       name: 'role',

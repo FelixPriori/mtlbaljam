@@ -83,6 +83,7 @@ export default async function MbjAbout({
 				currentTeamTitle={localize(siteSettings?.labels?.currentTeam, lang) ?? (lang === 'fr' ? 'Équipe actuelle' : 'Current Team')}
 				pastTeamTitle={localize(siteSettings?.labels?.pastTeam, lang) ?? (lang === 'fr' ? 'Ancienne équipe' : 'Past Team')}
 				members={staffMembers}
+				lang={lang}
 			/>
 		</>
 	)
