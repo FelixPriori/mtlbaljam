@@ -30,7 +30,6 @@ export default function DJs({
 								: { src: '', alt: dj.name ?? '' }
 						}
 					>
-						<p className={styles.djName}>{dj.name}</p>
 						<p className={styles.pronouns}>{dj.pronouns}</p>
 						<div className={styles.biography}>
 							<PortableText value={localize(dj.biography, lang)?.slice(0, 1) ?? []} />
