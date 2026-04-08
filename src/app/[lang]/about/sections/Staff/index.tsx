@@ -2,20 +2,17 @@ import styles from './styles.module.scss'
 import FeatureCard from '@/app/[lang]/components/FeatureCard'
 import { urlFor } from '@/lib/sanity/image'
 import type { SanityStaffMember } from '@/lib/sanity/queryTypes'
-import type { Locales } from '@/i18n'
 
 export default function StaffSection({
 	title,
 	currentTeamTitle,
 	pastTeamTitle,
 	members,
-	lang,
 }: {
 	title: string
 	currentTeamTitle: string
 	pastTeamTitle: string
 	members: SanityStaffMember[]
-	lang: Locales
 }) {
 	const current = members.filter(m => m.isCurrent)
 	const alumni = members.filter(m => !m.isCurrent)

@@ -15,31 +15,21 @@ type Props = {
 export async function generateMetadata(props: Props) {
 	const { lang } = await props.params
 	const siteUrl = `https://mtlbaljam.org/${lang}`
-
-	if (lang === 'fr') {
-		return {
-			title: 'Voyagement | MTL BAL JAM',
-			description: 'Voyager pour MTL BAL JAM',
-			alternates: { canonical: `${siteUrl}/travel` },
-			icons: [{ rel: 'icon', url: Favicon.src }],
-			openGraph: {
-				images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
-				title: 'Voyagement | MTL BAL JAM',
-				locale: 'fr',
-				description: 'Voyager pour MTL BAL JAM',
-			},
-		}
-	}
+	const page = await sanityFetch<STATIC_PAGE_QUERY_RESULT>(STATIC_PAGE_QUERY, { pageKey: 'travel' })
+	const title = localize(page?.metaTitle ?? null, lang)
+		?? (lang === 'fr' ? 'Voyagement | MTL BAL JAM' : 'Travel | MTL BAL JAM')
+	const description = localize(page?.metaDescription ?? null, lang)
+		?? (lang === 'fr' ? 'Voyager pour MTL BAL JAM' : 'Traveling to MTL BAL JAM')
 	return {
-		title: 'Travel | MTL BAL JAM',
-		description: 'Traveling to MTL BAL JAM',
+		title,
+		description,
 		alternates: { canonical: `${siteUrl}/travel` },
 		icons: [{ rel: 'icon', url: Favicon.src }],
 		openGraph: {
 			images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
-			title: 'Travel | MTL BAL JAM',
-			locale: 'en',
-			description: 'Travel to MTL BAL JAM',
+			title,
+			locale: lang,
+			description,
 		},
 	}
 }

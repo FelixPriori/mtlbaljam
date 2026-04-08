@@ -9,10 +9,11 @@
     }
 
     .content {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 300px);
+        grid-auto-rows: 1fr;
         justify-content: center;
         gap: 20px;
-        flex-wrap: wrap;
 
         .djName {
             text-align: center;

@@ -265,6 +265,8 @@ export const STAFF_QUERY = defineQuery(`
 export const STATIC_PAGE_QUERY = defineQuery(`
   *[_type == "staticPage" && pageKey == $pageKey][0] {
     pageKey,
+    metaTitle ${localizedStringFragment},
+    metaDescription ${localizedStringFragment},
     content { en, fr },
     foodSectionImage ${imageWithAltFragment},
     sightseeingSectionImage ${imageWithAltFragment},

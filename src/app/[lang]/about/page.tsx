@@ -15,34 +15,23 @@ type Props = {
 export async function generateMetadata(props: Props) {
 	const { lang } = await props.params
 	const siteUrl = `https://mtlbaljam.org/${lang}`
-	if (lang === 'fr') {
-		return {
-			title: 'À propos | MTL BAL JAM',
-			description:
-				'MTL BAL JAM est un week-end de Balboa à Montréal / Tiohtià:ke organisé par Campus Balboa, un organisme sans but lucratif fondé en 2023. Rencontrez l\'équipe derrière l\'événement.',
-			alternates: { canonical: `${siteUrl}/about` },
-			icons: [{ rel: 'icon', url: Favicon.src }],
-			openGraph: {
-				images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
-				title: 'À propos | MTL BAL JAM',
-				locale: 'fr',
-				description:
-					'MTL BAL JAM est un week-end de Balboa à Montréal / Tiohtià:ke organisé par Campus Balboa, un organisme sans but lucratif fondé en 2023. Rencontrez l\'équipe derrière l\'événement.',
-			},
-		}
-	}
+	const aboutPage_ = await sanityFetch<STATIC_PAGE_QUERY_RESULT>(STATIC_PAGE_QUERY, { pageKey: 'about' })
+	const title = localize(aboutPage_?.metaTitle ?? null, lang)
+		?? (lang === 'fr' ? 'À propos | MTL BAL JAM' : 'About | MTL BAL JAM')
+	const description = localize(aboutPage_?.metaDescription ?? null, lang)
+		?? (lang === 'fr'
+			? 'MTL BAL JAM est un week-end de Balboa à Montréal / Tiohtià:ke organisé par Campus Balboa, un organisme sans but lucratif fondé en 2023. Rencontrez l\'équipe derrière l\'événement.'
+			: 'MTL BAL JAM is a Balboa dance weekend in Montréal / Tiohtià:ke organized by Campus Balboa, a nonprofit founded in 2023. Meet the team behind the event.')
 	return {
-		title: 'About | MTL BAL JAM',
-		description:
-			'MTL BAL JAM is a Balboa dance weekend in Montréal / Tiohtià:ke organized by Campus Balboa, a nonprofit founded in 2023. Meet the team behind the event.',
+		title,
+		description,
 		alternates: { canonical: `${siteUrl}/about` },
 		icons: [{ rel: 'icon', url: Favicon.src }],
 		openGraph: {
 			images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
-			title: 'About | MTL BAL JAM',
-			locale: 'en',
-			description:
-				'MTL BAL JAM is a Balboa dance weekend in Montréal / Tiohtià:ke organized by Campus Balboa, a nonprofit founded in 2023. Meet the team behind the event.',
+			title,
+			locale: lang,
+			description,
 		},
 	}
 }
@@ -94,7 +83,6 @@ export default async function MbjAbout({
 				currentTeamTitle={localize(siteSettings?.labels?.currentTeam, lang) ?? (lang === 'fr' ? 'Équipe actuelle' : 'Current Team')}
 				pastTeamTitle={localize(siteSettings?.labels?.pastTeam, lang) ?? (lang === 'fr' ? 'Ancienne équipe' : 'Past Team')}
 				members={staffMembers}
-				lang={lang}
 			/>
 		</>
 	)

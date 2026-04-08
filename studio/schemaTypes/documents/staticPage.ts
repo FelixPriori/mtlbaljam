@@ -21,6 +21,18 @@ export const staticPage = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
+      name: 'metaTitle',
+      title: 'Meta Title',
+      type: 'localizedString',
+      description: 'Page title shown in browser tab and search results (e.g. "About | MTL BAL JAM").',
+    }),
+    defineField({
+      name: 'metaDescription',
+      title: 'Meta Description',
+      type: 'localizedString',
+      description: 'Short description shown in search results (~150 characters).',
+    }),
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'localizedText',

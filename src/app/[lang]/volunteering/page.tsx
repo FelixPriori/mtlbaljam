@@ -14,31 +14,21 @@ type Props = {
 export async function generateMetadata(props: Props) {
 	const { lang } = await props.params
 	const siteUrl = `https://mtlbaljam.org/${lang}`
-
-	if (lang === 'fr') {
-		return {
-			title: 'Bénévolat | MTL BAL JAM',
-			description: 'Faire du bénévolat pour MTL BAL JAM',
-			alternates: { canonical: `${siteUrl}/volunteering` },
-			icons: [{ rel: 'icon', url: Favicon.src }],
-			openGraph: {
-				images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
-				title: 'Bénévolat | MTL BAL JAM',
-				locale: 'fr',
-				description: 'Faire du bénévolat pour MTL BAL JAM',
-			},
-		}
-	}
+	const page = await sanityFetch<STATIC_PAGE_QUERY_RESULT>(STATIC_PAGE_QUERY, { pageKey: 'volunteering' })
+	const title = localize(page?.metaTitle ?? null, lang)
+		?? (lang === 'fr' ? 'Bénévolat | MTL BAL JAM' : 'Volunteering | MTL BAL JAM')
+	const description = localize(page?.metaDescription ?? null, lang)
+		?? (lang === 'fr' ? 'Faire du bénévolat pour MTL BAL JAM' : 'Volunteer for MTL BAL JAM')
 	return {
-		title: 'Volunteering | MTL BAL JAM',
-		description: 'Volunteer for MTL BAL JAM',
+		title,
+		description,
 		alternates: { canonical: `${siteUrl}/volunteering` },
 		icons: [{ rel: 'icon', url: Favicon.src }],
 		openGraph: {
 			images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
-			title: 'Volunteering | MTL BAL JAM',
-			locale: 'en',
-			description: 'Volunteer for MTL BAL JAM',
+			title,
+			locale: lang,
+			description,
 		},
 	}
 }
