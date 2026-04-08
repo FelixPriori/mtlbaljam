@@ -256,7 +256,7 @@ export const STAFF_QUERY = defineQuery(`
     pronouns,
     role ${localizedStringFragment},
     photo ${imageWithAltFragment},
-    yearsActive
+    isCurrent
   }
 `)
 
@@ -339,6 +339,8 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
       checkOutOurVenue ${localizedStringFragment},
       viewFullMap ${localizedStringFragment},
       ourTeam ${localizedStringFragment},
+      currentTeam ${localizedStringFragment},
+      pastTeam ${localizedStringFragment},
       toasterIconAlt ${localizedStringFragment},
       archImageAlt ${localizedStringFragment},
       loafIconAlt ${localizedStringFragment},

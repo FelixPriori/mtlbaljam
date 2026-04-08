@@ -312,7 +312,7 @@ export type StaffMember = {
   pronouns?: string;
   role?: LocalizedString;
   photo?: ImageWithAlt;
-  yearsActive?: Array<number>;
+  isCurrent?: boolean;
 };
 
 export type Venue = {
@@ -1796,7 +1796,7 @@ export type EXTRAS_QUERY_RESULT = {
 
 // Source: ../src/lib/sanity/queries.ts
 // Variable: STAFF_QUERY
-// Query: *[_type == "staffMember"] | order(name asc) {    _id,    name,    pronouns,    role { en, fr },    photo {  asset->{ _id, url, metadata { dimensions } },  hotspot,  crop,  alt { en, fr }},    yearsActive  }
+// Query: *[_type == "staffMember"] | order(name asc) {    _id,    name,    pronouns,    role { en, fr },    photo {  asset->{ _id, url, metadata { dimensions } },  hotspot,  crop,  alt { en, fr }},    isCurrent  }
 export type STAFF_QUERY_RESULT = Array<{
   _id: string;
   name: string | null;
@@ -1820,7 +1820,7 @@ export type STAFF_QUERY_RESULT = Array<{
       fr: string | null;
     } | null;
   } | null;
-  yearsActive: Array<number> | null;
+  isCurrent: boolean | null;
 }>;
 
 // Source: ../src/lib/sanity/queries.ts
@@ -2188,6 +2188,14 @@ export type SITE_SETTINGS_QUERY_RESULT = {
       en: string | null;
       fr: string | null;
     } | null;
+    currentTeam: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+    pastTeam: {
+      en: string | null;
+      fr: string | null;
+    } | null;
     toasterIconAlt: {
       en: string | null;
       fr: string | null;
@@ -2216,10 +2224,10 @@ declare module "@sanity/client" {
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "tracks": tracks[] {\n      trackName { en, fr },\n      trackDescription { en, fr },\n      classes[] {\n        title { en, fr },\n        description { en, fr },\n        instructorRef->{ _id, name, slug }\n      }\n    },\n    "tracksPageDescription": tracksPageDescription { en, fr },\n    "levelInfo": levelInfo { en, fr },\n    "levelInfoConcepts": levelInfoConcepts { en, fr }\n  }\n': TRACKS_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "registrationPage": registrationPage {\n      isOpen,\n      registerUrl,\n      fullPassDescription { en, fr },\n      partyPassDescription { en, fr },\n      classPassDescription { en, fr },\n      ticketsDetailsTitle { en, fr },\n      fullPassIncludes { en, fr },\n      partyPassIncludes { en, fr },\n      classPassIncludes { en, fr },\n      priceTiers[] {\n        dateLabel { en, fr },\n        endDate,\n        fullPassPrice,\n        partyPassPrice,\n        classPassPrice\n      },\n      subsidyTitle { en, fr },\n      subsidyInfo { en, fr },\n      subsidyEligibilityTitle { en, fr },\n      subsidyEligibility { en, fr },\n      termsUrl,\n      termsLinkText { en, fr },\n      termsContent { en, fr }\n    }\n  }\n': REGISTRATION_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "extras": extras[] {\n      key,\n      title { en, fr },\n      price,\n      soldOut,\n      when { en, fr },\n      description { en, fr },\n      images[] {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n      orderInstructions { en, fr }\n    }\n  }\n': EXTRAS_QUERY_RESULT;
-    '\n  *[_type == "staffMember"] | order(name asc) {\n    _id,\n    name,\n    pronouns,\n    role { en, fr },\n    photo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    yearsActive\n  }\n': STAFF_QUERY_RESULT;
+    '\n  *[_type == "staffMember"] | order(name asc) {\n    _id,\n    name,\n    pronouns,\n    role { en, fr },\n    photo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    isCurrent\n  }\n': STAFF_QUERY_RESULT;
     '\n  *[_type == "staticPage" && pageKey == $pageKey][0] {\n    pageKey,\n    content { en, fr },\n    foodSectionImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    sightseeingSectionImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    mapUrl,\n    mapLabel { en, fr }\n  }\n': STATIC_PAGE_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "homePage": homePage {\n      instructorSectionTitle { en, fr },\n      instructorLinkText { en, fr },\n      featuredInstructorGroups[] {\n        groupImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n        groupName,\n        shortBio { en, fr }\n      },\n      musicSectionTitle { en, fr },\n      musicLearnMoreText { en, fr },\n      venueSectionTitle { en, fr },\n      venueLearnMoreText { en, fr },\n      sponsorSectionTitle { en, fr },\n      featuredSponsors[]->{ _id, name, logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}, link },\n      sponsorNoteText { en, fr }\n    },\n    "bands": bands[]->{ _id, name, biography { en, fr }, logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}, schemaDescription }\n  }\n': HOME_PAGE_QUERY_RESULT;
     '\n  *[_type == "eventEdition"] | order(year desc) { year }\n': ALL_EDITION_YEARS_QUERY_RESULT;
-    '\n  *[_type == "siteSettings"][0] {\n    facebookUrl,\n    instagramUrl,\n    contactEmail,\n    labels {\n      competitions { en, fr },\n      judges { en, fr },\n      price { en, fr },\n      format { en, fr },\n      when { en, fr },\n      soldOut { en, fr },\n      howToOrder { en, fr },\n      registration { en, fr },\n      registerNow { en, fr },\n      fullPass { en, fr },\n      partyPass { en, fr },\n      classPass { en, fr },\n      ticketsInclude { en, fr },\n      helpSomeoneAttend { en, fr },\n      eligibilityAndGuidelines { en, fr },\n      priceCalendar { en, fr },\n      termsAndConditions { en, fr },\n      tracks { en, fr },\n      levelRequirement { en, fr },\n      learnMore { en, fr },\n      instructors { en, fr },\n      music { en, fr },\n      sponsors { en, fr },\n      venue { en, fr },\n      checkOutOurVenue { en, fr },\n      viewFullMap { en, fr },\n      ourTeam { en, fr },\n      toasterIconAlt { en, fr },\n      archImageAlt { en, fr },\n      loafIconAlt { en, fr },\n    }\n  }\n': SITE_SETTINGS_QUERY_RESULT;
+    '\n  *[_type == "siteSettings"][0] {\n    facebookUrl,\n    instagramUrl,\n    contactEmail,\n    labels {\n      competitions { en, fr },\n      judges { en, fr },\n      price { en, fr },\n      format { en, fr },\n      when { en, fr },\n      soldOut { en, fr },\n      howToOrder { en, fr },\n      registration { en, fr },\n      registerNow { en, fr },\n      fullPass { en, fr },\n      partyPass { en, fr },\n      classPass { en, fr },\n      ticketsInclude { en, fr },\n      helpSomeoneAttend { en, fr },\n      eligibilityAndGuidelines { en, fr },\n      priceCalendar { en, fr },\n      termsAndConditions { en, fr },\n      tracks { en, fr },\n      levelRequirement { en, fr },\n      learnMore { en, fr },\n      instructors { en, fr },\n      music { en, fr },\n      sponsors { en, fr },\n      venue { en, fr },\n      checkOutOurVenue { en, fr },\n      viewFullMap { en, fr },\n      ourTeam { en, fr },\n      currentTeam { en, fr },\n      pastTeam { en, fr },\n      toasterIconAlt { en, fr },\n      archImageAlt { en, fr },\n      loafIconAlt { en, fr },\n    }\n  }\n': SITE_SETTINGS_QUERY_RESULT;
   }
 }

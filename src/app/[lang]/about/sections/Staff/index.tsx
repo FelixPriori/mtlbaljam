@@ -6,15 +6,19 @@ import type { Locales } from '@/i18n'
 
 export default function StaffSection({
 	title,
+	currentTeamTitle,
+	pastTeamTitle,
 	members,
 	lang,
 }: {
 	title: string
+	currentTeamTitle: string
+	pastTeamTitle: string
 	members: SanityStaffMember[]
 	lang: Locales
 }) {
-	const current = members.filter(m => m.yearsActive?.includes(2026))
-	const alumni = members.filter(m => !m.yearsActive?.includes(2026))
+	const current = members.filter(m => m.isCurrent)
+	const alumni = members.filter(m => !m.isCurrent)
 
 	function renderGroup(group: SanityStaffMember[]) {
 		return (
@@ -46,13 +50,13 @@ export default function StaffSection({
 			<div className={styles.content}>
 				{current.length > 0 && (
 					<>
-						<h3>2026</h3>
+						<h3>{currentTeamTitle}</h3>
 						{renderGroup(current)}
 					</>
 				)}
 				{alumni.length > 0 && (
 					<>
-						<h3>2024, 2025</h3>
+						<h3>{pastTeamTitle}</h3>
 						{renderGroup(alumni)}
 					</>
 				)}

@@ -50,6 +50,8 @@ export const siteSettings = defineType({
         localizedString('viewFullMap', 'View Full Map (link text)'),
         // About
         localizedString('ourTeam', 'Our Team (section title)'),
+        localizedString('currentTeam', 'Current Team (sub-heading)'),
+        localizedString('pastTeam', 'Past Team (sub-heading)'),
         // Icon alts
         localizedString('toasterIconAlt', 'Toaster Icon Alt Text'),
         localizedString('archImageAlt', 'Arch Image Alt Text'),

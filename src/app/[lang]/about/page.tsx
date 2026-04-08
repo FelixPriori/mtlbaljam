@@ -91,6 +91,8 @@ export default async function MbjAbout({
 			<Description blocks={blocks} />
 			<Staff
 				title={localize(siteSettings?.labels?.ourTeam, lang) ?? (lang === 'fr' ? 'Notre équipe' : 'Our Team')}
+				currentTeamTitle={localize(siteSettings?.labels?.currentTeam, lang) ?? (lang === 'fr' ? 'Équipe actuelle' : 'Current Team')}
+				pastTeamTitle={localize(siteSettings?.labels?.pastTeam, lang) ?? (lang === 'fr' ? 'Ancienne équipe' : 'Past Team')}
 				members={staffMembers}
 				lang={lang}
 			/>

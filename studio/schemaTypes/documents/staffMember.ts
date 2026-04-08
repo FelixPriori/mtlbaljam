@@ -27,11 +27,11 @@ export const staffMember = defineType({
       type: 'imageWithAlt',
     }),
     defineField({
-      name: 'yearsActive',
-      title: 'Years Active',
-      type: 'array',
-      of: [{ type: 'number' }],
-      description: 'e.g. [2024, 2025, 2026]',
+      name: 'isCurrent',
+      title: 'Current Staff Member',
+      type: 'boolean',
+      description: 'Check if this person is on the current team. Uncheck to move them to the alumni section.',
+      initialValue: true,
     }),
   ],
   preview: {
