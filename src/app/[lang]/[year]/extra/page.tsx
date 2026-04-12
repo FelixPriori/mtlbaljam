@@ -54,12 +54,13 @@ export default async function MbjExtra({
 		sanityFetch<SITE_SETTINGS_QUERY_RESULT>(SITE_SETTINGS_QUERY),
 	])
 	const labels = settings?.labels ?? null
+	const contactEmail = settings?.contactEmail ?? null
 	const extras = data?.extras ?? []
 
 	return (
 		<>
 			{extras.map((extra) => (
-				<ExtraItem key={extra.key} extra={extra} labels={labels} lang={lang} />
+				<ExtraItem key={extra.key} extra={extra} labels={labels} lang={lang} contactEmail={contactEmail} />
 			))}
 		</>
 	)

@@ -25,6 +25,10 @@ export const siteSettings = defineType({
         // Extra items
         localizedString('soldOut', 'Sold Out'),
         localizedString('howToOrder', 'How to Order (heading)'),
+        localizedString('orderWhileRegistering', 'Order method: While registering'),
+        localizedString('orderEditRegistration', 'Order method: Edit existing registration'),
+        localizedString('orderAtTheEvent', 'Order method: At the event'),
+        localizedString('orderContactUs', 'Order method: Contact us'),
         // Registration
         localizedString('registration', 'Registration (section title)'),
         localizedString('registerNow', 'Register Now (button)'),

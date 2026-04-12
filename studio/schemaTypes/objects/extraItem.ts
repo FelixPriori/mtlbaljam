@@ -29,25 +29,30 @@ export const extraItem = defineType({
       initialValue: false,
     }),
     defineField({
-      name: 'when',
-      title: 'When Available',
-      type: 'localizedString',
-    }),
-    defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'localizedSimpleText',
-    }),
-    defineField({
       name: 'images',
       title: 'Images',
       type: 'array',
       of: [{ type: 'imageWithAlt' }],
     }),
     defineField({
-      name: 'orderInstructions',
-      title: 'Order Instructions',
-      type: 'localizedSimpleText',
+      name: 'content',
+      title: 'Content',
+      description: 'Description, deadlines, credits, and any other details.',
+      type: 'localizedText',
+    }),
+    defineField({
+      name: 'orderMethods',
+      title: 'How to Order',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'While registering', value: 'whileRegistering' },
+          { title: 'Edit existing registration', value: 'editRegistration' },
+          { title: 'At the event', value: 'atTheEvent' },
+          { title: 'Contact us', value: 'contactUs' },
+        ],
+      },
     }),
   ],
   preview: {

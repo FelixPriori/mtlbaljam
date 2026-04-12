@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
+import { PortableText } from '@portabletext/react'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
 import type { SanityExtraItem, SanityLabels } from '@/lib/sanity/queryTypes'
@@ -9,14 +10,37 @@ export default function ExtraItem({
 	extra,
 	labels,
 	lang,
+	contactEmail,
 }: {
 	extra: SanityExtraItem
 	labels: SanityLabels
 	lang: Locales
+	contactEmail?: string | null
 }) {
 	const firstImage = extra.images?.[0]
-	const description = localize(extra.description, lang)
-	const instructions = localize(extra.orderInstructions, lang)
+	const content = localize(extra.content, lang)
+
+	const orderMethodLabel = (method: string) => {
+		switch (method) {
+			case 'whileRegistering':
+				return localize(labels?.orderWhileRegistering, lang)
+			case 'editRegistration':
+				return localize(labels?.orderEditRegistration, lang)
+			case 'atTheEvent':
+				return localize(labels?.orderAtTheEvent, lang)
+			case 'contactUs':
+				return contactEmail ? (
+					<>
+						{localize(labels?.orderContactUs, lang)}{' '}
+						<a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+					</>
+				) : (
+					localize(labels?.orderContactUs, lang)
+				)
+			default:
+				return null
+		}
+	}
 
 	return (
 		<section className={styles.extraSection}>
@@ -38,20 +62,30 @@ export default function ExtraItem({
 					) : (
 						extra.price && <p>{extra.price}</p>
 					)}
-					{extra.when && <p className={styles.when}>{localize(extra.when, lang)}</p>}
-					{description && (
+					{content && content.length > 0 && (
 						<div className={styles.description}>
-							{description.map((line) => (
-								<p key={line}>{line}</p>
-							))}
+							<PortableText
+								value={content}
+								components={{
+									marks: {
+										link: ({ value, children }) => (
+											<a href={value?.href} target="_blank" rel="noopener noreferrer">
+												{children}
+											</a>
+										),
+									},
+								}}
+							/>
 						</div>
 					)}
-					{instructions && instructions.length > 0 && (
+					{extra.orderMethods && extra.orderMethods.length > 0 && (
 						<div className={styles.instructions}>
 							<h3>{localize(labels?.howToOrder, lang) ?? (lang === 'fr' ? 'Comment commander' : 'How to order')}</h3>
-							{instructions.map((line) => (
-								<p key={line}>{line}</p>
-							))}
+							<ul>
+								{extra.orderMethods.map((method) => (
+									<li key={method}>{orderMethodLabel(method)}</li>
+								))}
+							</ul>
 						</div>
 					)}
 				</div>

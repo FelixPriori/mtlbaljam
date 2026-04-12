@@ -239,10 +239,9 @@ export const EXTRAS_QUERY = defineQuery(`
       title ${localizedStringFragment},
       price,
       soldOut,
-      when ${localizedStringFragment},
-      description ${localizedSimpleTextFragment},
       images[] ${imageWithAltFragment},
-      orderInstructions ${localizedSimpleTextFragment}
+      content ${localizedTextFragment},
+      orderMethods
     }
   }
 `)
@@ -321,6 +320,10 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
       when ${localizedStringFragment},
       soldOut ${localizedStringFragment},
       howToOrder ${localizedStringFragment},
+      orderWhileRegistering ${localizedStringFragment},
+      orderEditRegistration ${localizedStringFragment},
+      orderAtTheEvent ${localizedStringFragment},
+      orderContactUs ${localizedStringFragment},
       registration ${localizedStringFragment},
       registerNow ${localizedStringFragment},
       fullPass ${localizedStringFragment},
