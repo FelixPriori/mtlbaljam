@@ -52,6 +52,8 @@ export type SiteSettings = {
     checkOutOurVenue?: LocalizedString;
     viewFullMap?: LocalizedString;
     ourTeam?: LocalizedString;
+    currentTeam?: LocalizedString;
+    pastTeam?: LocalizedString;
     toasterIconAlt?: LocalizedString;
     archImageAlt?: LocalizedString;
     loafIconAlt?: LocalizedString;
@@ -239,6 +241,8 @@ export type StaticPage = {
     | "travel"
     | "visiting"
     | "volunteering";
+  metaTitle?: LocalizedString;
+  metaDescription?: LocalizedString;
   content?: LocalizedText;
   foodSectionImage?: ImageWithAlt;
   sightseeingSectionImage?: ImageWithAlt;
@@ -420,7 +424,7 @@ export type ExtraItem = {
       _key: string;
     } & ImageWithAlt
   >;
-  orderInstructions?: LocalizedText;
+  orderInstructions?: LocalizedSimpleText;
 };
 
 export type Competition = {
@@ -1117,58 +1121,8 @@ export type EVENT_EDITION_QUERY_RESULT = {
       } | null;
     }> | null;
     orderInstructions: {
-      en: Array<{
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: "span";
-          _key: string;
-        }>;
-        style?:
-          | "blockquote"
-          | "h1"
-          | "h2"
-          | "h3"
-          | "h4"
-          | "h5"
-          | "h6"
-          | "normal";
-        listItem?: "bullet" | "number";
-        markDefs?: Array<{
-          href?: string;
-          _type: "link";
-          _key: string;
-        }>;
-        level?: number;
-        _type: "block";
-        _key: string;
-      }> | null;
-      fr: Array<{
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: "span";
-          _key: string;
-        }>;
-        style?:
-          | "blockquote"
-          | "h1"
-          | "h2"
-          | "h3"
-          | "h4"
-          | "h5"
-          | "h6"
-          | "normal";
-        listItem?: "bullet" | "number";
-        markDefs?: Array<{
-          href?: string;
-          _type: "link";
-          _key: string;
-        }>;
-        level?: number;
-        _type: "block";
-        _key: string;
-      }> | null;
+      en: Array<string> | null;
+      fr: Array<string> | null;
     } | null;
   }> | null;
 } | null;
@@ -1738,58 +1692,8 @@ export type EXTRAS_QUERY_RESULT = {
       } | null;
     }> | null;
     orderInstructions: {
-      en: Array<{
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: "span";
-          _key: string;
-        }>;
-        style?:
-          | "blockquote"
-          | "h1"
-          | "h2"
-          | "h3"
-          | "h4"
-          | "h5"
-          | "h6"
-          | "normal";
-        listItem?: "bullet" | "number";
-        markDefs?: Array<{
-          href?: string;
-          _type: "link";
-          _key: string;
-        }>;
-        level?: number;
-        _type: "block";
-        _key: string;
-      }> | null;
-      fr: Array<{
-        children?: Array<{
-          marks?: Array<string>;
-          text?: string;
-          _type: "span";
-          _key: string;
-        }>;
-        style?:
-          | "blockquote"
-          | "h1"
-          | "h2"
-          | "h3"
-          | "h4"
-          | "h5"
-          | "h6"
-          | "normal";
-        listItem?: "bullet" | "number";
-        markDefs?: Array<{
-          href?: string;
-          _type: "link";
-          _key: string;
-        }>;
-        level?: number;
-        _type: "block";
-        _key: string;
-      }> | null;
+      en: Array<string> | null;
+      fr: Array<string> | null;
     } | null;
   }> | null;
 } | null;
@@ -2085,7 +1989,7 @@ export type ALL_EDITION_YEARS_QUERY_RESULT = Array<{
 
 // Source: ../src/lib/sanity/queries.ts
 // Variable: SITE_SETTINGS_QUERY
-// Query: *[_type == "siteSettings"][0] {    facebookUrl,    instagramUrl,    contactEmail,    labels {      competitions { en, fr },      judges { en, fr },      price { en, fr },      format { en, fr },      when { en, fr },      soldOut { en, fr },      howToOrder { en, fr },      registration { en, fr },      registerNow { en, fr },      fullPass { en, fr },      partyPass { en, fr },      classPass { en, fr },      ticketsInclude { en, fr },      helpSomeoneAttend { en, fr },      eligibilityAndGuidelines { en, fr },      priceCalendar { en, fr },      termsAndConditions { en, fr },      tracks { en, fr },      levelRequirement { en, fr },      learnMore { en, fr },      instructors { en, fr },      music { en, fr },      sponsors { en, fr },      venue { en, fr },      checkOutOurVenue { en, fr },      viewFullMap { en, fr },      ourTeam { en, fr },      toasterIconAlt { en, fr },      archImageAlt { en, fr },      loafIconAlt { en, fr },    }  }
+// Query: *[_type == "siteSettings"][0] {    facebookUrl,    instagramUrl,    contactEmail,    labels {      competitions { en, fr },      judges { en, fr },      price { en, fr },      format { en, fr },      when { en, fr },      soldOut { en, fr },      howToOrder { en, fr },      registration { en, fr },      registerNow { en, fr },      fullPass { en, fr },      partyPass { en, fr },      classPass { en, fr },      ticketsInclude { en, fr },      helpSomeoneAttend { en, fr },      eligibilityAndGuidelines { en, fr },      priceCalendar { en, fr },      termsAndConditions { en, fr },      tracks { en, fr },      levelRequirement { en, fr },      learnMore { en, fr },      instructors { en, fr },      music { en, fr },      sponsors { en, fr },      venue { en, fr },      checkOutOurVenue { en, fr },      viewFullMap { en, fr },      ourTeam { en, fr },      currentTeam { en, fr },      pastTeam { en, fr },      toasterIconAlt { en, fr },      archImageAlt { en, fr },      loafIconAlt { en, fr },    }  }
 export type SITE_SETTINGS_QUERY_RESULT = {
   facebookUrl: string | null;
   instagramUrl: string | null;

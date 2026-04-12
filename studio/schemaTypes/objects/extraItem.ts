@@ -47,7 +47,7 @@ export const extraItem = defineType({
     defineField({
       name: 'orderInstructions',
       title: 'Order Instructions',
-      type: 'localizedText',
+      type: 'localizedSimpleText',
     }),
   ],
   preview: {

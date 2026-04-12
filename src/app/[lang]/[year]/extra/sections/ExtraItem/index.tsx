@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
-import { PortableText } from '@portabletext/react'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
 import type { SanityExtraItem, SanityLabels } from '@/lib/sanity/queryTypes'
@@ -50,7 +49,9 @@ export default function ExtraItem({
 					{instructions && instructions.length > 0 && (
 						<div className={styles.instructions}>
 							<h3>{localize(labels?.howToOrder, lang) ?? (lang === 'fr' ? 'Comment commander' : 'How to order')}</h3>
-							<PortableText value={instructions} />
+							{instructions.map((line) => (
+								<p key={line}>{line}</p>
+							))}
 						</div>
 					)}
 				</div>
