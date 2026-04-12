@@ -294,7 +294,8 @@ export const HOME_PAGE_QUERY = defineQuery(`
       featuredSponsors[]->{ _id, name, logo ${imageWithAltFragment}, link },
       sponsorNoteText ${localizedStringFragment}
     },
-    "bands": bands[]->{ _id, name, biography ${localizedTextFragment}, logo ${imageWithAltFragment}, schemaDescription }
+    "bands": bands[]->{ _id, name, biography ${localizedTextFragment}, logo ${imageWithAltFragment}, schemaDescription },
+    "venue": venueRef->{ name, address, website, position { lat, lng } }
   }
 `)
 

@@ -96,10 +96,50 @@ export default async function MTLBALJAM({
 
 	const homePage = data?.homePage ?? null
 	const bands = data?.bands ?? []
+	const venue = data?.venue ?? null
 	const labels = siteSettings?.labels ?? null
 
 	const band0 = bands[0]
 	const band1 = bands[1]
+
+	const location = venue
+		? (() => {
+				// Parse "streetAddress, city, province postalCode" → structured fields
+				const [street, city, regionPostal] = (venue.address ?? '').split(', ')
+				const spaceIdx = (regionPostal ?? '').indexOf(' ')
+				const region = regionPostal?.slice(0, spaceIdx) ?? 'QC'
+				const postalCode = regionPostal?.slice(spaceIdx + 1) ?? ''
+				return {
+					'@type': 'Place',
+					name: venue.name,
+					url: venue.website ?? undefined,
+					address: {
+						'@type': 'PostalAddress',
+						streetAddress: street,
+						addressLocality: city,
+						addressRegion: region,
+						postalCode,
+						addressCountry: 'CA',
+					},
+					geo: venue.position
+						? {
+								'@type': 'GeoCoordinates',
+								latitude: Number(venue.position.lat),
+								longitude: Number(venue.position.lng),
+							}
+						: undefined,
+				}
+			})()
+		: {
+				'@type': 'Place',
+				name: 'Montréal / Tiohtià:ke',
+				address: {
+					'@type': 'PostalAddress',
+					addressLocality: 'Montréal',
+					addressRegion: 'QC',
+					addressCountry: 'CA',
+				},
+			}
 
 	const eventSchema = {
 		'@context': 'https://schema.org',
@@ -112,16 +152,7 @@ export default async function MTLBALJAM({
 		eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
 		image: ['https://mtlbaljam.org/og-image.png', 'https://mtlbaljam.org/legacy-band.png'],
 		inLanguage: lang,
-		location: {
-			'@type': 'Place',
-			name: 'Montréal / Tiohtià:ke',
-			address: {
-				'@type': 'PostalAddress',
-				addressLocality: 'Montréal',
-				addressRegion: 'QC',
-				addressCountry: 'CA',
-			},
-		},
+		location,
 		organizer: {
 			'@type': 'Organization',
 			name: 'Campus Balboa',
