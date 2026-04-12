@@ -37,8 +37,8 @@ export const staffMember = defineType({
   preview: {
     select: {
       title: 'name',
-      subtitle: 'pronouns',
-      media: 'photo',
+      subtitle: 'pronouns.en',
+      media: 'photo.asset',
     },
   },
 })
