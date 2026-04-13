@@ -1,17 +1,11 @@
 import { defineField, defineType } from 'sanity'
+import { RoomInput } from '../../components/RoomInput'
 
 export const scheduleEvent = defineType({
   name: 'scheduleEvent',
   title: 'Schedule Event',
   type: 'object',
   fields: [
-    defineField({
-      name: 'id',
-      title: 'ID',
-      type: 'string',
-      description: 'Unique key within the edition (e.g. "friday-doors", "saturday-band").',
-      validation: (r) => r.required(),
-    }),
     defineField({
       name: 'title',
       title: 'Title',
@@ -39,8 +33,7 @@ export const scheduleEvent = defineType({
           { title: 'Social Dance', value: 'social' },
           { title: 'Break', value: 'break' },
           { title: 'Competition', value: 'competition' },
-          { title: 'Live Music', value: 'music' },
-          { title: 'Venue', value: 'venue' },
+          { title: 'Venue opens/closes', value: 'venue' },
           { title: 'Extra', value: 'extra' },
         ],
       },
@@ -48,14 +41,32 @@ export const scheduleEvent = defineType({
     }),
     defineField({
       name: 'location',
-      title: 'Location',
+      title: 'Venue',
+      type: 'reference',
+      to: [{ type: 'venue' }],
+      description: 'Leave empty if this event is at the main edition venue.',
+    }),
+    defineField({
+      name: 'musicRef',
+      title: 'Band / DJ',
+      type: 'reference',
+      to: [{ type: 'bandOrDj' }],
+      description: 'The band or DJ performing at this social dance.',
+      hidden: ({ parent }) => parent?.type !== 'social',
+    }),
+    defineField({
+      name: 'track',
+      title: 'Room',
       type: 'string',
+      description: 'For parallel class slots only. Leave empty for events that span all rooms (socials, breaks, music, etc.).',
+      components: { input: RoomInput },
     }),
     defineField({
       name: 'instructorRef',
       title: 'Instructor',
       type: 'reference',
       to: [{ type: 'instructor' }],
+      hidden: ({ parent }) => parent?.type !== 'class',
     }),
   ],
   preview: {

@@ -25,6 +25,7 @@ export const siteSettings = defineType({
         { name: 'competitions', title: 'Competitions' },
         { name: 'registration', title: 'Registration' },
         { name: 'orderMethods', title: 'Order Methods' },
+        { name: 'schedule', title: 'Schedule' },
         { name: 'tracks', title: 'Tracks' },
         { name: 'about', title: 'About & Team' },
         { name: 'other', title: 'Other' },
@@ -61,6 +62,9 @@ export const siteSettings = defineType({
         localizedString('orderEditRegistration', 'Edit existing registration', 'orderMethods'),
         localizedString('orderAtTheEvent', 'At the event', 'orderMethods'),
         localizedString('orderContactUs', 'Contact us', 'orderMethods'),
+        // Schedule
+        localizedString('schedule', 'Schedule (section title)', 'schedule'),
+        localizedString('scheduleSoon', 'Schedule coming soon (placeholder)', 'schedule'),
         // Tracks
         localizedString('tracks', 'Tracks (section title)', 'tracks'),
         localizedString('levelRequirement', 'Level Requirement (section title)', 'tracks'),

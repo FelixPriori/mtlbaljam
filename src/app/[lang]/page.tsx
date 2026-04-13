@@ -174,11 +174,10 @@ export default async function MTLBALJAM({
 			},
 		].filter(Boolean),
 		offers: {
-			'@type': 'AggregateOffer',
+			'@type': 'Offer',
 			url: 'https://mtlbaljam2026.dancecamps.org/booking.php',
 			availability: 'https://schema.org/InStock',
-			lowPrice: 210,
-			highPrice: 280,
+			price: 210,
 			priceCurrency: 'CAD',
 			validFrom: '2026-02-03',
 		},

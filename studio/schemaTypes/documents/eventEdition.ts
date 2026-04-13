@@ -31,6 +31,14 @@ export const eventEdition = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
+      name: 'nightCutoffHour',
+      title: 'Night Cutoff Hour',
+      type: 'number',
+      description: 'Events ending before this hour (e.g. 3 for 3 AM) are grouped under the previous day in the schedule. Default: 3.',
+      initialValue: 3,
+      validation: (r) => r.min(0).max(6).integer(),
+    }),
+    defineField({
       name: 'registrationOpenDate',
       title: 'Registration Opens',
       type: 'date',
@@ -104,6 +112,41 @@ export const eventEdition = defineType({
     }),
 
     // ── Schedule ──────────────────────────────────────────────────────────────
+    defineField({
+      name: 'rooms',
+      title: 'Rooms',
+      description: 'The rooms available at this venue. Used for parallel class tracks in the schedule.',
+      type: 'array',
+      of: [
+        defineField({
+          name: 'room',
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'label',
+              title: 'Label',
+              type: 'localizedString',
+              description: 'Display name (e.g. "Ballroom / Salle de bal", "Upstairs / À l\'étage")',
+              validation: (r) => r.required(),
+            }),
+            defineField({
+              name: 'key',
+              title: 'Key',
+              type: 'slug',
+              description: 'Auto-generated identifier used internally.',
+              options: {
+                source: (_doc, { parent }) =>
+                  (parent as { label?: { en?: string } })?.label?.en ?? '',
+              },
+              validation: (r) => r.required(),
+            }),
+          ],
+          preview: {
+            select: { title: 'label.en', subtitle: 'key.current' },
+          },
+        }),
+      ],
+    }),
     defineField({
       name: 'scheduleEvents',
       title: 'Schedule',
