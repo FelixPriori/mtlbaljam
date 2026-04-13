@@ -25,17 +25,17 @@ export type SiteSettings = {
   instagramUrl?: string;
   contactEmail?: string;
   labels?: {
+    learnMore?: LocalizedString;
+    instructors?: LocalizedString;
+    music?: LocalizedString;
+    sponsors?: LocalizedString;
+    venue?: LocalizedString;
+    checkOutOurVenue?: LocalizedString;
     competitions?: LocalizedString;
     judges?: LocalizedString;
     price?: LocalizedString;
     format?: LocalizedString;
     when?: LocalizedString;
-    soldOut?: LocalizedString;
-    howToOrder?: LocalizedString;
-    orderWhileRegistering?: LocalizedString;
-    orderEditRegistration?: LocalizedString;
-    orderAtTheEvent?: LocalizedString;
-    orderContactUs?: LocalizedString;
     registration?: LocalizedString;
     registerNow?: LocalizedString;
     fullPass?: LocalizedString;
@@ -46,18 +46,20 @@ export type SiteSettings = {
     eligibilityAndGuidelines?: LocalizedString;
     priceCalendar?: LocalizedString;
     termsAndConditions?: LocalizedString;
+    soldOut?: LocalizedString;
+    howToOrder?: LocalizedString;
+    orderWhileRegistering?: LocalizedString;
+    orderEditRegistration?: LocalizedString;
+    orderAtTheEvent?: LocalizedString;
+    orderContactUs?: LocalizedString;
+    schedule?: LocalizedString;
+    scheduleSoon?: LocalizedString;
     tracks?: LocalizedString;
     levelRequirement?: LocalizedString;
-    learnMore?: LocalizedString;
-    instructors?: LocalizedString;
-    music?: LocalizedString;
-    sponsors?: LocalizedString;
-    venue?: LocalizedString;
-    checkOutOurVenue?: LocalizedString;
-    viewFullMap?: LocalizedString;
     ourTeam?: LocalizedString;
     currentTeam?: LocalizedString;
     pastTeam?: LocalizedString;
+    viewFullMap?: LocalizedString;
     toasterIconAlt?: LocalizedString;
     archImageAlt?: LocalizedString;
     loafIconAlt?: LocalizedString;
@@ -115,6 +117,7 @@ export type EventEdition = {
   slug?: Slug;
   startDate?: string;
   endDate?: string;
+  nightCutoffHour?: number;
   registrationOpenDate?: string;
   registrationCloseDate?: string;
   venueRef?: VenueReference;
@@ -136,6 +139,12 @@ export type EventEdition = {
   sponsors?: Array<{
     sponsorRef?: SponsorReference;
     tier?: "presenting" | "gold" | "silver" | "community";
+    _key: string;
+  }>;
+  rooms?: Array<{
+    label?: LocalizedString;
+    key?: Slug;
+    _type: "room";
     _key: string;
   }>;
   scheduleEvents?: Array<
@@ -323,43 +332,6 @@ export type StaffMember = {
   isCurrent?: boolean;
 };
 
-export type Venue = {
-  _id: string;
-  _type: "venue";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  address?: string;
-  website?: string;
-  description?: LocalizedSimpleText;
-  photo?: ImageWithAlt;
-  position?: GeoCoordinates;
-  markerTitle?: string;
-  infoWindowText?: string;
-};
-
-export type GeoCoordinates = {
-  _type: "geoCoordinates";
-  lat?: string;
-  lng?: string;
-};
-
-export type BandOrDj = {
-  _id: string;
-  _type: "bandOrDj";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  type?: "band" | "dj";
-  pronouns?: string;
-  logo?: ImageWithAlt;
-  biography?: LocalizedText;
-  link?: string;
-  schemaDescription?: string;
-};
-
 export type Sponsor = {
   _id: string;
   _type: "sponsor";
@@ -442,19 +414,13 @@ export type Competition = {
 
 export type ScheduleEvent = {
   _type: "scheduleEvent";
-  id?: string;
   title?: LocalizedString;
   start?: string;
   end?: string;
-  type?:
-    | "class"
-    | "social"
-    | "break"
-    | "competition"
-    | "music"
-    | "venue"
-    | "extra";
-  location?: string;
+  type?: "class" | "social" | "break" | "competition" | "venue" | "extra";
+  location?: VenueReference;
+  musicRef?: BandOrDjReference;
+  track?: string;
   instructorRef?: InstructorReference;
 };
 
@@ -472,6 +438,43 @@ export type Instructor = {
   externalLink?: string;
   biography?: LocalizedText;
   schemaDescription?: string;
+};
+
+export type BandOrDj = {
+  _id: string;
+  _type: "bandOrDj";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  type?: "band" | "dj";
+  pronouns?: string;
+  logo?: ImageWithAlt;
+  biography?: LocalizedText;
+  link?: string;
+  schemaDescription?: string;
+};
+
+export type Venue = {
+  _id: string;
+  _type: "venue";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  address?: string;
+  website?: string;
+  description?: LocalizedSimpleText;
+  photo?: ImageWithAlt;
+  position?: GeoCoordinates;
+  markerTitle?: string;
+  infoWindowText?: string;
+};
+
+export type GeoCoordinates = {
+  _type: "geoCoordinates";
+  lat?: string;
+  lng?: string;
 };
 
 export type SanityImageCrop = {
@@ -605,9 +608,6 @@ export type AllSanitySchemaTypes =
   | ImageWithAlt
   | LocalizedText
   | StaffMember
-  | Venue
-  | GeoCoordinates
-  | BandOrDj
   | Sponsor
   | Judge
   | InstructorGroup
@@ -618,6 +618,9 @@ export type AllSanitySchemaTypes =
   | Competition
   | ScheduleEvent
   | Instructor
+  | BandOrDj
+  | Venue
+  | GeoCoordinates
   | SanityImageCrop
   | SanityImageHotspot
   | SanityImagePaletteSwatch
@@ -628,6 +631,38 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageAsset
   | Geopoint;
+
+// Source: ../src/app/api/ical/[year]/[eventId]/route.ts
+// Variable: ICAL_EVENT_QUERY
+// Query: *[_type == "eventEdition" && year == $year][0]{    "venueAddress": venueRef->address,    "venueName": venueRef->name,    "event": scheduleEvents[_key == $eventId][0] {      "_key": _key,      title,      start,      end,      type,      "location": location->{ name, address },      "musicRef": musicRef->{ name },      instructorRef->{ name }    }  }
+export type ICAL_EVENT_QUERY_RESULT = {
+  venueAddress: string | null;
+  venueName: string | null;
+  event: {
+    _key: string;
+    title: LocalizedString | null;
+    start: string | null;
+    end: string | null;
+    type:
+      | "break"
+      | "class"
+      | "competition"
+      | "extra"
+      | "social"
+      | "venue"
+      | null;
+    location: {
+      name: string | null;
+      address: string | null;
+    } | null;
+    musicRef: {
+      name: string | null;
+    } | null;
+    instructorRef: {
+      name: string | null;
+    } | null;
+  } | null;
+} | null;
 
 // Source: ../src/lib/sanity/queries.ts
 // Variable: EVENT_EDITION_QUERY
@@ -925,7 +960,7 @@ export type EVENT_EDITION_QUERY_RESULT = {
     } | null;
   }> | null;
   scheduleEvents: Array<{
-    id: string | null;
+    id: null;
     title: {
       en: string | null;
       fr: string | null;
@@ -937,11 +972,10 @@ export type EVENT_EDITION_QUERY_RESULT = {
       | "class"
       | "competition"
       | "extra"
-      | "music"
       | "social"
       | "venue"
       | null;
-    location: string | null;
+    location: VenueReference | null;
     instructorRef: {
       _id: string;
       name: string | null;
@@ -2027,6 +2061,54 @@ export type HOME_PAGE_QUERY_RESULT = {
 } | null;
 
 // Source: ../src/lib/sanity/queries.ts
+// Variable: SCHEDULE_QUERY
+// Query: *[_type == "eventEdition" && year == $year][0]{    startDate,    endDate,    nightCutoffHour,    "venueAddress": venueRef->address,    "venueName": venueRef->name,    "rooms": rooms[] {      label { en, fr },      "key": key.current    },    "scheduleEvents": scheduleEvents[] {      "_key": _key,      title { en, fr },      start,      end,      type,      track,      "location": location->{ name, address },      "musicRef": musicRef->{ _id, name },      instructorRef->{ _id, name }    }  }
+export type SCHEDULE_QUERY_RESULT = {
+  startDate: string | null;
+  endDate: string | null;
+  nightCutoffHour: number | null;
+  venueAddress: string | null;
+  venueName: string | null;
+  rooms: Array<{
+    label: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+    key: string | null;
+  }> | null;
+  scheduleEvents: Array<{
+    _key: string;
+    title: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+    start: string | null;
+    end: string | null;
+    type:
+      | "break"
+      | "class"
+      | "competition"
+      | "extra"
+      | "social"
+      | "venue"
+      | null;
+    track: string | null;
+    location: {
+      name: string | null;
+      address: string | null;
+    } | null;
+    musicRef: {
+      _id: string;
+      name: string | null;
+    } | null;
+    instructorRef: {
+      _id: string;
+      name: string | null;
+    } | null;
+  }> | null;
+} | null;
+
+// Source: ../src/lib/sanity/queries.ts
 // Variable: ALL_EDITION_YEARS_QUERY
 // Query: *[_type == "eventEdition"] | order(year desc) { year }
 export type ALL_EDITION_YEARS_QUERY_RESULT = Array<{
@@ -2035,7 +2117,7 @@ export type ALL_EDITION_YEARS_QUERY_RESULT = Array<{
 
 // Source: ../src/lib/sanity/queries.ts
 // Variable: SITE_SETTINGS_QUERY
-// Query: *[_type == "siteSettings"][0] {    facebookUrl,    instagramUrl,    contactEmail,    labels {      competitions { en, fr },      judges { en, fr },      price { en, fr },      format { en, fr },      when { en, fr },      soldOut { en, fr },      howToOrder { en, fr },      orderWhileRegistering { en, fr },      orderEditRegistration { en, fr },      orderAtTheEvent { en, fr },      orderContactUs { en, fr },      registration { en, fr },      registerNow { en, fr },      fullPass { en, fr },      partyPass { en, fr },      classPass { en, fr },      ticketsInclude { en, fr },      helpSomeoneAttend { en, fr },      eligibilityAndGuidelines { en, fr },      priceCalendar { en, fr },      termsAndConditions { en, fr },      tracks { en, fr },      levelRequirement { en, fr },      learnMore { en, fr },      instructors { en, fr },      music { en, fr },      sponsors { en, fr },      venue { en, fr },      checkOutOurVenue { en, fr },      viewFullMap { en, fr },      ourTeam { en, fr },      currentTeam { en, fr },      pastTeam { en, fr },      toasterIconAlt { en, fr },      archImageAlt { en, fr },      loafIconAlt { en, fr },    }  }
+// Query: *[_type == "siteSettings"][0] {    facebookUrl,    instagramUrl,    contactEmail,    labels {      competitions { en, fr },      judges { en, fr },      price { en, fr },      format { en, fr },      when { en, fr },      soldOut { en, fr },      howToOrder { en, fr },      orderWhileRegistering { en, fr },      orderEditRegistration { en, fr },      orderAtTheEvent { en, fr },      orderContactUs { en, fr },      registration { en, fr },      registerNow { en, fr },      fullPass { en, fr },      partyPass { en, fr },      classPass { en, fr },      ticketsInclude { en, fr },      helpSomeoneAttend { en, fr },      eligibilityAndGuidelines { en, fr },      priceCalendar { en, fr },      termsAndConditions { en, fr },      schedule { en, fr },      scheduleSoon { en, fr },      tracks { en, fr },      levelRequirement { en, fr },      learnMore { en, fr },      instructors { en, fr },      music { en, fr },      sponsors { en, fr },      venue { en, fr },      checkOutOurVenue { en, fr },      viewFullMap { en, fr },      ourTeam { en, fr },      currentTeam { en, fr },      pastTeam { en, fr },      toasterIconAlt { en, fr },      archImageAlt { en, fr },      loafIconAlt { en, fr },    }  }
 export type SITE_SETTINGS_QUERY_RESULT = {
   facebookUrl: string | null;
   instagramUrl: string | null;
@@ -2125,6 +2207,14 @@ export type SITE_SETTINGS_QUERY_RESULT = {
       en: string | null;
       fr: string | null;
     } | null;
+    schedule: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+    scheduleSoon: {
+      en: string | null;
+      fr: string | null;
+    } | null;
     tracks: {
       en: string | null;
       fr: string | null;
@@ -2192,6 +2282,7 @@ export type SITE_SETTINGS_QUERY_RESULT = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
+    '\n  *[_type == "eventEdition" && year == $year][0]{\n    "venueAddress": venueRef->address,\n    "venueName": venueRef->name,\n    "event": scheduleEvents[_key == $eventId][0] {\n      "_key": _key,\n      title,\n      start,\n      end,\n      type,\n      "location": location->{ name, address },\n      "musicRef": musicRef->{ name },\n      instructorRef->{ name }\n    }\n  }\n': ICAL_EVENT_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0] {\n    year,\n    startDate,\n    endDate,\n    registrationOpenDate,\n    registrationCloseDate,\n    venueRef-> {\n  _id,\n  name,\n  address,\n  website,\n  description { en, fr },\n  photo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n  position { lat, lng },\n  markerTitle,\n  infoWindowText\n},\n    instructors[]-> {\n  _id,\n  name,\n  pronouns,\n  slug,\n  cutoutImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n  youtubeUrl,\n  externalLink,\n  biography { en, fr },\n  schemaDescription\n},\n    bands[]-> {\n  _id,\n  name,\n  type,\n  pronouns,\n  logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n  biography { en, fr },\n  link,\n  schemaDescription\n},\n    djs[]-> {\n  _id,\n  name,\n  type,\n  pronouns,\n  logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n  biography { en, fr },\n  link,\n  schemaDescription\n},\n    sponsors[] {\n  tier,\n  sponsorRef->{ _id, name, logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}, link }\n},\n    scheduleEvents[] {\n      id,\n      title { en, fr },\n      start,\n      end,\n      type,\n      location,\n      instructorRef->{ _id, name, slug }\n    },\n    competitions[] {\n      type,\n      title { en, fr },\n      description { en, fr },\n      price,\n      format { en, fr },\n      when { en, fr }\n    },\n    "judges": judges[]-> {\n  _id,\n  name,\n  image {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}\n},\n    tracks[] {\n      trackName { en, fr },\n      trackDescription { en, fr },\n      classes[] {\n        title { en, fr },\n        description { en, fr },\n        instructorRef->{ _id, name, slug }\n      }\n    },\n    tracksPageDescription { en, fr },\n    levelInfo { en, fr },\n    registrationPage {\n      isOpen,\n      registerUrl,\n      fullPassDescription { en, fr },\n      partyPassDescription { en, fr },\n      classPassDescription { en, fr },\n      ticketsDetailsTitle { en, fr },\n      fullPassIncludes { en, fr },\n      partyPassIncludes { en, fr },\n      classPassIncludes { en, fr },\n      priceTiers[] {\n        dateLabel { en, fr },\n        endDate,\n        fullPassPrice,\n        partyPassPrice,\n        classPassPrice\n      },\n      subsidyTitle { en, fr },\n      subsidyInfo { en, fr },\n      subsidyEligibilityTitle { en, fr },\n      subsidyEligibility { en, fr },\n      termsUrl,\n      termsLinkText { en, fr },\n      termsContent { en, fr }\n    },\n    extras[] {\n      key,\n      title { en, fr },\n      price,\n      soldOut,\n      when { en, fr },\n      description { en, fr },\n      images[] {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n      orderInstructions { en, fr }\n    }\n  }\n': EVENT_EDITION_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0].instructors[]-> {\n  _id,\n  name,\n  pronouns,\n  slug,\n  cutoutImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n  youtubeUrl,\n  externalLink,\n  biography { en, fr },\n  schemaDescription\n}\n': EDITION_INSTRUCTORS_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "instructors": instructors[]-> {\n  _id,\n  name,\n  pronouns,\n  slug,\n  cutoutImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n  youtubeUrl,\n  externalLink,\n  biography { en, fr },\n  schemaDescription\n}\n  }\n': INSTRUCTORS_QUERY_RESULT;
@@ -2204,7 +2295,8 @@ declare module "@sanity/client" {
     '\n  *[_type == "staffMember"] | order(name asc) {\n    _id,\n    name,\n    pronouns { en, fr },\n    role { en, fr },\n    photo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    isCurrent\n  }\n': STAFF_QUERY_RESULT;
     '\n  *[_type == "staticPage" && pageKey == $pageKey][0] {\n    pageKey,\n    metaTitle { en, fr },\n    metaDescription { en, fr },\n    content { en, fr },\n    foodSectionImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    sightseeingSectionImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    mapUrl,\n    mapLabel { en, fr }\n  }\n': STATIC_PAGE_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "homePage": homePage {\n      instructorSectionTitle { en, fr },\n      instructorLinkText { en, fr },\n      featuredInstructorGroups[] {\n        groupImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n        groupName,\n        shortBio { en, fr }\n      },\n      musicSectionTitle { en, fr },\n      musicLearnMoreText { en, fr },\n      venueSectionTitle { en, fr },\n      venueLearnMoreText { en, fr },\n      sponsorSectionTitle { en, fr },\n      featuredSponsors[]->{ _id, name, logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}, link },\n      sponsorNoteText { en, fr }\n    },\n    "bands": bands[]->{ _id, name, biography { en, fr }, logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}, schemaDescription },\n    "venue": venueRef->{ name, address, website, position { lat, lng } }\n  }\n': HOME_PAGE_QUERY_RESULT;
+    '\n  *[_type == "eventEdition" && year == $year][0]{\n    startDate,\n    endDate,\n    nightCutoffHour,\n    "venueAddress": venueRef->address,\n    "venueName": venueRef->name,\n    "rooms": rooms[] {\n      label { en, fr },\n      "key": key.current\n    },\n    "scheduleEvents": scheduleEvents[] {\n      "_key": _key,\n      title { en, fr },\n      start,\n      end,\n      type,\n      track,\n      "location": location->{ name, address },\n      "musicRef": musicRef->{ _id, name },\n      instructorRef->{ _id, name }\n    }\n  }\n': SCHEDULE_QUERY_RESULT;
     '\n  *[_type == "eventEdition"] | order(year desc) { year }\n': ALL_EDITION_YEARS_QUERY_RESULT;
-    '\n  *[_type == "siteSettings"][0] {\n    facebookUrl,\n    instagramUrl,\n    contactEmail,\n    labels {\n      competitions { en, fr },\n      judges { en, fr },\n      price { en, fr },\n      format { en, fr },\n      when { en, fr },\n      soldOut { en, fr },\n      howToOrder { en, fr },\n      orderWhileRegistering { en, fr },\n      orderEditRegistration { en, fr },\n      orderAtTheEvent { en, fr },\n      orderContactUs { en, fr },\n      registration { en, fr },\n      registerNow { en, fr },\n      fullPass { en, fr },\n      partyPass { en, fr },\n      classPass { en, fr },\n      ticketsInclude { en, fr },\n      helpSomeoneAttend { en, fr },\n      eligibilityAndGuidelines { en, fr },\n      priceCalendar { en, fr },\n      termsAndConditions { en, fr },\n      tracks { en, fr },\n      levelRequirement { en, fr },\n      learnMore { en, fr },\n      instructors { en, fr },\n      music { en, fr },\n      sponsors { en, fr },\n      venue { en, fr },\n      checkOutOurVenue { en, fr },\n      viewFullMap { en, fr },\n      ourTeam { en, fr },\n      currentTeam { en, fr },\n      pastTeam { en, fr },\n      toasterIconAlt { en, fr },\n      archImageAlt { en, fr },\n      loafIconAlt { en, fr },\n    }\n  }\n': SITE_SETTINGS_QUERY_RESULT;
+    '\n  *[_type == "siteSettings"][0] {\n    facebookUrl,\n    instagramUrl,\n    contactEmail,\n    labels {\n      competitions { en, fr },\n      judges { en, fr },\n      price { en, fr },\n      format { en, fr },\n      when { en, fr },\n      soldOut { en, fr },\n      howToOrder { en, fr },\n      orderWhileRegistering { en, fr },\n      orderEditRegistration { en, fr },\n      orderAtTheEvent { en, fr },\n      orderContactUs { en, fr },\n      registration { en, fr },\n      registerNow { en, fr },\n      fullPass { en, fr },\n      partyPass { en, fr },\n      classPass { en, fr },\n      ticketsInclude { en, fr },\n      helpSomeoneAttend { en, fr },\n      eligibilityAndGuidelines { en, fr },\n      priceCalendar { en, fr },\n      termsAndConditions { en, fr },\n      schedule { en, fr },\n      scheduleSoon { en, fr },\n      tracks { en, fr },\n      levelRequirement { en, fr },\n      learnMore { en, fr },\n      instructors { en, fr },\n      music { en, fr },\n      sponsors { en, fr },\n      venue { en, fr },\n      checkOutOurVenue { en, fr },\n      viewFullMap { en, fr },\n      ourTeam { en, fr },\n      currentTeam { en, fr },\n      pastTeam { en, fr },\n      toasterIconAlt { en, fr },\n      archImageAlt { en, fr },\n      loafIconAlt { en, fr },\n    }\n  }\n': SITE_SETTINGS_QUERY_RESULT;
   }
 }

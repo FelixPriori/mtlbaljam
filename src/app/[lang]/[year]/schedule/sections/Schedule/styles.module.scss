@@ -1,0 +1,13 @@
+.scheduleSection {
+	padding: 48px 40px 80px;
+	max-width: var(--max-width);
+	margin: 0 auto;
+
+	@media (max-width: 576px) {
+		padding: 32px 16px 60px;
+	}
+}
+
+.title {
+	margin-bottom: 32px;
+}

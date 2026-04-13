@@ -1,0 +1,46 @@
+.tabs {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.tabList {
+	display: flex;
+	gap: 4px;
+	border-bottom: 2px solid var(--mbj-color-teal);
+	margin-bottom: 16px;
+}
+
+.tab {
+	padding: 10px 20px;
+	font-family: var(--font-josephin-sans);
+	font-size: 0.9rem;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+	background: none;
+	border: none;
+	border-bottom: 3px solid transparent;
+	margin-bottom: -2px;
+	cursor: pointer;
+	color: #888;
+	transition: color 150ms ease, border-color 150ms ease;
+
+	&:hover {
+		color: var(--mbj-color-black);
+	}
+
+	&[data-active='true'] {
+		color: var(--mbj-color-black);
+		border-bottom-color: var(--mbj-color-salmon);
+		font-weight: 600;
+	}
+
+	@media (max-width: 576px) {
+		padding: 8px 12px;
+		font-size: 0.8rem;
+	}
+}
+
+.panel {
+	// hidden attribute handles display:none natively
+}

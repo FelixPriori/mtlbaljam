@@ -299,6 +299,33 @@ export const HOME_PAGE_QUERY = defineQuery(`
   }
 `)
 
+// ── Schedule ──────────────────────────────────────────────────────────────────
+
+export const SCHEDULE_QUERY = defineQuery(`
+  *[_type == "eventEdition" && year == $year][0]{
+    startDate,
+    endDate,
+    nightCutoffHour,
+    "venueAddress": venueRef->address,
+    "venueName": venueRef->name,
+    "rooms": rooms[] {
+      label ${localizedStringFragment},
+      "key": key.current
+    },
+    "scheduleEvents": scheduleEvents[] {
+      "_key": _key,
+      title ${localizedStringFragment},
+      start,
+      end,
+      type,
+      track,
+      "location": location->{ name, address },
+      "musicRef": musicRef->{ _id, name },
+      instructorRef->{ _id, name }
+    }
+  }
+`)
+
 // ── All edition years (for generateStaticParams) ──────────────────────────────
 
 export const ALL_EDITION_YEARS_QUERY = defineQuery(`
@@ -335,6 +362,8 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
       eligibilityAndGuidelines ${localizedStringFragment},
       priceCalendar ${localizedStringFragment},
       termsAndConditions ${localizedStringFragment},
+      schedule ${localizedStringFragment},
+      scheduleSoon ${localizedStringFragment},
       tracks ${localizedStringFragment},
       levelRequirement ${localizedStringFragment},
       learnMore ${localizedStringFragment},

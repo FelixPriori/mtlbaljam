@@ -1,0 +1,92 @@
+$row-height: 24px; // 15 min per row
+
+// Wraps the scroll area. On mobile it breaks out of the section padding
+// so the grid gets the full viewport width.
+.scrollOuter {
+	@media (max-width: 640px) {
+		margin-inline: -16px; // undo Schedule section's horizontal padding
+	}
+}
+
+.panelWrapper {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: thin;
+	scrollbar-color: color-mix(in srgb, var(--mbj-color-teal) 40%, transparent) transparent;
+
+	// Scroll-aware edge fades using the background-attachment trick.
+	// "local" layers scroll with the content and act as covers that hide the
+	// shadow when the container is at that edge. "scroll" layers stay fixed
+	// and show through once the cover scrolls away.
+	// Only applied on mobile where overflow actually occurs.
+	@media (max-width: 640px) {
+		padding-inline: 16px; // restore inner breathing room
+
+		background-color: white;
+		background-image:
+			linear-gradient(to right, white, transparent),
+			linear-gradient(to left,  white, transparent),
+			linear-gradient(to right, rgba(0, 0, 0, 0.07), transparent),
+			linear-gradient(to left,  rgba(0, 0, 0, 0.07), transparent);
+		background-size: 32px 100%, 32px 100%, 32px 100%, 32px 100%;
+		background-position: left center, right center, left center, right center;
+		background-repeat: no-repeat;
+		background-attachment: local, local, scroll, scroll;
+	}
+}
+
+// Column header row — grid-template-columns set inline to match .dayGrid
+.trackHeader {
+	display: grid;
+	gap: 0 2px;
+	margin-bottom: 2px;
+}
+
+.timeCol {
+	// spacer to align with .timeLabel column
+}
+
+.trackLabel {
+	padding: 6px 8px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #666;
+	border-bottom: 2px solid var(--mbj-color-teal);
+	text-align: center;
+}
+
+// Main grid — grid-template-columns set inline dynamically
+.dayGrid {
+	display: grid;
+	grid-auto-rows: $row-height;
+	gap: 0 2px;
+}
+
+// Left-column time labels (10:00, 11:00, …)
+.timeLabel {
+	grid-column: 1;
+	font-size: 0.6rem;
+	color: #aaa;
+	padding-top: 3px;
+	padding-right: 4px;
+	text-align: right;
+	white-space: nowrap;
+	align-self: start;
+	user-select: none;
+}
+
+// Horizontal line at the start of each hour
+.hourLine {
+	grid-column: 1 / -1;
+	border-top: 1px solid rgba(0, 0, 0, 0.07);
+	pointer-events: none;
+}
+
+.empty {
+	padding: 48px 0;
+	text-align: center;
+	color: #888;
+	font-size: 0.9rem;
+}
