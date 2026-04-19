@@ -19,8 +19,9 @@ export const extraItem = defineType({
     }),
     defineField({
       name: 'price',
-      title: 'Price',
-      type: 'string',
+      title: 'Price (CAD)',
+      type: 'number',
+      description: 'Amount in CAD. Leave empty for free items.',
     }),
     defineField({
       name: 'soldOut',

@@ -391,7 +391,7 @@ export type ExtraItem = {
   _type: "extraItem";
   key?: string;
   title?: LocalizedString;
-  price?: string;
+  price?: number;
   soldOut?: boolean;
   images?: Array<
     {
@@ -1132,7 +1132,7 @@ export type EVENT_EDITION_QUERY_RESULT = {
       en: string | null;
       fr: string | null;
     } | null;
-    price: string | null;
+    price: number | null;
     soldOut: boolean | null;
     when: null;
     description: null;
@@ -1694,7 +1694,7 @@ export type EXTRAS_QUERY_RESULT = {
       en: string | null;
       fr: string | null;
     } | null;
-    price: string | null;
+    price: number | null;
     soldOut: boolean | null;
     images: Array<{
       asset: {

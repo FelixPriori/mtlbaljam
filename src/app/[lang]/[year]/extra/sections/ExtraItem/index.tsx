@@ -60,7 +60,15 @@ export default function ExtraItem({
 					{extra.soldOut ? (
 						<p className={styles.soldOut}>{localize(labels?.soldOut, lang) ?? (lang === 'fr' ? 'Épuisé' : 'Sold out')}</p>
 					) : (
-						extra.price && <p>{extra.price}</p>
+						extra.price != null && (
+								<p>
+									{localize(labels?.price, lang)}
+									{new Intl.NumberFormat(lang === 'fr' ? 'fr-CA' : 'en-CA', {
+										style: 'currency',
+										currency: 'CAD',
+									}).format(extra.price)}
+								</p>
+							)
 					)}
 					{content && content.length > 0 && (
 						<div className={styles.description}>
