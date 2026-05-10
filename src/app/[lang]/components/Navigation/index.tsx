@@ -7,7 +7,7 @@ import { Locales } from '@/i18n'
 
 export type NavigationData = DictionaryType['navigation']
 
-export type PageTabs = keyof Omit<NavigationData, 'title'>
+export type PageTabs = keyof Omit<NavigationData, 'title' | 'archiveLabel'>
 
 export default function Navigation({
 	navigation,

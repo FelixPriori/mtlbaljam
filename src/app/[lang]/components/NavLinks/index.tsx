@@ -3,7 +3,7 @@ import NavLink from '../NavLink'
 import styles from './styles.module.scss'
 import { useState } from 'react'
 import NavTab from '../NavTab'
-import { checkIsCurrent, getDefaultToggledTab } from '@/util/navigationUtils'
+import { checkIsCurrent, getDefaultToggledTab, getPastYearKeys, getSortedMainTabs } from '@/util/navigationUtils'
 import { usePathname } from 'next/navigation'
 import { NavigationData, PageTabs } from '../Navigation'
 
@@ -16,22 +16,36 @@ export default function NavLinks({
 	const [toggledTab, setToggledTab] = useState<string | null>(
 		getDefaultToggledTab(pathname, navigation)
 	)
-	const orderOfNav = Object.keys(navigation)
-		.filter(key => key !== 'title')
-		.sort((a, b) => {
-			if (a === 'about') {
-				return -1
-			}
-			if (a === 'travel') {
-				return 1
-			}
-			const year1 = a.split('202')[1]
-			const year2 = b.split('202')[1]
-			if (year1 < year2) {
-				return 1
-			}
-			return -1
-		})
+
+	const pastYearKeys = getPastYearKeys(navigation)
+	const mainTabs = getSortedMainTabs(navigation)
+
+	const tabsBeforeTravel = mainTabs.filter(tab => tab !== 'travel')
+	const hasTravel = mainTabs.includes('travel')
+	const archiveIsOpen = toggledTab === 'archive'
+
+	const renderTab = (tab: string) => {
+		const isOpen = tab === toggledTab
+		return (
+			<NavTab
+				key={tab}
+				tab={tab}
+				isOpen={isOpen}
+				setToggledTab={() => setToggledTab(isOpen ? null : tab)}
+				title={navigation[tab as PageTabs].title}
+			>
+				{navigation[tab as PageTabs].subtabs.map((page: any) => (
+					<NavLink
+						key={page.text}
+						hidden={!isOpen}
+						isCurrent={checkIsCurrent(page.href, pathname)}
+						href={page.href}
+						text={page.text}
+					/>
+				))}
+			</NavTab>
+		)
+	}
 
 	return (
 		<div className={styles.navLinksWrapper}>
@@ -39,28 +53,31 @@ export default function NavLinks({
 				<h2 className={styles.title}>{navigation.title}</h2>
 			</div>
 			<ul className={styles.navLinks}>
-				{orderOfNav.map(tab => {
-					const isOpen = tab === toggledTab
-					return (
-						<NavTab
-							key={tab}
-							tab={tab}
-							isOpen={isOpen}
-							setToggledTab={() => setToggledTab(isOpen ? null : tab)}
-							title={navigation[tab as PageTabs].title}
-						>
-							{navigation[tab as PageTabs].subtabs.map((page: any) => (
+				{tabsBeforeTravel.map(renderTab)}
+				{pastYearKeys.length > 0 && (
+					<NavTab
+						tab="archive"
+						isOpen={archiveIsOpen}
+						setToggledTab={() => setToggledTab(archiveIsOpen ? null : 'archive')}
+						title={navigation.archiveLabel}
+					>
+						{pastYearKeys.map(key => {
+							const yearNum = key.replace('mbj', '')
+							const lang = pathname.split('/')[1]
+							const href = `/${lang}/${yearNum}`
+							return (
 								<NavLink
-									key={page.text}
-									hidden={!isOpen}
-									isCurrent={checkIsCurrent(page.href, pathname)}
-									href={page.href}
-									text={page.text}
+									key={key}
+									hidden={!archiveIsOpen}
+									isCurrent={pathname.split('/').includes(yearNum)}
+									href={href}
+									text={navigation[key as PageTabs].title}
 								/>
-							))}
-						</NavTab>
-					)
-				})}
+							)
+						})}
+					</NavTab>
+				)}
+				{hasTravel && renderTab('travel')}
 			</ul>
 		</div>
 	)

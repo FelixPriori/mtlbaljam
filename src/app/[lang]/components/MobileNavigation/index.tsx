@@ -4,7 +4,7 @@ import NavTab from '../NavTab'
 import NavLink from '../NavLink'
 import styles from './styles.module.scss'
 import LanguageSwitcher from '../LanguageSwitcher'
-import { checkIsCurrent } from '@/util/navigationUtils'
+import { checkIsCurrent, getPastYearKeys, getSortedMainTabs } from '@/util/navigationUtils'
 import { usePathname } from 'next/navigation'
 import { NavigationData, PageTabs } from '../Navigation'
 import { Locales } from '@/i18n'
@@ -23,6 +23,36 @@ export default function MobileNavigation({
 	const toggle = () => setIsOpen(!isOpen)
 	const pathname = usePathname()
 
+	const pastYearKeys = getPastYearKeys(navigation)
+	const mainTabs = getSortedMainTabs(navigation)
+	const tabsBeforeTravel = mainTabs.filter(tab => tab !== 'travel')
+	const hasTravel = mainTabs.includes('travel')
+
+	const renderTab = (tab: string) => {
+		const isTabOpen = tab === toggledTab
+		return (
+			<NavTab
+				key={tab}
+				tab={tab}
+				isOpen={true}
+				setToggledTab={() => setToggledTab(isTabOpen ? null : tab)}
+				title={navigation[tab as PageTabs].title}
+				isMobile
+			>
+				{navigation[tab as PageTabs].subtabs.map((page: any) => (
+					<NavLink
+						key={page.text}
+						hidden={!isTabOpen}
+						isCurrent={checkIsCurrent(page.href, pathname)}
+						mobileToggle={toggle}
+						href={page.href}
+						text={page.text}
+					/>
+				))}
+			</NavTab>
+		)
+	}
+
 	return (
 		<>
 			<div
@@ -40,31 +70,33 @@ export default function MobileNavigation({
 					<h2 className={styles.title}>{navigation.title}</h2>
 
 					<ul className={styles.navTabs}>
-						{Object.keys(navigation).map((tab: string) => {
-							const isTabOpen = tab === toggledTab
-							if (tab === 'title') return
-							return (
-								<NavTab
-									key={tab}
-									tab={tab}
-									isOpen={true}
-									setToggledTab={() => setToggledTab(isOpen ? null : tab)}
-									title={navigation[tab as PageTabs].title}
-									isMobile
-								>
-									{navigation[tab as PageTabs].subtabs.map((page: any) => (
+						{tabsBeforeTravel.map(renderTab)}
+						{pastYearKeys.length > 0 && (
+							<NavTab
+								tab="archive"
+								isOpen={true}
+								setToggledTab={() => {}}
+								title={navigation.archiveLabel}
+								isMobile
+							>
+								{pastYearKeys.map(key => {
+									const yearNum = key.replace('mbj', '')
+									const lang = pathname.split('/')[1]
+									const href = `/${lang}/${yearNum}`
+									return (
 										<NavLink
-											key={page.text}
-											hidden={!isTabOpen}
-											isCurrent={checkIsCurrent(page.href, pathname)}
+											key={key}
+											hidden={false}
+											isCurrent={pathname.split('/').includes(yearNum)}
 											mobileToggle={toggle}
-											href={page.href}
-											text={page.text}
+											href={href}
+											text={navigation[key as PageTabs].title}
 										/>
-									))}
-								</NavTab>
-							)
-						})}
+									)
+								})}
+							</NavTab>
+						)}
+						{hasTravel && renderTab('travel')}
 						<li className={styles.languageSwitcher}>
 							<LanguageSwitcher lang={lang} />
 						</li>
