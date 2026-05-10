@@ -39,6 +39,17 @@ export default async function LocaleLayout({
 				suppressHydrationWarning
 				className={`${caveatBrush.variable} ${josephinSans.variable}`}
 			>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							'@context': 'https://schema.org',
+							'@type': 'WebSite',
+							name: 'MTL BAL JAM',
+							url: 'https://mtlbaljam.org',
+						}),
+					}}
+				/>
 				<div className="wrapper">
 					<Navigation navigation={navigation} lang={lang} />
 					<Header header={header} iconAlts={iconAlts} />
