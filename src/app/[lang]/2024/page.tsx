@@ -76,8 +76,9 @@ export default async function Event2024({
 			<Instructors instructorsSection={mbj2024.homePage.instructorsSection} />
 			<Venue
 				venueSection={mbj2024.homePage.venueSection}
-				scheduleSection={mbj2024.homePage.scheduleSection}
+				competitionsSection={mbj2024.homePage.competitionsSection}
 				iconAlts={iconAlts}
+				lang={lang}
 			/>
 			<Music
 				musicSection={mbj2024.homePage.musicSection}

@@ -338,11 +338,15 @@
 				"detailsLink": "/2024/registration",
 				"description": "Vous pouvez maintenant vous inscrire en visitant notre <registration>page d’inscription</registration>! Si vous voulez simplement voir les différentes options, <details>cliquez-ici</details>."
 			},
-			"scheduleSection": {
-				"title": "Horaire",
-				"detailsLink": "/2024/schedule",
-				"description": "Vous pouvez maintenant consulter l'horaire de l'événement en visitant la ",
-				"linkText": "page de l'horaire"
+			"competitionsSection": {
+				"title": "Compétitions",
+				"competitions": ["Open Mix & Match", "Slow Balboa"],
+				"judgesTitle": "Juges",
+				"judges": "Yulia & Sasha",
+				"learnMore": {
+					"text": "Voir les détails...",
+					"href": "/2024/competitions"
+				}
 			}
 		},
 		"musicPage": {
@@ -830,8 +834,8 @@
 			},
 			"instructorsSection": {
 				"title": "Instructeurs",
-				"instructorsNames": "Yulia & Sasha",
-				"description": "Yulia et Sasha sont deux passionnés du Balboa basés au Royaume-Uni : danseurs, instructeurs et compétiteurs. Ils proposent des cours et des mini-ateliers à Londres et à travers l'Europe.",
+				"instructorsNames": "Lucía & Javi / Neus & Albert",
+				"description": "Lucía et Javi (ES) dansent et enseignent les danses swing ensemble depuis plus de dix ans, en se concentrant sur le partenariat et l'improvisation musicale. Neus et Albert (ES) ont développé une technique de danse en partenaire où les deux sont égaux, mettant l'accent sur la danse sociale et l'improvisation.",
 				"learnMore": {
 					"text": "Plus de détails...",
 					"href": "/2025/instructors"
@@ -849,11 +853,15 @@
 				"detailsLink": "/2025/registration",
 				"description": "Vous pouvez maintenant vous inscrire en visitant notre <registration>page d’inscription</registration>! Si vous voulez simplement voir les différentes options, <details>cliquez-ici</details>."
 			},
-			"scheduleSection": {
-				"title": "Horaire",
-				"detailsLink": "/2025/schedule",
-				"description": "Vous pouvez maintenant consulter l'horaire de l'événement en visitant la ",
-				"linkText": "page de l'horaire"
+			"competitionsSection": {
+				"title": "Compétitions",
+				"competitions": ["Open Mix & Match", "Pure Balboa Strictly", "Slow Balboa Strictly"],
+				"judgesTitle": "Juges",
+				"judges": "Lucía, Javi, Neus, Albert, Dominique, Zack & Cara",
+				"learnMore": {
+					"text": "Voir les détails...",
+					"href": "/2025/competitions"
+				}
 			}
 		},
 		"instructorsPage": {
@@ -2485,6 +2493,7 @@
 	},
 	"navigation": {
 		"title": "Menu",
+		"archiveLabel": "Archives",
 		"about": {
 			"title": "À propos",
 			"subtabs": [

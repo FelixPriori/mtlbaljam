@@ -27,22 +27,44 @@
         }
     }
 
-    .registration {
+    .competitions {
         grid-column: 3 / 7;
         height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-
-        p {
-            line-height: 150%;
-        }
+        gap: 0.75rem;
 
         h2 {
             font-size: 3rem;
             text-align: left;
-            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.25rem;
+
+            li {
+                line-height: 1.6;
+            }
+        }
+
+        .judges {
+            span {
+                font-weight: 700;
+            }
+        }
+
+        a {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+            max-width: fit-content;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 
@@ -104,16 +126,11 @@
         min-height: 100vh;
         grid-template-rows: repeat(2, 1fr);
 
-        .subscribeWrapper {
+        .competitions {
             grid-row: 1 / 2;
             grid-column: 4 / 10;
+            padding: 2rem 0;
         }
-
-        .registration {
-            grid-row: 1 / 2;
-            grid-column: 4 / 10;
-        }
-
 
         .archWrapper {
             grid-row: 2 / -1;
@@ -135,11 +152,7 @@
     }
 
     @media only screen and (max-width: 768px) {
-        .subscribeWrapper {
-            grid-column: 2 / 12;
-        }
-
-        .registration {
+        .competitions {
             grid-column: 2 / 12;
         }
 
