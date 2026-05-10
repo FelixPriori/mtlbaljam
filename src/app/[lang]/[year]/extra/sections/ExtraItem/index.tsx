@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import { PortableText } from '@portabletext/react'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
+import { formatCurrency } from '@/util/formatCurrency'
 import type { SanityExtraItem, SanityLabels } from '@/lib/sanity/queryTypes'
 import type { Locales } from '@/i18n'
 
@@ -60,7 +61,12 @@ export default function ExtraItem({
 					{extra.soldOut ? (
 						<p className={styles.soldOut}>{localize(labels?.soldOut, lang) ?? (lang === 'fr' ? 'Épuisé' : 'Sold out')}</p>
 					) : (
-						extra.price && <p>{extra.price}</p>
+						extra.price != null && (
+							<p>
+								{localize(labels?.price, lang)}
+								{formatCurrency(extra.price, lang)}
+							</p>
+						)
 					)}
 					{content && content.length > 0 && (
 						<div className={styles.description}>
