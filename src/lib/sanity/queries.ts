@@ -315,6 +315,7 @@ export const SCHEDULE_QUERY = defineQuery(`
     "scheduleEvents": scheduleEvents[] {
       "_key": _key,
       title ${localizedStringFragment},
+      description,
       start,
       end,
       type,

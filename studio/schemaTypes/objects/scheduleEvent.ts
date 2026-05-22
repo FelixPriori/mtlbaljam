@@ -62,6 +62,12 @@ export const scheduleEvent = defineType({
       components: { input: RoomInput },
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'localizedSimpleText',
+      hidden: ({ parent }) => parent?.type !== 'class',
+    }),
+    defineField({
       name: 'instructorRef',
       title: 'Instructor',
       type: 'reference',
