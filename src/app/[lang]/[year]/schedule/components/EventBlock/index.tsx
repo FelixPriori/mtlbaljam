@@ -1,6 +1,7 @@
 import type { Locales } from '@/i18n'
 import { localize } from '@/lib/sanity/localize'
 import type { ScheduleEvent } from '../../scheduleUtils'
+import type { LocalizedStringArray } from '@/lib/sanity/queryTypes'
 import { formatTimeEDT, formatGCalDate } from '../../scheduleUtils'
 import styles from './styles.module.scss'
 
@@ -20,6 +21,7 @@ export default function EventBlock({
 	rowOffset?: number
 }) {
 	const title = localize(event.title, lang) ?? ''
+	const description = localize(event.description as LocalizedStringArray, lang)?.[0] ?? null
 	const startStr = formatTimeEDT(event.startDate, lang)
 	const endStr = formatTimeEDT(event.endDate, lang)
 	const showCalendar = event.type != null && SHOW_CALENDAR.has(event.type)
@@ -80,6 +82,7 @@ export default function EventBlock({
 				</div>
 				<p className={styles.title}>{title}</p>
 				{performer && <p className={styles.instructor}>{performer}</p>}
+				{description && <p className={styles.description}>{description}</p>}
 			</div>
 		</div>
 	)
