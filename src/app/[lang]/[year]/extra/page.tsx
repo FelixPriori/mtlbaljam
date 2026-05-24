@@ -55,7 +55,7 @@ export default async function MbjExtra({
 	])
 	const labels = settings?.labels ?? null
 	const contactEmail = settings?.contactEmail ?? null
-	const extras = data?.extras ?? []
+	const extras = (data?.extras ?? []).sort((a, b) => Number(a.soldOut) - Number(b.soldOut))
 
 	return (
 		<>
