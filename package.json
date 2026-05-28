@@ -13,33 +13,29 @@
 		"typegen": "cd studio && sanity schema extract --path=schema.json && sanity typegen generate"
 	},
 	"dependencies": {
-		"@formatjs/intl-localematcher": "^0.5.9",
-		"@portabletext/react": "^6.0.3",
+		"@formatjs/intl-localematcher": "^0.8.9",
+		"@portabletext/react": "^6.2.0",
 		"@sanity/image-url": "^2.1.1",
-		"@vis.gl/react-google-maps": "^1.1.0",
-		"date-fns": "^4.1.0",
+		"@vis.gl/react-google-maps": "^1.8.3",
+		"date-fns": "^4.3.0",
 		"date-fns-tz": "^3.2.0",
 		"negotiator": "^1.0.0",
-		"next": "^16.1.6",
-		"next-sanity": "^12.2.1",
-		"react": "^19.2.4",
-		"react-big-calendar": "^1.19.4",
-		"react-dom": "^19.2.4",
+		"next": "^16.2.6",
+		"next-sanity": "^13.0.7",
+		"react": "^19.2.6",
+		"react-dom": "^19.2.6",
 		"react-player": "^2.16.0",
-		"sass": "^1.97.3",
-		"sharp": "^0.33.5"
+		"sass": "^1.100.0",
+		"sharp": "^0.34.5"
 	},
 	"devDependencies": {
-		"@sanity/client": "^7.20.0",
+		"@sanity/client": "^7.22.1",
 		"@types/negotiator": "^0.6.3",
-		"@types/node": "^20",
-		"@types/react": "^19.2.13",
-		"@types/react-big-calendar": "^1.16.3",
+		"@types/node": "^25.9.1",
+		"@types/react": "^19.2.15",
 		"@types/react-dom": "^19.2.3",
-		"dotenv": "^17.4.0",
-		"eslint": "^9.39.1",
-		"eslint-config-next": "^16.1.6",
-		"tsx": "^4.21.0",
-		"typescript": "^5"
+		"eslint": "^9.39.4",
+		"eslint-config-next": "^16.2.6",
+		"typescript": "^6.0.3"
 	}
 }

@@ -11,7 +11,6 @@ import { sanityFetchLive } from './live'
 export async function sanityFetch<T>(
 	query: string,
 	params: QueryParams = {},
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	_revalidate?: number | false,
 ): Promise<T> {
 	const { data } = await sanityFetchLive({ query, params })
