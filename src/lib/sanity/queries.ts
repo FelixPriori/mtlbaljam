@@ -150,12 +150,15 @@ export const EDITION_INSTRUCTORS_QUERY = defineQuery(`
 
 export const INSTRUCTORS_QUERY = defineQuery(`
   *[_type == "eventEdition" && year == $year][0]{
+    "instructorsTitle": instructorsTitle ${localizedStringFragment},
     "instructors": instructors[]-> ${instructorFragment}
   }
 `)
 
 export const MUSIC_QUERY = defineQuery(`
   *[_type == "eventEdition" && year == $year][0]{
+    "bandsTitle": bandsTitle ${localizedStringFragment},
+    "djsTitle": djsTitle ${localizedStringFragment},
     "bands": bands[]-> ${bandOrDjFragment},
     "djs": djs[]-> ${bandOrDjFragment}
   }
@@ -163,6 +166,7 @@ export const MUSIC_QUERY = defineQuery(`
 
 export const VENUE_QUERY = defineQuery(`
   *[_type == "eventEdition" && year == $year][0]{
+    "venueSectionTitle": venueSectionTitle ${localizedStringFragment},
     "venue": venueRef-> ${venueFragment}
   }
 `)
@@ -333,6 +337,19 @@ export const ALL_EDITION_YEARS_QUERY = defineQuery(`
   *[_type == "eventEdition"] | order(year desc) { year }
 `)
 
+// ── Editions for navigation (layout-level) ────────────────────────────────────
+
+export const EDITIONS_FOR_NAV_QUERY = defineQuery(`
+  *[_type == "eventEdition"] | order(year desc) {
+    year,
+    displayDate ${localizedStringFragment},
+    navPages[] {
+      pageSlug,
+      label ${localizedStringFragment}
+    }
+  }
+`)
+
 
 // ── Site settings (singleton) ─────────────────────────────────────────────────
 
@@ -341,6 +358,8 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
     facebookUrl,
     instagramUrl,
     contactEmail,
+    copyright ${localizedStringFragment},
+    registrationUrl,
     labels {
       competitions ${localizedStringFragment},
       judges ${localizedStringFragment},
@@ -380,6 +399,9 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
       toasterIconAlt ${localizedStringFragment},
       archImageAlt ${localizedStringFragment},
       loafIconAlt ${localizedStringFragment},
+      knifeIconAlt ${localizedStringFragment},
+      mbjLogoAlt ${localizedStringFragment},
+      archiveNavLabel ${localizedStringFragment},
     }
   }
 `)
