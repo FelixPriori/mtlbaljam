@@ -2,27 +2,23 @@ import NavLinks from '../NavLinks'
 import styles from './styles.module.scss'
 import MobileNavigation from '../MobileNavigation'
 import LanguageSwitcher from '../LanguageSwitcher'
-import { DictionaryType } from '../../dictionaries'
+import type { NavigationConfig } from '@/types/navigation'
 import { Locales } from '@/i18n'
 
-export type NavigationData = DictionaryType['navigation']
-
-export type PageTabs = keyof Omit<NavigationData, 'title' | 'archiveLabel'>
-
 export default function Navigation({
-	navigation,
+	config,
 	lang,
 }: {
-	navigation: DictionaryType['navigation']
+	config: NavigationConfig
 	lang: Locales
 }) {
 	return (
 		<>
 			<nav className={styles.navigation}>
 				<LanguageSwitcher lang={lang} />
-				<NavLinks navigation={navigation} />
+				<NavLinks config={config} />
 			</nav>
-			<MobileNavigation navigation={navigation} lang={lang} />
+			<MobileNavigation config={config} lang={lang} />
 		</>
 	)
 }

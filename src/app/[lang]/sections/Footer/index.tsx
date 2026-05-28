@@ -1,20 +1,19 @@
 import styles from './styles.module.scss'
 import IconBox from '../../components/IconBox'
-import { DictionaryType } from '../../dictionaries'
 
 export default function Footer({
 	copyright,
-	iconAlts,
+	knifeAlt,
 }: {
-	copyright: DictionaryType['copyright']
-	iconAlts: DictionaryType['iconAlts']
+	copyright: string
+	knifeAlt: string
 }) {
 	return (
 		<footer className={styles.footer}>
 			<p>{copyright}</p>
 			<IconBox
 				src="/mbj-knife-white.png"
-				alt={iconAlts.knife}
+				alt={knifeAlt}
 				width={50}
 				height={50}
 				position="centerLeft"

@@ -4,42 +4,37 @@ import NavTab from '../NavTab'
 import NavLink from '../NavLink'
 import styles from './styles.module.scss'
 import LanguageSwitcher from '../LanguageSwitcher'
-import { checkIsCurrent, getPastYearKeys, getSortedMainTabs } from '@/util/navigationUtils'
+import { checkIsCurrent } from '@/util/navigationUtils'
 import { usePathname } from 'next/navigation'
-import { NavigationData, PageTabs } from '../Navigation'
+import type { NavigationConfig, NavSection } from '@/types/navigation'
 import { Locales } from '@/i18n'
 
 type MobileNavigationProps = {
-	navigation: NavigationData
+	config: NavigationConfig
 	lang: Locales
 }
 
-export default function MobileNavigation({
-	navigation,
-	lang,
-}: MobileNavigationProps) {
+export default function MobileNavigation({ config, lang }: MobileNavigationProps) {
 	const [toggledTab, setToggledTab] = useState<string | null>(null)
 	const [isOpen, setIsOpen] = useState(false)
 	const toggle = () => setIsOpen(!isOpen)
 	const pathname = usePathname()
 
-	const pastYearKeys = getPastYearKeys(navigation)
-	const mainTabs = getSortedMainTabs(navigation)
-	const tabsBeforeTravel = mainTabs.filter(tab => tab !== 'travel')
-	const hasTravel = mainTabs.includes('travel')
+	const travelSection = config.mainSections.find(s => s.key === 'travel')
+	const tabsBeforeTravel = config.mainSections.filter(s => s.key !== 'travel')
 
-	const renderTab = (tab: string) => {
-		const isTabOpen = tab === toggledTab
+	const renderSection = (section: NavSection) => {
+		const isTabOpen = section.key === toggledTab
 		return (
 			<NavTab
-				key={tab}
-				tab={tab}
+				key={section.key}
+				tab={section.key}
 				isOpen={true}
-				setToggledTab={() => setToggledTab(isTabOpen ? null : tab)}
-				title={navigation[tab as PageTabs].title}
+				setToggledTab={() => setToggledTab(isTabOpen ? null : section.key)}
+				title={section.title}
 				isMobile
 			>
-				{navigation[tab as PageTabs].subtabs.map((page: any) => (
+				{section.subtabs.map(page => (
 					<NavLink
 						key={page.text}
 						hidden={!isTabOpen}
@@ -56,9 +51,7 @@ export default function MobileNavigation({
 	return (
 		<>
 			<div
-				className={`${styles.mbjButtonContainer} ${
-					isOpen ? styles.active : ''
-				}`}
+				className={`${styles.mbjButtonContainer} ${isOpen ? styles.active : ''}`}
 				onClick={toggle}
 			>
 				<span className={styles.top}></span>
@@ -67,36 +60,34 @@ export default function MobileNavigation({
 			</div>
 			<div className={`${styles.mbjOverlay} ${isOpen ? styles.open : ''}`}>
 				<nav className={styles.overlayMenu}>
-					<h2 className={styles.title}>{navigation.title}</h2>
+					<h2 className={styles.title}>{config.menuTitle}</h2>
 
 					<ul className={styles.navTabs}>
-						{tabsBeforeTravel.map(renderTab)}
-						{pastYearKeys.length > 0 && (
+						{tabsBeforeTravel.map(renderSection)}
+						{config.archiveEntries.length > 0 && (
 							<NavTab
 								tab="archive"
 								isOpen={true}
 								setToggledTab={() => {}}
-								title={navigation.archiveLabel}
+								title={config.archiveLabel}
 								isMobile
 							>
-								{pastYearKeys.map(key => {
-									const yearNum = key.replace('mbj', '')
-									const lang = pathname.split('/')[1]
-									const href = `/${lang}/${yearNum}`
+								{config.archiveEntries.map(entry => {
+									const yearNum = entry.href.split('/').pop() ?? ''
 									return (
 										<NavLink
-											key={key}
+											key={entry.key}
 											hidden={false}
 											isCurrent={pathname.split('/').includes(yearNum)}
 											mobileToggle={toggle}
-											href={href}
-											text={navigation[key as PageTabs].title}
+											href={entry.href}
+											text={entry.title}
 										/>
 									)
 								})}
 							</NavTab>
 						)}
-						{hasTravel && renderTab('travel')}
+						{travelSection && renderSection(travelSection)}
 						<li className={styles.languageSwitcher}>
 							<LanguageSwitcher lang={lang} />
 						</li>

@@ -4,82 +4,97 @@ import { usePathname } from 'next/navigation'
 import LogoLink from '../../components/LogoLink'
 import styles from './styles.module.scss'
 import { getPageNameFromSlug } from '@/util/navigationUtils'
-import { DictionaryType } from '../../dictionaries'
+import type { Locales } from '@/i18n'
 
-type PageName = keyof DictionaryType['header']['headerTitle']
+const HEADER_TITLES: Record<Locales, Record<string, string>> = {
+	en: {
+		home: 'Home',
+		music: 'Music',
+		about: 'About',
+		venue: 'Venue',
+		instructors: 'Instructors',
+		extra: 'Extra',
+		competitions: 'Competitions',
+		'code-of-conduct': 'Code of Conduct',
+		registration: 'Registration',
+		schedule: 'Schedule',
+		visiting: 'Visiting Montréal / Tiohtià:ke',
+		travel: 'Travel',
+		accommodation: 'Accommodation',
+		volunteering: 'Volunteering',
+		'coming-soon': 'Coming Soon',
+		tracks: 'Workshops',
+	},
+	fr: {
+		home: 'Accueil',
+		music: 'Musique',
+		about: 'À propos',
+		venue: 'Lieux',
+		instructors: 'Instructeurs',
+		extra: 'Extra',
+		competitions: 'Compétitions',
+		'code-of-conduct': 'Code de conduite',
+		registration: 'Inscriptions',
+		schedule: 'Horaire',
+		visiting: 'Visiter Montréal / Tiohtià:ke',
+		travel: 'Voyagement',
+		accommodation: 'Hébergement',
+		volunteering: 'Bénévolat',
+		'coming-soon': 'À venir',
+		tracks: 'Ateliers',
+	},
+}
+
+type HeaderProps = {
+	datesMap: Record<number, string>
+	registrationUrl: string
+	registerNow: string
+	logoAlt: string
+	lang: Locales
+}
 
 export default function Header({
-	header,
-	iconAlts,
-}: {
-	header: DictionaryType['header']
-	iconAlts: DictionaryType['iconAlts']
-}) {
+	datesMap,
+	registrationUrl,
+	registerNow,
+	logoAlt,
+	lang,
+}: HeaderProps) {
 	const pathname = usePathname()
 
 	const renderText = useCallback(() => {
-		const pageName = getPageNameFromSlug(pathname) as PageName
-		const is2024 = pathname.includes('2024')
+		const pageName = getPageNameFromSlug(pathname)
+		const segments = pathname.split('/')
+		const yearInPath = segments.find(s => /^\d{4}$/.test(s))
+		const year = yearInPath ? parseInt(yearInPath) : new Date().getFullYear()
+		const displayDate = datesMap[year] ?? ''
 
-		if (pageName) {
-			return (
-				<>
-					<p className={styles.date}>
-						{is2024 ? header.date2024 : header.date}
-					</p>
-					<h1>{header.headerTitle[pageName]}</h1>
-					{/* <div className={styles.registrationOpens}>
-						<p>
-							{header.registration.text} {header.registration.date}
-						</p>
-					</div> */}
-					{/* <p>{header.registrationClosed}</p> */}
+		const isYearHomePage = /^\d{4}$/.test(pageName)
+		const h1 = isYearHomePage ? pageName : (HEADER_TITLES[lang][pageName] ?? HEADER_TITLES[lang].home)
+
+		return (
+			<>
+				<p className={styles.date}>{displayDate}</p>
+				<h1>{h1}</h1>
+				{registrationUrl && (
 					<a
 						className={styles.registerNow}
-						href="https://mtlbaljam2026.dancecamps.org/booking.php"
+						href={registrationUrl}
 						rel="noreferrer noopener"
 						target="_blank"
 					>
-						{header.registerNow}
+						{registerNow}
 					</a>
-				</>
-			)
-		}
-		return (
-			<>
-				<p className={styles.date}>{is2024 ? header.date2024 : header.date}</p>
-				<h1>{header.headerTitle.home}</h1>
-				{/* <div className={styles.registrationOpens}>
-					<p>
-						{header.registration.text} {header.registration.date}
-					</p>
-				</div> */}
-				{/* <p>{header.registrationClosed}</p> */}
-
-				<a
-					className={styles.registerNow}
-					href="https://mtlbaljam2026.dancecamps.org/booking.php"
-					rel="noreferrer noopener"
-					target="_blank"
-				>
-					{header.registerNow}
-				</a>
+				)}
 			</>
 		)
-	}, [
-		header.date,
-		header.date2024,
-		header.headerTitle,
-		header.registration.date,
-		header.registration.text,
-		pathname,
-	])
+	}, [datesMap, lang, pathname, registerNow, registrationUrl])
 
 	return (
 		<header className={styles.headerSection}>
-			<LogoLink iconAlts={iconAlts} />
+			<LogoLink logoAlt={logoAlt} />
 			<div className={styles.text}>
-				<p className={styles.eventTitle}>{header.title}</p>
+				<p className={styles.eventTitle}>MTL BAL JAM</p>
 				{renderText()}
 			</div>
 		</header>

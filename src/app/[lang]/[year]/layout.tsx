@@ -4,7 +4,7 @@ import type { ALL_EDITION_YEARS_QUERY_RESULT } from '@/sanity.types'
 import { ReactNode } from 'react'
 
 // Years with their own static route folders (JSON-based, not Sanity-backed)
-const STATIC_YEAR_FOLDERS = new Set([2024, 2025])
+const STATIC_YEAR_FOLDERS = new Set<number>([])
 
 export async function generateStaticParams() {
 	const editions = await sanityClient.fetch<ALL_EDITION_YEARS_QUERY_RESULT>(ALL_EDITION_YEARS_QUERY)
