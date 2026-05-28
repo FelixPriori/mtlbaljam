@@ -51,6 +51,7 @@ export default async function MbjVenue({
 	const { lang, year } = await params
 	const data = await sanityFetch<VENUE_QUERY_RESULT>(VENUE_QUERY, { year: Number(year) })
 	const venue = data?.venue
+	const venueSectionTitle = data?.venueSectionTitle ?? null
 	if (!venue) return null
 
 	const venueSchema = {
@@ -81,7 +82,7 @@ export default async function MbjVenue({
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(venueSchema) }}
 			/>
-			<Cats venue={venue} lang={lang} />
+			<Cats venue={venue} title={venueSectionTitle} lang={lang} />
 		</>
 	)
 }

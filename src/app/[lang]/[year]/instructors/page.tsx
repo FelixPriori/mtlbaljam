@@ -54,6 +54,7 @@ export default async function MbjInstructors({
 	})
 
 	const instructors = data?.instructors ?? []
+	const instructorsTitle = data?.instructorsTitle ?? null
 	const instructorsSchema = instructors.map((instructor) => ({
 		'@context': 'https://schema.org',
 		'@type': 'Person',
@@ -69,7 +70,7 @@ export default async function MbjInstructors({
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(instructorsSchema) }}
 			/>
-			<InstructorsSection instructors={instructors} lang={lang} />
+			<InstructorsSection instructors={instructors} title={instructorsTitle} lang={lang} />
 		</>
 	)
 }

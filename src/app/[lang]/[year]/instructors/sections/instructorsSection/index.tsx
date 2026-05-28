@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import ReactPlayer from 'react-player/youtube'
 import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
@@ -12,22 +12,18 @@ import type { Locales } from '@/i18n'
 
 export default function InstructorsSection({
 	instructors,
+	title,
 	lang,
 }: {
 	instructors: SanityInstructor[]
+	title: { en: string | null; fr: string | null } | null
 	lang: Locales
 }) {
-	const [hasWindow, setHasWindow] = useState(false)
-
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			setHasWindow(true)
-		}
-	}, [])
+	const hasWindow = useSyncExternalStore(() => () => {}, () => true, () => false)
 
 	return (
 		<section className={styles.instructorsSection}>
-			<h2>Instructors</h2>
+			{title && <h2>{localize(title, lang)}</h2>}
 			<div className={styles.content}>
 				{instructors.map((instructor) => (
 					<div key={instructor._id} className={styles.instructor}>

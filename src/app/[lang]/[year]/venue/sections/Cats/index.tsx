@@ -6,14 +6,16 @@ import type { Locales } from '@/i18n'
 
 export default function Cats({
 	venue,
+	title,
 	lang,
 }: {
 	venue: SanityVenue
+	title: { en: string | null; fr: string | null } | null
 	lang: Locales
 }) {
 	return (
 		<section className={styles.mapSection}>
-			<h2>Dances &amp; Workshops</h2>
+			{title && <h2>{localize(title, lang)}</h2>}
 			<div className={styles.content}>
 				{venue.position?.lat && venue.position?.lng && (
 					<div className={styles.mapContainer}>

@@ -55,6 +55,8 @@ export default async function MbjMusic({
 
 	const bands = data?.bands ?? []
 	const djs = data?.djs ?? []
+	const bandsTitle = data?.bandsTitle ?? null
+	const djsTitle = data?.djsTitle ?? null
 
 	const musicSchema = [
 		...bands.map((band) => ({
@@ -83,8 +85,8 @@ export default async function MbjMusic({
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(musicSchema) }}
 			/>
-			<Band bands={bands} lang={lang} />
-			<DJs djs={djs} lang={lang} />
+			<Band bands={bands} title={bandsTitle} lang={lang} />
+			<DJs djs={djs} title={djsTitle} lang={lang} />
 		</>
 	)
 }

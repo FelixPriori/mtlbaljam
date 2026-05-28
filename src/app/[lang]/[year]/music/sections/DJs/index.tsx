@@ -8,14 +8,16 @@ import type { Locales } from '@/i18n'
 
 export default function DJs({
 	djs,
+	title,
 	lang,
 }: {
 	djs: SanityBandOrDj[]
+	title: { en: string | null; fr: string | null } | null
 	lang: Locales
 }) {
 	return (
 		<section className={styles.djSection}>
-			<h2 className={styles.title}>DJs</h2>
+			{title && <h2 className={styles.title}>{localize(title, lang)}</h2>}
 			<div className={styles.content}>
 				{djs.map((dj) => (
 					<FeatureCard

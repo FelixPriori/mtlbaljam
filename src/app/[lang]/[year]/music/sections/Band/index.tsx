@@ -9,14 +9,16 @@ import type { Locales } from '@/i18n'
 
 export default function Band({
 	bands,
+	title,
 	lang,
 }: {
 	bands: SanityBandOrDj[]
+	title: { en: string | null; fr: string | null } | null
 	lang: Locales
 }) {
 	return (
 		<section className={styles.bandSection}>
-			<h2>Live music</h2>
+			{title && <h2>{localize(title, lang)}</h2>}
 			<div className={styles.content}>
 				<div className={styles.cutout}>
 					<Image
