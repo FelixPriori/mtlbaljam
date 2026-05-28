@@ -55,12 +55,34 @@ export const eventEdition = defineType({
       to: [{ type: 'venue' }],
     }),
 
+    // ── Venue ─────────────────────────────────────────────────────────────────
+    defineField({
+      name: 'venueSectionTitle',
+      title: 'Venue — Section Title',
+      type: 'localizedString',
+    }),
+
     // ── People ────────────────────────────────────────────────────────────────
+    defineField({
+      name: 'instructorsTitle',
+      title: 'Instructors — Section Title',
+      type: 'localizedString',
+    }),
     defineField({
       name: 'instructors',
       title: 'Instructors',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'instructor' }] }],
+    }),
+    defineField({
+      name: 'bandsTitle',
+      title: 'Music — Live Bands Section Title',
+      type: 'localizedString',
+    }),
+    defineField({
+      name: 'djsTitle',
+      title: 'Music — DJs Section Title',
+      type: 'localizedString',
     }),
     defineField({
       name: 'bands',
@@ -228,6 +250,39 @@ export const eventEdition = defineType({
       title: 'Extras (merchandise, breakfast, etc.)',
       type: 'array',
       of: [{ type: 'extraItem' }],
+    }),
+
+    // ── Featured Artist ───────────────────────────────────────────────────────
+    defineField({
+      name: 'featuredArtist',
+      title: 'Featured Artist',
+      type: 'reference',
+      to: [{ type: 'artist' }],
+      description: 'Optional featured performer for this edition (e.g. Youlia).',
+    }),
+
+    // ── Navigation ───────────────────────────────────────────────────────────
+    defineField({
+      name: 'displayDate',
+      title: 'Display Date',
+      type: 'localizedString',
+      description: 'Short formatted date shown in the site header (e.g. "June 19–21, 2026" / "19–21 juin 2026")',
+    }),
+    defineField({
+      name: 'navPages',
+      title: 'Navigation Pages',
+      type: 'array',
+      description: 'Ordered list of pages that appear under this edition in the nav menu.',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({ name: 'pageSlug', title: 'Page Slug', type: 'string', description: 'e.g. instructors, registration, tracks' }),
+            defineField({ name: 'label', title: 'Nav Label', type: 'localizedString' }),
+          ],
+          preview: { select: { title: 'pageSlug', subtitle: 'label.en' } },
+        },
+      ],
     }),
 
     // ── Home Page ─────────────────────────────────────────────────────────────

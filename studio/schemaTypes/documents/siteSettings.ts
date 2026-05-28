@@ -15,6 +15,8 @@ export const siteSettings = defineType({
     defineField({ name: 'facebookUrl', title: 'Facebook URL', type: 'string', group: 'social' }),
     defineField({ name: 'instagramUrl', title: 'Instagram URL', type: 'string', group: 'social' }),
     defineField({ name: 'contactEmail', title: 'Contact Email', type: 'string', group: 'social' }),
+    defineField({ name: 'copyright', title: 'Copyright Notice', type: 'localizedString', group: 'social' }),
+    defineField({ name: 'registrationUrl', title: 'Registration URL', type: 'string', group: 'social' }),
     defineField({
       name: 'labels',
       title: 'UI Labels',
@@ -77,6 +79,9 @@ export const siteSettings = defineType({
         localizedString('toasterIconAlt', 'Toaster Icon Alt Text', 'other'),
         localizedString('archImageAlt', 'Arch Image Alt Text', 'other'),
         localizedString('loafIconAlt', 'Loaf Icon Alt Text', 'other'),
+        localizedString('knifeIconAlt', 'Knife Icon Alt Text', 'other'),
+        localizedString('mbjLogoAlt', 'MTL BAL JAM Logo Alt Text', 'other'),
+        localizedString('archiveNavLabel', 'Archive Nav Label (e.g. "Archives")', 'other'),
       ],
     }),
   ],

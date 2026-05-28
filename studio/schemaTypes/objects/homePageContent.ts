@@ -54,6 +54,26 @@ export const homePageContent = defineType({
       description: 'e.g. "Check out our venue..."',
     }),
 
+    // ── Competitions section ──────────────────────────────────────────────────
+    defineField({
+      name: 'competitionsSectionTitle',
+      title: 'Competitions Section Title',
+      type: 'localizedString',
+      description: 'e.g. "Competitions"',
+    }),
+    defineField({
+      name: 'competitionsJudgesLabel',
+      title: 'Competitions — Judges Label',
+      type: 'localizedString',
+      description: 'e.g. "Judges" / "Juges"',
+    }),
+    defineField({
+      name: 'competitionsLearnMoreText',
+      title: 'Competitions — Learn More Link Text',
+      type: 'localizedString',
+      description: 'e.g. "See competition details..."',
+    }),
+
     // ── Sponsors section ──────────────────────────────────────────────────────
     defineField({
       name: 'sponsorSectionTitle',

@@ -14,6 +14,7 @@ import { instructorGroup } from './objects/instructorGroup'
 import { homePageContent } from './objects/homePageContent'
 
 // Documents
+import { artist } from './documents/artist'
 import { instructor } from './documents/instructor'
 import { judge } from './documents/judge'
 import { sponsor } from './documents/sponsor'
@@ -44,6 +45,7 @@ export const schemaTypes = [
   homePageContent,
 
   // Documents
+  artist,
   instructor,
   judge,
   sponsor,
