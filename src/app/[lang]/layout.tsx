@@ -13,6 +13,7 @@ import { localize } from '@/lib/sanity/localize'
 import { SanityLive } from '@/lib/sanity/live'
 import '@/app/[lang]/globals.css'
 import type { NavigationConfig, NavSection } from '@/types/navigation'
+import LangSetter from './components/LangSetter'
 
 export function generateStaticParams() {
 	return locales.map(locale => ({ locale }))
@@ -140,36 +141,32 @@ export default async function LocaleLayout({
 		localize(siteSettings?.labels?.knifeIconAlt, lang) ?? 'Butterknife icon'
 
 	return (
-		<html lang={lang}>
-			<body
-				suppressHydrationWarning
-				className={`${caveatBrush.variable} ${josephinSans.variable}`}
-			>
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify({
-							'@context': 'https://schema.org',
-							'@type': 'WebSite',
-							name: 'MTL BAL JAM',
-							url: 'https://mtlbaljam.org',
-						}),
-					}}
+		<>
+			<LangSetter lang={lang} />
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						'@context': 'https://schema.org',
+						'@type': 'WebSite',
+						name: 'MTL BAL JAM',
+						url: 'https://mtlbaljam.org',
+					}),
+				}}
+			/>
+			<div className={`${caveatBrush.variable} ${josephinSans.variable} wrapper`}>
+				<Navigation config={navigationConfig} lang={lang} />
+				<Header
+					datesMap={datesMap}
+					registrationUrl={registrationUrl}
+					registerNow={registerNow}
+					logoAlt={logoAlt}
+					lang={lang}
 				/>
-				<div className="wrapper">
-					<Navigation config={navigationConfig} lang={lang} />
-					<Header
-						datesMap={datesMap}
-						registrationUrl={registrationUrl}
-						registerNow={registerNow}
-						logoAlt={logoAlt}
-						lang={lang}
-					/>
-					<Main>{children}</Main>
-					<Footer copyright={copyright} knifeAlt={knifeAlt} />
-				</div>
-				<SanityLive />
-			</body>
-		</html>
+				<Main>{children}</Main>
+				<Footer copyright={copyright} knifeAlt={knifeAlt} />
+			</div>
+			<SanityLive />
+		</>
 	)
 }
