@@ -1,17 +1,20 @@
 import { MetadataRoute } from 'next'
 import { readdirSync, statSync, existsSync } from 'fs'
 import { join } from 'path'
+import { sanityClient } from '@/lib/sanity/client'
+import { ALL_EDITION_YEARS_QUERY } from '@/lib/sanity/queries'
+import type { ALL_EDITION_YEARS_QUERY_RESULT } from '@/sanity.types'
 
 const LOCALES = ['en', 'fr'] as const
 const SITE = 'https://mtlbaljam.org'
 const PAGES_ROOT = join(process.cwd(), 'src/app/[lang]')
+const YEAR_ROOT = join(PAGES_ROOT, '[year]')
 
-// Non-route directories to skip at any depth
 const SKIP_DIRS = new Set(['components', 'sections'])
 
 type SitemapEntry = MetadataRoute.Sitemap[number]
 
-function findPages(dir: string, urlPath = ''): { urlPath: string; lastModified: Date }[] {
+function findStaticPages(dir: string, urlPath = ''): { urlPath: string; lastModified: Date }[] {
 	const results: { urlPath: string; lastModified: Date }[] = []
 	const pageFile = join(dir, 'page.tsx')
 
@@ -23,11 +26,25 @@ function findPages(dir: string, urlPath = ''): { urlPath: string; lastModified: 
 		if (!entry.isDirectory()) continue
 		if (SKIP_DIRS.has(entry.name)) continue
 		if (entry.name.startsWith('_') || entry.name.startsWith('(')) continue
+		if (entry.name.startsWith('[')) continue // dynamic segments handled separately
 
-		results.push(...findPages(join(dir, entry.name), `${urlPath}/${entry.name}`))
+		results.push(...findStaticPages(join(dir, entry.name), `${urlPath}/${entry.name}`))
 	}
 
 	return results
+}
+
+function findYearSubpages(): string[] {
+	const subpages: string[] = [''] // '' = the year home page itself
+	for (const entry of readdirSync(YEAR_ROOT, { withFileTypes: true })) {
+		if (!entry.isDirectory()) continue
+		if (SKIP_DIRS.has(entry.name)) continue
+		if (entry.name.startsWith('_') || entry.name.startsWith('(') || entry.name.startsWith('[')) continue
+		if (existsSync(join(YEAR_ROOT, entry.name, 'page.tsx'))) {
+			subpages.push(`/${entry.name}`)
+		}
+	}
+	return subpages
 }
 
 function getPriority(urlPath: string): number {
@@ -44,10 +61,23 @@ function getChangeFrequency(urlPath: string): SitemapEntry['changeFrequency'] {
 	return 'monthly'
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
-	const pages = findPages(PAGES_ROOT)
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+	const staticPages = findStaticPages(PAGES_ROOT)
+	const yearSubpages = findYearSubpages()
 
-	return pages.flatMap(({ urlPath, lastModified }) =>
+	const editions = await sanityClient.fetch<ALL_EDITION_YEARS_QUERY_RESULT>(ALL_EDITION_YEARS_QUERY)
+	const years = editions.map(e => e.year).filter((y): y is number => y != null)
+
+	const yearPages = years.flatMap(year =>
+		yearSubpages.map(sub => ({
+			urlPath: `/${year}${sub}`,
+			lastModified: new Date(),
+		}))
+	)
+
+	const allPages = [...staticPages, ...yearPages]
+
+	return allPages.flatMap(({ urlPath, lastModified }) =>
 		LOCALES.map(locale => ({
 			url: `${SITE}/${locale}${urlPath}`,
 			lastModified,
