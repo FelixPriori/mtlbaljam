@@ -64,8 +64,7 @@ export const scheduleEvent = defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'localizedSimpleText',
-      hidden: ({ parent }) => parent?.type !== 'class',
+      type: 'localizedText',
     }),
     defineField({
       name: 'instructorRef',
