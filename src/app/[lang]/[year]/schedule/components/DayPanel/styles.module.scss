@@ -22,12 +22,12 @@ $row-height: 24px; // 15 min per row
 	@media (max-width: 640px) {
 		padding-inline: 16px; // restore inner breathing room
 
-		background-color: white;
+		background-color: var(--color-neutral);
 		background-image:
-			linear-gradient(to right, white, transparent),
-			linear-gradient(to left,  white, transparent),
-			linear-gradient(to right, rgba(0, 0, 0, 0.07), transparent),
-			linear-gradient(to left,  rgba(0, 0, 0, 0.07), transparent);
+			linear-gradient(to right, var(--color-neutral), transparent),
+			linear-gradient(to left,  var(--color-neutral), transparent),
+			linear-gradient(to right, var(--mbj-color-divider), transparent),
+			linear-gradient(to left,  var(--mbj-color-divider), transparent);
 		background-size: 32px 100%, 32px 100%, 32px 100%, 32px 100%;
 		background-position: left center, right center, left center, right center;
 		background-repeat: no-repeat;
@@ -52,7 +52,7 @@ $row-height: 24px; // 15 min per row
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	color: #666;
+	color: var(--mbj-color-text-muted);
 	border-bottom: 2px solid var(--mbj-color-teal);
 	text-align: center;
 }
@@ -68,7 +68,7 @@ $row-height: 24px; // 15 min per row
 .timeLabel {
 	grid-column: 1;
 	font-size: 0.6rem;
-	color: #aaa;
+	color: var(--mbj-color-text-faint);
 	padding-top: 3px;
 	padding-right: 4px;
 	text-align: right;
@@ -80,13 +80,13 @@ $row-height: 24px; // 15 min per row
 // Horizontal line at the start of each hour
 .hourLine {
 	grid-column: 1 / -1;
-	border-top: 1px solid rgba(0, 0, 0, 0.07);
+	border-top: 1px solid var(--mbj-color-divider);
 	pointer-events: none;
 }
 
 .empty {
 	padding: 48px 0;
 	text-align: center;
-	color: #888;
+	color: var(--mbj-color-text-subtle);
 	font-size: 0.9rem;
 }
