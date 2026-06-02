@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import type { Locales } from '@/i18n'
 import type { ScheduleDay } from '../../scheduleUtils'
-import { getDayLabel } from '../../scheduleUtils'
+import { getDayLabel, getDefaultDate } from '../../scheduleUtils'
 import DayPanel from '../DayPanel'
 import styles from './styles.module.scss'
 
@@ -20,7 +20,7 @@ export default function ScheduleTabs({
 	scheduleSoonLabel: string | null
 	venueLocation: string | null
 }) {
-	const [activeDate, setActiveDate] = useState<string>(days[0]?.date ?? '')
+	const [activeDate, setActiveDate] = useState<string>(() => getDefaultDate(days))
 
 	return (
 		<div className={styles.tabs}>

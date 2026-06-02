@@ -238,6 +238,14 @@ export function formatGCalDate(date: Date): string {
 	return formatInTimeZone(date, TZ, "yyyyMMdd'T'HHmmss")
 }
 
+/** Return the date string that should be selected by default.
+ *  Picks today's tab if within the festival range, otherwise the first day. */
+export function getDefaultDate(days: ScheduleDay[]): string {
+	if (days.length === 0) return ''
+	const today = formatInTimeZone(new Date(), TZ, 'yyyy-MM-dd')
+	return days.find((d) => d.date === today)?.date ?? days[0].date
+}
+
 /** Derive a day tab label from the day's date string. */
 export function getDayLabel(date: string, lang: Locales): string {
 	// Parse at noon UTC to avoid any day-boundary shift
