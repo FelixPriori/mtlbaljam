@@ -1,4 +1,3 @@
-import { Caveat_Brush, Josefin_Sans } from 'next/font/google'
 import Main from '@/layout/Main'
 import Navigation from './components/Navigation'
 import { Footer, Header } from './sections'
@@ -19,19 +18,6 @@ export function generateStaticParams() {
 	return locales.map(locale => ({ locale }))
 }
 
-const caveatBrush = Caveat_Brush({
-	subsets: ['latin'],
-	weight: ['400'],
-	style: ['normal'],
-	variable: '--font-caveat-brush',
-})
-
-const josephinSans = Josefin_Sans({
-	subsets: ['latin'],
-	weight: ['100', '200', '300', '400', '500', '600', '700'],
-	style: ['normal', 'italic'],
-	variable: '--font-josephin-sans',
-})
 
 function buildNavigationConfig(
 	editions: EDITIONS_FOR_NAV_QUERY_RESULT,
@@ -154,7 +140,7 @@ export default async function LocaleLayout({
 					}),
 				}}
 			/>
-			<div className={`${caveatBrush.variable} ${josephinSans.variable} wrapper`}>
+			<div className="wrapper">
 				<Navigation config={navigationConfig} lang={lang} />
 				<Header
 					datesMap={datesMap}
