@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import type { Locales } from '@/i18n'
 import type { ScheduleDay } from '../../scheduleUtils'
 import ScheduleTabs from '../../components/ScheduleTabs'
@@ -23,13 +24,15 @@ export default function Schedule({
 	return (
 		<section className={styles.scheduleSection}>
 			<h2 className={styles.title}>{title}</h2>
-			<ScheduleTabs
-				days={days}
-				lang={lang}
-				year={year}
-				scheduleSoonLabel={scheduleSoonLabel}
-				venueLocation={venueLocation}
-			/>
+			<Suspense fallback={null}>
+				<ScheduleTabs
+					days={days}
+					lang={lang}
+					year={year}
+					scheduleSoonLabel={scheduleSoonLabel}
+					venueLocation={venueLocation}
+				/>
+			</Suspense>
 		</section>
 	)
 }

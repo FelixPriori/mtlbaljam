@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import type { Locales } from '@/i18n'
 import type { ScheduleDay } from '../../scheduleUtils'
 import { getDayLabel, getDefaultDate } from '../../scheduleUtils'
@@ -20,7 +20,18 @@ export default function ScheduleTabs({
 	scheduleSoonLabel: string | null
 	venueLocation: string | null
 }) {
-	const [activeDate, setActiveDate] = useState<string>(() => getDefaultDate(days))
+	const searchParams = useSearchParams()
+	const router = useRouter()
+	const pathname = usePathname()
+
+	const paramDay = searchParams.get('day')
+	const activeDate = days.find((d) => d.date === paramDay)?.date ?? getDefaultDate(days)
+
+	function setActiveDate(date: string) {
+		const params = new URLSearchParams(searchParams.toString())
+		params.set('day', date)
+		router.replace(`${pathname}?${params.toString()}`, { scroll: false })
+	}
 
 	return (
 		<div className={styles.tabs}>
