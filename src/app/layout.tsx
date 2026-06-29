@@ -21,7 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
-		<html suppressHydrationWarning className={`${caveatBrush.variable} ${josephinSans.variable}`}>
+		<html suppressHydrationWarning data-scroll-behavior="smooth" className={`${caveatBrush.variable} ${josephinSans.variable}`}>
 			<body suppressHydrationWarning>{children}</body>
 		</html>
 	)
