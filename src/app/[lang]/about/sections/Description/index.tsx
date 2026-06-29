@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import styles from './styles.module.scss'
 import { PortableText } from '@portabletext/react'
 import type { PortableTextBlock } from '@portabletext/types'
+import MtlBalJamLogo from '@/assets/svgs/mtlbaljam-logo'
 
 export default function Description({ blocks }: { blocks: PortableTextBlock[] }) {
 	return (
@@ -26,12 +26,7 @@ export default function Description({ blocks }: { blocks: PortableTextBlock[] })
 				/>
 			</div>
 			<div className={styles.logoContainer}>
-				<Image
-					src="/mtl-bal-jam-logo-white.png"
-					height={1584}
-					width={1584}
-					alt="MTL BAL JAM logo"
-				/>
+				<MtlBalJamLogo />
 			</div>
 		</section>
 	)

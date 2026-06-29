@@ -57,7 +57,7 @@ export default async function MbjAbout({
 		url: `https://mtlbaljam.org/${lang}/about`,
 		email: 'info@campusbalboa.org',
 		foundingDate: '2023',
-		logo: 'https://mtlbaljam.org/mtl-bal-jam-logo-white.png',
+		logo: 'https://mtlbaljam.org/MTLBALJAM-logo.svg',
 		description: lang === 'fr'
 			? 'Campus Balboa est un organisme sans but lucratif fondé en 2023 à Montréal / Tiohtià:ke, dédié à la promotion de la danse Balboa.'
 			: 'Campus Balboa is a nonprofit organization founded in 2023 in Montréal / Tiohtià:ke, dedicated to promoting Balboa dance.',
