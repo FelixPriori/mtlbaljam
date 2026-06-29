@@ -22,7 +22,10 @@ export default function EventBlock({
 	rowOffset?: number
 }) {
 	const title = localize(event.title, lang) ?? ''
-	const descriptionBlocks = (localize(event.description as any, lang) ?? []) as PortableTextBlock[]
+	const descriptionBlocks = (localize(
+		event.description as { en: PortableTextBlock[]; fr: PortableTextBlock[] } | null,
+		lang,
+	) ?? []) as PortableTextBlock[]
 	const startStr = formatTimeEDT(event.startDate, lang)
 	const endStr = formatTimeEDT(event.endDate, lang)
 	const showCalendar = event.type != null && SHOW_CALENDAR.has(event.type)

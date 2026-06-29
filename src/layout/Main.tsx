@@ -5,7 +5,7 @@ export default function Main({
 	styles,
 }: {
 	children: ReactNode
-	styles?: any
+	styles?: string
 }) {
 	return <main className={styles}>{children}</main>
 }

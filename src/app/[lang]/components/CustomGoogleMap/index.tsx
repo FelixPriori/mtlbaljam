@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client"
 import { useState } from 'react';
 import { APIProvider, Map, AdvancedMarker, InfoWindow, useAdvancedMarkerRef } from '@vis.gl/react-google-maps';
@@ -17,7 +16,7 @@ function GoogleMaps({ lat, lng, markerTitle, infoWindowText, mapId, zoom = 16 }:
     const [markerRef, marker] = useAdvancedMarkerRef();
 
     return (
-        <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
+        <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
             <Map
                 mapTypeControlOptions={{
                     mapTypeIds: [],
