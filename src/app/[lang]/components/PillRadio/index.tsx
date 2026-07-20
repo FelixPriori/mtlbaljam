@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import clsx from 'clsx'
 import styles from './styles.module.scss'
 
 export type OptionProps = {
@@ -18,9 +19,7 @@ function Option({
 }: OptionProps) {
 	return (
 		<Link
-			className={`${styles.option} ${active && styles.active} ${
-				first && styles.first
-			} ${last && styles.last}`}
+			className={clsx(styles.option, active && styles.active, first && styles.first, last && styles.last)}
 			href={href}
 		>
 			{name}

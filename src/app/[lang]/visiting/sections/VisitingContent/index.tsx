@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import clsx from 'clsx'
 import styles from './styles.module.scss'
 import ExternalLink from '@/assets/svgs/external-link'
 import { PortableText } from '@portabletext/react'
@@ -81,7 +82,7 @@ export default function VisitingContent({
 
 				{/* Sightseeing */}
 				{sightseeingBlocks.length > 0 && (
-					<div className={`${styles.blogSection} ${styles.reversed}`}>
+					<div className={clsx(styles.blogSection, styles.reversed)}>
 						{sightseeingImage && (
 							<div className={styles.image}>
 								<Image

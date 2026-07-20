@@ -1,4 +1,5 @@
 import styles from './styles.module.scss'
+import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import LinesCircle from '@/assets/svgs/lines-circle'
@@ -35,10 +36,10 @@ export default function MainSection({
 				{groups.map((group, i) => (
 					<div
 						key={group.groupName}
-						className={`${styles.instructors} ${i === 0 ? styles.first : styles.second}`}
+						className={clsx(styles.instructors, i === 0 ? styles.first : styles.second)}
 					>
 						{group.groupImage && (
-							<div className={`${styles.cutout} ${i === 0 ? styles.firsCutout : styles.secondCutout}`}>
+							<div className={clsx(styles.cutout, i === 0 ? styles.firsCutout : styles.secondCutout)}>
 								<Image
 									src={urlFor(group.groupImage).width(1080).url()}
 									alt={localize(group.groupImage.alt, lang) ?? group.groupName ?? ''}

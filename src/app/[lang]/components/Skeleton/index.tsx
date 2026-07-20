@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import clsx from 'clsx'
 import styles from './styles.module.scss'
 
 interface SkeletonProps {
@@ -9,8 +10,8 @@ interface SkeletonProps {
 
 export default function Skeleton({ wrapperClass, boxClass, children }: SkeletonProps) {
     return (
-        <div className={`${styles.skeleton} ${wrapperClass ? wrapperClass : ''}`}>
-            <div className={`${styles.pulse} ${boxClass} ${styles.box}`}>
+        <div className={clsx(styles.skeleton, wrapperClass)}>
+            <div className={clsx(styles.pulse, boxClass, styles.box)}>
                 {children}
             </div>
         </div>
