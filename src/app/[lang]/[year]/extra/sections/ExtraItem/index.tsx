@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
+import NoteBox from '@/app/[lang]/components/NoteBox'
 import { PortableText } from '@portabletext/react'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
@@ -85,14 +86,14 @@ export default function ExtraItem({
 						</div>
 					)}
 					{extra.orderMethods && extra.orderMethods.length > 0 && (
-						<div className={styles.instructions}>
+						<NoteBox variant="dotted" className={styles.instructions}>
 							<h3>{localize(labels?.howToOrder, lang) ?? (lang === 'fr' ? 'Comment commander' : 'How to order')}</h3>
 							<ul>
 								{extra.orderMethods.map((method) => (
 									<li key={method}>{orderMethodLabel(method)}</li>
 								))}
 							</ul>
-						</div>
+						</NoteBox>
 					)}
 				</div>
 			</div>

@@ -1,4 +1,5 @@
 import styles from './styles.module.scss'
+import NoteBox from '@/app/[lang]/components/NoteBox'
 import { localize } from '@/lib/sanity/localize'
 import type { LocalizedString, SanityLabels } from '@/lib/sanity/queryTypes'
 import type { Locales } from '@/i18n'
@@ -28,9 +29,9 @@ export default function Intro({
 				</div>
 			)}
 			{competitionNote && (
-				<div className={styles.competitionNote}>
+				<NoteBox className={styles.competitionNote}>
 					<p>{localize(competitionNote, lang)}</p>
-				</div>
+				</NoteBox>
 			)}
 			{musicTitle && <h3>{localize(musicTitle, lang)}</h3>}
 			{musicDescription && (

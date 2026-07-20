@@ -38,7 +38,7 @@ export default function StaffSection({
 						}
 						isH4
 					>
-						{member.pronouns && <p className={styles.pronouns}>{localize(member.pronouns, lang)}</p>}
+						{member.pronouns && <p>{localize(member.pronouns, lang)}</p>}
 						{member.role && <p className={styles.role}>{localize(member.role, lang)}</p>}
 					</FeatureCard>
 				))}

@@ -1,0 +1,12 @@
+.noteBox {
+	border-radius: var(--border-radius);
+	padding: var(--spacing-m);
+}
+
+.solid {
+	border: 1px solid var(--mbj-color-white);
+}
+
+.dotted {
+	border: 2px dotted var(--mbj-color-white);
+}
