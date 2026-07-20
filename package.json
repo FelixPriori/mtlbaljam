@@ -10,13 +10,16 @@
 		"studio": "cd studio && npm run dev",
 		"studio:build": "cd studio && npm run build",
 		"studio:deploy": "cd studio && npm run deploy",
-		"typegen": "cd studio && sanity schema extract --path=schema.json && sanity typegen generate"
+		"typegen": "cd studio && sanity schema extract --path=schema.json && sanity typegen generate",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
 	},
 	"dependencies": {
 		"@formatjs/intl-localematcher": "^0.8.9",
 		"@portabletext/react": "^6.2.0",
 		"@sanity/image-url": "^2.1.1",
 		"@vis.gl/react-google-maps": "^1.8.3",
+		"clsx": "^2.1.1",
 		"date-fns": "^4.3.0",
 		"date-fns-tz": "^3.2.0",
 		"negotiator": "^1.0.0",
@@ -29,13 +32,26 @@
 		"sharp": "^0.34.5"
 	},
 	"devDependencies": {
+		"@chromatic-com/storybook": "^5.2.1",
 		"@sanity/client": "^7.22.1",
+		"@storybook/addon-a11y": "^10.5.3",
+		"@storybook/addon-docs": "^10.5.3",
+		"@storybook/addon-mcp": "^0.7.0",
+		"@storybook/addon-vitest": "^10.5.3",
+		"@storybook/nextjs-vite": "^10.5.3",
 		"@types/negotiator": "^0.6.3",
 		"@types/node": "^25.9.1",
 		"@types/react": "^19.2.15",
 		"@types/react-dom": "^19.2.3",
+		"@vitest/browser-playwright": "^4.1.10",
+		"@vitest/coverage-v8": "^4.1.10",
 		"eslint": "^9.39.4",
 		"eslint-config-next": "^16.2.6",
-		"typescript": "^6.0.3"
+		"eslint-plugin-storybook": "^10.5.3",
+		"playwright": "^1.61.1",
+		"storybook": "^10.5.3",
+		"typescript": "^6.0.3",
+		"vite": "^8.1.5",
+		"vitest": "^4.1.10"
 	}
 }
