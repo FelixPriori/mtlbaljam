@@ -1,17 +1,17 @@
 .visitingContent {
-	padding: 40px 60px;
+	padding: var(--spacing-3xl) var(--spacing-5xl);
 	background-color: var(--mbj-color-white);
 	min-height: 350px;
 
 	.blogCollection {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: var(--spacing-2xl);
 
 		.blogSection {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			column-gap: 40px;
+			column-gap: var(--spacing-3xl);
 			align-items: start;
 
 			// Sightseeing section: image on right, text on left
@@ -46,11 +46,11 @@
 				.buttonContainer {
 					display: flex;
 					width: 100%;
-					margin-bottom: 20px;
+					margin-bottom: var(--spacing-l);
 
 					.button {
 						margin-right: auto;
-						padding: 0.75rem 2.5rem;
+						padding: var(--spacing-s) var(--spacing-3xl);
 						background-color: var(--mbj-color-teal);
 						border: 1px solid var(--mbj-color-teal);
 						color: var(--mbj-color-white);
@@ -59,7 +59,7 @@
 						cursor: pointer;
 						display: inline-flex;
 						align-items: center;
-						gap: 4px;
+						gap: var(--spacing-3xs);
 
 						svg {
 							width: 18px;
@@ -75,18 +75,18 @@
 
 				h2 {
 					font-size: 1.5rem;
-					margin-bottom: 0.75rem;
+					margin-bottom: var(--spacing-s);
 				}
 
 				h3 {
 					font-size: 1.1rem;
-					margin-top: 1rem;
-					margin-bottom: 0.25rem;
+					margin-top: var(--spacing-m);
+					margin-bottom: var(--spacing-3xs);
 					color: var(--mbj-color-teal);
 				}
 
 				p {
-					margin-bottom: 0.75rem;
+					margin-bottom: var(--spacing-s);
 					line-height: 135%;
 				}
 
@@ -103,11 +103,11 @@
 				ul {
 					list-style: none;
 					padding: 0;
-					margin-bottom: 1rem;
+					margin-bottom: var(--spacing-m);
 
 					li {
 						line-height: 135%;
-						margin-bottom: 0.2rem;
+						margin-bottom: var(--spacing-3xs);
 					}
 				}
 			}
@@ -126,7 +126,7 @@
 				}
 
 				.image {
-					margin-bottom: 1rem;
+					margin-bottom: var(--spacing-m);
 
 					img {
 						max-width: 500px;
@@ -155,7 +155,7 @@
 		.blogCollection {
 			.blogSection {
 				.blogDetails {
-					padding: 20px;
+					padding: var(--spacing-l);
 
 					.buttonContainer .button {
 						width: 100%;

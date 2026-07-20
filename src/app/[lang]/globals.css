@@ -1,32 +1,37 @@
 :root {
   --max-width: 1100px;
 
-  --spacing-xxxs: 0.25rem;
+  --spacing-3xs: 0.25rem;
   /* 4px */
-  --spacing-xxs: 0.5rem;
+  --spacing-2xs: 0.5rem;
   /* 8px */
   --spacing-xs: 0.625rem;
   /* 10px */
   --spacing-s: 0.75rem;
   /* 12px */
-  --spacing-sm: 0.875rem;
-  /* 14px */
   --spacing-m: 1rem;
   /* 16px */
-  --spacing-lm: 1.125rem;
-  /* 18px */
-  --spacing-llm: 1.25rem;
+  --spacing-l: 1.25rem;
   /* 20px */
-  --spacing-l: 1.5rem;
+  --spacing-xl: 1.5rem;
   /* 24px */
-  --spacing-ll: 2rem;
+  --spacing-2xl: 2rem;
   /* 32px */
+  --spacing-3xl: 2.5rem;
+  /* 40px */
+  --spacing-4xl: 3rem;
+  /* 48px */
+  --spacing-5xl: 4rem;
+  /* 64px */
+
+  --section-padding-mobile: var(--spacing-xl) var(--spacing-4xl);
+  /* 24px 48px - recurring mobile section-padding override */
 
   --section-height: 85vh;
   --section-padding: 48px;
 
   --border-radius: var(--spacing-xs);
-  --button-border-radius: calc(var(--spacing-ll) * 2);
+  --button-border-radius: var(--spacing-5xl);
 
   --mbj-color-salmon: #d97f76;
   --mbj-color-teal: #008080;

@@ -1,6 +1,6 @@
 .levelSection {
 	background-color: var(--mbj-color-black);
-	padding: 40px;
+	padding: var(--spacing-3xl);
 
 	h2,
 	h3,
@@ -14,12 +14,12 @@
 
 	h2 {
 		text-align: center;
-		margin-bottom: 20px;
+		margin-bottom: var(--spacing-l);
 	}
 
 	h3 {
 		text-align: center;
-		margin: 15px 0;
+		margin: var(--spacing-m) 0;
 	}
 
 	.content {
@@ -28,12 +28,12 @@
 
 		.level {
 			p:not(:last-of-type) {
-				margin-bottom: 10px;
+				margin-bottom: var(--spacing-xs);
 			}
 
 			.levelList {
 				color: var(--mbj-color-white);
-				margin-top: 1rem;
+				margin-top: var(--spacing-m);
 				columns: 2;
 			}
 		}

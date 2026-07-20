@@ -1,17 +1,17 @@
 .judgesSection {
-    padding: 50px;
+    padding: var(--spacing-4xl);
     background-color: var(--mbj-color-teal);
 
     .title {
         color: var(--mbj-color-white);
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: var(--spacing-4xl);
     }
 
     .content {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: var(--spacing-l);
         flex-wrap: wrap;
     }
 }
@@ -21,7 +21,7 @@
     background-color: var(--mbj-color-salmon);
     border-radius: 8px;
     width: 300px;
-    padding: 20px;
+    padding: var(--spacing-l);
     box-shadow: 0 3px 5px rgba(38, 70, 83, 0.5);
 
     .linesCircle {
@@ -50,7 +50,7 @@
         .name {
             font-size: 2rem;
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--spacing-2xs);
             color: var(--mbj-color-white);
         }
     }
