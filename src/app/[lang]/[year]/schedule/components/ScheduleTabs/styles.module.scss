@@ -6,13 +6,13 @@
 
 .tabList {
 	display: flex;
-	gap: 4px;
+	gap: var(--spacing-3xs);
 	border-bottom: 2px solid var(--mbj-color-teal);
-	margin-bottom: 16px;
+	margin-bottom: var(--spacing-m);
 }
 
 .tab {
-	padding: 10px 20px;
+	padding: var(--spacing-xs) var(--spacing-l);
 	font-family: var(--font-josephin-sans);
 	font-size: 0.9rem;
 	font-weight: 500;
@@ -36,7 +36,7 @@
 	}
 
 	@media (max-width: 576px) {
-		padding: 8px 12px;
+		padding: var(--spacing-2xs) var(--spacing-s);
 		font-size: 0.8rem;
 	}
 }

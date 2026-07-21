@@ -1,80 +1,92 @@
 .parentTabs {
-	transition: all 500ms ease-in-out;
-	min-width: 150px;
-	padding: 8px 16px;
-	width: 100%;
+  transition: all 500ms ease-in-out;
+  min-width: 150px;
+  padding: var(--spacing-2xs) var(--spacing-m);
+  width: 100%;
 
-	.tabButton {
-		color: var(--mbj-color-black);
-		text-align: left;
-		position: relative;
-		background-color: transparent;
-		border: none;
-		font-size: 1.125rem;
-		font-weight: bold;
-		cursor: pointer;
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
+  .tabButton {
+    color: var(--mbj-color-black);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-2xs);
 
-		img {
-			max-width: 18px;
-			max-height: 18px;
-			transition: all 500ms ease;
-		}
+    img {
+      max-width: 14px;
+      max-height: 14px;
+      opacity: 0.5;
+      transition: all 500ms ease;
+    }
 
-		&.activeTab {
-			img {
-				transform: rotate(90deg);
-			}
-		}
+    &:hover,
+    &.activeTab {
+      img {
+        opacity: 1;
+      }
+    }
 
-		&:after {
-			content: '';
-			position: absolute;
-			bottom: -2px;
-			left: 0;
-			right: 0;
-			background-color: var(--mbj-color-black);
-			height: 1px;
-		}
-	}
+    &.activeTab {
+      img {
+        transform: rotate(90deg);
+      }
+    }
 
-	.nestedTabs {
-		max-height: 0;
-		height: auto;
-		overflow: hidden;
-		list-style: none;
-		transition: all 500ms ease;
-		padding: 0 10px;
-		text-align: left;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      background-color: var(--mbj-color-black);
+      height: 1px;
+    }
+  }
 
-		&.toggledTab {
-			max-height: 500px;
-			padding: 5px 10px;
-			height: auto;
-		}
-	}
+  .nestedTabs {
+    max-height: 0;
+    height: auto;
+    overflow: hidden;
+    list-style: none;
+    transition: all 500ms ease;
+    padding: 0 var(--spacing-xs);
+    text-align: center;
 
-	@media only screen and (max-width: 576px) {
-		opacity: 0;
-		padding: 0 40px;
-		transition: all 500ms ease;
-		animation-delay: 0.35s;
+    &.toggledTab {
+      max-height: 500px;
+      padding: var(--spacing-m) var(--spacing-xs) var(--spacing-2xs) var(--spacing-xs);
+      height: auto;
+    }
+  }
 
-		.tabButton {
-			animation-delay: 0.35s;
-			font-size: 1rem;
-			margin: 0;
-			pointer-events: none;
+  @media only screen and (max-width: 576px) {
+    opacity: 0;
+    padding: 0 var(--spacing-3xl);
+    transition: all 500ms ease;
+    animation-delay: 0.35s;
 
-			img {
-				display: none;
-			}
-		}
+    .tabButton {
+      animation-delay: 0.35s;
+      font-size: 1rem;
+      margin: 0;
+      pointer-events: none;
 
-		.nestedTabs {
-			animation-delay: 0.35s;
-		}
-	}
+      img {
+        display: none;
+      }
+    }
+
+    .nestedTabs {
+      animation-delay: 0.35s;
+    }
+  }
 }

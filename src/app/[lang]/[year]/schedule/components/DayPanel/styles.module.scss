@@ -85,7 +85,7 @@ $row-height: 24px; // 15 min per row
 }
 
 .empty {
-	padding: 48px 0;
+	padding: var(--spacing-4xl) 0;
 	text-align: center;
 	color: var(--mbj-color-text-subtle);
 	font-size: 0.9rem;

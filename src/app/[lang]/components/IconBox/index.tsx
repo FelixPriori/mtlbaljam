@@ -1,4 +1,5 @@
 import Image from "next/image"
+import clsx from 'clsx'
 import styles from './styles.module.scss'
 
 interface IconBox {
@@ -11,7 +12,7 @@ interface IconBox {
 
 export default function IconBox({alt, src, width, height, position}: IconBox) {
     return (
-        <div className={`${styles.iconBox} ${styles[position]}`}>
+        <div className={clsx(styles.iconBox, styles[position])}>
             <Image src={src} alt={alt}  width={width} height={height}/>
         </div>
     )

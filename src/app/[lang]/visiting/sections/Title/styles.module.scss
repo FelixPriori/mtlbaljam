@@ -24,7 +24,7 @@
     .content {
         grid-column: 3 / 8;
         display: flex;
-        gap: 40px;
+        gap: var(--spacing-3xl);
         height: 100%;
 
         .text {
@@ -42,7 +42,7 @@
             }
 
             p {
-                margin-bottom: 1rem;
+                margin-bottom: var(--spacing-m);
                 line-height: 125%;
             }
 
@@ -129,7 +129,7 @@
 
     @media only screen and (max-width: 576px) {
         min-height: 300px;
-        padding: 50px;
+        padding: var(--spacing-4xl);
 
         .halfCircle {
             display: none;

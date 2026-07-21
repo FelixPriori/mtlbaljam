@@ -1,41 +1,38 @@
 .navLink {
-	a {
-		color: var(--mbj-color-black);
-		text-decoration: underline;
-		text-underline-offset: 3px;
-		text-decoration-thickness: 2px;
+  margin-bottom: var(--spacing-2xs);
 
-		&:hover {
-			text-decoration: none;
-		}
-	}
+  &:last-child {
+    margin-bottom: 0;
+  }
 
-	&.current {
-		a {
-			position: relative;
-			text-decoration: none;
-			cursor: default;
-			pointer-events: none;
+  a {
+    color: var(--mbj-color-black);
+    font-style: italic;
+    text-decoration: none;
 
-			&:before {
-				content: '*';
-				position: absolute;
-				left: -7px;
-				top: 4px;
-			}
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 2px;
+    }
+  }
 
-			&:after {
-				content: '*';
-				position: absolute;
-				right: -7px;
-				top: 4px;
-			}
-		}
-	}
+  &.current {
+    a {
+      font-style: normal;
+      font-weight: 600;
+      cursor: default;
+      pointer-events: none;
+      border: 1px dotted var(--mbj-color-black);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-3xs) var(--spacing-xs);
+    }
+  }
 
-	@media only screen and (max-width: 576px) {
-		a {
-			font-size: 0.85rem;
-		}
-	}
+  @media only screen and (max-width: 576px) {
+    a {
+      font-size: 0.85rem;
+    }
+  }
 }

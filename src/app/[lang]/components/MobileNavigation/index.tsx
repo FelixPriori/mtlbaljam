@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import clsx from 'clsx'
 import NavTab from '../NavTab'
 import NavLink from '../NavLink'
 import styles from './styles.module.scss'
@@ -51,14 +52,14 @@ export default function MobileNavigation({ config, lang }: MobileNavigationProps
 	return (
 		<>
 			<div
-				className={`${styles.mbjButtonContainer} ${isOpen ? styles.active : ''}`}
+				className={clsx(styles.mbjButtonContainer, isOpen && styles.active)}
 				onClick={toggle}
 			>
 				<span className={styles.top}></span>
 				<span className={styles.middle}></span>
 				<span className={styles.bottom}></span>
 			</div>
-			<div className={`${styles.mbjOverlay} ${isOpen ? styles.open : ''}`}>
+			<div className={clsx(styles.mbjOverlay, isOpen && styles.open)}>
 				<nav className={styles.overlayMenu}>
 					<h2 className={styles.title}>{config.menuTitle}</h2>
 
@@ -88,10 +89,11 @@ export default function MobileNavigation({ config, lang }: MobileNavigationProps
 							</NavTab>
 						)}
 						{travelSection && renderSection(travelSection)}
-						<li className={styles.languageSwitcher}>
-							<LanguageSwitcher lang={lang} />
-						</li>
 					</ul>
+
+					<div className={styles.languageSwitcher}>
+						<LanguageSwitcher lang={lang} />
+					</div>
 				</nav>
 			</div>
 		</>

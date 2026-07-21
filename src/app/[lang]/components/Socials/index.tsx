@@ -1,4 +1,5 @@
 import styles from './styles.module.scss'
+import clsx from 'clsx'
 import Image from 'next/image'
 
 type SocialEntry = { alt: string; href: string; logo: string }
@@ -14,7 +15,7 @@ export default function Socials({
 	socials: SocialsData
 }) {
 	return (
-		<ul className={`${styles.socials} ${styles[position]}`}>
+		<ul className={clsx(styles.socials, styles[position])}>
 			{keys.map(key => (
 				<li key={key}>
 					<a href={socials[key].href} target="_blank" rel="noreferrer">

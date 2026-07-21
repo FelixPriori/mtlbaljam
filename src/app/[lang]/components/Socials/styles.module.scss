@@ -2,7 +2,7 @@
 	position: absolute;
 	list-style: none;
 	display: flex;
-	gap: 1rem;
+	gap: var(--spacing-m);
 	z-index: 3;
 
 	img {
