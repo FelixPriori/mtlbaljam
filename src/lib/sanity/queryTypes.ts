@@ -14,6 +14,8 @@ import type {
   TRACKS_QUERY_RESULT,
   REGISTRATION_QUERY_RESULT,
   EXTRAS_QUERY_RESULT,
+  GALLERY_QUERY_RESULT,
+  ALBUM_PHOTOS_QUERY_RESULT,
   HOME_PAGE_QUERY_RESULT,
   STAFF_QUERY_RESULT,
   EVENT_EDITION_QUERY_RESULT,
@@ -44,6 +46,10 @@ export type SanityPriceTier = NonNullable<_RegPage['priceTiers']>[number]
 export type SanityRegistrationPage = _RegPage
 
 export type SanityExtraItem = NonNullable<NonNullable<EXTRAS_QUERY_RESULT>['extras']>[number]
+
+export type SanityAlbum = GALLERY_QUERY_RESULT[number]
+
+export type SanityAlbumPhoto = NonNullable<NonNullable<ALBUM_PHOTOS_QUERY_RESULT>['photos']>[number]
 
 export type SanityStaffMember = STAFF_QUERY_RESULT[number]
 

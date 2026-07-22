@@ -47,6 +47,15 @@ const sponsorWithTierFragment = /* groq */ `{
   sponsorRef->{ _id, name, logo ${imageWithAltFragment}, link }
 }`
 
+const albumSummaryFragment = /* groq */ `{
+  _id,
+  title ${localizedStringFragment},
+  year,
+  author,
+  authorUrl,
+  coverImage ${imageWithAltFragment}
+}`
+
 const venueFragment = /* groq */ `{
   _id,
   name,
@@ -250,6 +259,20 @@ export const EXTRAS_QUERY = defineQuery(`
   }
 `)
 
+// ── Gallery ───────────────────────────────────────────────────────────────────
+
+export const GALLERY_QUERY = defineQuery(`
+  *[_type == "album"] | order(year desc, _createdAt asc) ${albumSummaryFragment}
+`)
+
+// Fetched on demand only once a specific album is opened, since photos[]
+// can be large (dozens to 100+ images) and are unused on the album list.
+export const ALBUM_PHOTOS_QUERY = defineQuery(`
+  *[_type == "album" && _id == $id][0]{
+    "photos": photos[] ${imageWithAltFragment}
+  }
+`)
+
 // ── Staff ─────────────────────────────────────────────────────────────────────
 
 export const STAFF_QUERY = defineQuery(`
@@ -392,6 +415,7 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
       sponsors ${localizedStringFragment},
       venue ${localizedStringFragment},
       checkOutOurVenue ${localizedStringFragment},
+      gallery ${localizedStringFragment},
       viewFullMap ${localizedStringFragment},
       ourTeam ${localizedStringFragment},
       currentTeam ${localizedStringFragment},

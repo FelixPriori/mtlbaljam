@@ -15,6 +15,46 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type Album = {
+  _id: string;
+  _type: "album";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: LocalizedString;
+  year?: number;
+  author?: string;
+  authorUrl?: string;
+  coverImage?: ImageWithAlt;
+  photos?: Array<
+    {
+      _key: string;
+    } & ImageWithAlt
+  >;
+};
+
+export type SanityImageAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+};
+
+export type ImageWithAlt = {
+  _type: "imageWithAlt";
+  asset?: SanityImageAssetReference;
+  media?: unknown;
+  hotspot?: SanityImageHotspot;
+  crop?: SanityImageCrop;
+  alt?: LocalizedString;
+};
+
+export type LocalizedString = {
+  _type: "localizedString";
+  en?: string;
+  fr?: string;
+};
+
 export type SiteSettings = {
   _id: string;
   _type: "siteSettings";
@@ -33,6 +73,7 @@ export type SiteSettings = {
     sponsors?: LocalizedString;
     venue?: LocalizedString;
     checkOutOurVenue?: LocalizedString;
+    gallery?: LocalizedString;
     competitions?: LocalizedString;
     judges?: LocalizedString;
     price?: LocalizedString;
@@ -69,12 +110,6 @@ export type SiteSettings = {
     mbjLogoAlt?: LocalizedString;
     archiveNavLabel?: LocalizedString;
   };
-};
-
-export type LocalizedString = {
-  _type: "localizedString";
-  en?: string;
-  fr?: string;
 };
 
 export type VenueReference = {
@@ -289,22 +324,6 @@ export type StaticPage = {
   mapLabel?: LocalizedString;
 };
 
-export type SanityImageAssetReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-};
-
-export type ImageWithAlt = {
-  _type: "imageWithAlt";
-  asset?: SanityImageAssetReference;
-  media?: unknown;
-  hotspot?: SanityImageHotspot;
-  crop?: SanityImageCrop;
-  alt?: LocalizedString;
-};
-
 export type LocalizedText = {
   _type: "localizedText";
   en?: Array<{
@@ -465,7 +484,7 @@ export type ScheduleEvent = {
   location?: VenueReference;
   musicRef?: BandOrDjReference;
   track?: string;
-  description?: LocalizedSimpleText;
+  description?: LocalizedText;
   instructorRef?: InstructorReference;
 };
 
@@ -636,8 +655,11 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
-  | SiteSettings
+  | Album
+  | SanityImageAssetReference
+  | ImageWithAlt
   | LocalizedString
+  | SiteSettings
   | VenueReference
   | InstructorReference
   | BandOrDjReference
@@ -650,8 +672,6 @@ export type AllSanitySchemaTypes =
   | LocalizedSimpleText
   | Slug
   | StaticPage
-  | SanityImageAssetReference
-  | ImageWithAlt
   | LocalizedText
   | StaffMember
   | Sponsor
@@ -1833,6 +1853,56 @@ export type EXTRAS_QUERY_RESULT = {
 } | null;
 
 // Source: ../src/lib/sanity/queries.ts
+// Variable: GALLERY_QUERY
+// Query: *[_type == "album"] | order(year desc, _createdAt asc) {  _id,  title { en, fr },  year,  author,  authorUrl,  coverImage {  asset->{ _id, url, metadata { dimensions } },  hotspot,  crop,  alt { en, fr }}}
+export type GALLERY_QUERY_RESULT = Array<{
+  _id: string;
+  title: {
+    en: string | null;
+    fr: string | null;
+  } | null;
+  year: number | null;
+  author: string | null;
+  authorUrl: string | null;
+  coverImage: {
+    asset: {
+      _id: string;
+      url: string | null;
+      metadata: {
+        dimensions: SanityImageDimensions | null;
+      } | null;
+    } | null;
+    hotspot: SanityImageHotspot | null;
+    crop: SanityImageCrop | null;
+    alt: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+  } | null;
+}>;
+
+// Source: ../src/lib/sanity/queries.ts
+// Variable: ALBUM_PHOTOS_QUERY
+// Query: *[_type == "album" && _id == $id][0]{    "photos": photos[] {  asset->{ _id, url, metadata { dimensions } },  hotspot,  crop,  alt { en, fr }}  }
+export type ALBUM_PHOTOS_QUERY_RESULT = {
+  photos: Array<{
+    asset: {
+      _id: string;
+      url: string | null;
+      metadata: {
+        dimensions: SanityImageDimensions | null;
+      } | null;
+    } | null;
+    hotspot: SanityImageHotspot | null;
+    crop: SanityImageCrop | null;
+    alt: {
+      en: string | null;
+      fr: string | null;
+    } | null;
+  }> | null;
+} | null;
+
+// Source: ../src/lib/sanity/queries.ts
 // Variable: STAFF_QUERY
 // Query: *[_type == "staffMember"] | order(name asc) {    _id,    name,    pronouns { en, fr },    role { en, fr },    photo {  asset->{ _id, url, metadata { dimensions } },  hotspot,  crop,  alt { en, fr }},    isCurrent  }
 export type STAFF_QUERY_RESULT = Array<{
@@ -2125,7 +2195,7 @@ export type HOME_PAGE_QUERY_RESULT = {
 
 // Source: ../src/lib/sanity/queries.ts
 // Variable: SCHEDULE_QUERY
-// Query: *[_type == "eventEdition" && year == $year][0]{    startDate,    endDate,    nightCutoffHour,    "venueAddress": venueRef->address,    "venueName": venueRef->name,    "rooms": rooms[] {      label { en, fr },      "key": key.current    },    "scheduleEvents": scheduleEvents[] {      "_key": _key,      title { en, fr },      description,      start,      end,      type,      track,      "location": location->{ name, address },      "musicRef": musicRef->{ _id, name },      instructorRef->{ _id, name }    }  }
+// Query: *[_type == "eventEdition" && year == $year][0]{    startDate,    endDate,    nightCutoffHour,    "venueAddress": venueRef->address,    "venueName": venueRef->name,    "rooms": rooms[] {      label { en, fr },      "key": key.current    },    "scheduleEvents": scheduleEvents[] {      "_key": _key,      title { en, fr },      description { en, fr },      start,      end,      type,      track,      "location": location->{ name, address },      "musicRef": musicRef->{ _id, name },      instructorRef->{ _id, name }    }  }
 export type SCHEDULE_QUERY_RESULT = {
   startDate: string | null;
   endDate: string | null;
@@ -2145,7 +2215,60 @@ export type SCHEDULE_QUERY_RESULT = {
       en: string | null;
       fr: string | null;
     } | null;
-    description: LocalizedSimpleText | null;
+    description: {
+      en: Array<{
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?:
+          | "blockquote"
+          | "h1"
+          | "h2"
+          | "h3"
+          | "h4"
+          | "h5"
+          | "h6"
+          | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }> | null;
+      fr: Array<{
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?:
+          | "blockquote"
+          | "h1"
+          | "h2"
+          | "h3"
+          | "h4"
+          | "h5"
+          | "h6"
+          | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }> | null;
+    } | null;
     start: string | null;
     end: string | null;
     type:
@@ -2199,7 +2322,7 @@ export type EDITIONS_FOR_NAV_QUERY_RESULT = Array<{
 
 // Source: ../src/lib/sanity/queries.ts
 // Variable: SITE_SETTINGS_QUERY
-// Query: *[_type == "siteSettings"][0] {    facebookUrl,    instagramUrl,    contactEmail,    copyright { en, fr },    registrationUrl,    labels {      competitions { en, fr },      judges { en, fr },      price { en, fr },      format { en, fr },      when { en, fr },      soldOut { en, fr },      howToOrder { en, fr },      orderWhileRegistering { en, fr },      orderEditRegistration { en, fr },      orderAtTheEvent { en, fr },      orderContactUs { en, fr },      registration { en, fr },      registerNow { en, fr },      fullPass { en, fr },      partyPass { en, fr },      classPass { en, fr },      ticketsInclude { en, fr },      helpSomeoneAttend { en, fr },      eligibilityAndGuidelines { en, fr },      priceCalendar { en, fr },      termsAndConditions { en, fr },      schedule { en, fr },      scheduleSoon { en, fr },      tracks { en, fr },      levelRequirement { en, fr },      learnMore { en, fr },      instructors { en, fr },      music { en, fr },      sponsors { en, fr },      venue { en, fr },      checkOutOurVenue { en, fr },      viewFullMap { en, fr },      ourTeam { en, fr },      currentTeam { en, fr },      pastTeam { en, fr },      toasterIconAlt { en, fr },      archImageAlt { en, fr },      loafIconAlt { en, fr },      knifeIconAlt { en, fr },      mbjLogoAlt { en, fr },      archiveNavLabel { en, fr },    }  }
+// Query: *[_type == "siteSettings"][0] {    facebookUrl,    instagramUrl,    contactEmail,    copyright { en, fr },    registrationUrl,    labels {      competitions { en, fr },      judges { en, fr },      price { en, fr },      format { en, fr },      when { en, fr },      soldOut { en, fr },      howToOrder { en, fr },      orderWhileRegistering { en, fr },      orderEditRegistration { en, fr },      orderAtTheEvent { en, fr },      orderContactUs { en, fr },      registration { en, fr },      registerNow { en, fr },      fullPass { en, fr },      partyPass { en, fr },      classPass { en, fr },      ticketsInclude { en, fr },      helpSomeoneAttend { en, fr },      eligibilityAndGuidelines { en, fr },      priceCalendar { en, fr },      termsAndConditions { en, fr },      schedule { en, fr },      scheduleSoon { en, fr },      tracks { en, fr },      levelRequirement { en, fr },      learnMore { en, fr },      instructors { en, fr },      music { en, fr },      sponsors { en, fr },      venue { en, fr },      checkOutOurVenue { en, fr },      gallery { en, fr },      viewFullMap { en, fr },      ourTeam { en, fr },      currentTeam { en, fr },      pastTeam { en, fr },      toasterIconAlt { en, fr },      archImageAlt { en, fr },      loafIconAlt { en, fr },      knifeIconAlt { en, fr },      mbjLogoAlt { en, fr },      archiveNavLabel { en, fr },    }  }
 export type SITE_SETTINGS_QUERY_RESULT = {
   facebookUrl: string | null;
   instagramUrl: string | null;
@@ -2334,6 +2457,10 @@ export type SITE_SETTINGS_QUERY_RESULT = {
       en: string | null;
       fr: string | null;
     } | null;
+    gallery: {
+      en: string | null;
+      fr: string | null;
+    } | null;
     viewFullMap: {
       en: string | null;
       fr: string | null;
@@ -2391,12 +2518,14 @@ declare module "@sanity/client" {
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "tracks": tracks[] {\n      trackName { en, fr },\n      trackDescription { en, fr },\n      classes[] {\n        title { en, fr },\n        description { en, fr },\n        instructorRef->{ _id, name, slug }\n      }\n    },\n    "tracksPageDescription": tracksPageDescription { en, fr },\n    "levelInfo": levelInfo { en, fr },\n    "levelInfoConcepts": levelInfoConcepts { en, fr }\n  }\n': TRACKS_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "registrationPage": registrationPage {\n      isOpen,\n      registerUrl,\n      fullPassDescription { en, fr },\n      partyPassDescription { en, fr },\n      classPassDescription { en, fr },\n      ticketsDetailsTitle { en, fr },\n      fullPassIncludes { en, fr },\n      partyPassIncludes { en, fr },\n      classPassIncludes { en, fr },\n      priceTiers[] {\n        dateLabel { en, fr },\n        endDate,\n        fullPassPrice,\n        partyPassPrice,\n        classPassPrice\n      },\n      subsidyTitle { en, fr },\n      subsidyInfo { en, fr },\n      subsidyEligibilityTitle { en, fr },\n      subsidyEligibility { en, fr },\n      termsUrl,\n      termsLinkText { en, fr },\n      termsContent { en, fr }\n    }\n  }\n': REGISTRATION_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "extras": extras[] {\n      key,\n      title { en, fr },\n      price,\n      soldOut,\n      images[] {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n      content { en, fr },\n      orderMethods\n    }\n  }\n': EXTRAS_QUERY_RESULT;
+    '\n  *[_type == "album"] | order(year desc, _createdAt asc) {\n  _id,\n  title { en, fr },\n  year,\n  author,\n  authorUrl,\n  coverImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}\n}\n': GALLERY_QUERY_RESULT;
+    '\n  *[_type == "album" && _id == $id][0]{\n    "photos": photos[] {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}\n  }\n': ALBUM_PHOTOS_QUERY_RESULT;
     '\n  *[_type == "staffMember"] | order(name asc) {\n    _id,\n    name,\n    pronouns { en, fr },\n    role { en, fr },\n    photo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    isCurrent\n  }\n': STAFF_QUERY_RESULT;
     '\n  *[_type == "staticPage" && pageKey == $pageKey][0] {\n    pageKey,\n    metaTitle { en, fr },\n    metaDescription { en, fr },\n    content { en, fr },\n    foodSectionImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    sightseeingSectionImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n    mapUrl,\n    mapLabel { en, fr }\n  }\n': STATIC_PAGE_QUERY_RESULT;
     '\n  *[_type == "eventEdition" && year == $year][0]{\n    "homePage": homePage {\n      instructorSectionTitle { en, fr },\n      instructorLinkText { en, fr },\n      featuredInstructorGroups[] {\n        groupImage {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n},\n        groupName,\n        shortBio { en, fr }\n      },\n      musicSectionTitle { en, fr },\n      musicLearnMoreText { en, fr },\n      venueSectionTitle { en, fr },\n      venueLearnMoreText { en, fr },\n      sponsorSectionTitle { en, fr },\n      featuredSponsors[]->{ _id, name, logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}, link },\n      sponsorNoteText { en, fr }\n    },\n    "bands": bands[]->{ _id, name, biography { en, fr }, logo {\n  asset->{ _id, url, metadata { dimensions } },\n  hotspot,\n  crop,\n  alt { en, fr }\n}, schemaDescription },\n    "venue": venueRef->{ name, address, website, position { lat, lng } }\n  }\n': HOME_PAGE_QUERY_RESULT;
-    '\n  *[_type == "eventEdition" && year == $year][0]{\n    startDate,\n    endDate,\n    nightCutoffHour,\n    "venueAddress": venueRef->address,\n    "venueName": venueRef->name,\n    "rooms": rooms[] {\n      label { en, fr },\n      "key": key.current\n    },\n    "scheduleEvents": scheduleEvents[] {\n      "_key": _key,\n      title { en, fr },\n      description,\n      start,\n      end,\n      type,\n      track,\n      "location": location->{ name, address },\n      "musicRef": musicRef->{ _id, name },\n      instructorRef->{ _id, name }\n    }\n  }\n': SCHEDULE_QUERY_RESULT;
+    '\n  *[_type == "eventEdition" && year == $year][0]{\n    startDate,\n    endDate,\n    nightCutoffHour,\n    "venueAddress": venueRef->address,\n    "venueName": venueRef->name,\n    "rooms": rooms[] {\n      label { en, fr },\n      "key": key.current\n    },\n    "scheduleEvents": scheduleEvents[] {\n      "_key": _key,\n      title { en, fr },\n      description { en, fr },\n      start,\n      end,\n      type,\n      track,\n      "location": location->{ name, address },\n      "musicRef": musicRef->{ _id, name },\n      instructorRef->{ _id, name }\n    }\n  }\n': SCHEDULE_QUERY_RESULT;
     '\n  *[_type == "eventEdition"] | order(year desc) { year }\n': ALL_EDITION_YEARS_QUERY_RESULT;
     '\n  *[_type == "eventEdition"] | order(year desc) {\n    year,\n    displayDate { en, fr },\n    navPages[] {\n      pageSlug,\n      label { en, fr }\n    }\n  }\n': EDITIONS_FOR_NAV_QUERY_RESULT;
-    '\n  *[_type == "siteSettings"][0] {\n    facebookUrl,\n    instagramUrl,\n    contactEmail,\n    copyright { en, fr },\n    registrationUrl,\n    labels {\n      competitions { en, fr },\n      judges { en, fr },\n      price { en, fr },\n      format { en, fr },\n      when { en, fr },\n      soldOut { en, fr },\n      howToOrder { en, fr },\n      orderWhileRegistering { en, fr },\n      orderEditRegistration { en, fr },\n      orderAtTheEvent { en, fr },\n      orderContactUs { en, fr },\n      registration { en, fr },\n      registerNow { en, fr },\n      fullPass { en, fr },\n      partyPass { en, fr },\n      classPass { en, fr },\n      ticketsInclude { en, fr },\n      helpSomeoneAttend { en, fr },\n      eligibilityAndGuidelines { en, fr },\n      priceCalendar { en, fr },\n      termsAndConditions { en, fr },\n      schedule { en, fr },\n      scheduleSoon { en, fr },\n      tracks { en, fr },\n      levelRequirement { en, fr },\n      learnMore { en, fr },\n      instructors { en, fr },\n      music { en, fr },\n      sponsors { en, fr },\n      venue { en, fr },\n      checkOutOurVenue { en, fr },\n      viewFullMap { en, fr },\n      ourTeam { en, fr },\n      currentTeam { en, fr },\n      pastTeam { en, fr },\n      toasterIconAlt { en, fr },\n      archImageAlt { en, fr },\n      loafIconAlt { en, fr },\n      knifeIconAlt { en, fr },\n      mbjLogoAlt { en, fr },\n      archiveNavLabel { en, fr },\n    }\n  }\n': SITE_SETTINGS_QUERY_RESULT;
+    '\n  *[_type == "siteSettings"][0] {\n    facebookUrl,\n    instagramUrl,\n    contactEmail,\n    copyright { en, fr },\n    registrationUrl,\n    labels {\n      competitions { en, fr },\n      judges { en, fr },\n      price { en, fr },\n      format { en, fr },\n      when { en, fr },\n      soldOut { en, fr },\n      howToOrder { en, fr },\n      orderWhileRegistering { en, fr },\n      orderEditRegistration { en, fr },\n      orderAtTheEvent { en, fr },\n      orderContactUs { en, fr },\n      registration { en, fr },\n      registerNow { en, fr },\n      fullPass { en, fr },\n      partyPass { en, fr },\n      classPass { en, fr },\n      ticketsInclude { en, fr },\n      helpSomeoneAttend { en, fr },\n      eligibilityAndGuidelines { en, fr },\n      priceCalendar { en, fr },\n      termsAndConditions { en, fr },\n      schedule { en, fr },\n      scheduleSoon { en, fr },\n      tracks { en, fr },\n      levelRequirement { en, fr },\n      learnMore { en, fr },\n      instructors { en, fr },\n      music { en, fr },\n      sponsors { en, fr },\n      venue { en, fr },\n      checkOutOurVenue { en, fr },\n      gallery { en, fr },\n      viewFullMap { en, fr },\n      ourTeam { en, fr },\n      currentTeam { en, fr },\n      pastTeam { en, fr },\n      toasterIconAlt { en, fr },\n      archImageAlt { en, fr },\n      loafIconAlt { en, fr },\n      knifeIconAlt { en, fr },\n      mbjLogoAlt { en, fr },\n      archiveNavLabel { en, fr },\n    }\n  }\n': SITE_SETTINGS_QUERY_RESULT;
   }
 }
