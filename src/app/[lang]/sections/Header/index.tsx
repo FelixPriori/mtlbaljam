@@ -50,6 +50,7 @@ type HeaderProps = {
 	registrationUrl: string
 	registerNow: string
 	logoAlt: string
+	galleryTitle: string
 	lang: Locales
 }
 
@@ -58,6 +59,7 @@ export default function Header({
 	registrationUrl,
 	registerNow,
 	logoAlt,
+	galleryTitle,
 	lang,
 }: HeaderProps) {
 	const pathname = usePathname()
@@ -70,7 +72,11 @@ export default function Header({
 		const displayDate = datesMap[year] ?? ''
 
 		const isYearHomePage = /^\d{4}$/.test(pageName)
-		const h1 = isYearHomePage ? pageName : (HEADER_TITLES[lang][pageName] ?? HEADER_TITLES[lang].home)
+		const h1 = isYearHomePage
+			? pageName
+			: pageName === 'gallery'
+				? galleryTitle
+				: (HEADER_TITLES[lang][pageName] ?? HEADER_TITLES[lang].home)
 
 		return (
 			<>
@@ -88,7 +94,7 @@ export default function Header({
 				)}
 			</>
 		)
-	}, [datesMap, lang, pathname, registerNow, registrationUrl])
+	}, [datesMap, galleryTitle, lang, pathname, registerNow, registrationUrl])
 
 	return (
 		<header className={styles.headerSection}>

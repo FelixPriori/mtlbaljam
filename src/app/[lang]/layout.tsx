@@ -35,6 +35,7 @@ function buildNavigationConfig(
 						{ text: 'Vision et équipe', href: '/fr/about' },
 						{ text: 'Code de conduite', href: '/fr/code-of-conduct' },
 						{ text: 'Bénévolat', href: '/fr/volunteering' },
+						{ text: 'Galerie', href: '/fr/gallery' },
 					],
 				}
 			: {
@@ -44,6 +45,7 @@ function buildNavigationConfig(
 						{ text: 'Team and vision', href: '/en/about' },
 						{ text: 'Code of conduct', href: '/en/code-of-conduct' },
 						{ text: 'Volunteering', href: '/en/volunteering' },
+						{ text: 'Gallery', href: '/en/gallery' },
 					],
 				}
 
@@ -125,6 +127,8 @@ export default async function LocaleLayout({
 		(lang === 'fr' ? '© Campus Balboa, 2026' : '©2026 Campus Balboa')
 	const knifeAlt =
 		localize(siteSettings?.labels?.knifeIconAlt, lang) ?? 'Butterknife icon'
+	const galleryTitle =
+		localize(siteSettings?.labels?.gallery, lang) ?? (lang === 'fr' ? 'Galerie' : 'Gallery')
 
 	return (
 		<>
@@ -147,6 +151,7 @@ export default async function LocaleLayout({
 					registrationUrl={registrationUrl}
 					registerNow={registerNow}
 					logoAlt={logoAlt}
+					galleryTitle={galleryTitle}
 					lang={lang}
 				/>
 				<Main>{children}</Main>
