@@ -1,0 +1,169 @@
+@use 'styles/breakpoints' as bp;
+
+.gallerySection {
+	background-color: var(--mbj-color-black);
+	padding: var(--spacing-3xl) var(--spacing-5xl);
+
+	h2,
+	h3 {
+		color: var(--mbj-color-white);
+	}
+
+	h2 {
+		text-align: center;
+		margin-bottom: var(--spacing-xl);
+	}
+}
+
+.backButton {
+	display: inline-block;
+	margin-bottom: var(--spacing-l);
+	background: none;
+	border: none;
+	color: var(--mbj-color-white);
+	cursor: pointer;
+	padding: 0;
+	text-decoration: underline;
+
+	&:focus-visible {
+		outline: 2px solid var(--mbj-color-white);
+		outline-offset: 2px;
+	}
+}
+
+.yearGroup {
+	margin-top: var(--spacing-3xl);
+
+	h3 {
+		margin-bottom: var(--spacing-m);
+	}
+}
+
+.albumGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	justify-content: center;
+	gap: var(--spacing-l);
+}
+
+.albumCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-3xs);
+}
+
+.albumButton {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-3xs);
+	width: 100%;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	text-align: center;
+
+	&:focus-visible {
+		outline: 2px solid var(--mbj-color-white);
+		outline-offset: 2px;
+	}
+}
+
+.albumCoverWrapper {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1;
+	overflow: hidden;
+	border-radius: var(--radius-m);
+	box-shadow: var(--shadow-card);
+}
+
+.albumCover {
+	object-fit: cover;
+	transition: opacity var(--transition-fast) ease-in-out;
+}
+
+.skeletonOverlay {
+	position: absolute;
+	inset: 0;
+}
+
+.albumButton:hover .albumCover {
+	opacity: var(--opacity-hover);
+}
+
+.albumName {
+	font-size: var(--font-size-s);
+	font-weight: bold;
+	color: var(--mbj-color-white);
+}
+
+.albumAuthor {
+	color: var(--mbj-color-white);
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+.albumDetailAuthor {
+	@extend .albumAuthor;
+	margin-bottom: var(--spacing-xl);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	gap: var(--spacing-s);
+}
+
+.thumbButton {
+	position: relative;
+	display: block;
+	aspect-ratio: 1;
+	padding: 0;
+	border: none;
+	border-radius: var(--radius-s);
+	overflow: hidden;
+	cursor: pointer;
+	background: none;
+
+	&:focus-visible {
+		outline: 2px solid var(--mbj-color-white);
+		outline-offset: 2px;
+	}
+}
+
+.thumb {
+	object-fit: cover;
+	transition: opacity var(--transition-fast) ease-in-out;
+}
+
+.thumbButton:hover .thumb {
+	opacity: var(--opacity-hover);
+}
+
+.scrollSentinel {
+	margin: var(--spacing-xl) 0 0;
+	text-align: center;
+	color: var(--mbj-color-white);
+	opacity: var(--opacity-hover);
+	font-size: 0.9rem;
+}
+
+@include bp.down('lg') {
+	.gallerySection {
+		padding: var(--spacing-2xl) var(--spacing-xl);
+	}
+}
+
+@include bp.down('sm') {
+	.gallerySection {
+		padding: var(--spacing-xl) var(--spacing-m);
+	}
+
+	.albumGrid,
+	.grid {
+		grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	}
+}

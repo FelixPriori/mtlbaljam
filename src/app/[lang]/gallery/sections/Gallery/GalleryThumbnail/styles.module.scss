@@ -1,0 +1,23 @@
+.skeletonOverlay {
+	position: absolute;
+	inset: 0;
+}
+
+.magnifyIcon {
+	position: absolute;
+	top: var(--spacing-2xs);
+	right: var(--spacing-2xs);
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: var(--mbj-color-white);
+
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+}
