@@ -28,10 +28,37 @@
   /* 24px 48px - recurring mobile section-padding override */
 
   --section-height: 85vh;
-  --section-padding: 48px;
+  --section-padding: var(--spacing-4xl);
 
-  --border-radius: var(--spacing-xs);
+  --radius-xs: var(--spacing-3xs);
+  --radius-s: var(--spacing-2xs);
+  --radius-m: var(--spacing-xs);
+  --radius-l: var(--spacing-s);
   --button-border-radius: var(--spacing-5xl);
+
+  --opacity-hover: 0.8;
+
+  /* consolidated from a spread of close-but-not-quite values (150-200ms,
+     250-350ms, and an already-consistent 500ms cluster) */
+  --transition-fast: 200ms;
+  --transition-medium: 350ms;
+  --transition-slow: 500ms;
+
+  /* consolidated from a mix of % and unitless values (120-130%, 135-140%, 150%);
+     standardized on unitless per CSS best practice. Schedule components keep
+     local hand-tuned values, same as the font-size/spacing scales above. */
+  --line-height-tight: 1.25;
+  --line-height-base: 1.35;
+  --line-height-loose: 1.5;
+
+  /* recurring body/label sizes only — headings use the h1-h4 clamp() scale below,
+     and the schedule components (EventBlock/DayPanel/ScheduleTabs) keep local
+     hand-tuned sizes for calendar density, not part of this scale. */
+  --font-size-xs: 1.1rem;
+  --font-size-s: 1.125rem;
+  --font-size-m: 1.5rem;
+  --font-size-l: 2rem;
+  --font-size-xl: 3rem;
 
   --mbj-color-salmon: #d97f76;
   --mbj-color-teal: #008080;
@@ -48,12 +75,31 @@
   --mbj-color-inactive: oklch(from var(--mbj-color-teal) 85% 0.01 h); /* neutral event states */
   --mbj-color-divider: oklch(from var(--mbj-color-teal) 20% 0.03 h / 0.07); /* hour lines, shadows */
 
+  --mbj-color-skeleton-base: #d7d7d7;
+  --mbj-color-skeleton-highlight: #fcfcfc;
+
   /*overrides*/
   --color-dark: var(--mbj-color-black);
   --color-primary: var(--mbj-color-salmon);
   --color-secondary: var(--mbj-color-teal);
   --color-neutral: var(--mbj-color-white);
   --color-warning: var(--mbj-color-chartreuse);
+
+  --mbj-color-shadow-rgb: 38, 70, 83;
+  --shadow-card: 0 3px 5px rgba(var(--mbj-color-shadow-rgb), 0.5);
+  --shadow-wrapper: 0 1.5rem 4rem rgba(var(--mbj-color-shadow-rgb), 0.15);
+
+  /* z-index scale — values preserve existing stacking behavior, just named.
+     base/raised/overlay: local layering within a single component (e.g. image behind text).
+     badge/nav/popover/nav-panel/nav-toggle: app-wide chrome, ordered low to high. */
+  --z-base: 0;
+  --z-raised: 1;
+  --z-overlay: 2;
+  --z-badge: 3;
+  --z-nav: 5;
+  --z-popover: 10;
+  --z-nav-panel: 100;
+  --z-nav-toggle: 150;
 }
 
 *,
@@ -77,7 +123,7 @@ body {
   color: var(--color-dark);
   font-family: var(--font-josephin-sans);
   background-color: var(--color-neutral);
-  padding: 40px;
+  padding: var(--spacing-3xl);
 
   @media only screen and (max-width: 576px) {
     padding: 0;
@@ -162,7 +208,7 @@ textarea {
 }
 
 .mbjForm {
-  padding: 12px;
+  padding: var(--spacing-s);
   width: 100%;
 
   @media only screen and (max-width: 576px) {
@@ -173,17 +219,17 @@ textarea {
 .mbjForm .mbjFieldset {
   display: flex;
   flex-direction: column;
-  margin-bottom: 12px;
+  margin-bottom: var(--spacing-s);
 }
 
 .mbjForm .mbjInlineFieldset {
   display: flex;
-  gap: 8px;
-  margin: 12px 0;
+  gap: var(--spacing-2xs);
+  margin: var(--spacing-s) 0;
 }
 
 .mbjForm .mbjLabel {
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-2xs);
 }
 
 .mbjForm .mbjInlineLabel {
@@ -191,8 +237,8 @@ textarea {
 }
 
 .mbjForm .mbjField {
-  padding: 8px 12px;
-  border-radius: 4px;
+  padding: var(--spacing-2xs) var(--spacing-s);
+  border-radius: var(--radius-xs);
   border-style: solid;
   border-color: var(--mbj-color-black);
 }
@@ -209,11 +255,11 @@ textarea {
 
 .mbjForm .mbjButtonContainer .mbjButton {
   margin-left: auto;
-  padding: 0.5rem 2rem;
+  padding: var(--spacing-2xs) var(--spacing-2xl);
   background-color: var(--mbj-color-black);
   border: 1px solid var(--mbj-color-black);
   color: var(--mbj-color-white);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   transition: all 200ms ease-in-out;
   cursor: pointer;
 
@@ -228,9 +274,9 @@ textarea {
 }
 
 .wrapper {
-  margin-bottom: 40px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 1.5rem 4rem rgba(38, 70, 83, 0.15);
+  margin-bottom: var(--spacing-3xl);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-wrapper);
   overflow: hidden;
 
   @media only screen and (max-width: 576px) {
@@ -245,7 +291,7 @@ textarea {
 }
 
 .not-found main {
-  padding: 40px;
+  padding: var(--spacing-3xl);
   padding-bottom: 80px;
   background-color: var(--color-neutral);
 }
