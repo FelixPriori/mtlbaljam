@@ -2,6 +2,7 @@ import styles from './styles.module.scss'
 import { PortableText } from '@portabletext/react'
 import type { PortableTextBlock } from '@portabletext/types'
 import MtlBalJamLogo from '@/assets/svgs/mtlbaljam-logo'
+import TextLink from '@/app/[lang]/components/TextLink'
 
 export default function Description({ blocks }: { blocks: PortableTextBlock[] }) {
 	return (
@@ -12,14 +13,7 @@ export default function Description({ blocks }: { blocks: PortableTextBlock[] })
 					components={{
 						marks: {
 							link: ({ value, children }) => (
-								<a
-									href={value?.href}
-									className={styles.link}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									{children}
-								</a>
+								<TextLink href={value?.href ?? ''}>{children}</TextLink>
 							),
 						},
 					}}

@@ -1,9 +1,9 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
-import Link from 'next/link'
 import { PortableText } from '@portabletext/react'
 import IconBox from '@/app/[lang]/components/IconBox'
 import Socials from '@/app/[lang]/components/Socials'
+import TextLink from '@/app/[lang]/components/TextLink'
 import { urlFor } from '@/lib/sanity/image'
 import { localize } from '@/lib/sanity/localize'
 import type { HOME_PAGE_QUERY_RESULT, SITE_SETTINGS_QUERY_RESULT } from '@/sanity.types'
@@ -50,9 +50,9 @@ export default function MusicSection({
 						</div>
 					))}
 				</div>
-				<Link href={`/${lang}/${year}/music`}>
+				<TextLink href={`/${lang}/${year}/music`} className={styles.link}>
 					{learnMoreText ?? localize(siteSettings?.labels?.learnMore, lang) ?? (lang === 'fr' ? 'En savoir plus...' : 'Learn more...')}
-				</Link>
+				</TextLink>
 			</div>
 
 			<div className={styles.socialsWrapper}>

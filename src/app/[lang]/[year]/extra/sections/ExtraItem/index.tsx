@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import NoteBox from '@/app/[lang]/components/NoteBox'
+import TextLink from '@/app/[lang]/components/TextLink'
 import { PortableText } from '@portabletext/react'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
@@ -34,7 +35,7 @@ export default function ExtraItem({
 				return contactEmail ? (
 					<>
 						{localize(labels?.orderContactUs, lang)}{' '}
-						<a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+						<TextLink href={`mailto:${contactEmail}`}>{contactEmail}</TextLink>
 					</>
 				) : (
 					localize(labels?.orderContactUs, lang)
@@ -76,9 +77,7 @@ export default function ExtraItem({
 								components={{
 									marks: {
 										link: ({ value, children }) => (
-											<a href={value?.href} target="_blank" rel="noopener noreferrer">
-												{children}
-											</a>
+											<TextLink href={value?.href ?? ''}>{children}</TextLink>
 										),
 									},
 								}}

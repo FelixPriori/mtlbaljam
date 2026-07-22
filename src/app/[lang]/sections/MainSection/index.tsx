@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import clsx from 'clsx'
 import Image from 'next/image'
-import Link from 'next/link'
+import TextLink from '@/app/[lang]/components/TextLink'
 import LinesCircle from '@/assets/svgs/lines-circle'
 import HalfCircle from '@/assets/svgs/half-circle'
 import { urlFor } from '@/lib/sanity/image'
@@ -55,9 +55,9 @@ export default function MainSection({
 							{localize(group.shortBio, lang)?.map(line => (
 								<p key={line}>{line}</p>
 							))}
-							<Link className={styles.link} href={`/${lang}/${year}/instructors`}>
+							<TextLink href={`/${lang}/${year}/instructors`}>
 								{resolvedLinkText}
-							</Link>
+							</TextLink>
 						</div>
 					</div>
 				))}

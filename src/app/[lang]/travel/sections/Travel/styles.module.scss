@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .travelSection {
 	background-color: var(--mbj-color-black);
 	padding: var(--spacing-3xl) 0;
@@ -16,7 +18,7 @@
 	}
 
 	h3 {
-		font-size: 1.5rem;
+		font-size: var(--font-size-m);
 		margin-top: var(--spacing-xl);
 		margin-bottom: var(--spacing-2xs);
 	}
@@ -29,17 +31,7 @@
 
 		p {
 			margin-bottom: var(--spacing-m);
-			line-height: 150%;
-		}
-
-		a {
-			text-decoration: underline;
-			text-underline-offset: 2px;
-			text-decoration-thickness: 2px;
-
-			&:hover {
-				text-decoration: none;
-			}
+			line-height: var(--line-height-loose);
 		}
 
 		ul {
@@ -52,7 +44,7 @@
 		}
 	}
 
-	@media only screen and (max-width: 768px) {
+	@include bp.down('md') {
 		.content {
 			padding: 0 var(--spacing-2xl);
 		}

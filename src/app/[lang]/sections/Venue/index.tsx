@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
-import Link from 'next/link'
 import IconBox from '@/app/[lang]/components/IconBox'
+import TextLink from '@/app/[lang]/components/TextLink'
 import { urlFor } from '@/lib/sanity/image'
 import { localize } from '@/lib/sanity/localize'
 import type { SanityHomePage, SanityLabels } from '@/lib/sanity/queryTypes'
@@ -71,9 +71,9 @@ export default function Venue({
 
 				<div className={styles.text}>
 					<h2>{venueSectionTitle ?? localize(labels?.venue, lang) ?? (lang === 'fr' ? 'Lieu' : 'Venue')}</h2>
-					<Link href={`/${lang}/${year}/venue`}>
+					<TextLink href={`/${lang}/${year}/venue`}>
 						{venueLearnMoreText ?? localize(labels?.checkOutOurVenue, lang) ?? (lang === 'fr' ? 'Découvrez notre lieu...' : 'Check out our venue...')}
-					</Link>
+					</TextLink>
 				</div>
 
 				<IconBox

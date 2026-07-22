@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player/youtube'
 import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
 import Skeleton from '@/app/[lang]/components/Skeleton'
+import TextLink from '@/app/[lang]/components/TextLink'
 import styles from './styles.module.scss'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
@@ -66,9 +67,7 @@ export default function InstructorsSection({
 							<h3>{instructor.name}</h3>
 							<PortableText value={localize(instructor.biography, lang) ?? []} />
 							{instructor.externalLink && (
-								<a target="_blank" rel="noreferrer" href={instructor.externalLink}>
-									{instructor.externalLink}
-								</a>
+								<TextLink href={instructor.externalLink}>{instructor.externalLink}</TextLink>
 							)}
 						</div>
 					</div>

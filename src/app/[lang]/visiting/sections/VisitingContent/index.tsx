@@ -2,6 +2,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import styles from './styles.module.scss'
 import ExternalLink from '@/assets/svgs/external-link'
+import TextLink from '@/app/[lang]/components/TextLink'
 import { PortableText } from '@portabletext/react'
 import { urlFor } from '@/lib/sanity/image'
 import { localize } from '@/lib/sanity/localize'
@@ -70,9 +71,7 @@ export default function VisitingContent({
 							components={{
 								marks: {
 									link: ({ value, children }) => (
-										<a href={value?.href} target="_blank" rel="noopener noreferrer">
-											{children}
-										</a>
+										<TextLink href={value?.href ?? ''}>{children}</TextLink>
 									),
 								},
 							}}
@@ -99,9 +98,7 @@ export default function VisitingContent({
 								components={{
 									marks: {
 										link: ({ value, children }) => (
-											<a href={value?.href} target="_blank" rel="noopener noreferrer">
-												{children}
-											</a>
+											<TextLink href={value?.href ?? ''}>{children}</TextLink>
 										),
 									},
 								}}

@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .visitingContent {
 	padding: var(--spacing-3xl) var(--spacing-5xl);
 	background-color: var(--mbj-color-white);
@@ -29,14 +31,14 @@
 
 			.image {
 				grid-column: 1 / 2;
-				z-index: 10;
+				z-index: var(--z-popover);
 
 				img {
 					width: 100%;
 					height: 100%;
 					object-fit: contain;
-					border-radius: 4px;
-					box-shadow: 0 3px 5px rgba(38, 70, 83, 0.5);
+					border-radius: var(--radius-xs);
+					box-shadow: var(--shadow-card);
 				}
 			}
 
@@ -54,8 +56,8 @@
 						background-color: var(--mbj-color-teal);
 						border: 1px solid var(--mbj-color-teal);
 						color: var(--mbj-color-white);
-						border-radius: 4px;
-						transition: all 200ms ease-in-out;
+						border-radius: var(--radius-xs);
+						transition: all var(--transition-fast) ease-in-out;
 						cursor: pointer;
 						display: inline-flex;
 						align-items: center;
@@ -74,12 +76,12 @@
 				}
 
 				h2 {
-					font-size: 1.5rem;
+					font-size: var(--font-size-m);
 					margin-bottom: var(--spacing-s);
 				}
 
 				h3 {
-					font-size: 1.1rem;
+					font-size: var(--font-size-xs);
 					margin-top: var(--spacing-m);
 					margin-bottom: var(--spacing-3xs);
 					color: var(--mbj-color-teal);
@@ -87,17 +89,7 @@
 
 				p {
 					margin-bottom: var(--spacing-s);
-					line-height: 135%;
-				}
-
-				a {
-					text-decoration: underline;
-					text-underline-offset: 2px;
-					text-decoration-thickness: 2px;
-
-					&:hover {
-						text-decoration: none;
-					}
+					line-height: var(--line-height-base);
 				}
 
 				ul {
@@ -106,7 +98,7 @@
 					margin-bottom: var(--spacing-m);
 
 					li {
-						line-height: 135%;
+						line-height: var(--line-height-base);
 						margin-bottom: var(--spacing-3xs);
 					}
 				}
@@ -114,7 +106,7 @@
 		}
 	}
 
-	@media only screen and (max-width: 992px) {
+	@include bp.down('lg') {
 		.blogCollection {
 			.blogSection {
 				display: flex;
@@ -149,7 +141,7 @@
 		}
 	}
 
-	@media only screen and (max-width: 576px) {
+	@include bp.down('sm') {
 		padding: 0;
 
 		.blogCollection {

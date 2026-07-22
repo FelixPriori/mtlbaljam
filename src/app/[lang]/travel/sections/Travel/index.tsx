@@ -1,6 +1,7 @@
 import styles from './styles.module.scss'
 import { PortableText } from '@portabletext/react'
 import type { PortableTextBlock } from '@portabletext/types'
+import TextLink from '@/app/[lang]/components/TextLink'
 
 export default function Travel({ blocks }: { blocks: PortableTextBlock[] }) {
 	return (
@@ -11,13 +12,7 @@ export default function Travel({ blocks }: { blocks: PortableTextBlock[] }) {
 					components={{
 						marks: {
 							link: ({ value, children }) => (
-								<a
-									href={value?.href}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									{children}
-								</a>
+								<TextLink href={value?.href ?? ''}>{children}</TextLink>
 							),
 						},
 					}}

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import styles from './styles.module.scss'
 import { Fragment } from 'react/jsx-runtime'
 import { PortableText } from '@portabletext/react'
+import TextLink from '@/app/[lang]/components/TextLink'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
 import type { SanityBandOrDj } from '@/lib/sanity/queryTypes'
@@ -44,9 +45,7 @@ export default function Band({
 							<h3>{band.name}</h3>
 							<PortableText value={localize(band.biography, lang) ?? []} />
 							{band.link && (
-								<a target="_blank" rel="noreferrer" href={band.link}>
-									{band.link}
-								</a>
+								<TextLink href={band.link}>{band.link}</TextLink>
 							)}
 						</div>
 					</Fragment>

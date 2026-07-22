@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .mapSection {
     position: relative;
     background-color: var(--mbj-color-black);
@@ -21,7 +23,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        z-index: 2;
+        z-index: var(--z-overlay);
 
         .mapContainer {
             grid-column: 2 / 7;
@@ -29,7 +31,7 @@
             height: 100%;
             min-width: 500px;
             min-height: 500px;
-            border-radius: var(--border-radius);
+            border-radius: var(--radius-m);
             overflow: hidden;
         }
 
@@ -39,16 +41,6 @@
             flex-direction: column;
             justify-content: center;
             gap: var(--spacing-2xl);
-
-            a {
-                text-decoration: underline;
-                text-underline-offset: 3px;
-                text-decoration-thickness: 2px;
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
         }
     }
 
@@ -58,7 +50,7 @@
         right: 0;
         left: 50%;
         bottom: 0;
-        z-index: 0;
+        z-index: var(--z-base);
 
         img {
             width: 100%;
@@ -72,7 +64,7 @@
         position: absolute;
         right: 150px;
         bottom: 0;
-        z-index: 0;
+        z-index: var(--z-base);
 
         img {
             width: 320px;
@@ -82,7 +74,7 @@
         }
     }
 
-    @media only screen and (max-width: 992px) {
+    @include bp.down('lg') {
         .cutout {
             left: 0;
         }
@@ -107,7 +99,7 @@
         }
     }
 
-    @media only screen and (max-width: 768px) {
+    @include bp.down('md') {
         .content {
             .mapContainer {
                 min-width: 320px;
@@ -116,7 +108,7 @@
         }
     }
 
-    @media only screen and (max-width: 576px) {
+    @include bp.down('sm') {
         .content {
             .mapContainer {
                 grid-column: 1 / -1;

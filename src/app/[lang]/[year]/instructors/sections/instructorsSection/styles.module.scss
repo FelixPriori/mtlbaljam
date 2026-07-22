@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .instructorsSection {
 	background-color: var(--mbj-color-black);
 	padding: var(--spacing-3xl) 0;
@@ -30,7 +32,7 @@
 				top: 0;
 				right: 0;
 				bottom: 0;
-				z-index: 0;
+				z-index: var(--z-base);
 
 				img {
 					width: 100%;
@@ -49,7 +51,7 @@
 				height: 100%;
 				min-width: 640px;
 				min-height: 360px;
-				z-index: 1;
+				z-index: var(--z-raised);
 
 				.loading {
 					.box {
@@ -62,7 +64,7 @@
 
 			.text {
 				grid-column: 6 / -2;
-				z-index: 1;
+				z-index: var(--z-raised);
 
 				p {
 					margin-bottom: var(--spacing-l);
@@ -73,19 +75,9 @@
 						display: block;
 					}
 				}
-
-				a {
-					text-decoration: underline;
-					text-underline-offset: 2px;
-					text-decoration-thickness: 2px;
-
-					&:hover {
-						text-decoration: none;
-					}
-				}
 			}
 
-			@media only screen and (max-width: 1200px) {
+			@include bp.down('xl') {
 				grid-template-columns: 1fr;
 				align-items: center;
 
@@ -111,11 +103,11 @@
 					left: 50%;
 					transform: translateX(-50%);
 					width: 500px;
-					z-index: 0;
+					z-index: var(--z-base);
 				}
 			}
 
-			@media only screen and (max-width: 768px) {
+			@include bp.down('md') {
 				.youtubeWrapper {
 					min-width: 427px;
 					min-height: 213px;
@@ -143,7 +135,7 @@
 				}
 			}
 
-			@media only screen and (max-width: 576px) {
+			@include bp.down('sm') {
 				.youtubeWrapper {
 					min-width: 320px;
 					min-height: 180px;
@@ -161,7 +153,7 @@
 					left: 50%;
 					transform: translateX(-50%);
 					width: 325px;
-					z-index: 0;
+					z-index: var(--z-base);
 				}
 			}
 

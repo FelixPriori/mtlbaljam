@@ -1,5 +1,6 @@
 import styles from './styles.module.scss'
 import GoogleMaps from '@/app/[lang]/components/CustomGoogleMap'
+import TextLink from '@/app/[lang]/components/TextLink'
 import { localize } from '@/lib/sanity/localize'
 import type { SanityVenue } from '@/lib/sanity/queryTypes'
 import type { Locales } from '@/i18n'
@@ -35,9 +36,7 @@ export default function Cats({
 					))}
 					{venue.address && <p>{venue.address}</p>}
 					{venue.website && (
-						<a target="_blank" rel="noreferrer" href={venue.website}>
-							{venue.website}
-						</a>
+						<TextLink href={venue.website}>{venue.website}</TextLink>
 					)}
 				</div>
 			</div>
