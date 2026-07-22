@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
+		"lint": "eslint .",
 		"studio": "cd studio && npm run dev",
 		"studio:build": "cd studio && npm run build",
 		"studio:deploy": "cd studio && npm run deploy",
