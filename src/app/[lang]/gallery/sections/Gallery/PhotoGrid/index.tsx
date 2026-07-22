@@ -52,6 +52,7 @@ export default function PhotoGrid({
 						isLoaded={isPhotoLoaded(key)}
 						onLoad={() => onPhotoLoad(key)}
 						onClick={() => onOpenPhoto(photoIndex)}
+						priority={photoIndex === 0}
 						wrapperClassName={styles.thumbButton}
 						imageClassName={styles.thumb}
 					/>
