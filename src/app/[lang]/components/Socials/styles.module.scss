@@ -3,7 +3,7 @@
 	list-style: none;
 	display: flex;
 	gap: var(--spacing-m);
-	z-index: 3;
+	z-index: var(--z-badge);
 
 	img {
 		max-width: 50px;

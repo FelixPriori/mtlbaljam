@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .headerSection {
 	position: relative;
 	height: 50vh;
@@ -8,19 +10,19 @@
 		padding: var(--spacing-s) var(--spacing-m);
 		background-color: var(--mbj-color-white);
 		border: 2px dotted var(--mbj-color-black);
-		border-radius: 8px;
+		border-radius: var(--radius-s);
 	}
 
 	.registerNow {
 		background-color: var(--mbj-color-white);
 		padding: var(--spacing-s) var(--spacing-m);
-		border-radius: 8px;
+		border-radius: var(--radius-s);
 		text-decoration: none;
 		border: 2px solid var(--mbj-color-black);
-		transition: all 300ms ease-in-out;
+		transition: all var(--transition-medium) ease-in-out;
 		&:hover {
 			transform: translateY(-2px);
-			box-shadow: 0 3px 5px rgba(38, 70, 83, 0.5);
+			box-shadow: var(--shadow-card);
 		}
 	}
 
@@ -55,12 +57,12 @@
 
 		p {
 			font-family: var(--font-caveat-brush);
-			font-size: 2rem;
+			font-size: var(--font-size-l);
 			margin: 0;
 		}
 	}
 
-	@media only screen and (max-width: 992px) {
+	@include bp.down('lg') {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 
@@ -69,11 +71,11 @@
 		}
 	}
 
-	@media only screen and (max-width: 768px) {
+	@include bp.down('md') {
 		display: block;
 	}
 
-	@media only screen and (max-width: 576px) {
+	@include bp.down('sm') {
 		.registration {
 			p {
 				font-size: 1.2rem;

@@ -28,8 +28,8 @@
 
         .biography {
             text-align: justify;
-            font-size: 18px;
-            line-height: 150%;
+            font-size: var(--font-size-s);
+            line-height: var(--line-height-loose);
         }
     }
 }

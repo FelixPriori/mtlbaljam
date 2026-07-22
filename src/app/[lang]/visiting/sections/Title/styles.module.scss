@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .titleSection {
     position: relative;
     height: 50vh;
@@ -36,26 +38,13 @@
 
             h2,
             h3,
-            p,
-            a {
+            p {
                 color: var(--mbj-color-white);
             }
 
             p {
                 margin-bottom: var(--spacing-m);
-                line-height: 125%;
-            }
-
-            a {
-                margin-left: auto;
-                max-width: fit-content;
-                text-decoration: underline;
-                text-underline-offset: 3px;
-                text-decoration-thickness: 2px;
-
-                &:hover {
-                    text-decoration: none;
-                }
+                line-height: var(--line-height-tight);
             }
         }
     }
@@ -65,14 +54,14 @@
         right: 50px;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 1;
+        z-index: var(--z-raised);
     }
 
     svg {
         color: var(--mbj-color-white);
     }
 
-    @media only screen and (max-width: 1400px) {
+    @include bp.down('xxl') {
         .linesCircle {
             svg {
                 max-width: 250px;
@@ -81,7 +70,7 @@
         }
     }
 
-    @media only screen and (max-width: 1200px) {
+    @include bp.down('xl') {
         .content {
             grid-column: 3 / 10;
         }
@@ -97,7 +86,7 @@
     }
 
 
-    @media only screen and (max-width: 992px) {
+    @include bp.down('lg') {
         .halfCircle {
             bottom: -100px;
             top: initial;
@@ -115,19 +104,19 @@
                 justify-content: center;
 
                 h2 {
-                    font-size: 3rem;
+                    font-size: var(--font-size-xl);
                 }
             }
         }
     }
 
-    @media only screen and (max-width: 768px) {
+    @include bp.down('md') {
         .linesCircle {
             right: -100px;
         }
     }
 
-    @media only screen and (max-width: 576px) {
+    @include bp.down('sm') {
         min-height: 300px;
         padding: var(--spacing-4xl);
 

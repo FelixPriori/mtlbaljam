@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .introSection {
 	background-color: var(--mbj-color-black);
 	padding: var(--spacing-3xl) 0 var(--spacing-l) 0;
@@ -22,8 +24,7 @@
 
 	h2,
 	h3,
-	p,
-	a {
+	p {
 		color: var(--mbj-color-white);
 	}
 
@@ -45,19 +46,9 @@
 		p {
 			margin-bottom: var(--spacing-xs);
 		}
-
-		a {
-			text-decoration: underline;
-			text-underline-offset: 2px;
-			text-decoration-thickness: 2px;
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
 	}
 
-	@media only screen and (max-width: 992px) {
+	@include bp.down('lg') {
 		padding: var(--spacing-l) 0 0 0;
 
 		.competitionNote {

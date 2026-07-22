@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .valuesSection {
 	background-color: var(--mbj-color-black);
 	padding: var(--spacing-4xl);
@@ -24,7 +26,7 @@
 		margin: 0 auto;
 
 		p {
-			line-height: 120%;
+			line-height: var(--line-height-tight);
 			margin-bottom: var(--spacing-l);
 
 			br {
@@ -34,7 +36,7 @@
 			}
 		}
 
-		@media only screen and (max-width: 992px) {
+		@include bp.down('lg') {
 			h3 {
 				text-align: center;
 			}

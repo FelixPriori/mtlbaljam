@@ -11,7 +11,7 @@
   }
 
   p {
-    line-height: 135%;
+    line-height: var(--line-height-base);
   }
 
   h2 {
@@ -47,7 +47,7 @@
 
     strong {
       display: block;
-      font-size: 1.1rem;
+      font-size: var(--font-size-xs);
       font-weight: 600;
       margin-bottom: var(--spacing-2xs);
     }

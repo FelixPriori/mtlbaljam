@@ -1,7 +1,7 @@
 .pillRadio {
 	padding: var(--spacing-3xs);
 	border: 1px solid var(--color-dark);
-	border-radius: 0.75rem;
+	border-radius: var(--radius-l);
 	width: fit-content;
 
 	.option {
@@ -19,7 +19,7 @@
 			&:hover {
 				background-color: var(--color-primary);
 				color: var(--color-neutral);
-				transition: all 200ms;
+				transition: all var(--transition-fast);
 			}
 		}
 
@@ -30,11 +30,11 @@
 		}
 
 		&.first {
-			border-radius: 0.5rem 0 0 0.5rem;
+			border-radius: var(--radius-s) 0 0 var(--radius-s);
 		}
 
 		&.last {
-			border-radius: 0 0.5rem 0.5rem 0;
+			border-radius: 0 var(--radius-s) var(--radius-s) 0;
 		}
 	}
 }

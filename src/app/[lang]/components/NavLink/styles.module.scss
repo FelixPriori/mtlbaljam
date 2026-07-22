@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .navLink {
   margin-bottom: var(--spacing-2xs);
 
@@ -25,12 +27,12 @@
       cursor: default;
       pointer-events: none;
       border: 1px dotted var(--mbj-color-black);
-      border-radius: var(--border-radius);
+      border-radius: var(--radius-m);
       padding: var(--spacing-3xs) var(--spacing-xs);
     }
   }
 
-  @media only screen and (max-width: 576px) {
+  @include bp.down('sm') {
     a {
       font-size: 0.85rem;
     }

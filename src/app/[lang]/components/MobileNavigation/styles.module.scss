@@ -5,8 +5,8 @@
   height: 27px;
   width: 35px;
   cursor: pointer;
-  z-index: 150;
-  transition: opacity 0.25s ease;
+  z-index: var(--z-nav-toggle);
+  transition: opacity var(--transition-medium) ease;
 
   &.active {
     .top {
@@ -36,7 +36,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 0.35s ease;
+    transition: all var(--transition-medium) ease;
     cursor: pointer;
     box-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 
@@ -68,15 +68,15 @@ $stagger-step: 0.05s;
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 0.35s,
-    visibility 0.35s,
-    height 0.35s;
+    opacity var(--transition-medium),
+    visibility var(--transition-medium),
+    height var(--transition-medium);
   overflow: hidden;
-  z-index: 100;
+  z-index: var(--z-nav-panel);
 
   .title {
     flex-shrink: 0;
-    font-size: 2rem;
+    font-size: var(--font-size-l);
     color: var(--mbj-color-black);
     margin-bottom: var(--spacing-m);
     text-transform: uppercase;
@@ -88,7 +88,7 @@ $stagger-step: 0.05s;
     height: 100%;
 
     li {
-      animation: fadeInRight 0.5s ease forwards;
+      animation: fadeInRight var(--transition-slow) ease forwards;
       animation-delay: $stagger-base-delay;
 
       @for $i from 2 through $stagger-max-items {
@@ -129,7 +129,7 @@ $stagger-step: 0.05s;
         flex-shrink: 0;
         margin-top: var(--spacing-m);
         opacity: 0;
-        animation: fadeInRight 0.5s ease forwards;
+        animation: fadeInRight var(--transition-slow) ease forwards;
         animation-delay: $stagger-base-delay + $stagger-max-items * $stagger-step;
         align-self: center;
       }

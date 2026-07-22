@@ -1,6 +1,6 @@
 .iconBox {
     position: absolute;
-    z-index: 10;
+    z-index: var(--z-popover);
 
     &.topLeft {
         top: 1rem;

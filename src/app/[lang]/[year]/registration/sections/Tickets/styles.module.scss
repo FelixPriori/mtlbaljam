@@ -13,7 +13,7 @@
 
 	a,
 	p {
-		line-height: 135%;
+		line-height: var(--line-height-base);
 	}
 
 	ul {
@@ -94,7 +94,7 @@
 
 		li,
 		p {
-			line-height: 150%;
+			line-height: var(--line-height-loose);
 		}
 
 		.content {

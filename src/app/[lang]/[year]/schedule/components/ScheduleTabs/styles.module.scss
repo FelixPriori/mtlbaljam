@@ -1,3 +1,5 @@
+@use 'styles/breakpoints' as bp;
+
 .tabs {
 	display: flex;
 	flex-direction: column;
@@ -22,8 +24,8 @@
 	border-bottom: 3px solid transparent;
 	margin-bottom: -2px;
 	cursor: pointer;
-	color: #888;
-	transition: color 150ms ease, border-color 150ms ease;
+	color: var(--mbj-color-text-muted);
+	transition: color var(--transition-fast) ease, border-color var(--transition-fast) ease;
 
 	&:hover {
 		color: var(--mbj-color-black);
@@ -35,7 +37,7 @@
 		font-weight: 600;
 	}
 
-	@media (max-width: 576px) {
+	@include bp.down('sm') {
 		padding: var(--spacing-2xs) var(--spacing-s);
 		font-size: 0.8rem;
 	}
