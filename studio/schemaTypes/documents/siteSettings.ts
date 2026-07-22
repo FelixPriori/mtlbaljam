@@ -40,6 +40,7 @@ export const siteSettings = defineType({
         localizedString('sponsors', 'Sponsors (section title fallback)', 'homepage'),
         localizedString('venue', 'Venue (section title fallback)', 'homepage'),
         localizedString('checkOutOurVenue', 'Check Out Our Venue (link text fallback)', 'homepage'),
+        localizedString('gallery', 'Gallery (page/header title)', 'homepage'),
         // Competitions
         localizedString('competitions', 'Competitions (section title)', 'competitions'),
         localizedString('judges', 'Judges (section title)', 'competitions'),

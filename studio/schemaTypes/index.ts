@@ -24,6 +24,7 @@ import { staffMember } from './documents/staffMember'
 import { staticPage } from './documents/staticPage'
 import { eventEdition } from './documents/eventEdition'
 import { siteSettings } from './documents/siteSettings'
+import { album } from './documents/album'
 
 export const schemaTypes = [
   // Primitives first (referenced by everything else)
@@ -55,4 +56,5 @@ export const schemaTypes = [
   staticPage,
   eventEdition,
   siteSettings,
+  album,
 ]
