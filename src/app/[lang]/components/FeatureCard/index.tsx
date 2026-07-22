@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import styles from './styles.module.scss'
 import LinesCircle from '@/assets/svgs/lines-circle'
+import SanityImage from '@/app/[lang]/components/SanityImage'
 import { ReactNode } from 'react'
 
 interface FeatureCardProps {
@@ -26,7 +26,7 @@ export default function FeatureCard({
 			</div>
 
 			<div className={styles.imgWrapper}>
-				<Image src={image.src} alt={image.alt} width={150} height={150} />
+				<SanityImage src={image.src} alt={image.alt} width={150} height={150} />
 			</div>
 			<div className={styles.details}>
 				{isH4 ? (

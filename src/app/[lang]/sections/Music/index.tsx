@@ -1,9 +1,9 @@
 import styles from './styles.module.scss'
-import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
 import IconBox from '@/app/[lang]/components/IconBox'
 import Socials from '@/app/[lang]/components/Socials'
 import TextLink from '@/app/[lang]/components/TextLink'
+import SanityImage from '@/app/[lang]/components/SanityImage'
 import { urlFor } from '@/lib/sanity/image'
 import { localize } from '@/lib/sanity/localize'
 import type { HOME_PAGE_QUERY_RESULT, SITE_SETTINGS_QUERY_RESULT } from '@/sanity.types'
@@ -35,7 +35,7 @@ export default function MusicSection({
 						<div key={band._id} className={styles.band}>
 							<div className={styles.bandImageWrapper}>
 								{band.logo ? (
-									<Image
+									<SanityImage
 										src={urlFor(band.logo).width(270).url()}
 										alt={localize(band.logo.alt, lang) ?? band.name ?? ''}
 										width={270}

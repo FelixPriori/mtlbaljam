@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import clsx from 'clsx'
-import Image from 'next/image'
 import TextLink from '@/app/[lang]/components/TextLink'
+import SanityImage from '@/app/[lang]/components/SanityImage'
 import LinesCircle from '@/assets/svgs/lines-circle'
 import HalfCircle from '@/assets/svgs/half-circle'
 import { urlFor } from '@/lib/sanity/image'
@@ -40,7 +40,7 @@ export default function MainSection({
 					>
 						{group.groupImage && (
 							<div className={clsx(styles.cutout, i === 0 ? styles.firsCutout : styles.secondCutout)}>
-								<Image
+								<SanityImage
 									src={urlFor(group.groupImage).width(1080).url()}
 									alt={localize(group.groupImage.alt, lang) ?? group.groupName ?? ''}
 									width={1080}

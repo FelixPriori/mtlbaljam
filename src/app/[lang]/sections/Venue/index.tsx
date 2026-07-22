@@ -2,6 +2,7 @@ import styles from './styles.module.scss'
 import Image from 'next/image'
 import IconBox from '@/app/[lang]/components/IconBox'
 import TextLink from '@/app/[lang]/components/TextLink'
+import SanityImage from '@/app/[lang]/components/SanityImage'
 import { urlFor } from '@/lib/sanity/image'
 import { localize } from '@/lib/sanity/localize'
 import type { SanityHomePage, SanityLabels } from '@/lib/sanity/queryTypes'
@@ -42,7 +43,7 @@ export default function Venue({
 							>
 								{sponsor.logo && (
 									<div className={styles.sponsorLogo}>
-										<Image
+										<SanityImage
 											src={urlFor(sponsor.logo).width(100).url()}
 											alt={localize(sponsor.logo.alt, lang) ?? sponsor.name ?? ''}
 											width={100}

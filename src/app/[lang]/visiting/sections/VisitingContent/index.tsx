@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import clsx from 'clsx'
 import styles from './styles.module.scss'
 import ExternalLink from '@/assets/svgs/external-link'
 import TextLink from '@/app/[lang]/components/TextLink'
+import SanityImage from '@/app/[lang]/components/SanityImage'
 import { PortableText } from '@portabletext/react'
 import { urlFor } from '@/lib/sanity/image'
 import { localize } from '@/lib/sanity/localize'
@@ -44,7 +44,7 @@ export default function VisitingContent({
 				<div className={styles.blogSection}>
 					{foodImage && (
 						<div className={styles.image}>
-							<Image
+							<SanityImage
 								src={urlFor(foodImage).width(1080).height(1080).url()}
 								alt={localize(foodImage.alt, lang) ?? ''}
 								width={1080}
@@ -84,7 +84,7 @@ export default function VisitingContent({
 					<div className={clsx(styles.blogSection, styles.reversed)}>
 						{sightseeingImage && (
 							<div className={styles.image}>
-								<Image
+								<SanityImage
 									src={urlFor(sightseeingImage).width(1080).height(1080).url()}
 									alt={localize(sightseeingImage.alt, lang) ?? ''}
 									width={1080}

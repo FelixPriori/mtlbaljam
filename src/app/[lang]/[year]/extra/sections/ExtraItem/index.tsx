@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import styles from './styles.module.scss'
 import NoteBox from '@/app/[lang]/components/NoteBox'
 import TextLink from '@/app/[lang]/components/TextLink'
+import SanityImage from '@/app/[lang]/components/SanityImage'
 import { PortableText } from '@portabletext/react'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
@@ -51,7 +51,7 @@ export default function ExtraItem({
 			<div className={styles.content}>
 				{firstImage && (
 					<div className={styles.imageWrapper}>
-						<Image
+						<SanityImage
 							src={urlFor(firstImage).width(1000).height(1000).url()}
 							width={1000}
 							height={1000}

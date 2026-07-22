@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
 import Skeleton from '@/app/[lang]/components/Skeleton'
 import TextLink from '@/app/[lang]/components/TextLink'
+import SanityImage from '@/app/[lang]/components/SanityImage'
 import styles from './styles.module.scss'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
@@ -55,7 +56,7 @@ export default function InstructorsSection({
 						)}
 						{instructor.cutoutImage && (
 							<div className={styles.cutout}>
-								<Image
+								<SanityImage
 									src={urlFor(instructor.cutoutImage).width(1080).height(1080).url()}
 									alt={localize(instructor.cutoutImage.alt, lang) ?? ''}
 									width={1080}

@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import { Fragment } from 'react/jsx-runtime'
 import { PortableText } from '@portabletext/react'
 import TextLink from '@/app/[lang]/components/TextLink'
+import SanityImage from '@/app/[lang]/components/SanityImage'
 import { localize } from '@/lib/sanity/localize'
 import { urlFor } from '@/lib/sanity/image'
 import type { SanityBandOrDj } from '@/lib/sanity/queryTypes'
@@ -33,7 +34,7 @@ export default function Band({
 					<Fragment key={band._id}>
 						{band.logo && (
 							<div className={styles.logoWrapper}>
-								<Image
+								<SanityImage
 									src={urlFor(band.logo).width(1080).height(1080).url()}
 									alt={localize(band.logo.alt, lang) ?? ''}
 									width={1080}
