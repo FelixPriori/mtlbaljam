@@ -45,7 +45,7 @@ export default function VisitingContent({
 					{foodImage && (
 						<div className={styles.image}>
 							<SanityImage
-								src={urlFor(foodImage).width(1080).height(1080).url()}
+								src={urlFor(foodImage).width(2160).height(2160).quality(80).auto('format').url()}
 								alt={localize(foodImage.alt, lang) ?? ''}
 								width={1080}
 								height={1080}
@@ -85,7 +85,7 @@ export default function VisitingContent({
 						{sightseeingImage && (
 							<div className={styles.image}>
 								<SanityImage
-									src={urlFor(sightseeingImage).width(1080).height(1080).url()}
+									src={urlFor(sightseeingImage).width(2160).height(2160).quality(80).auto('format').url()}
 									alt={localize(sightseeingImage.alt, lang) ?? ''}
 									width={1080}
 									height={1080}

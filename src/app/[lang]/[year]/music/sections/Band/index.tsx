@@ -35,7 +35,7 @@ export default function Band({
 						{band.logo && (
 							<div className={styles.logoWrapper}>
 								<SanityImage
-									src={urlFor(band.logo).width(1080).height(1080).url()}
+									src={urlFor(band.logo).width(2160).height(2160).quality(80).auto('format').url()}
 									alt={localize(band.logo.alt, lang) ?? ''}
 									width={1080}
 									height={1080}

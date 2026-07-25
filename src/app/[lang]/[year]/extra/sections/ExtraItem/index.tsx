@@ -52,7 +52,7 @@ export default function ExtraItem({
 				{firstImage && (
 					<div className={styles.imageWrapper}>
 						<SanityImage
-							src={urlFor(firstImage).width(1000).height(1000).url()}
+							src={urlFor(firstImage).width(2000).height(2000).quality(80).auto('format').url()}
 							width={1000}
 							height={1000}
 							alt={localize(firstImage.alt, lang) ?? ''}

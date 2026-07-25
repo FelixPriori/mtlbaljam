@@ -31,7 +31,7 @@ export default function StaffSection({
 						image={
 							member.photo?.asset
 								? {
-										src: urlFor(member.photo).width(300).height(300).fit('crop').url(),
+										src: urlFor(member.photo).width(300).height(300).fit('crop').quality(80).auto('format').url(),
 										alt: member.name ?? '',
 									}
 								: { src: '', alt: member.name ?? '' }

@@ -57,7 +57,7 @@ export default function InstructorsSection({
 						{instructor.cutoutImage && (
 							<div className={styles.cutout}>
 								<SanityImage
-									src={urlFor(instructor.cutoutImage).width(1080).height(1080).url()}
+									src={urlFor(instructor.cutoutImage).width(2160).height(2160).quality(80).auto('format').url()}
 									alt={localize(instructor.cutoutImage.alt, lang) ?? ''}
 									width={1080}
 									height={1080}

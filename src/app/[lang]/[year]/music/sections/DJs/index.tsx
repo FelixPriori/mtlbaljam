@@ -26,7 +26,7 @@ export default function DJs({
 						image={
 							dj.logo
 								? {
-										src: urlFor(dj.logo).width(150).height(150).url(),
+										src: urlFor(dj.logo).width(300).height(300).quality(80).auto('format').url(),
 										alt: localize(dj.logo.alt, lang) ?? dj.name ?? '',
 									}
 								: { src: '', alt: dj.name ?? '' }

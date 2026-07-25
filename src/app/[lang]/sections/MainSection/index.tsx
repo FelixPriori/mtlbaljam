@@ -41,7 +41,7 @@ export default function MainSection({
 						{group.groupImage && (
 							<div className={clsx(styles.cutout, i === 0 ? styles.firsCutout : styles.secondCutout)}>
 								<SanityImage
-									src={urlFor(group.groupImage).width(1080).url()}
+									src={urlFor(group.groupImage).width(2160).quality(80).auto('format').url()}
 									alt={localize(group.groupImage.alt, lang) ?? group.groupName ?? ''}
 									width={1080}
 									height={1080}

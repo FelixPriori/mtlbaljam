@@ -44,7 +44,7 @@ export default function Venue({
 								{sponsor.logo && (
 									<div className={styles.sponsorLogo}>
 										<SanityImage
-											src={urlFor(sponsor.logo).width(100).url()}
+											src={urlFor(sponsor.logo).width(200).quality(80).auto('format').url()}
 											alt={localize(sponsor.logo.alt, lang) ?? sponsor.name ?? ''}
 											width={100}
 											height={100}

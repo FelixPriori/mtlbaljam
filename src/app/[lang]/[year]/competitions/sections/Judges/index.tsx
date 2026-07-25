@@ -26,7 +26,7 @@ export default function Judges({
 						image={
 							judge.image
 								? {
-										src: urlFor(judge.image).width(150).height(150).url(),
+										src: urlFor(judge.image).width(300).height(300).quality(80).auto('format').url(),
 										alt: localize(judge.image.alt, lang) ?? judge.name ?? '',
 									}
 								: { src: '', alt: judge.name ?? '' }

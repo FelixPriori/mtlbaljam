@@ -36,7 +36,7 @@ export default function MusicSection({
 							<div className={styles.bandImageWrapper}>
 								{band.logo ? (
 									<SanityImage
-										src={urlFor(band.logo).width(270).url()}
+										src={urlFor(band.logo).width(540).quality(80).auto('format').url()}
 										alt={localize(band.logo.alt, lang) ?? band.name ?? ''}
 										width={270}
 										height={291}
