@@ -46,13 +46,12 @@ export default function PhotoGrid({
 				return (
 					<GalleryThumbnail
 						key={key}
-						src={urlFor(photo).width(400).height(400).quality(60).auto('format').url()}
+						src={urlFor(photo).width(800).height(800).quality(60).auto('format').url()}
 						alt={localize(photo.alt, lang) ?? ''}
 						sizes="(max-width: 576px) 45vw, (max-width: 992px) 30vw, 200px"
 						isLoaded={isPhotoLoaded(key)}
 						onLoad={() => onPhotoLoad(key)}
 						onClick={() => onOpenPhoto(photoIndex)}
-						priority={photoIndex === 0}
 						wrapperClassName={styles.thumbButton}
 						imageClassName={styles.thumb}
 					/>
