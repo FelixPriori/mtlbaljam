@@ -2,8 +2,9 @@ import { MetadataRoute } from 'next'
 import { readdirSync, statSync, existsSync } from 'fs'
 import { join } from 'path'
 import { sanityClient } from '@/lib/sanity/client'
-import { ALL_EDITION_YEARS_QUERY } from '@/lib/sanity/queries'
-import type { ALL_EDITION_YEARS_QUERY_RESULT } from '@/sanity.types'
+import { EDITIONS_FOR_NAV_QUERY, SITE_SETTINGS_QUERY } from '@/lib/sanity/queries'
+import type { EDITIONS_FOR_NAV_QUERY_RESULT, SITE_SETTINGS_QUERY_RESULT } from '@/sanity.types'
+import { getHomeYear, isEditionListed } from '@/lib/editions'
 
 const LOCALES = ['en', 'fr'] as const
 const SITE = 'https://mtlbaljam.org'
@@ -47,26 +48,39 @@ function findYearSubpages(): string[] {
 	return subpages
 }
 
-function getPriority(urlPath: string): number {
-	if (urlPath === '') return 1
-	if (urlPath.includes('/2026')) return 0.7
-	if (urlPath.includes('/2025')) return 0.5
-	if (urlPath.includes('/2024')) return 0.3
-	return 0.7
+const yearOf = (urlPath: string) => {
+	const match = urlPath.match(/^\/(\d{4})(\/|$)/)
+	return match ? Number(match[1]) : null
 }
 
-function getChangeFrequency(urlPath: string): SitemapEntry['changeFrequency'] {
-	if (urlPath === '' || urlPath.includes('/2026')) return 'weekly'
-	if (urlPath.includes('/2024') || urlPath.includes('/2025')) return 'yearly'
-	return 'monthly'
+function getPriority(urlPath: string, homeYear: number | null): number {
+	if (urlPath === '') return 1
+	const year = yearOf(urlPath)
+	if (year == null || homeYear == null || year >= homeYear) return 0.7
+	return homeYear - year === 1 ? 0.5 : 0.3
+}
+
+function getChangeFrequency(urlPath: string, homeYear: number | null): SitemapEntry['changeFrequency'] {
+	if (urlPath === '') return 'weekly'
+	const year = yearOf(urlPath)
+	if (year == null) return 'monthly'
+	if (homeYear != null && year < homeYear) return 'yearly'
+	return 'weekly'
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const staticPages = findStaticPages(PAGES_ROOT)
 	const yearSubpages = findYearSubpages()
 
-	const editions = await sanityClient.fetch<ALL_EDITION_YEARS_QUERY_RESULT>(ALL_EDITION_YEARS_QUERY)
-	const years = editions.map(e => e.year).filter((y): y is number => y != null)
+	const [editions, siteSettings] = await Promise.all([
+		sanityClient.fetch<EDITIONS_FOR_NAV_QUERY_RESULT>(EDITIONS_FOR_NAV_QUERY),
+		sanityClient.fetch<SITE_SETTINGS_QUERY_RESULT>(SITE_SETTINGS_QUERY),
+	])
+	const homeYear = getHomeYear(editions, siteSettings?.currentEditionYear)
+	const years = editions
+		.filter(isEditionListed)
+		.map(e => e.year)
+		.filter((y): y is number => y != null)
 
 	const yearPages = years.flatMap(year =>
 		yearSubpages.map(sub => ({
@@ -81,8 +95,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		LOCALES.map(locale => ({
 			url: `${SITE}/${locale}${urlPath}`,
 			lastModified,
-			changeFrequency: getChangeFrequency(urlPath),
-			priority: getPriority(urlPath),
+			changeFrequency: getChangeFrequency(urlPath, homeYear),
+			priority: getPriority(urlPath, homeYear),
 		}))
 	)
 }

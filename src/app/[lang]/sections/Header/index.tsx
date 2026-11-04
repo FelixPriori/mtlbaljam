@@ -47,6 +47,7 @@ const HEADER_TITLES: Record<Locales, Record<string, string>> = {
 
 type HeaderProps = {
 	datesMap: Record<number, string>
+	homeYear: number | null
 	registrationUrl: string
 	registerNow: string
 	logoAlt: string
@@ -56,6 +57,7 @@ type HeaderProps = {
 
 export default function Header({
 	datesMap,
+	homeYear,
 	registrationUrl,
 	registerNow,
 	logoAlt,
@@ -68,8 +70,8 @@ export default function Header({
 		const pageName = getPageNameFromSlug(pathname)
 		const segments = pathname.split('/')
 		const yearInPath = segments.find(s => /^\d{4}$/.test(s))
-		const year = yearInPath ? parseInt(yearInPath) : new Date().getFullYear()
-		const displayDate = datesMap[year] ?? ''
+		const year = yearInPath ? parseInt(yearInPath) : homeYear
+		const displayDate = year != null ? (datesMap[year] ?? '') : ''
 
 		const isYearHomePage = /^\d{4}$/.test(pageName)
 		const h1 = isYearHomePage
@@ -94,7 +96,7 @@ export default function Header({
 				)}
 			</>
 		)
-	}, [datesMap, galleryTitle, lang, pathname, registerNow, registrationUrl])
+	}, [datesMap, galleryTitle, homeYear, lang, pathname, registerNow, registrationUrl])
 
 	return (
 		<header className={styles.headerSection}>

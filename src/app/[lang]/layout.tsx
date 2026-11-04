@@ -13,6 +13,7 @@ import { SanityLive } from '@/lib/sanity/live'
 import '@/app/[lang]/globals.css'
 import type { NavigationConfig, NavSection } from '@/types/navigation'
 import LangSetter from './components/LangSetter'
+import { getHomeYear, isEditionListed } from '@/lib/editions'
 
 export function generateStaticParams() {
 	return locales.map(locale => ({ locale }))
@@ -70,6 +71,7 @@ function buildNavigationConfig(
 
 	const mainEditions: NavSection[] = editions
 		.filter(e => e.year != null && e.year >= currentYear)
+		.filter(isEditionListed)
 		.map(e => ({
 			key: `mbj${e.year}`,
 			title: `MTL BAL JAM ${e.year}`,
@@ -81,6 +83,7 @@ function buildNavigationConfig(
 
 	const archiveEntries = editions
 		.filter(e => e.year != null && e.year < currentYear)
+		.filter(isEditionListed)
 		.map(e => ({
 			key: `mbj${e.year}`,
 			title: `MTL BAL JAM ${e.year}`,
@@ -116,6 +119,8 @@ export default async function LocaleLayout({
 		if (edition.year != null && date) datesMap[edition.year] = date
 	}
 
+	const homeYear = getHomeYear(editions ?? [], siteSettings?.currentEditionYear)
+
 	const registrationUrl = siteSettings?.registrationUrl ?? ''
 	const registerNow =
 		localize(siteSettings?.labels?.registerNow, lang) ??
@@ -148,6 +153,7 @@ export default async function LocaleLayout({
 				<Navigation config={navigationConfig} lang={lang} />
 				<Header
 					datesMap={datesMap}
+					homeYear={homeYear}
 					registrationUrl={registrationUrl}
 					registerNow={registerNow}
 					logoAlt={logoAlt}
