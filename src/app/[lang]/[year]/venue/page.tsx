@@ -5,6 +5,7 @@ import { Locales } from '@/i18n'
 import { sanityFetch } from '@/lib/sanity/fetch'
 import { VENUE_QUERY } from '@/lib/sanity/queries'
 import type { VENUE_QUERY_RESULT } from '@/sanity.types'
+import { toPostalAddress } from '@/lib/schemaOrg'
 
 type Props = {
 	params: Promise<{ lang: Locales; year: string }>
@@ -60,19 +61,14 @@ export default async function MbjVenue({
 		name: venue.name,
 		url: venue.website ?? undefined,
 		image: venue.photo?.asset?.url,
-		address: {
-			'@type': 'PostalAddress',
-			streetAddress: '1956 Rue Frontenac',
-			addressLocality: 'Montréal',
-			addressRegion: 'QC',
-			postalCode: 'H2K 2Z1',
-			addressCountry: 'CA',
-		},
-		geo: {
-			'@type': 'GeoCoordinates',
-			latitude: venue.position?.lat,
-			longitude: venue.position?.lng,
-		},
+		address: toPostalAddress(venue.address),
+		geo: venue.position
+			? {
+					'@type': 'GeoCoordinates',
+					latitude: venue.position.lat,
+					longitude: venue.position.lng,
+				}
+			: undefined,
 		description: venue.description?.en?.join(' '),
 	}
 
