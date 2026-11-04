@@ -217,6 +217,7 @@ export const TRACKS_QUERY = defineQuery(`
 
 export const REGISTRATION_QUERY = defineQuery(`
   *[_type == "eventEdition" && year == $year][0]{
+    registrationOpenDate,
     "registrationPage": registrationPage {
       isOpen,
       registerUrl,
@@ -322,7 +323,15 @@ export const HOME_PAGE_QUERY = defineQuery(`
       sponsorNoteText ${localizedStringFragment}
     },
     "bands": bands[]->{ _id, name, biography ${localizedTextFragment}, logo ${imageWithAltFragment}, schemaDescription },
-    "venue": venueRef->{ name, address, website, position { lat, lng } }
+    "venue": venueRef->{ name, address, website, position { lat, lng } },
+    year,
+    startDate,
+    endDate,
+    displayDate ${localizedStringFragment},
+    registrationOpenDate,
+    "registrationIsOpen": registrationPage.isOpen,
+    "registerUrl": registrationPage.registerUrl,
+    "fullPassPrice": registrationPage.priceTiers[0].fullPassPrice
   }
 `)
 
@@ -383,7 +392,13 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
     contactEmail,
     copyright ${localizedStringFragment},
     registrationUrl,
+    "currentEditionYear": currentEdition->year,
     labels {
+      registrationOpensOn ${localizedStringFragment},
+      detailsComingSoon ${localizedStringFragment},
+      toBeAnnounced ${localizedStringFragment},
+      sponsorInvite ${localizedStringFragment},
+      instructorTbaAlt ${localizedStringFragment},
       competitions ${localizedStringFragment},
       judges ${localizedStringFragment},
       price ${localizedStringFragment},
