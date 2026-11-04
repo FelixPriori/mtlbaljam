@@ -1,0 +1,23 @@
+.comingSoonSection {
+	background-color: var(--color-dark);
+	padding: var(--spacing-3xl) var(--spacing-3xl) 0;
+	text-align: center;
+
+	h2,
+	p {
+		color: var(--color-neutral);
+	}
+
+	h2 {
+		margin-bottom: var(--spacing-l);
+	}
+
+	p {
+		font-size: var(--font-size-m);
+		line-height: var(--line-height-base);
+	}
+
+	@media only screen and (max-width: 500px) {
+		padding: var(--spacing-3xl) var(--spacing-m) 0;
+	}
+}

@@ -5,6 +5,7 @@ import TextLink from '@/app/[lang]/components/TextLink'
 import SanityImage from '@/app/[lang]/components/SanityImage'
 import { urlFor } from '@/lib/sanity/image'
 import { localize } from '@/lib/sanity/localize'
+import { toBeAnnounced } from '@/lib/editions'
 import type { SanityHomePage, SanityLabels } from '@/lib/sanity/queryTypes'
 import type { Locales } from '@/i18n'
 
@@ -17,6 +18,8 @@ export default function Venue({
 	labels,
 	year,
 	lang,
+	hasVenue = true,
+	contactEmail,
 }: {
 	featuredSponsors: SanityHomePage['featuredSponsors']
 	sponsorSectionTitle: string | null
@@ -26,7 +29,21 @@ export default function Venue({
 	labels: SanityLabels
 	year: string
 	lang: Locales
+	hasVenue?: boolean
+	contactEmail?: string | null
 }) {
+	const email = contactEmail ?? 'mtlbaljam@campusbalboa.org'
+	const sponsorNote =
+		sponsorNoteText ??
+		((featuredSponsors ?? []).length === 0
+			? (
+					localize(labels?.sponsorInvite, lang) ??
+					(lang === 'fr'
+						? 'Vous souhaitez commanditer MTL BAL JAM? Écrivez-nous à {{email}}'
+						: 'You want to sponsor MTL BAL JAM? Reach out to us at {{email}}')
+				).replace('{{email}}', email)
+			: null)
+
 	return (
 		<section className={styles.venueSection}>
 			<div className={styles.subscribeWrapper}>
@@ -55,8 +72,8 @@ export default function Venue({
 							</a>
 						))}
 					</div>
-					{sponsorNoteText && (
-						<p className={styles.sponsorNote}>{sponsorNoteText}</p>
+					{sponsorNote && (
+						<p className={styles.sponsorNote}>{sponsorNote}</p>
 					)}
 				</div>
 			</div>
@@ -72,9 +89,13 @@ export default function Venue({
 
 				<div className={styles.text}>
 					<h2>{venueSectionTitle ?? localize(labels?.venue, lang) ?? (lang === 'fr' ? 'Lieu' : 'Venue')}</h2>
-					<TextLink href={`/${lang}/${year}/venue`}>
-						{venueLearnMoreText ?? localize(labels?.checkOutOurVenue, lang) ?? (lang === 'fr' ? 'Découvrez notre lieu...' : 'Check out our venue...')}
-					</TextLink>
+					{hasVenue ? (
+						<TextLink href={`/${lang}/${year}/venue`}>
+							{venueLearnMoreText ?? localize(labels?.checkOutOurVenue, lang) ?? (lang === 'fr' ? 'Découvrez notre lieu...' : 'Check out our venue...')}
+						</TextLink>
+					) : (
+						<p>{toBeAnnounced(labels, lang)}</p>
+					)}
 				</div>
 
 				<IconBox

@@ -1,6 +1,6 @@
 import Favicon from '@/app/favicon.ico'
 
-import { MainSection, MusicSection, Venue } from '@/app/[lang]/sections'
+import { EditionHome } from '@/app/[lang]/sections'
 import { Locales } from '@/i18n'
 import { sanityFetch } from '@/lib/sanity/fetch'
 import { HOME_PAGE_QUERY, SITE_SETTINGS_QUERY } from '@/lib/sanity/queries'
@@ -55,42 +55,6 @@ export default async function MbjYearHome({
 		sanityFetch<SITE_SETTINGS_QUERY_RESULT>(SITE_SETTINGS_QUERY),
 	])
 
-	const homePage = data?.homePage ?? null
-	const bands = data?.bands ?? []
-	const labels = siteSettings?.labels ?? null
-
-	return (
-		<>
-			{homePage && (
-				<>
-					<MainSection
-						groups={homePage.featuredInstructorGroups ?? []}
-						sectionTitle={localize(homePage.instructorSectionTitle, lang)}
-						linkText={localize(homePage.instructorLinkText, lang)}
-						labels={labels}
-						year={year}
-						lang={lang}
-					/>
-					<Venue
-						featuredSponsors={homePage.featuredSponsors ?? []}
-						sponsorSectionTitle={localize(homePage.sponsorSectionTitle, lang)}
-						sponsorNoteText={localize(homePage.sponsorNoteText, lang)}
-						venueSectionTitle={localize(homePage.venueSectionTitle, lang)}
-						venueLearnMoreText={localize(homePage.venueLearnMoreText, lang)}
-						labels={labels}
-						year={year}
-						lang={lang}
-					/>
-					<MusicSection
-						bands={bands}
-						sectionTitle={localize(homePage.musicSectionTitle, lang)}
-						learnMoreText={localize(homePage.musicLearnMoreText, lang)}
-						year={year}
-						lang={lang}
-						siteSettings={siteSettings}
-					/>
-				</>
-			)}
-		</>
-	)
+	if (!data) return null
+	return <EditionHome data={data} siteSettings={siteSettings} year={year} lang={lang} />
 }

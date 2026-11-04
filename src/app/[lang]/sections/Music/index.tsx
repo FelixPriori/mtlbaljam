@@ -6,6 +6,7 @@ import TextLink from '@/app/[lang]/components/TextLink'
 import SanityImage from '@/app/[lang]/components/SanityImage'
 import { urlFor } from '@/lib/sanity/image'
 import { localize } from '@/lib/sanity/localize'
+import { toBeAnnounced } from '@/lib/editions'
 import type { HOME_PAGE_QUERY_RESULT, SITE_SETTINGS_QUERY_RESULT } from '@/sanity.types'
 import type { Locales } from '@/i18n'
 
@@ -30,6 +31,7 @@ export default function MusicSection({
 		<section className={styles.bandSection}>
 			<div className={styles.bandsArea}>
 				<h2>{sectionTitle ?? localize(siteSettings?.labels?.music, lang) ?? (lang === 'fr' ? 'Musique' : 'Music')}</h2>
+				{displayBands.length === 0 && <p>{toBeAnnounced(siteSettings?.labels, lang)}</p>}
 				<div className={styles.bands}>
 					{displayBands.map((band) => (
 						<div key={band._id} className={styles.band}>
@@ -50,9 +52,11 @@ export default function MusicSection({
 						</div>
 					))}
 				</div>
-				<TextLink href={`/${lang}/${year}/music`} className={styles.link}>
-					{learnMoreText ?? localize(siteSettings?.labels?.learnMore, lang) ?? (lang === 'fr' ? 'En savoir plus...' : 'Learn more...')}
-				</TextLink>
+				{displayBands.length > 0 && (
+					<TextLink href={`/${lang}/${year}/music`} className={styles.link}>
+						{learnMoreText ?? localize(siteSettings?.labels?.learnMore, lang) ?? (lang === 'fr' ? 'En savoir plus...' : 'Learn more...')}
+					</TextLink>
+				)}
 			</div>
 
 			<div className={styles.socialsWrapper}>

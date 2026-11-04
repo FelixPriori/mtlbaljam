@@ -1,5 +1,7 @@
 import styles from './styles.module.scss'
 import clsx from 'clsx'
+import Image from 'next/image'
+import { toBeAnnounced } from '@/lib/editions'
 import TextLink from '@/app/[lang]/components/TextLink'
 import SanityImage from '@/app/[lang]/components/SanityImage'
 import LinesCircle from '@/assets/svgs/lines-circle'
@@ -25,6 +27,7 @@ export default function MainSection({
 	lang: Locales
 }) {
 	const resolvedLinkText = linkText ?? localize(labels?.learnMore, lang) ?? (lang === 'fr' ? 'En savoir plus...' : 'Learn more...')
+	const tbaText = toBeAnnounced(labels, lang)
 
 	return (
 		<section className={styles.mainSection}>
@@ -33,6 +36,28 @@ export default function MainSection({
 			</div>
 			<h2>{sectionTitle ?? localize(labels?.instructors, lang) ?? (lang === 'fr' ? 'Instructeurs' : 'Instructors')}</h2>
 			<div className={styles.content}>
+				{groups.length === 0 &&
+					[0, 1].map(i => (
+						<div key={i} className={clsx(styles.instructors, i === 0 ? styles.first : styles.second)}>
+							<div className={clsx(styles.cutout, i === 0 ? styles.firsCutout : styles.secondCutout)}>
+								<Image
+									src="/instructor-tba.png"
+									alt={
+										localize(labels?.instructorTbaAlt, lang) ??
+										(lang === 'fr'
+											? 'Silhouette avec un point d’interrogation : enseignant·e à venir'
+											: 'Silhouette with a question mark: instructor to be announced')
+									}
+									width={1080}
+									height={1080}
+									priority={i === 0}
+								/>
+							</div>
+							<div className={styles.text}>
+								<h3>{tbaText}</h3>
+							</div>
+						</div>
+					))}
 				{groups.map((group, i) => (
 					<div
 						key={group.groupName}

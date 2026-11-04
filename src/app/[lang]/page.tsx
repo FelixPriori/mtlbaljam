@@ -1,135 +1,101 @@
+import { cache } from 'react'
 import Favicon from '@/app/favicon.ico'
 
-import { MainSection, MusicSection, Venue } from './sections'
+import { EditionHome } from './sections'
 import { Locales } from '@/i18n'
 import { sanityFetch } from '@/lib/sanity/fetch'
-import { HOME_PAGE_QUERY, SITE_SETTINGS_QUERY } from '@/lib/sanity/queries'
-import type { HOME_PAGE_QUERY_RESULT, SITE_SETTINGS_QUERY_RESULT } from '@/sanity.types'
+import { EDITIONS_FOR_NAV_QUERY, HOME_PAGE_QUERY, SITE_SETTINGS_QUERY } from '@/lib/sanity/queries'
+import type {
+	EDITIONS_FOR_NAV_QUERY_RESULT,
+	HOME_PAGE_QUERY_RESULT,
+	SITE_SETTINGS_QUERY_RESULT,
+} from '@/sanity.types'
 import { localize } from '@/lib/sanity/localize'
-
-const CURRENT_YEAR = 2026
+import { getHomeYear } from '@/lib/editions'
+import { toPostalAddress } from '@/lib/schemaOrg'
 
 type Props = {
 	params: Promise<{ lang: Locales }>
 }
 
+const getHomeEdition = cache(async function getHomeEdition() {
+	const [editions, siteSettings] = await Promise.all([
+		sanityFetch<EDITIONS_FOR_NAV_QUERY_RESULT>(EDITIONS_FOR_NAV_QUERY),
+		sanityFetch<SITE_SETTINGS_QUERY_RESULT>(SITE_SETTINGS_QUERY),
+	])
+	const year = getHomeYear(editions ?? [], siteSettings?.currentEditionYear)
+	const data =
+		year != null ? await sanityFetch<HOME_PAGE_QUERY_RESULT>(HOME_PAGE_QUERY, { year }) : null
+	return { year, data, siteSettings }
+})
+
+const parsePrice = (price: string | null | undefined) => {
+	const match = price?.replace(/\s/g, '').match(/\d+(?:[.,]\d+)?/)
+	const n = match ? Number(match[0].replace(',', '.')) : NaN
+	return Number.isFinite(n) && n > 0 ? n : undefined
+}
+
 export async function generateMetadata(props: Props) {
 	const { lang } = await props.params
+	const { year, data } = await getHomeEdition()
 	const siteUrl = `https://mtlbaljam.org/${lang}`
-	if (lang === 'fr') {
-		return {
-			title: 'MTL BAL JAM 2026 — Événement Balboa · Montréal / Tiohtià:ke, 19–21 juin',
-			description:
-				'Week-end de Balboa à Montréal / Tiohtià:ke, 19–21 juin 2026. Instructeurs de classe mondiale, musique live swing, compétitions et soirées sociales. Inscrivez-vous!',
-			alternates: {
-				canonical: siteUrl,
-				languages: {
-					fr: 'https://mtlbaljam.org/fr',
-					en: 'https://mtlbaljam.org/en',
-					'x-default': 'https://mtlbaljam.org/en',
-				},
+	const date = localize(data?.displayDate, lang)
+
+	const title =
+		lang === 'fr'
+			? `MTL BAL JAM ${year ?? ''} · Événement de Balboa · Montréal / Tiohtià:ke`
+			: `MTL BAL JAM ${year ?? ''} · Balboa Dance Event · Montréal / Tiohtià:ke`
+	const description =
+		lang === 'fr'
+			? `Week-end de danse Balboa à Montréal / Tiohtià:ke${date ? `, ${date}` : ''}. Instructeur.ice.s de classe mondiale, musique swing live, compétitions et soirées de danse sociale.`
+			: `Balboa dance weekend in Montréal / Tiohtià:ke${date ? `, ${date}` : ''}. World-class instructors, live swing bands, competitions, and social dancing.`
+
+	return {
+		title,
+		description,
+		alternates: {
+			canonical: siteUrl,
+			languages: {
+				en: 'https://mtlbaljam.org/en',
+				fr: 'https://mtlbaljam.org/fr',
+				'x-default': 'https://mtlbaljam.org/en',
 			},
-			icons: [{ rel: 'icon', url: Favicon.src }],
-			openGraph: {
-				images: [
-					{
-						url: '/og-image.png',
-						alt: 'MTL BAL JAM logo',
-						width: 1200,
-						height: 630,
-					},
-				],
-				title: 'MTL BAL JAM 2026 — Événement Balboa · Montréal / Tiohtià:ke, 19–21 juin',
-				locale: 'fr',
-				description:
-					'Week-end de Balboa à Montréal / Tiohtià:ke, 19–21 juin 2026. Instructeurs de classe mondiale, musique live swing, compétitions et soirées sociales. Inscrivez-vous!',
-			},
-			twitter: {
-				card: 'summary_large_image',
-			},
-		}
-	} else {
-		return {
-			title: 'MTL BAL JAM 2026 — Balboa Dance Event · Montréal / Tiohtià:ke, June 19–21',
-			description:
-				'Balboa dance weekend in Montréal / Tiohtià:ke, June 19–21, 2026. World-class instructors, live swing bands, competitions, and social dancing. Register now!',
-			alternates: {
-				canonical: siteUrl,
-				languages: {
-					en: 'https://mtlbaljam.org/en',
-					fr: 'https://mtlbaljam.org/fr',
-					'x-default': 'https://mtlbaljam.org/en',
-				},
-			},
-			icons: [{ rel: 'icon', url: Favicon.src }],
-			openGraph: {
-				images: [
-					{
-						url: '/og-image.png',
-						alt: 'MTL BAL JAM logo',
-						width: 1200,
-						height: 630,
-					},
-				],
-				title: 'MTL BAL JAM 2026 — Balboa Dance Event · Montréal / Tiohtià:ke, June 19–21',
-				locale: 'en',
-				description:
-					'Balboa dance weekend in Montréal / Tiohtià:ke, June 19–21, 2026. World-class instructors, live swing bands, competitions, and social dancing. Register now!',
-			},
-			twitter: {
-				card: 'summary_large_image',
-			},
-		}
+		},
+		icons: [{ rel: 'icon', url: Favicon.src }],
+		openGraph: {
+			images: [{ url: '/og-image.png', alt: 'MTL BAL JAM logo', width: 1200, height: 630 }],
+			title,
+			locale: lang,
+			description,
+		},
+		twitter: {
+			card: 'summary_large_image',
+		},
 	}
 }
 
-export default async function MTLBALJAM({
-	params,
-}: {
-	params: Promise<{ lang: Locales }>
-}) {
+export default async function MTLBALJAM({ params }: Props) {
 	const { lang } = await params
-	const [data, siteSettings] = await Promise.all([
-		sanityFetch<HOME_PAGE_QUERY_RESULT>(HOME_PAGE_QUERY, { year: CURRENT_YEAR }),
-		sanityFetch<SITE_SETTINGS_QUERY_RESULT>(SITE_SETTINGS_QUERY),
-	])
+	const { year, data, siteSettings } = await getHomeEdition()
+	if (year == null || !data) return null
 
-	const homePage = data?.homePage ?? null
-	const bands = data?.bands ?? []
-	const venue = data?.venue ?? null
-	const labels = siteSettings?.labels ?? null
-
-	const band0 = bands[0]
-	const band1 = bands[1]
+	const bands = data.bands ?? []
+	const venue = data.venue ?? null
 
 	const location = venue
-		? (() => {
-				// Parse "streetAddress, city, province postalCode" → structured fields
-				const [street, city, regionPostal] = (venue.address ?? '').split(', ')
-				const spaceIdx = (regionPostal ?? '').indexOf(' ')
-				const region = regionPostal?.slice(0, spaceIdx) ?? 'QC'
-				const postalCode = regionPostal?.slice(spaceIdx + 1) ?? ''
-				return {
-					'@type': 'Place',
-					name: venue.name,
-					url: venue.website ?? undefined,
-					address: {
-						'@type': 'PostalAddress',
-						streetAddress: street,
-						addressLocality: city,
-						addressRegion: region,
-						postalCode,
-						addressCountry: 'CA',
-					},
-					geo: venue.position
-						? {
-								'@type': 'GeoCoordinates',
-								latitude: Number(venue.position.lat),
-								longitude: Number(venue.position.lng),
-							}
-						: undefined,
-				}
-			})()
+		? {
+				'@type': 'Place',
+				name: venue.name,
+				url: venue.website ?? undefined,
+				address: toPostalAddress(venue.address),
+				geo: venue.position
+					? {
+							'@type': 'GeoCoordinates',
+							latitude: Number(venue.position.lat),
+							longitude: Number(venue.position.lng),
+						}
+					: undefined,
+			}
 		: {
 				'@type': 'Place',
 				name: 'Montréal / Tiohtià:ke',
@@ -141,16 +107,21 @@ export default async function MTLBALJAM({
 				},
 			}
 
+	const offerUrl = data.registrationIsOpen
+		? (data.registerUrl ?? siteSettings?.registrationUrl ?? null)
+		: null
+	const price = parsePrice(data.fullPassPrice)
+
 	const eventSchema = {
 		'@context': 'https://schema.org',
 		'@type': 'DanceEvent',
-		name: 'MTL BAL JAM 2026',
+		name: `MTL BAL JAM ${year}`,
 		url: `https://mtlbaljam.org/${lang}`,
-		startDate: '2026-06-19T09:00:00-04:00',
-		endDate: '2026-06-21T23:59:00-04:00',
+		startDate: data.startDate ?? undefined,
+		endDate: data.endDate ?? undefined,
 		eventStatus: 'https://schema.org/EventScheduled',
 		eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-		image: ['https://mtlbaljam.org/og-image.png', 'https://mtlbaljam.org/legacy-band.png'],
+		image: ['https://mtlbaljam.org/og-image.png'],
 		inLanguage: lang,
 		location,
 		organizer: {
@@ -159,28 +130,22 @@ export default async function MTLBALJAM({
 			url: `https://mtlbaljam.org/${lang}/about`,
 			email: 'mtlbaljam@campusbalboa.org',
 		},
-		performer: [
-			band0 && {
-				'@type': 'MusicGroup',
-				name: band0.name,
-				description: band0.schemaDescription ?? undefined,
-				image: 'https://mtlbaljam.org/legacy-band-promo.png',
-			},
-			band1 && {
-				'@type': 'MusicGroup',
-				name: band1.name,
-				description: band1.schemaDescription ?? undefined,
-				image: 'https://mtlbaljam.org/johancsik.png',
-			},
-		].filter(Boolean),
-		offers: {
-			'@type': 'Offer',
-			url: 'https://mtlbaljam2026.dancecamps.org/booking.php',
-			availability: 'https://schema.org/InStock',
-			price: 210,
-			priceCurrency: 'CAD',
-			validFrom: '2026-02-03',
-		},
+		performer: bands.map(band => ({
+			'@type': 'MusicGroup',
+			name: band.name,
+			description: band.schemaDescription ?? undefined,
+			image: band.logo?.asset?.url ?? undefined,
+		})),
+		offers: offerUrl
+			? {
+					'@type': 'Offer',
+					url: offerUrl,
+					availability: 'https://schema.org/InStock',
+					price,
+					priceCurrency: 'CAD',
+					validFrom: data.registrationOpenDate ?? undefined,
+				}
+			: undefined,
 		description:
 			lang === 'fr'
 				? 'MTL BAL JAM est un événement de danse Balboa à Montréal / Tiohtià:ke.'
@@ -193,36 +158,7 @@ export default async function MTLBALJAM({
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
 			/>
-			{homePage && (
-				<>
-					<MainSection
-						groups={homePage.featuredInstructorGroups ?? []}
-						sectionTitle={localize(homePage.instructorSectionTitle, lang)}
-						linkText={localize(homePage.instructorLinkText, lang)}
-						labels={labels}
-						year={String(CURRENT_YEAR)}
-						lang={lang}
-					/>
-					<Venue
-						featuredSponsors={homePage.featuredSponsors ?? []}
-						sponsorSectionTitle={localize(homePage.sponsorSectionTitle, lang)}
-						sponsorNoteText={localize(homePage.sponsorNoteText, lang)}
-						venueSectionTitle={localize(homePage.venueSectionTitle, lang)}
-						venueLearnMoreText={localize(homePage.venueLearnMoreText, lang)}
-						labels={labels}
-						year={String(CURRENT_YEAR)}
-						lang={lang}
-					/>
-					<MusicSection
-						bands={bands}
-						sectionTitle={localize(homePage.musicSectionTitle, lang)}
-						learnMoreText={localize(homePage.musicLearnMoreText, lang)}
-						year={String(CURRENT_YEAR)}
-						lang={lang}
-						siteSettings={siteSettings}
-					/>
-				</>
-			)}
+			<EditionHome data={data} siteSettings={siteSettings} year={String(year)} lang={lang} />
 		</>
 	)
 }
