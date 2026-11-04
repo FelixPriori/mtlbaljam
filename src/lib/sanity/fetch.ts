@@ -3,6 +3,11 @@ import { cache } from 'react'
 import type { QueryParams } from 'next-sanity'
 import { sanityFetchLive } from './live'
 
+const PERSPECTIVE =
+	process.env.NODE_ENV === 'development' && process.env.SANITY_PREVIEW_DRAFTS === 'true'
+		? 'drafts'
+		: 'published'
+
 /**
  * Fetch data from Sanity using the Live Content API.
  * Cache is automatically invalidated when content is published in the studio.
@@ -19,6 +24,6 @@ export const sanityFetch = cache(async function sanityFetch<T>(
 	params: QueryParams = {},
 	_revalidate?: number | false,
 ): Promise<T> {
-	const { data } = await sanityFetchLive({ query, params })
+	const { data } = await sanityFetchLive({ query, params, perspective: PERSPECTIVE })
 	return data as T
 })
