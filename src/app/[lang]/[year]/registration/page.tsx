@@ -56,7 +56,12 @@ export default async function MbjRegistration({
 	const labels = settings?.labels ?? null
 	return (
 		<>
-			<Tickets registrationPage={data?.registrationPage ?? null} labels={labels} lang={lang} />
+			<Tickets
+				registrationPage={data?.registrationPage ?? null}
+				registrationOpenDate={data?.registrationOpenDate ?? null}
+				labels={labels}
+				lang={lang}
+			/>
 		</>
 	)
 }

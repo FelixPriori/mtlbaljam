@@ -1,18 +1,26 @@
 import styles from './styles.module.scss'
 import { localize } from '@/lib/sanity/localize'
+import { registrationOpensText, showRegistrationOpensOn } from '@/lib/editions'
 import type { SanityRegistrationPage, SanityLabels } from '@/lib/sanity/queryTypes'
 import type { Locales } from '@/i18n'
 
 export default function Tickets({
 	registrationPage,
+	registrationOpenDate,
 	labels,
 	lang,
 }: {
 	registrationPage: SanityRegistrationPage | null
+	registrationOpenDate: string | null
 	labels: SanityLabels
 	lang: Locales
 }) {
-	if (!registrationPage) return null
+	const opensOnText =
+		registrationOpenDate && showRegistrationOpensOn(registrationPage?.isOpen, registrationOpenDate)
+			? registrationOpensText(localize(labels?.registrationOpensOn, lang), registrationOpenDate, lang)
+			: null
+
+	if (!registrationPage && !opensOnText) return null
 
 	const {
 		priceTiers,
@@ -31,7 +39,7 @@ export default function Tickets({
 		termsLinkText,
 		termsContent,
 		registerUrl,
-	} = registrationPage
+	} = registrationPage ?? {}
 
 	const mtlbaljamEmail = `<a href="mailto:mtlbaljam@campusbalboa.org">mtlbaljam@campusbalboa.org</a>`
 
@@ -60,6 +68,8 @@ export default function Tickets({
 		<section className={styles.ticketsSection}>
 			<h2>{localize(labels?.registration, lang) ?? (lang === 'fr' ? 'Inscription' : 'Registration')}</h2>
 			<div className={styles.content}>
+				{opensOnText && <p className={styles.opensOn}>{opensOnText}</p>}
+
 				{registerUrl && (
 					<div className={styles.registerLink}>
 						<a href={registerUrl} target="_blank" rel="noreferrer noopener">

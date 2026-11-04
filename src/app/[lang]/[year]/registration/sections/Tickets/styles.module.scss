@@ -42,6 +42,12 @@
 		max-width: 500px;
 		margin: 0 auto;
 
+		.opensOn {
+			text-align: center;
+			font-size: var(--font-size-m);
+			margin-bottom: var(--spacing-l);
+		}
+
 		.details {
 			width: 100%;
 		}
